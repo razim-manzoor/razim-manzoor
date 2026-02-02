@@ -61,6 +61,7 @@ export default function NavBar() {
                 <button
                     className="md:hidden text-foreground focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle menu"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
