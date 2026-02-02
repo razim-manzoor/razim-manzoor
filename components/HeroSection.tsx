@@ -19,7 +19,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary dark:text-primary dark:bg-white/5 dark:border-white/10 text-sm font-medium mb-6">
-                        Available for immediate joining
+                        Based in {USER_DATA.location} • Available for immediate joining
                     </span>
 
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
