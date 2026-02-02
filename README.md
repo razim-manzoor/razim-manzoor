@@ -24,7 +24,6 @@ Designed to move beyond a static resume by *demonstrating* value through interac
 ## 📂 Project Structure
 
 ```bash
-portfolio/
 ├── app/
 │   ├── layout.tsx       # Root layout, fonts, metadata
 │   ├── page.tsx         # Main landing page composition
@@ -41,20 +40,20 @@ portfolio/
 
 ## ⚡ Quick Start
 
-1.  **Clone the repository**:
+4.  **Clone the repository**:
     ```bash
-    git clone https://github.com/razim-manzoor/Portfolio-Website.git
-    cd portfolio
+    git clone https://github.com/razim-manzoor/razim-manzoor.git
+    cd razim-manzoor
     ```
 
-2.  **Install dependencies**:
+5.  **Install dependencies**:
     ```bash
     npm install
     # or
     yarn install
     ```
 
-3.  **Run Development Server**:
+6.  **Run Development Server**:
     ```bash
     npm run dev
     ```
@@ -82,8 +81,7 @@ The easiest way to deploy is **Vercel**.
 
 1.  Push your code to GitHub.
 2.  Import the project to Vercel.
-3.  **IMPORTANT**: Set the **Root Directory** to `portfolio` (since the app lives in a subdirectory).
-4.  Click **Deploy**.
+3.  Click **Deploy**. (Deployment is zero-config as the app is in the root directory).
 
 ## 📄 License
 
