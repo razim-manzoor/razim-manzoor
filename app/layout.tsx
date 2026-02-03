@@ -15,6 +15,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Razim Manzoor | Business Analyst & AI Strategist",
   description: "Portfolio of Razim Manzoor - Operational Excellence Analyst and AI Strategist.",
+  metadataBase: new URL("https://razim-manzoor.github.io/razim-manzoor/"), // Replace with actual domain if different
+  openGraph: {
+    title: "Razim Manzoor | Business Analyst & AI Strategist",
+    description: "Operational Excellence Analyst and AI Strategist.",
+    url: "https://razim-manzoor.github.io/razim-manzoor/",
+    siteName: "Razim Manzoor Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Razim Manzoor | Business Analyst & AI Strategist",
+    description: "Operational Excellence Analyst and AI Strategist.",
+  },
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";

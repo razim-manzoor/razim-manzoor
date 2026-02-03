@@ -48,7 +48,7 @@ export default function NavBar() {
                         </a>
                     ))}
                     <a
-                        href="/Razim_Manzoor_Resume.pdf"
+                        href="/Razim_Manzoor_Resume_V2.pdf"
                         target="_blank"
                         className="px-4 py-2 text-xs font-semibold bg-primary text-white rounded-full hover:bg-primary-dark transition-all"
                     >
@@ -88,7 +88,7 @@ export default function NavBar() {
                                 </a>
                             ))}
                             <a
-                                href="/Razim_Manzoor_Resume.pdf"
+                                href="/Razim_Manzoor_Resume_V2.pdf"
                                 target="_blank"
                                 className="inline-block px-5 py-3 text-center text-sm font-bold bg-primary rounded-lg text-white"
                             >

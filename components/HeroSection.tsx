@@ -43,7 +43,7 @@ export default function HeroSection() {
                             View Projects <ArrowRight size={18} />
                         </a>
                         <a
-                            href="/Razim_Manzoor_Resume.pdf"
+                            href="/Razim_Manzoor_Resume_V2.pdf"
                             target="_blank"
                             className="px-8 py-3 glass text-gray-700 dark:text-white rounded-full font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-all flex items-center gap-2"
                         >
