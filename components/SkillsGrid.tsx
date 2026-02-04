@@ -29,7 +29,7 @@ export default function SkillsGrid() {
                         className="glass-card p-8 rounded-2xl"
                     >
                         <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                            <span className="w-2 h-8 bg-blue-500 rounded-full" />
+                            <span className="w-2 h-8 bg-primary rounded-full" />
                             Business Strategy
                         </h3>
                         <div className="flex flex-wrap gap-3">
@@ -52,7 +52,7 @@ export default function SkillsGrid() {
                         className="glass-card p-8 rounded-2xl"
                     >
                         <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                            <span className="w-2 h-8 bg-pink-500 rounded-full" />
+                            <span className="w-2 h-8 bg-primary-dark rounded-full" />
                             AI & Automation
                         </h3>
                         <div className="flex flex-wrap gap-3">

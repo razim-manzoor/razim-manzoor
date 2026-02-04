@@ -43,7 +43,7 @@ export default function NavBar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover:glow"
+                            className="text-sm font-medium text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(14,165,233,0.5)]"
                         >
                             {link.name}
                         </a>
