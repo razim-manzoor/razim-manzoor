@@ -22,7 +22,7 @@ export default function HeroSection() {
                         Based in {USER_DATA.location} • Available for immediate joining
                     </span>
 
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6">
                         Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-primary dark:from-white dark:to-gray-400">{USER_DATA.name}</span>
                     </h1>
 

@@ -49,7 +49,7 @@ export default function ExperienceTimeline() {
                                     {job.achievements.map((item, i) => (
                                         <li key={i} className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex items-start gap-2">
                                             <span className="mt-1.5 w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full flex-shrink-0" />
-                                            {item.replace(/\*\*(.*?)\*\*/g, "").trim()} {/* Strip bold markdown for now or can parse it */}
+                                            {item}
                                         </li>
                                     ))}
                                 </ul>
