@@ -13,12 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Razim Manzoor | Business Analyst & AI Strategist",
-  description: "Portfolio of Razim Manzoor - Operational Excellence Analyst and AI Strategist.",
-  metadataBase: new URL("https://razim-manzoor.github.io/razim-manzoor/"), // Replace with actual domain if different
+  title: "Razim Manzoor | MBA AI Strategist & Business Analyst",
+  description: "Portfolio of Razim Manzoor - Bridging Business Strategy and AI Implementation. Specialized in Operational Excellence, Power Automate, and GenAI Solutions in Dubai.",
+  keywords: ["Business Analyst Dubai", "AI Strategist", "Power Automate Expert", "Operational Excellence", "GenAI Consultant", "Razim Manzoor"],
+  authors: [{ name: "Razim Manzoor", url: "https://razim-manzoor.github.io/razim-manzoor/" }],
+  metadataBase: new URL("https://razim-manzoor.github.io/razim-manzoor/"),
   openGraph: {
-    title: "Razim Manzoor | Business Analyst & AI Strategist",
-    description: "Operational Excellence Analyst and AI Strategist.",
+    title: "Razim Manzoor | MBA AI Strategist",
+    description: "Bridging Business Strategy and AI Implementation.",
     url: "https://razim-manzoor.github.io/razim-manzoor/",
     siteName: "Razim Manzoor Portfolio",
     locale: "en_US",
@@ -26,8 +28,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Razim Manzoor | Business Analyst & AI Strategist",
-    description: "Operational Excellence Analyst and AI Strategist.",
+    title: "Razim Manzoor | MBA AI Strategist",
+    description: "Bridging Business Strategy and AI Implementation.",
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
