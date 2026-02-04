@@ -27,7 +27,9 @@ export default function NavBar() {
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass border-b border-black/5 dark:border-white/10 py-4" : "py-6 bg-transparent"
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+                ? "glass border-b border-black/5 dark:border-white/10 pb-4 pt-[calc(1rem+env(safe-area-inset-top))]"
+                : "pb-6 pt-[calc(1.5rem+env(safe-area-inset-top))] bg-transparent"
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
@@ -58,7 +60,7 @@ export default function NavBar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-foreground focus:outline-none"
+                    className="md:hidden text-foreground focus:outline-none p-2.5 -mr-2.5 active:bg-black/5 dark:active:bg-white/10 rounded-full transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
