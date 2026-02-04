@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Linkedin, Github, FileText, Globe } from "lucide-r
 
 export const USER_DATA = {
   name: "Razim Manzoor",
-  role: "Business Analyst | Data & AI Analytics | Automation",
+  role: "MBA Grad | AI Strategy & Business Analysis",
   location: "Dubai, UAE",
   contact: {
     email: "manzoorrazim@gmail.com",
@@ -11,10 +11,10 @@ export const USER_DATA = {
     linkedin: "https://www.linkedin.com/in/razim-manzoor",
   },
   summary:
-    "MBA-qualified Business and Data Analyst with experience across digital transformation, data analytics, and AI-enabled solutions. Strong ability to translate business requirements into analytical and automated solutions using Power BI, Python, SQL, and workflow automation tools.",
+    "Bridging the gap between business strategy and AI implementation. I don't just manage workflows; I engineer operational excellence using Generative AI and Data Intelligence.",
   detailedBio: [
-    "Bridging the gap between technical complexity and business reality.",
-    "Specialized in: Automated Workflows (Power Automate), GenAI Solutions (RAG), and Real-time Intelligence (Power BI).",
+    "MBA-qualified Strategist with deep technical fluency in Generative AI and Automation.",
+    "I translate complex business goals into scalable, automated realities.",
   ],
   stats: [
     { label: "Revenue Growth Opportunity", value: "15%" },
