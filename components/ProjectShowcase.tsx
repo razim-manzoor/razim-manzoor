@@ -7,7 +7,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 
 export default function ProjectShowcase() {
     return (
-        <section id="projects" className="py-24">
+        <section id="projects" className="py-16 md:py-24">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function ProjectShowcase() {
                                 transition={{ delay: index * 0.1 }}
                                 className="glass-card group hover:bg-black/5 dark:hover:bg-white/5 transition-colors rounded-2xl overflow-hidden flex flex-col cursor-pointer"
                             >
-                                <div className="p-8 flex-grow">
+                                <div className="p-6 md:p-8 flex-grow">
                                     <div className="flex justify-between items-start mb-4">
                                         <div className="p-3 bg-primary/10 dark:bg-white/5 rounded-lg text-primary dark:text-white">
                                             {/* Icon placeholder based on tech */}

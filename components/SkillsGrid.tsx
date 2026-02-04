@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function SkillsGrid() {
     return (
-        <section id="skills" className="py-24 relative">
+        <section id="skills" className="py-16 md:py-24 relative">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

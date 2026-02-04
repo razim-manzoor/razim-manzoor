@@ -7,7 +7,7 @@ import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
 
 export default function ExperienceTimeline() {
     return (
-        <section id="experience" className="py-24 bg-white/05">
+        <section id="experience" className="py-16 md:py-24 bg-white/05">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

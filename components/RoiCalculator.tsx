@@ -11,7 +11,7 @@ export default function RoiCalculator() {
     const annualSavings = hours * 52 * hourlyRate;
 
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-16 md:py-24 relative overflow-hidden">
             {/* Background Accent */}
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
@@ -50,7 +50,7 @@ export default function RoiCalculator() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="glass-card p-8 rounded-3xl border border-black/5 dark:border-white/10 relative"
+                            className="glass-card p-6 md:p-8 rounded-3xl border border-black/5 dark:border-white/10 relative"
                         >
                             <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-pulse" />
 
