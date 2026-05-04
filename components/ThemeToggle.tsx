@@ -10,8 +10,8 @@ export function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        setMounted(true);
+        const frame = requestAnimationFrame(() => setMounted(true));
+        return () => cancelAnimationFrame(frame);
     }, []);
 
     if (!mounted) return null;
@@ -19,16 +19,17 @@ export function ThemeToggle() {
     return (
         <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 ml-4 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors text-primary border border-primary/20"
-            aria-label="Toggle Theme"
+            className="grid h-10 w-10 place-items-center border border-[var(--card-border)] bg-surface text-foreground transition-transform hover:-translate-y-0.5"
+            aria-label="Toggle theme"
+            title="Toggle theme"
         >
-            <motion.div
+            <motion.span
                 initial={{ rotate: 0 }}
                 animate={{ rotate: theme === "dark" ? 0 : 180 }}
                 transition={{ duration: 0.3 }}
             >
-                {theme === "dark" ? <Moon size={20} /> : <Sun size={20} />}
-            </motion.div>
+                {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
+            </motion.span>
         </button>
     );
 }

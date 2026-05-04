@@ -14,23 +14,35 @@
 
 @layer base {
   :root {
-    /* Light Mode Variables */
-    --background: #ffffff;
-    --foreground: #0a0a0a;
-    --primary: #0ea5e9;
-    --primary-dark: #004F90;
-    --card-bg: rgba(0, 0, 0, 0.03);
-    --card-border: rgba(0, 0, 0, 0.05);
+    --background: #f7f4ec;
+    --foreground: #171717;
+    --primary: #0f766e;
+    --primary-dark: #123c69;
+    --accent: #e4552f;
+    --warm: #d9a441;
+    --muted: #6f6a61;
+    --surface: #fffaf0;
+    --surface-strong: #ede4d2;
+    --card-bg: rgba(255, 250, 240, 0.78);
+    --card-border: rgba(23, 23, 23, 0.13);
   }
 
   .dark {
-    /* Dark Mode Variables */
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary: #0ea5e9;
-    --primary-dark: #004F90;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.1);
+    --background: #10100f;
+    --foreground: #f4efe4;
+    --primary: #2dd4bf;
+    --primary-dark: #84a9d8;
+    --accent: #ff6b3d;
+    --warm: #f2bd5b;
+    --muted: #aaa093;
+    --surface: #171716;
+    --surface-strong: #24231f;
+    --card-bg: rgba(23, 23, 22, 0.78);
+    --card-border: rgba(244, 239, 228, 0.13);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -38,6 +50,12 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fffaf0;
   }
 }
 
@@ -50,13 +68,36 @@
   }
 
   .glass-card {
-    background: linear-gradient(145deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.01) 100%);
-    backdrop-filter: blur(16px);
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
     border: 1px solid var(--card-border);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.12);
   }
 
   .glow {
     text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  }
+
+  .page-noise {
+    background-image:
+      linear-gradient(rgba(127, 127, 127, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(127, 127, 127, 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .editorial-rule {
+    border-top: 1px solid var(--card-border);
+  }
+
+  .text-muted {
+    color: var(--muted);
+  }
+
+  .bg-surface {
+    background: var(--surface);
+  }
+
+  .bg-surface-strong {
+    background: var(--surface-strong);
   }
 }

@@ -5,6 +5,7 @@ export const USER_DATA = {
   name: "Razim Manzoor",
   role: "MBA Grad | AI Strategy & Business Analysis",
   location: "Dubai, UAE",
+  availability: "Visit Visa | Available immediately in Dubai",
   contact: {
     email: "manzoorrazim@gmail.com",
     phone: "+971 50 300 1697",
@@ -20,6 +21,38 @@ export const USER_DATA = {
     { label: "Revenue Growth Opportunity", value: "15%" },
     { label: "Manual Effort Reduction", value: "45%" },
     { label: "Reporting Time Reduced", value: "3 Days to 2 Hrs" },
+  ],
+  recruiterSnapshot: [
+    { label: "Target Roles", value: "Business Analyst, Data Analyst, AI Automation Analyst" },
+    { label: "Work Authorization", value: "Visit Visa, available immediately in Dubai" },
+    { label: "Best Fit", value: "Teams modernizing reporting, workflows, and AI-enabled operations" },
+    { label: "Differentiator", value: "MBA business context with hands-on Python, BI, RAG, and automation delivery" },
+  ],
+  hiringSignals: [
+    "Can gather requirements with business stakeholders and translate them into dashboards, workflows, or AI prototypes.",
+    "Has shipped practical analytics and automation work, not just certificates or coursework.",
+    "Comfortable moving between ROI framing, process mapping, Power BI, Python, SQL, and GenAI tools.",
+  ],
+  proofPoints: [
+    "MBA in Data Science & Analytics",
+    "Power BI, Python, SQL, Azure",
+    "RAG, LLMs, AI agents",
+    "Power Automate and UiPath",
+    "Dubai-ready, immediate joining",
+  ],
+  focusAreas: [
+    {
+      title: "Requirement to Prototype",
+      detail: "Turn unclear business requirements into dashboards, automation flows, and GenAI proof-of-concepts.",
+    },
+    {
+      title: "Operational ROI",
+      detail: "Model time, cost, throughput, and reporting latency so improvements are visible before buildout.",
+    },
+    {
+      title: "Decision Support",
+      detail: "Design dashboards, workflows, and analyst loops that help managers act faster with less manual drag.",
+    },
   ],
   skills: {
     business: [
@@ -87,40 +120,32 @@ export const USER_DATA = {
       institution: "Kannur University",
       year: "2018 -- 2021",
     },
-    {
-      degree: "Higher Secondary (+2)",
-      field: "Computer Science",
-      institution: "St. Joseph's HSS Thalassery",
-      year: "2016 -- 2018",
-    },
-    {
-      degree: "SSLC (10th)",
-      field: "General Education",
-      institution: "St. Joseph's HSS Thalassery",
-      year: "2015 -- 2016",
-    },
   ],
   projects: [
     {
       title: "Manifest: AI-Native Career CRM",
+      metric: "UAE-market product thinking",
       tech: ["React 19", "Tailwind CSS", "Generative AI", "Product Strategy"],
       link: "https://www.linkedin.com/posts/razim-manzoor_productmanagement-businessstrategy-dubai-activity-7402331627022192640-u-II",
       description: "A gamified Career CRM tailored for the UAE market. Applied behavioral design (XP systems) to combat 'spreadsheet fatigue' and built a 'Visit Visa Monitor' to manage strategic timeline constraints. Proves that business strategists can execute.",
     },
     {
       title: "LiquidityAI: Automated Accounts Receivable Engine",
+      metric: "80% daily effort reduction",
       tech: ["Python", "Streamlit", "AI Agents", "Zero-Touch"],
       link: "https://www.linkedin.com/posts/razim-manzoor_the-operational-efficiency-post-activity-7411345989959147520-ghxo",
       description: "Developed a zero-touch Python automation system to streamline invoice follow-ups, reducing daily manual effort by 80%. Implemented tiered customer prioritization logic (VIP vs. High Risk) to balance relationship management with liquidity recovery.",
     },
     {
       title: "Secure Document Analysis Agent (Local RAG)",
+      metric: "100% on-prem processing",
       tech: ["DeepSeek", "Ollama", "RAG", "Privacy-focused"],
       link: "https://www.linkedin.com/posts/razim-manzoor_rag-llm-ai-activity-7313875466493259776-90vf",
       description: "Built a privacy-focused AI solution enabling secure querying of internal PDFs without external data exposure. Implemented offline LLM workflows using DeepSeek and Ollama to ensure 100% on-premise data processing.",
     },
     {
       title: "Automated Quality Control System",
+      metric: "Computer vision QA flow",
       tech: ["CNN", "Computer Vision", "Deep Learning"],
       link: "https://github.com/razim-manzoor/Plant-Disease-Classification-CNN",
       description: "Developed a CNN-based image classification model to simulate an industrial quality assurance workflow. Applied data augmentation and preprocessing techniques to improve robustness and consistency under varying conditions.",

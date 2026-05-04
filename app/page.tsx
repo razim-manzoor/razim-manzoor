@@ -1,7 +1,8 @@
 
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
-import RoiCalculator from "@/components/RoiCalculator"; // [NEW]
+import RecruiterSnapshot from "@/components/RecruiterSnapshot";
+import RoiCalculator from "@/components/RoiCalculator";
 import SkillsGrid from "@/components/SkillsGrid";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ProjectShowcase from "@/components/ProjectShowcase";
@@ -12,10 +13,11 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <NavBar />
       <HeroSection />
-      <RoiCalculator /> {/* [NEW] Placement: High Impact, immediately after Hero */}
+      <RecruiterSnapshot />
+      <ProjectShowcase />
+      <RoiCalculator />
       <SkillsGrid />
       <ExperienceTimeline />
-      <ProjectShowcase />
       <Footer />
     </main>
   );

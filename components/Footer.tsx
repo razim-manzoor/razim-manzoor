@@ -1,59 +1,53 @@
 "use client";
 
 import { USER_DATA } from "@/lib/data";
-import { Mail, Linkedin, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="py-24 border-t border-black/5 dark:border-white/10 relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10" />
-
-            <div className="container mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold mb-8 text-foreground dark:text-white">Ready to Optimize?</h2>
-                <div className="flex flex-col items-center gap-6 mb-12">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium">
-                        <span className="relative flex h-2.5 w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-                        </span>
-                        Available for opportunities in Dubai
+        <footer id="contact" className="border-t border-[var(--card-border)] bg-foreground py-20 text-background md:py-28">
+            <div className="container mx-auto px-5 md:px-8">
+                <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+                    <div>
+                        <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-[var(--warm)]">Open to opportunities</p>
+                        <h2 className="max-w-4xl text-5xl font-black uppercase leading-[0.9] md:text-8xl">
+                            Let&apos;s build useful AI into the business.
+                        </h2>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
-                        Let&apos;s discuss how I can help your team with Business Analysis and AI Strategy.
-                    </p>
+
+                    <div className="flex flex-col justify-end gap-3">
+                        <a
+                            href={`mailto:${USER_DATA.contact.email}`}
+                            className="group flex items-center justify-between gap-4 border border-background/15 px-5 py-4 transition-colors hover:bg-background hover:text-foreground"
+                            aria-label={`Email ${USER_DATA.contact.email}`}
+                        >
+                            <span className="flex items-center gap-3"><Mail size={20} /> {USER_DATA.contact.email}</span>
+                            <span className="text-xs font-black uppercase tracking-[0.16em]">Email</span>
+                        </a>
+                        <a
+                            href={`tel:${USER_DATA.contact.phone.replace(/ /g, "")}`}
+                            className="group flex items-center justify-between gap-4 border border-background/15 px-5 py-4 transition-colors hover:bg-background hover:text-foreground"
+                            aria-label={`Call ${USER_DATA.contact.phone}`}
+                        >
+                            <span className="flex items-center gap-3"><Phone size={20} /> {USER_DATA.contact.phone}</span>
+                            <span className="text-xs font-black uppercase tracking-[0.16em]">Call</span>
+                        </a>
+                        <a
+                            href={USER_DATA.contact.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center justify-between gap-4 border border-background/15 px-5 py-4 transition-colors hover:bg-background hover:text-foreground"
+                            aria-label="Visit LinkedIn Profile"
+                        >
+                            <span className="flex items-center gap-3"><Linkedin size={20} /> LinkedIn Profile</span>
+                            <span className="text-xs font-black uppercase tracking-[0.16em]">Connect</span>
+                        </a>
+                    </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
-                    <a
-                        href={`mailto:${USER_DATA.contact.email}`}
-                        className="px-6 py-4 glass rounded-xl flex items-center gap-3 hover:bg-black/5 dark:hover:bg-white/5 transition-all w-full md:w-auto justify-center border border-black/5 dark:border-white/10 text-gray-700 dark:text-gray-200"
-                        aria-label={`Email ${USER_DATA.contact.email}`}
-                    >
-                        <Mail className="text-primary" />
-                        <span>{USER_DATA.contact.email}</span>
-                    </a>
-                    <a
-                        href={`tel:${USER_DATA.contact.phone.replace(/ /g, "")}`}
-                        className="px-6 py-4 glass rounded-xl flex items-center gap-3 hover:bg-black/5 dark:hover:bg-white/5 transition-all w-full md:w-auto justify-center border border-black/5 dark:border-white/10 text-gray-700 dark:text-gray-200"
-                        aria-label={`Call ${USER_DATA.contact.phone}`}
-                    >
-                        <Phone className="text-primary" />
-                        <span>{USER_DATA.contact.phone}</span>
-                    </a>
-                    <a
-                        href={USER_DATA.contact.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-4 glass rounded-xl flex items-center gap-3 hover:bg-black/5 dark:hover:bg-white/5 transition-all w-full md:w-auto justify-center border border-black/5 dark:border-white/10 text-gray-700 dark:text-gray-200"
-                        aria-label="Visit LinkedIn Profile"
-                    >
-                        <Linkedin className="text-primary" />
-                        <span>LinkedIn Profile</span>
-                    </a>
-                </div>
-
-                <div className="text-gray-500 dark:text-gray-600 text-sm">
-                    © {new Date().getFullYear()} Razim Manzoor. All rights reserved. Built with Next.js & Tailwind.
+                <div className="mt-16 flex flex-col justify-between gap-4 border-t border-background/15 pt-5 text-xs font-semibold uppercase tracking-[0.18em] text-background/60 md:flex-row">
+                    <span>{USER_DATA.availability}</span>
+                    <span>© {new Date().getFullYear()} Razim Manzoor</span>
                 </div>
             </div>
         </footer>

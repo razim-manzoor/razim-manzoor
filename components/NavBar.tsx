@@ -1,66 +1,65 @@
-
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Work", href: "#projects" },
+    { name: "Capability", href: "#skills" },
     { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
 ];
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 28, restDelta: 0.001 });
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
-                ? "glass border-b border-black/5 dark:border-white/10 pb-4 pt-[calc(1rem+env(safe-area-inset-top))]"
-                : "pb-6 pt-[calc(1.5rem+env(safe-area-inset-top))] bg-transparent"
+            className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled
+                ? "border-b border-[var(--card-border)] bg-[color-mix(in_srgb,var(--background)_86%,transparent)] py-3 backdrop-blur-xl"
+                : "py-5"
                 }`}
         >
-            <div className="container mx-auto px-6 flex justify-between items-center">
-                <a href="#" className="text-xl font-bold tracking-tighter hover:text-primary transition-colors">
-                    RAZIM<span className="text-primary">.</span>
+            <motion.div className="absolute bottom-0 left-0 h-[2px] origin-left bg-[var(--accent)]" style={{ scaleX }} />
+            <div className="container mx-auto flex items-center justify-between px-5 md:px-8">
+                <a href="#home" className="group text-lg font-black uppercase tracking-[-0.02em]">
+                    Razim<span className="text-[var(--accent)]">.</span>
+                    <span className="ml-2 hidden text-[10px] font-semibold uppercase tracking-[0.24em] text-muted sm:inline">AI Ops</span>
                 </a>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden items-center gap-7 md:flex">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(14,165,233,0.5)]"
+                            className="text-xs font-bold uppercase tracking-[0.22em] text-muted transition-colors hover:text-foreground"
                         >
                             {link.name}
                         </a>
                     ))}
                     <a
-                        href="/Razim_Manzoor_Resume_V2.pdf"
+                        href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
                         target="_blank"
-                        className="px-4 py-2 text-xs font-semibold bg-primary text-white rounded-full hover:bg-primary-dark transition-all"
+                        className="border border-[var(--card-border)] bg-surface px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] transition-transform hover:-translate-y-0.5"
                     >
                         Resume
                     </a>
                     <ThemeToggle />
                 </div>
 
-                {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-foreground focus:outline-none p-2.5 -mr-2.5 active:bg-black/5 dark:active:bg-white/10 rounded-full transition-colors"
+                    className="p-2.5 md:hidden"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
@@ -68,38 +67,35 @@ export default function NavBar() {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white/95 dark:bg-black/95 backdrop-blur-xl border-t border-black/5 dark:border-white/10"
+                        initial={{ opacity: 0, y: -12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -12 }}
+                        className="md:hidden border-t border-[var(--card-border)] bg-background"
                     >
-                        <div className="flex flex-col p-6 space-y-4">
+                        <div className="flex flex-col gap-5 px-5 py-6">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-primary"
+                                    className="text-2xl font-black uppercase"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}
                                 </a>
                             ))}
                             <a
-                                href="/Razim_Manzoor_Resume_V2.pdf"
+                                href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
                                 target="_blank"
-                                className="inline-block px-5 py-3 text-center text-sm font-bold bg-primary rounded-lg text-white"
+                                className="bg-foreground px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-background"
                             >
                                 Download Resume
                             </a>
-                            <div className="flex items-center justify-between mt-4 border-t border-black/5 dark:border-white/10 pt-4">
-                                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Appearance</span>
-                                <div onClick={(e) => e.stopPropagation()}>
-                                    <ThemeToggle />
-                                </div>
+                            <div className="flex items-center justify-between border-t border-[var(--card-border)] pt-4">
+                                <span className="text-sm font-semibold text-muted">Appearance</span>
+                                <ThemeToggle />
                             </div>
                         </div>
                     </motion.div>

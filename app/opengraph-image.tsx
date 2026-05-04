@@ -15,6 +15,7 @@ export default async function Image() {
     const profilePicData = await fetch(new URL('../public/profilepic.jpeg', import.meta.url)).then(
         (res) => res.arrayBuffer()
     )
+    const profilePicSrc = `data:image/jpeg;base64,${arrayBufferToBase64(profilePicData)}`
 
     return new ImageResponse(
         (
@@ -36,7 +37,7 @@ export default async function Image() {
                     {/* Profile Picture */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                        src={profilePicData as any}
+                        src={profilePicSrc}
                         alt="Razim Manzoor"
                         width={250}
                         height={250}
@@ -62,4 +63,13 @@ export default async function Image() {
             ...size,
         }
     )
+}
+
+function arrayBufferToBase64(buffer: ArrayBuffer) {
+    let binary = ''
+    const bytes = new Uint8Array(buffer)
+    for (let index = 0; index < bytes.byteLength; index += 1) {
+        binary += String.fromCharCode(bytes[index])
+    }
+    return btoa(binary)
 }

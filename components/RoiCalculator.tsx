@@ -1,113 +1,95 @@
-
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Calculator, Clock } from "lucide-react";
+import { motion, useSpring, useTransform } from "framer-motion";
+import { Calculator, Clock, TrendingUp } from "lucide-react";
 
 export default function RoiCalculator() {
     const [hours, setHours] = useState(10);
-    const hourlyRate = 50; // Conservative estimate for specialized admin/analyst work
+    const hourlyRate = 50;
     const annualSavings = hours * 52 * hourlyRate;
+    const springHours = useSpring(hours, { stiffness: 90, damping: 18 });
+    const barScale = useTransform(springHours, [0, 40], [0.04, 1]);
 
     return (
-        <section className="py-16 md:py-24 relative overflow-hidden">
-            {/* Background Accent */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] -z-10" />
-
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
-
-                    {/* Text Content */}
-                    <div className="lg:w-1/2">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+        <section className="py-20 md:py-32">
+            <div className="container mx-auto px-5 md:px-8">
+                <div className="grid gap-8 border-y border-[var(--card-border)] py-10 lg:grid-cols-[0.95fr_1.05fr]">
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col justify-between gap-10"
+                    >
+                        <div>
+                            <div className="mb-6 inline-flex items-center gap-2 bg-foreground px-3 py-2 text-xs font-black uppercase tracking-[0.2em] text-background">
                                 <Calculator size={14} />
-                                <span>First Principles Thinking</span>
+                                Recruiter-ready business case
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                                The Cost of <span className="text-gray-400 dark:text-gray-500 line-through">Thinking</span> Waiting.
+                            <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-7xl">
+                                Turn manual work into savings.
                             </h2>
-                            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
-                                Business value isn&apos;t abstract—it&apos;s mathematical.
-                                I don&apos;t just &quot;do data&quot;; I build systems that remove human latency from the equation.
+                            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
+                                A simple way to show how I evaluate automation opportunities: estimate repeated hours, convert them into annual cost, then prioritize the workflow with the clearest business return.
                             </p>
-                            <div className="p-6 bg-primary/5 dark:bg-white/5 border-l-2 border-primary rounded-r-xl">
-                                <p className="italic text-gray-600 dark:text-gray-300">
-                                    &quot;Excellence is achieved not by adding mental models, but by systematically removing biases and noise (Subtractive Cognition).&quot;
+                        </div>
+                        <div className="border-l-4 border-[var(--accent)] bg-surface p-5 text-lg font-semibold leading-8">
+                            Useful automation starts with a measurable process, not a tool demo.
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 28 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="border border-[var(--card-border)] bg-surface p-5 shadow-xl md:p-8"
+                    >
+                        <div className="mb-8 flex items-center justify-between gap-4">
+                            <h3 className="text-2xl font-black uppercase">Automation math</h3>
+                            <TrendingUp size={28} className="text-[var(--accent)]" />
+                        </div>
+
+                        <div className="space-y-8">
+                            <div>
+                                <div className="mb-4 flex justify-between gap-4">
+                                    <label className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-muted">
+                                        <Clock size={16} /> Manual hours / week
+                                    </label>
+                                    <span className="text-4xl font-black">{hours}</span>
+                                </div>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="40"
+                                    step="1"
+                                    value={hours}
+                                    onChange={(event) => setHours(Number(event.target.value))}
+                                    className="w-full cursor-pointer accent-[var(--accent)]"
+                                />
+                                <div className="mt-3 flex justify-between text-xs font-bold uppercase tracking-[0.16em] text-muted">
+                                    <span>0</span>
+                                    <span>20</span>
+                                    <span>40</span>
+                                </div>
+                            </div>
+
+                            <div className="overflow-hidden border border-[var(--card-border)] bg-background p-5">
+                                <p className="text-xs font-black uppercase tracking-[0.22em] text-muted">Potential annual savings</p>
+                                <div className="mt-3 flex items-end gap-2">
+                                    <span className="text-5xl font-black leading-none text-[var(--accent)] md:text-7xl">
+                                        ${annualSavings.toLocaleString()}
+                                    </span>
+                                    <span className="pb-2 text-sm font-bold uppercase text-muted">/ year</span>
+                                </div>
+                                <div className="mt-6 h-3 overflow-hidden bg-surface-strong">
+                                    <motion.div className="h-full origin-left bg-[var(--accent)]" style={{ scaleX: barScale }} />
+                                </div>
+                                <p className="mt-4 text-xs leading-5 text-muted">
+                                    Based on a conservative $50/hr operational cost including salary, overhead, and coordination drag.
                                 </p>
                             </div>
-                        </motion.div>
-                    </div>
-
-                    {/* Calculator Card */}
-                    <div className="lg:w-1/2 w-full">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="glass-card p-6 md:p-8 rounded-3xl border border-black/5 dark:border-white/10 relative"
-                        >
-                            <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-pulse" />
-
-                            <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
-                                <span className="w-2 h-2 bg-green-500 rounded-full animate-ping" />
-                                Automation ROI Simulator
-                            </h3>
-
-                            <div className="space-y-8">
-                                {/* Input Slider */}
-                                <div>
-                                    <div className="flex justify-between mb-4">
-                                        <label className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
-                                            <Clock size={16} /> Manual Hours / Week
-                                        </label>
-                                        <span className="text-2xl font-bold text-foreground dark:text-white">{hours} hrs</span>
-                                    </div>
-                                    <input
-                                        type="range"
-                                        min="0"
-                                        max="40"
-                                        step="1"
-                                        value={hours}
-                                        onChange={(e) => setHours(Number(e.target.value))}
-                                        className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary hover:accent-primary-dark transition-all"
-                                    />
-                                    <div className="flex justify-between text-xs text-gray-500 mt-2 font-mono">
-                                        <span>0 hr</span>
-                                        <span>20 hrs</span>
-                                        <span>40 hrs</span>
-                                    </div>
-                                </div>
-
-                                {/* Result Display */}
-                                <div className="bg-white/50 dark:bg-black/40 rounded-xl p-6 border border-black/5 dark:border-white/5">
-                                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">Potential Annual Savings</p>
-                                    <div className="flex items-baseline gap-1">
-                                        <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-primary dark:from-green-400 dark:to-primary">
-                                            ${annualSavings.toLocaleString()}
-                                        </span>
-                                        <span className="text-sm text-gray-500">/ year</span>
-                                    </div>
-                                    <p className="text-xs text-gray-500 dark:text-gray-600 mt-3">
-                                        *Based on conservative $50/hr operational cost (Salary + Overhead)
-                                    </p>
-                                </div>
-
-                                <div className="text-center">
-                                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                                        This is the value I bring to the table. <br />
-                                        <span className="text-primary font-semibold">Day One.</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

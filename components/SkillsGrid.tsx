@@ -1,73 +1,80 @@
-
 "use client";
 
 import { USER_DATA } from "@/lib/data";
 import { motion } from "framer-motion";
+import { BrainCircuit, ChartNoAxesCombined, Gauge, Layers3 } from "lucide-react";
+
+const capabilityIcons = [BrainCircuit, Gauge, ChartNoAxesCombined];
 
 export default function SkillsGrid() {
     return (
-        <section id="skills" className="py-16 md:py-24 relative">
-            <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-16 text-center"
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Technical & <span className="text-primary">Business</span> Hybrid</h2>
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        My unique advantage is the ability to speak both languages: the strategic language of business and the technical language of data and AI.
-                    </p>
-                </motion.div>
+        <section id="skills" className="relative py-20 md:py-32 page-noise">
+            <div className="container mx-auto px-5 md:px-8">
+                <div className="grid gap-10 border-t border-[var(--card-border)] pt-5 lg:grid-cols-[0.82fr_1.18fr]">
+                    <div>
+                        <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-[var(--accent)]">Capability map</p>
+                        <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-7xl">
+                            Business brain. Technical hands.
+                        </h2>
+                    </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    {/* Business Skills */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="glass-card p-8 rounded-2xl"
-                    >
-                        <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                            <span className="w-2 h-8 bg-primary rounded-full" />
-                            Business Strategy
-                        </h3>
-                        <div className="flex flex-wrap gap-3">
-                            {USER_DATA.skills.business.map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="px-4 py-2 bg-primary/5 dark:bg-white/5 border border-primary/20 dark:border-white/5 rounded-lg text-sm text-gray-700 dark:text-gray-300 hover:border-primary/50 transition-colors"
+                    <div className="grid gap-4">
+                        {USER_DATA.focusAreas.map((area, index) => {
+                            const Icon = capabilityIcons[index % capabilityIcons.length];
+                            return (
+                                <motion.div
+                                    key={area.title}
+                                    initial={{ opacity: 0, x: 22 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.08 }}
+                                    className="grid gap-5 border border-[var(--card-border)] bg-surface p-5 md:grid-cols-[56px_1fr]"
                                 >
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
+                                    <div className="grid h-14 w-14 place-items-center bg-foreground text-background">
+                                        <Icon size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-2xl font-black uppercase">{area.title}</h3>
+                                        <p className="mt-2 leading-7 text-muted">{area.detail}</p>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </div>
 
-                    {/* Technical Skills */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="glass-card p-8 rounded-2xl"
-                    >
-                        <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                            <span className="w-2 h-8 bg-primary-dark rounded-full" />
-                            AI & Automation
-                        </h3>
-                        <div className="flex flex-wrap gap-3">
-                            {USER_DATA.skills.technical.map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="px-4 py-2 bg-primary/5 dark:bg-white/5 border border-primary/20 dark:border-white/5 rounded-lg text-sm text-gray-700 dark:text-gray-300 hover:border-primary/50 transition-colors"
-                                >
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
+                <div className="mt-16 grid gap-4 md:grid-cols-2">
+                    <SkillColumn title="Business Strategy" skills={USER_DATA.skills.business} tone="bg-[color-mix(in_srgb,var(--warm)_20%,var(--surface))]" />
+                    <SkillColumn title="AI and Automation" skills={USER_DATA.skills.technical} tone="bg-[color-mix(in_srgb,var(--primary)_16%,var(--surface))]" />
                 </div>
             </div>
         </section>
+    );
+}
+
+function SkillColumn({ title, skills, tone }: { title: string; skills: string[]; tone: string }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`${tone} border border-[var(--card-border)] p-6 md:p-8`}
+        >
+            <div className="mb-8 flex items-center justify-between gap-4 border-b border-[var(--card-border)] pb-5">
+                <h3 className="text-2xl font-black uppercase">{title}</h3>
+                <Layers3 size={22} className="text-[var(--accent)]" />
+            </div>
+            <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                    <motion.span
+                        key={skill}
+                        whileHover={{ y: -3 }}
+                        className="border border-[var(--card-border)] bg-background/60 px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-foreground"
+                    >
+                        {skill}
+                    </motion.span>
+                ))}
+            </div>
+        </motion.div>
     );
 }
