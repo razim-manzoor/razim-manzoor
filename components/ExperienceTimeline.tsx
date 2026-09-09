@@ -62,6 +62,19 @@ export default function ExperienceTimeline() {
                         </motion.div>
                     ))}
                 </div>
+
+                <div className="mt-10 grid gap-4 border-t border-[var(--card-border)] pt-8 md:grid-cols-[0.8fr_1.2fr]">
+                    <div>
+                        <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--accent)]">Current focus</p>
+                        <p className="mt-3 text-lg font-semibold leading-8">Based in Dubai and available immediately for business analysis, data analytics, and AI automation roles.</p>
+                    </div>
+                    <div>
+                        <p className="text-xs font-black uppercase tracking-[0.22em] text-muted">Credentials</p>
+                        <ul className="mt-3 grid gap-2 text-sm leading-6 text-muted">
+                            {USER_DATA.certifications.map((certification) => <li key={certification}>• {certification}</li>)}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     );

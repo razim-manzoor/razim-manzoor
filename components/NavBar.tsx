@@ -20,7 +20,7 @@ export default function NavBar() {
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -60,8 +60,10 @@ export default function NavBar() {
 
                 <button
                     className="p-2.5 md:hidden"
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => setIsOpen((open) => !open)}
                     aria-label="Toggle menu"
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-navigation"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -73,6 +75,7 @@ export default function NavBar() {
                         initial={{ opacity: 0, y: -12 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -12 }}
+                        id="mobile-navigation"
                         className="md:hidden border-t border-[var(--card-border)] bg-background"
                     >
                         <div className="flex flex-col gap-5 px-5 py-6">
@@ -89,6 +92,7 @@ export default function NavBar() {
                             <a
                                 href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="bg-foreground px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-background"
                             >
                                 Download Resume

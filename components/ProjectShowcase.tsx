@@ -40,11 +40,8 @@ export default function ProjectShowcase() {
                         const spanClass = index === 0 || index === 3 ? "md:col-span-3 md:row-span-2" : "md:col-span-3";
 
                         return (
-                            <motion.a
+                            <motion.article
                                 key={project.title}
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 initial={{ opacity: 0, y: 28, rotate: index % 2 ? 0.8 : -0.8 }}
                                 whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                                 whileHover={{ y: -8, rotate: index % 2 ? -0.8 : 0.8 }}
@@ -57,7 +54,7 @@ export default function ProjectShowcase() {
                                     <div className="grid h-12 w-12 place-items-center border border-[var(--card-border)] bg-background/70">
                                         <ProjectIcon size={24} />
                                     </div>
-                                    <LinkIcon size={22} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                                    <LinkIcon size={22} aria-hidden="true" className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
                                 </div>
 
                                 <div className="pt-10">
@@ -70,6 +67,10 @@ export default function ProjectShowcase() {
                                     <p className="mt-5 max-w-2xl text-sm leading-7 text-muted md:text-base">
                                         {project.description}
                                     </p>
+                                    <details className="mt-5 max-w-2xl border-t border-[var(--card-border)] pt-3 text-sm leading-6">
+                                        <summary className="cursor-pointer font-black uppercase tracking-[0.12em] text-[var(--accent)]">Case-study summary</summary>
+                                        <p className="mt-3 text-muted">{project.caseStudy}</p>
+                                    </details>
                                 </div>
 
                                 <div className="mt-8 flex flex-wrap gap-2">
@@ -79,7 +80,15 @@ export default function ProjectShowcase() {
                                         </span>
                                     ))}
                                 </div>
-                            </motion.a>
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-5 inline-flex w-fit items-center gap-2 border border-[var(--card-border)] bg-background/70 px-3 py-2 text-xs font-black uppercase tracking-[0.14em] transition-transform hover:-translate-y-0.5"
+                                >
+                                    {isGithub ? "View source" : "View published evidence"} <ArrowUpRight size={15} aria-hidden="true" />
+                                </a>
+                            </motion.article>
                         );
                     })}
                 </div>

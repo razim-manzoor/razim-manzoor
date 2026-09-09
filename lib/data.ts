@@ -128,6 +128,7 @@ export const USER_DATA = {
       tech: ["React 19", "Tailwind CSS", "Generative AI", "Product Strategy"],
       link: "https://www.linkedin.com/posts/razim-manzoor_productmanagement-businessstrategy-dubai-activity-7402331627022192640-u-II",
       description: "A gamified Career CRM tailored for the UAE market. Applied behavioral design (XP systems) to combat 'spreadsheet fatigue' and built a 'Visit Visa Monitor' to manage strategic timeline constraints. Proves that business strategists can execute.",
+      caseStudy: "Designed the product around a practical user constraint: managing a high-volume job search while operating on a time-bound UAE visit visa. The solution pairs a visual pipeline with motivation mechanics and deadline visibility.",
     },
     {
       title: "LiquidityAI: Automated Accounts Receivable Engine",
@@ -135,6 +136,7 @@ export const USER_DATA = {
       tech: ["Python", "Streamlit", "AI Agents", "Zero-Touch"],
       link: "https://www.linkedin.com/posts/razim-manzoor_the-operational-efficiency-post-activity-7411345989959147520-ghxo",
       description: "Developed a zero-touch Python automation system to streamline invoice follow-ups, reducing daily manual effort by 80%. Implemented tiered customer prioritization logic (VIP vs. High Risk) to balance relationship management with liquidity recovery.",
+      caseStudy: "Mapped the receivables follow-up workflow, automated repeat communication, and added prioritization logic so the process could protect key relationships while focusing attention on collection risk.",
     },
     {
       title: "Secure Document Analysis Agent (Local RAG)",
@@ -142,6 +144,7 @@ export const USER_DATA = {
       tech: ["DeepSeek", "Ollama", "RAG", "Privacy-focused"],
       link: "https://www.linkedin.com/posts/razim-manzoor_rag-llm-ai-activity-7313875466493259776-90vf",
       description: "Built a privacy-focused AI solution enabling secure querying of internal PDFs without external data exposure. Implemented offline LLM workflows using DeepSeek and Ollama to ensure 100% on-premise data processing.",
+      caseStudy: "The design constraint was privacy: internal documents needed to remain in the local environment. The workflow uses local retrieval and inference so teams can query PDFs without sending source material to a third-party model API.",
     },
     {
       title: "Automated Quality Control System",
@@ -149,6 +152,7 @@ export const USER_DATA = {
       tech: ["CNN", "Computer Vision", "Deep Learning"],
       link: "https://github.com/razim-manzoor/Plant-Disease-Classification-CNN",
       description: "Developed a CNN-based image classification model to simulate an industrial quality assurance workflow. Applied data augmentation and preprocessing techniques to improve robustness and consistency under varying conditions.",
+      caseStudy: "Framed the model as a quality-control workflow rather than a classroom classifier. Image preprocessing and augmentation addressed variable inputs, while the output demonstrates how computer vision can support a repeatable inspection step.",
     },
   ],
   certifications: [

@@ -4,10 +4,19 @@ import { useState } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 import { Calculator, Clock, TrendingUp } from "lucide-react";
 
+const aedFormatter = new Intl.NumberFormat("en-AE", {
+    style: "currency",
+    currency: "AED",
+    maximumFractionDigits: 0,
+});
+
 export default function RoiCalculator() {
     const [hours, setHours] = useState(10);
-    const hourlyRate = 50;
-    const annualSavings = hours * 52 * hourlyRate;
+    const [hourlyRate, setHourlyRate] = useState(50);
+    const [automationRate, setAutomationRate] = useState(75);
+    const [implementationCost, setImplementationCost] = useState(5000);
+    const annualSavings = Math.round(hours * 52 * hourlyRate * (automationRate / 100));
+    const paybackMonths = annualSavings > 0 ? Math.ceil((implementationCost / annualSavings) * 12) : null;
     const springHours = useSpring(hours, { stiffness: 90, damping: 18 });
     const barScale = useTransform(springHours, [0, 40], [0.04, 1]);
 
@@ -52,12 +61,13 @@ export default function RoiCalculator() {
                         <div className="space-y-8">
                             <div>
                                 <div className="mb-4 flex justify-between gap-4">
-                                    <label className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-muted">
+                                    <label htmlFor="manual-hours" className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-muted">
                                         <Clock size={16} /> Manual hours / week
                                     </label>
                                     <span className="text-4xl font-black">{hours}</span>
                                 </div>
                                 <input
+                                    id="manual-hours"
                                     type="range"
                                     min="0"
                                     max="40"
@@ -73,19 +83,58 @@ export default function RoiCalculator() {
                                 </div>
                             </div>
 
+                            <div className="grid gap-5 sm:grid-cols-2">
+                                <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.12em] text-muted">
+                                    Loaded hourly cost (AED)
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        value={hourlyRate}
+                                        onChange={(event) => setHourlyRate(Math.max(1, Number(event.target.value) || 1))}
+                                        className="border border-[var(--card-border)] bg-background px-3 py-3 text-base font-black text-foreground"
+                                    />
+                                </label>
+                                <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.12em] text-muted">
+                                    Automation captured
+                                    <span className="flex items-center gap-3 border border-[var(--card-border)] bg-background px-3 py-2 text-base font-black text-foreground">
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="100"
+                                            step="5"
+                                            value={automationRate}
+                                            onChange={(event) => setAutomationRate(Number(event.target.value))}
+                                            className="w-full cursor-pointer accent-[var(--accent)]"
+                                        />
+                                        {automationRate}%
+                                    </span>
+                                </label>
+                            </div>
+
                             <div className="overflow-hidden border border-[var(--card-border)] bg-background p-5">
-                                <p className="text-xs font-black uppercase tracking-[0.22em] text-muted">Potential annual savings</p>
+                                <p className="text-xs font-black uppercase tracking-[0.22em] text-muted">Potential annual savings (AED)</p>
                                 <div className="mt-3 flex items-end gap-2">
                                     <span className="text-5xl font-black leading-none text-[var(--accent)] md:text-7xl">
-                                        ${annualSavings.toLocaleString()}
+                                        {aedFormatter.format(annualSavings)}
                                     </span>
                                     <span className="pb-2 text-sm font-bold uppercase text-muted">/ year</span>
                                 </div>
                                 <div className="mt-6 h-3 overflow-hidden bg-surface-strong">
                                     <motion.div className="h-full origin-left bg-[var(--accent)]" style={{ scaleX: barScale }} />
                                 </div>
+                                <label className="mt-5 grid gap-2 text-xs font-black uppercase tracking-[0.16em] text-muted">
+                                    Estimated implementation cost
+                                    <input
+                                        type="number"
+                                        min="0"
+                                        step="500"
+                                        value={implementationCost}
+                                        onChange={(event) => setImplementationCost(Math.max(0, Number(event.target.value) || 0))}
+                                        className="border border-[var(--card-border)] bg-surface px-3 py-2 text-base font-black text-foreground"
+                                    />
+                                </label>
                                 <p className="mt-4 text-xs leading-5 text-muted">
-                                    Based on a conservative $50/hr operational cost including salary, overhead, and coordination drag.
+                                    {paybackMonths === null ? "Add weekly hours to estimate payback." : paybackMonths === 0 ? "The estimate has no implementation cost." : `Estimated payback: ${paybackMonths} month${paybackMonths === 1 ? "" : "s"}.`} Assumes 52 working weeks and includes salary, overhead, and coordination drag.
                                 </p>
                             </div>
                         </div>

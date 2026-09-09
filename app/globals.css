@@ -45,6 +45,10 @@
     scroll-behavior: smooth;
   }
 
+  section[id], footer[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -56,6 +60,24 @@
   ::selection {
     background: var(--accent);
     color: #fffaf0;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 

@@ -70,6 +70,7 @@ export default function HeroSection() {
                             <a
                                 href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 border border-[var(--card-border)] bg-surface px-6 py-4 text-sm font-bold uppercase tracking-[0.18em] transition-transform hover:-translate-y-1"
                             >
                                 Resume <Download size={18} />
