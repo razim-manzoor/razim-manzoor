@@ -12,7 +12,6 @@ export default function SkillsGrid() {
             <div className="container mx-auto px-5 md:px-8">
                 <div className="grid gap-10 border-t border-[var(--card-border)] pt-5 lg:grid-cols-[0.82fr_1.18fr]">
                     <div>
-                        <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-[var(--accent)]">Capability map</p>
                         <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-7xl">
                             Business brain. Technical hands.
                         </h2>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
-import { Calculator, Clock, TrendingUp } from "lucide-react";
+import { Clock, TrendingUp } from "lucide-react";
 
 const aedFormatter = new Intl.NumberFormat("en-AE", {
     style: "currency",
@@ -21,7 +21,7 @@ export default function RoiCalculator() {
     const barScale = useTransform(springHours, [0, 40], [0.04, 1]);
 
     return (
-        <section className="py-20 md:py-32">
+        <section id="roi" className="py-20 md:py-32">
             <div className="container mx-auto px-5 md:px-8">
                 <div className="grid gap-8 border-y border-[var(--card-border)] py-10 lg:grid-cols-[0.95fr_1.05fr]">
                     <motion.div
@@ -31,19 +31,15 @@ export default function RoiCalculator() {
                         className="flex flex-col justify-between gap-10"
                     >
                         <div>
-                            <div className="mb-6 inline-flex items-center gap-2 bg-foreground px-3 py-2 text-xs font-black uppercase tracking-[0.2em] text-background">
-                                <Calculator size={14} />
-                                Recruiter-ready business case
-                            </div>
                             <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-7xl">
                                 Turn manual work into savings.
                             </h2>
                             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-                                A simple way to show how I evaluate automation opportunities: estimate repeated hours, convert them into annual cost, then prioritize the workflow with the clearest business return.
+                                A quantitative model of operational automation: estimate repeated manual hours, convert them into annual overhead drag, and model payback months before deploying code.
                             </p>
                         </div>
                         <div className="border-l-4 border-[var(--accent)] bg-surface p-5 text-lg font-semibold leading-8">
-                            Useful automation starts with a measurable process, not a tool demo.
+                            High-margin automation starts with a quantified business bottleneck, not an ungrounded tool demo.
                         </div>
                     </motion.div>
 
@@ -54,7 +50,7 @@ export default function RoiCalculator() {
                         className="border border-[var(--card-border)] bg-surface p-5 shadow-xl md:p-8"
                     >
                         <div className="mb-8 flex items-center justify-between gap-4">
-                            <h3 className="text-2xl font-black uppercase">Automation math</h3>
+                            <h3 className="text-2xl font-black uppercase">Automation Math</h3>
                             <TrendingUp size={28} className="text-[var(--accent)]" />
                         </div>
 
@@ -77,27 +73,33 @@ export default function RoiCalculator() {
                                     className="w-full cursor-pointer accent-[var(--accent)]"
                                 />
                                 <div className="mt-3 flex justify-between text-xs font-bold uppercase tracking-[0.16em] text-muted">
-                                    <span>0</span>
-                                    <span>20</span>
-                                    <span>40</span>
+                                    <span>0 hrs</span>
+                                    <span>20 hrs</span>
+                                    <span>40 hrs</span>
                                 </div>
                             </div>
 
                             <div className="grid gap-5 sm:grid-cols-2">
-                                <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.12em] text-muted">
-                                    Loaded hourly cost (AED)
+                                <div className="grid gap-2">
+                                    <label htmlFor="hourly-rate" className="text-sm font-bold uppercase tracking-[0.12em] text-muted">
+                                        Loaded hourly cost (AED)
+                                    </label>
                                     <input
+                                        id="hourly-rate"
                                         type="number"
                                         min="1"
                                         value={hourlyRate}
                                         onChange={(event) => setHourlyRate(Math.max(1, Number(event.target.value) || 1))}
                                         className="border border-[var(--card-border)] bg-background px-3 py-3 text-base font-black text-foreground"
                                     />
-                                </label>
-                                <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.12em] text-muted">
-                                    Automation captured
+                                </div>
+                                <div className="grid gap-2">
+                                    <label htmlFor="automation-rate" className="text-sm font-bold uppercase tracking-[0.12em] text-muted">
+                                        Automation captured
+                                    </label>
                                     <span className="flex items-center gap-3 border border-[var(--card-border)] bg-background px-3 py-2 text-base font-black text-foreground">
                                         <input
+                                            id="automation-rate"
                                             type="range"
                                             min="0"
                                             max="100"
@@ -108,7 +110,7 @@ export default function RoiCalculator() {
                                         />
                                         {automationRate}%
                                     </span>
-                                </label>
+                                </div>
                             </div>
 
                             <div className="overflow-hidden border border-[var(--card-border)] bg-background p-5">
@@ -122,9 +124,12 @@ export default function RoiCalculator() {
                                 <div className="mt-6 h-3 overflow-hidden bg-surface-strong">
                                     <motion.div className="h-full origin-left bg-[var(--accent)]" style={{ scaleX: barScale }} />
                                 </div>
-                                <label className="mt-5 grid gap-2 text-xs font-black uppercase tracking-[0.16em] text-muted">
-                                    Estimated implementation cost
+                                <div className="mt-5 grid gap-2">
+                                    <label htmlFor="impl-cost" className="text-xs font-black uppercase tracking-[0.16em] text-muted">
+                                        Estimated implementation cost
+                                    </label>
                                     <input
+                                        id="impl-cost"
                                         type="number"
                                         min="0"
                                         step="500"
@@ -132,9 +137,9 @@ export default function RoiCalculator() {
                                         onChange={(event) => setImplementationCost(Math.max(0, Number(event.target.value) || 0))}
                                         className="border border-[var(--card-border)] bg-surface px-3 py-2 text-base font-black text-foreground"
                                     />
-                                </label>
+                                </div>
                                 <p className="mt-4 text-xs leading-5 text-muted">
-                                    {paybackMonths === null ? "Add weekly hours to estimate payback." : paybackMonths === 0 ? "The estimate has no implementation cost." : `Estimated payback: ${paybackMonths} month${paybackMonths === 1 ? "" : "s"}.`} Assumes 52 working weeks and includes salary, overhead, and coordination drag.
+                                    {paybackMonths === null ? "Add weekly hours to estimate payback." : paybackMonths === 0 ? "The estimate has no implementation cost." : `Estimated payback: ${paybackMonths} month${paybackMonths === 1 ? "" : "s"}.`} Assumes 52 working weeks and accounts for salary, coordination drag, and team adoption latency.
                                 </p>
                             </div>
                         </div>

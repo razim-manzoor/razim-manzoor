@@ -13,19 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Razim Manzoor | MBA AI Strategist & Business Analyst",
-  description: "Portfolio of Razim Manzoor - Bridging business strategy and AI implementation for operational excellence, automation, and GenAI solutions in Dubai and the UAE.",
-  keywords: ["Business Analyst Dubai", "Business Analyst UAE", "AI Strategist UAE", "Power Automate Expert Dubai", "Operational Excellence", "GenAI Consultant UAE", "Razim Manzoor"],
+  title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
+  description: "Portfolio and Client Services of Razim Manzoor - MBA-trained AI Solutions Architect building enterprise AI assistants, high-performance web platforms, and automated workflow pipelines in Dubai and worldwide.",
+  keywords: ["AI Solutions Architect Dubai", "Business Analyst Dubai", "AI Strategist UAE", "Next.js Web Developer", "n8n Make Automation", "GenAI Consultant UAE", "Razim Manzoor"],
   authors: [{ name: "Razim Manzoor", url: "https://razim-manzoor.github.io/razim-manzoor/" }],
   metadataBase: new URL("https://razim-manzoor.github.io/razim-manzoor/"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Razim Manzoor | MBA AI Strategist",
-    description: "Bridging Business Strategy and AI Implementation.",
+    title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
+    description: "Enterprise AI systems, turnkey web platforms, and automated workflow pipelines.",
     url: "https://razim-manzoor.github.io/razim-manzoor/",
-    siteName: "Razim Manzoor Portfolio",
+    siteName: "Razim Manzoor Portfolio & Services",
     locale: "en_AE",
     type: "website",
     images: [
@@ -39,13 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Razim Manzoor | MBA AI Strategist",
-    description: "Bridging Business Strategy and AI Implementation.",
+    title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
+    description: "Enterprise AI systems, turnkey web platforms, and automated workflow pipelines.",
     images: ["/opengraph-image"],
-  },
-  icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
   },
 };
 

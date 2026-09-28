@@ -1,11 +1,12 @@
-
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
-import RecruiterSnapshot from "@/components/RecruiterSnapshot";
+import ServicesHub from "@/components/ServicesHub";
+import ProjectShowcase from "@/components/ProjectShowcase";
+import ServiceScopeBuilder from "@/components/ServiceScopeBuilder";
 import RoiCalculator from "@/components/RoiCalculator";
+import RecruiterSnapshot from "@/components/RecruiterSnapshot";
 import SkillsGrid from "@/components/SkillsGrid";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
-import ProjectShowcase from "@/components/ProjectShowcase";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,9 +18,11 @@ export default function Home() {
       <NavBar />
       <div id="main-content" tabIndex={-1}>
         <HeroSection />
-        <RecruiterSnapshot />
+        <ServicesHub />
         <ProjectShowcase />
+        <ServiceScopeBuilder />
         <RoiCalculator />
+        <RecruiterSnapshot />
         <SkillsGrid />
         <ExperienceTimeline />
       </div>

@@ -1,9 +1,6 @@
-
-
-
 export const USER_DATA = {
   name: "Razim Manzoor",
-  role: "MBA Grad | AI Strategy & Business Analysis",
+  role: "MBA | AI Solutions Architect & Business Strategist",
   location: "Dubai, UAE",
   availability: "Visit Visa | Available immediately in Dubai",
   contact: {
@@ -12,10 +9,10 @@ export const USER_DATA = {
     linkedin: "https://www.linkedin.com/in/razim-manzoor",
   },
   summary:
-    "Bridging the gap between business strategy and AI implementation. I don't just manage workflows; I engineer operational excellence using Generative AI and Data Intelligence.",
+    "Bridging business strategy and operational engineering. I design and build autonomous AI systems, high-performance web platforms, and automated decision loops that turn friction into measurable margin.",
   detailedBio: [
-    "MBA-qualified Strategist with deep technical fluency in Generative AI and Automation.",
-    "I translate complex business goals into scalable, automated realities.",
+    "MBA-qualified Strategist with deep technical fluency in Generative AI, Next.js, and Enterprise Automation.",
+    "Available for strategic full-time roles in Dubai and turnkey client advisory engagements.",
   ],
   stats: [
     { label: "Revenue Growth Opportunity", value: "15%" },
@@ -23,10 +20,10 @@ export const USER_DATA = {
     { label: "Reporting Time Reduced", value: "3 Days to 2 Hrs" },
   ],
   recruiterSnapshot: [
-    { label: "Target Roles", value: "Business Analyst, Data Analyst, AI Automation Analyst" },
+    { label: "Target Roles", value: "AI Solutions Architect, Business Analyst, AI Automation Specialist" },
     { label: "Work Authorization", value: "Visit Visa, available immediately in Dubai" },
-    { label: "Best Fit", value: "Teams modernizing reporting, workflows, and AI-enabled operations" },
-    { label: "Differentiator", value: "MBA business context with hands-on Python, BI, RAG, and automation delivery" },
+    { label: "Best Fit", value: "Teams modernizing reporting, workflows, customer funnels, and AI operations" },
+    { label: "Differentiator", value: "MBA business acumen paired with hands-on Next.js, Python, RAG, and n8n delivery" },
   ],
   hiringSignals: [
     "Can gather requirements with business stakeholders and translate them into dashboards, workflows, or AI prototypes.",
@@ -35,9 +32,10 @@ export const USER_DATA = {
   ],
   proofPoints: [
     "MBA in Data Science & Analytics",
-    "Power BI, Python, SQL, Azure",
-    "RAG, LLMs, AI agents",
-    "Power Automate and UiPath",
+    "Turnkey Next.js & Tailwind Platforms",
+    "RAG, LLMs, AI agents & Ollama",
+    "n8n, Make & Power Automate",
+    "Power BI, Python & SQL",
     "Dubai-ready, immediate joining",
   ],
   focusAreas: [
@@ -67,15 +65,17 @@ export const USER_DATA = {
     technical: [
       "Generative AI (LLMs)",
       "RAG Architecture",
-      "Prompt Engineering",
-      "AI Agents",
+      "Next.js / React 19",
+      "TypeScript",
+      "Make / n8n Pipelines",
+      "AI Agents (Ollama / DeepSeek)",
       "Power Automate",
       "UiPath",
       "Power BI (DAX)",
       "Python (Pandas, Scikit-learn)",
       "SQL",
-      "Azure",
-      "Tableau",
+      "Meta Conversions API (CAPI)",
+      "Azure / Cloudflare",
     ],
   },
   experience: [
@@ -125,6 +125,7 @@ export const USER_DATA = {
     {
       title: "Manifest: AI-Native Career CRM",
       metric: "UAE-market product thinking",
+      serviceTrack: "Web Platforms & Product Strategy",
       tech: ["React 19", "Tailwind CSS", "Generative AI", "Product Strategy"],
       link: "https://www.linkedin.com/posts/razim-manzoor_productmanagement-businessstrategy-dubai-activity-7402331627022192640-u-II",
       description: "A gamified Career CRM tailored for the UAE market. Applied behavioral design (XP systems) to combat 'spreadsheet fatigue' and built a 'Visit Visa Monitor' to manage strategic timeline constraints. Proves that business strategists can execute.",
@@ -133,6 +134,7 @@ export const USER_DATA = {
     {
       title: "LiquidityAI: Automated Accounts Receivable Engine",
       metric: "80% daily effort reduction",
+      serviceTrack: "Operations & Workflow Automation",
       tech: ["Python", "Streamlit", "AI Agents", "Zero-Touch"],
       link: "https://www.linkedin.com/posts/razim-manzoor_the-operational-efficiency-post-activity-7411345989959147520-ghxo",
       description: "Developed a zero-touch Python automation system to streamline invoice follow-ups, reducing daily manual effort by 80%. Implemented tiered customer prioritization logic (VIP vs. High Risk) to balance relationship management with liquidity recovery.",
@@ -141,6 +143,7 @@ export const USER_DATA = {
     {
       title: "Secure Document Analysis Agent (Local RAG)",
       metric: "100% on-prem processing",
+      serviceTrack: "AI & Intelligent Systems",
       tech: ["DeepSeek", "Ollama", "RAG", "Privacy-focused"],
       link: "https://www.linkedin.com/posts/razim-manzoor_rag-llm-ai-activity-7313875466493259776-90vf",
       description: "Built a privacy-focused AI solution enabling secure querying of internal PDFs without external data exposure. Implemented offline LLM workflows using DeepSeek and Ollama to ensure 100% on-premise data processing.",
@@ -149,6 +152,7 @@ export const USER_DATA = {
     {
       title: "Automated Quality Control System",
       metric: "Computer vision QA flow",
+      serviceTrack: "Data Intelligence & Analytics",
       tech: ["CNN", "Computer Vision", "Deep Learning"],
       link: "https://github.com/razim-manzoor/Plant-Disease-Classification-CNN",
       description: "Developed a CNN-based image classification model to simulate an industrial quality assurance workflow. Applied data augmentation and preprocessing techniques to improve robustness and consistency under varying conditions.",
