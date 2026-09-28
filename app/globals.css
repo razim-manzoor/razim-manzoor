@@ -6,7 +6,11 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
+  --color-primary-glow: var(--primary-glow);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
@@ -14,31 +18,25 @@
 
 @layer base {
   :root {
-    --background: #f7f4ec;
-    --foreground: #171717;
-    --primary: #0f766e;
-    --primary-dark: #123c69;
-    --accent: #e4552f;
-    --warm: #d9a441;
-    --muted: #6f6a61;
-    --surface: #fffaf0;
-    --surface-strong: #ede4d2;
-    --card-bg: rgba(255, 250, 240, 0.78);
-    --card-border: rgba(23, 23, 23, 0.13);
+    --background: #f8fafc;
+    --foreground: #09090b;
+    --primary: #059669;
+    --primary-glow: rgba(5, 150, 105, 0.15);
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: rgba(15, 23, 42, 0.08);
+    --muted: #64748b;
   }
 
   .dark {
-    --background: #10100f;
-    --foreground: #f4efe4;
-    --primary: #2dd4bf;
-    --primary-dark: #84a9d8;
-    --accent: #ff6b3d;
-    --warm: #f2bd5b;
-    --muted: #aaa093;
-    --surface: #171716;
-    --surface-strong: #24231f;
-    --card-bg: rgba(23, 23, 22, 0.78);
-    --card-border: rgba(244, 239, 228, 0.13);
+    --background: #09090b;
+    --foreground: #f8fafc;
+    --primary: #10b981;
+    --primary-glow: rgba(16, 185, 129, 0.2);
+    --surface: #121215;
+    --surface-hover: #1a1a20;
+    --border: rgba(255, 255, 255, 0.08);
+    --muted: #94a3b8;
   }
 
   html {
@@ -46,25 +44,30 @@
   }
 
   section[id], footer[id] {
-    scroll-margin-top: 5.5rem;
+    scroll-margin-top: 5rem;
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-sans);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.25s, color 0.25s;
     overflow-x: hidden;
   }
 
+  /* Themed Browser Surfaces */
   ::selection {
-    background: var(--accent);
-    color: #fffaf0;
+    background-color: var(--primary);
+    color: #ffffff;
   }
 
   :focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 4px;
+    outline: none;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -82,44 +85,23 @@
 }
 
 @layer utilities {
-  .glass {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--card-border);
+  .blueprint-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
-  .glass-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(18px);
-    border: 1px solid var(--card-border);
-    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.12);
+  :root:not(.dark) .blueprint-grid {
+    background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
   }
 
-  .glow {
-    text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+  .glass-island {
+    background: color-mix(in srgb, var(--surface) 82%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
   }
 
-  .page-noise {
-    background-image:
-      linear-gradient(rgba(127, 127, 127, 0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(127, 127, 127, 0.045) 1px, transparent 1px);
-    background-size: 44px 44px;
-  }
-
-  .editorial-rule {
-    border-top: 1px solid var(--card-border);
-  }
-
-  .text-muted {
-    color: var(--muted);
-  }
-
-  .bg-surface {
-    background: var(--surface);
-  }
-
-  .bg-surface-strong {
-    background: var(--surface-strong);
+  .subpixel-border {
+    border: 1px solid var(--border);
   }
 }

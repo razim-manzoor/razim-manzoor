@@ -1,205 +1,200 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import {
-    ArrowUpRight,
-    BookOpenCheck,
-    BrainCircuit,
-    ChartSpline,
-    CheckCircle2,
-    Globe,
-    KeyRound,
-    Layers,
-    ShieldCheck,
-    Sparkles,
-    Workflow,
+  BrainCircuit,
+  Globe,
+  Workflow,
+  ChartSpline,
+  Layers,
+  ArrowRight,
+  ShieldCheck,
+  KeyRound,
+  BookOpenCheck,
+  CheckCircle2,
 } from "lucide-react";
 import { HANDOVER_GUARANTEES, SERVICES_CATALOG, ServicePillar } from "@/lib/services";
+import { SpotlightCard } from "@/components/magicui/spotlight-card";
+import { snappySpring, spatialSpring } from "@/lib/motion";
 
 const pillarIcons: Record<string, typeof BrainCircuit> = {
-    "ai-systems": BrainCircuit,
-    "web-platforms": Globe,
-    "automation": Workflow,
-    "analytics-growth": ChartSpline,
-    "retainers": Layers,
+  "ai-systems": BrainCircuit,
+  "web-platforms": Globe,
+  automation: Workflow,
+  "analytics-growth": ChartSpline,
+  retainers: Layers,
 };
 
 const guaranteeIcons: Record<string, typeof ShieldCheck> = {
-    ShieldCheck,
-    KeyRound,
-    BookOpenCheck,
+  ShieldCheck,
+  KeyRound,
+  BookOpenCheck,
 };
 
 export default function ServicesHub() {
-    const [activePillarId, setActivePillarId] = useState<string>(SERVICES_CATALOG[0].id);
-    const activePillar: ServicePillar = SERVICES_CATALOG.find((p) => p.id === activePillarId) || SERVICES_CATALOG[0];
-    const ActiveIcon = pillarIcons[activePillar.id] || Sparkles;
+  const [activePillarId, setActivePillarId] = useState<string>(SERVICES_CATALOG[0].id);
+  const activePillar: ServicePillar =
+    SERVICES_CATALOG.find((p) => p.id === activePillarId) || SERVICES_CATALOG[0];
+  const ActiveIcon = pillarIcons[activePillar.id] || BrainCircuit;
 
-    return (
-        <section id="services" className="relative py-20 md:py-32 page-noise">
-            <div className="container mx-auto px-5 md:px-8">
-                <div className="mb-12 border-t border-[var(--card-border)] pt-5">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-60px" }}
-                    >
-                        <h2 className="max-w-4xl text-4xl font-black uppercase leading-[0.95] md:text-7xl">
-                            Turnkey engineering. Measured outcomes.
-                        </h2>
-                        <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-                            Institutional-grade web platforms, conversational AI assistants, and automated workflow pipelines. Built with production standards, clear milestone pricing, and complete asset handover.
-                        </p>
-                    </motion.div>
-                </div>
+  return (
+    <section id="services" className="relative py-20 md:py-28 overflow-hidden blueprint-grid">
+      <div className="container mx-auto px-5 md:px-8">
+        {/* Section Header */}
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
+            Client Services & Delivery Tracks
+          </h2>
+          <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
+            Institutional-grade AI assistants, automated operational pipelines, and sub-second web platforms. Delivered with fixed milestone scopes, complete asset handover, and a 14-day warranty.
+          </p>
+        </div>
 
-                {/* Pillar Switcher Navigation */}
-                <div className="mb-10 flex flex-wrap gap-2 border-b border-[var(--card-border)] pb-6">
-                    {SERVICES_CATALOG.map((pillar) => {
-                        const Icon = pillarIcons[pillar.id] || Sparkles;
-                        const isActive = pillar.id === activePillarId;
+        {/* Pillar Switcher Tabs */}
+        <div className="mb-8 flex flex-wrap gap-2 border-b border-[var(--border)] pb-6">
+          {SERVICES_CATALOG.map((pillar) => {
+            const Icon = pillarIcons[pillar.id] || BrainCircuit;
+            const isActive = pillar.id === activePillarId;
 
-                        return (
-                            <button
-                                key={pillar.id}
-                                onClick={() => setActivePillarId(pillar.id)}
-                                className={`inline-flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.16em] transition-all cursor-pointer ${isActive
-                                    ? "bg-foreground text-background shadow-md -translate-y-0.5"
-                                    : "border border-[var(--card-border)] bg-surface text-muted hover:text-foreground hover:bg-background"
-                                    }`}
-                            >
-                                <Icon size={15} className={isActive ? "text-[var(--accent)]" : "text-muted"} />
-                                {pillar.shortTitle}
-                            </button>
-                        );
-                    })}
-                </div>
+            return (
+              <motion.button
+                key={pillar.id}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={snappySpring}
+                onClick={() => setActivePillarId(pillar.id)}
+                className={`inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer select-none ${
+                  isActive
+                    ? "bg-[var(--primary)] text-white shadow-sm"
+                    : "border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)]"
+                }`}
+              >
+                <Icon size={15} />
+                {pillar.shortTitle}
+              </motion.button>
+            );
+          })}
+        </div>
 
-                {/* Active Pillar Summary */}
-                <div className="mb-8 border border-[var(--card-border)] bg-surface p-6 md:p-8">
-                    <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
-                        <div className="flex items-center gap-4">
-                            <div className="grid h-12 w-12 place-items-center bg-foreground text-background">
-                                <ActiveIcon size={24} />
-                            </div>
-                            <div>
-                                <h3 className="text-2xl font-black uppercase md:text-3xl">{activePillar.title}</h3>
-                                <p className="mt-1 text-sm text-muted">{activePillar.summary}</p>
-                            </div>
-                        </div>
-                        <a
-                            href="#scope-builder"
-                            className="inline-flex w-fit items-center gap-2 bg-[var(--accent)] px-4 py-2.5 text-xs font-bold uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
-                        >
-                            Inquire for Scope <ArrowUpRight size={14} />
-                        </a>
-                    </div>
-                </div>
-
-                {/* Deliverable Cards Grid */}
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={activePillar.id}
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -16 }}
-                        transition={{ duration: 0.35 }}
-                        className="grid gap-6 md:grid-cols-2"
-                    >
-                        {activePillar.items.map((item, idx) => (
-                            <div
-                                key={item.title}
-                                className="group relative flex flex-col justify-between border border-[var(--card-border)] bg-background p-6 shadow-sm transition-all hover:shadow-md md:p-8"
-                            >
-                                <div className="absolute inset-x-0 top-0 h-1 bg-[var(--card-border)] group-hover:bg-[var(--accent)] transition-colors" />
-
-                                <div>
-                                    <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                                        <span className="border border-[var(--card-border)] bg-surface px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--accent)]">
-                                            {item.scopeType}
-                                        </span>
-                                        <span className="text-[11px] font-semibold text-muted">
-                                            Track #{idx + 1}
-                                        </span>
-                                    </div>
-
-                                    <h4 className="text-xl font-black uppercase leading-tight md:text-2xl">
-                                        {item.title}
-                                    </h4>
-                                    <p className="mt-2 text-xs font-bold uppercase tracking-[0.1em] text-muted">
-                                        {item.tagline}
-                                    </p>
-                                    <p className="mt-4 text-sm leading-relaxed text-muted">
-                                        {item.description}
-                                    </p>
-
-                                    {/* Key Deliverables */}
-                                    <div className="mt-6 space-y-2.5 border-t border-[var(--card-border)] pt-5">
-                                        <p className="text-[11px] font-black uppercase tracking-[0.2em] text-foreground">
-                                            Included Scope:
-                                        </p>
-                                        {item.deliverables.map((del) => (
-                                            <div key={del} className="flex items-start gap-2.5 text-xs text-muted">
-                                                <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-[var(--accent)]" />
-                                                <span className="leading-snug">{del}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="mt-8 border-t border-[var(--card-border)] pt-5">
-                                    <div className="mb-4 bg-surface p-3 text-xs leading-relaxed text-foreground">
-                                        <span className="font-bold text-[var(--accent)]">Business Outcome: </span>
-                                        {item.businessImpact}
-                                    </div>
-
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {item.tech.map((t) => (
-                                            <span
-                                                key={t}
-                                                className="border border-[var(--card-border)] bg-surface-strong/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
-                                            >
-                                                {t}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </motion.div>
-                </AnimatePresence>
-
-                {/* Handover Trust Standards Banner */}
-                <div className="mt-16 border border-[var(--card-border)] bg-surface p-6 md:p-10">
-                    <div className="mb-6 flex flex-col gap-2">
-                        <span className="text-xs font-black uppercase tracking-[0.22em] text-[var(--accent)]">
-                            Institutional Delivery Standards
-                        </span>
-                        <h3 className="text-2xl font-black uppercase md:text-3xl">
-                            How client handovers work
-                        </h3>
-                        <p className="max-w-2xl text-sm leading-relaxed text-muted">
-                            Every project is delivered with formal handover bundles, production sign-off certificates, and binding engineering guarantees.
-                        </p>
-                    </div>
-
-                    <div className="grid gap-6 md:grid-cols-3">
-                        {HANDOVER_GUARANTEES.map((g) => {
-                            const Icon = guaranteeIcons[g.iconName] || ShieldCheck;
-                            return (
-                                <div key={g.title} className="border border-[var(--card-border)] bg-background p-5">
-                                    <div className="mb-3 grid h-10 w-10 place-items-center bg-foreground text-background">
-                                        <Icon size={18} className="text-[var(--warm)]" />
-                                    </div>
-                                    <h4 className="text-base font-black uppercase leading-snug">{g.title}</h4>
-                                    <p className="mt-2 text-xs leading-relaxed text-muted">{g.description}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+        {/* Active Pillar Hero Card */}
+        <div className="mb-8 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
+            <div className="flex items-center gap-4">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--surface-hover)] border border-[var(--border)] text-[var(--primary)]">
+                <ActiveIcon size={24} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
+                  {activePillar.title}
+                </h3>
+                <p className="mt-1 text-sm text-[var(--muted)] max-w-2xl leading-relaxed">
+                  {activePillar.summary}
+                </p>
+              </div>
             </div>
-        </section>
-    );
+            <a
+              href="#scope-builder"
+              className="inline-flex w-fit items-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-102"
+            >
+              Inquire for Scope <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+
+        {/* Deliverable Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activePillar.id}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={spatialSpring}
+            className="grid gap-6 md:grid-cols-2"
+          >
+            {activePillar.items.map((item) => (
+              <SpotlightCard
+                key={item.title}
+                className="flex flex-col justify-between p-6 md:p-8"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      {item.scopeType}
+                    </span>
+                  </div>
+
+                  <h4 className="text-xl font-bold tracking-tight text-[var(--foreground)]">
+                    {item.title}
+                  </h4>
+                  <p className="mt-1 text-xs font-medium text-[var(--primary)]">
+                    {item.tagline}
+                  </p>
+
+                  <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-5 space-y-2">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block">
+                      Core Deliverables
+                    </span>
+                    {item.deliverables.map((deliv) => (
+                      <div key={deliv} className="flex items-start gap-2 text-xs text-[var(--foreground)]">
+                        <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                        <span>{deliv}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-[var(--border)]">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-1">
+                    Business Margin Impact
+                  </span>
+                  <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                    {item.businessImpact}
+                  </p>
+                </div>
+              </SpotlightCard>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Handover Guarantees Section */}
+        <div className="mt-16 rounded-2xl border border-[var(--border)] bg-[var(--surface-hover)] p-6 md:p-10">
+          <div className="mb-8 max-w-xl">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--primary)] block mb-1">
+              Institutional Delivery Standard
+            </span>
+            <h3 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
+              The 3 Handover Guarantees
+            </h3>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-3">
+            {HANDOVER_GUARANTEES.map((g) => {
+              const GIcon = guaranteeIcons[g.iconName] || ShieldCheck;
+              return (
+                <div
+                  key={g.title}
+                  className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-xs"
+                >
+                  <div className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] text-[var(--primary)] mb-3">
+                    <GIcon size={20} />
+                  </div>
+                  <h4 className="text-base font-bold text-[var(--foreground)]">
+                    {g.title}
+                  </h4>
+                  <p className="mt-2 text-xs text-[var(--muted)] leading-relaxed">
+                    {g.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

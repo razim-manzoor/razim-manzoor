@@ -1,65 +1,134 @@
 "use client";
 
 import { USER_DATA } from "@/lib/data";
-import { motion } from "framer-motion";
-import { ArrowRight, BadgeCheck, BriefcaseBusiness, CheckCircle2, MapPinned } from "lucide-react";
-
-const factIcons = [BriefcaseBusiness, MapPinned, CheckCircle2, BadgeCheck];
+import { Briefcase, MapPin, CheckCircle2, Award, Download, ArrowRight, GraduationCap } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 export default function RecruiterSnapshot() {
-    return (
-        <section aria-label="Recruiter snapshot" className="py-14 md:py-20">
-            <div className="container mx-auto px-5 md:px-8">
-                <div className="grid gap-4 border border-[var(--card-border)] bg-surface p-4 shadow-xl md:grid-cols-[0.88fr_1.12fr] md:p-6 lg:p-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="flex flex-col justify-between gap-8 bg-foreground p-6 text-background"
-                    >
-                        <div>
-                            <h2 className="text-3xl font-black uppercase leading-[0.95] md:text-5xl">
-                                Why hire Razim?
-                            </h2>
-                        </div>
-                        <div className="grid gap-3">
-                            {USER_DATA.hiringSignals.map((signal) => (
-                                <p key={signal} className="border-t border-background/15 pt-3 text-sm font-semibold leading-relaxed text-background/80">
-                                    {signal}
-                                </p>
-                            ))}
-                        </div>
-                        <div className="border-t border-background/20 pt-4">
-                            <a
-                                href="#services"
-                                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--warm)] hover:underline"
-                            >
-                                Looking for turnkey client deliverables? See Services <ArrowRight size={14} />
-                            </a>
-                        </div>
-                    </motion.div>
+  return (
+    <section id="dossier" className="relative py-20 md:py-28 overflow-hidden blueprint-grid">
+      <div className="container mx-auto px-5 md:px-8">
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
+            Recruiter & Leadership Dossier
+          </h2>
+          <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
+            Essential profile context for engineering leadership, CTOs, and talent acquisition teams evaluating full-time architectural appointments in Dubai.
+          </p>
+        </div>
 
-                    <div className="grid gap-3 sm:grid-cols-2">
-                        {USER_DATA.recruiterSnapshot.map((fact, index) => {
-                            const Icon = factIcons[index % factIcons.length];
-                            return (
-                                <motion.div
-                                    key={fact.label}
-                                    initial={{ opacity: 0, y: 16 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.05 }}
-                                    className="border border-[var(--card-border)] bg-background p-5"
-                                >
-                                    <Icon size={22} className="mb-6 text-[var(--accent)]" />
-                                    <p className="text-xs font-black uppercase tracking-[0.18em] text-muted">{fact.label}</p>
-                                    <p className="mt-2 text-base font-black leading-snug">{fact.value}</p>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
-                </div>
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          {/* Left Column: Quick Snapshot Facts */}
+          <div className="space-y-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {USER_DATA.recruiterSnapshot.map((fact) => (
+                <Card key={fact.label} className="p-5">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--primary)] block">
+                    {fact.label}
+                  </span>
+                  <p className="mt-2 text-sm font-bold text-[var(--foreground)] leading-snug">
+                    {fact.value}
+                  </p>
+                </Card>
+              ))}
             </div>
-        </section>
-    );
+
+            {/* Hiring Signals */}
+            <Card className="p-6">
+              <h3 className="text-base font-bold text-[var(--foreground)] mb-4 flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-emerald-500" />
+                Key Capability Signals
+              </h3>
+              <div className="space-y-3">
+                {USER_DATA.hiringSignals.map((signal) => (
+                  <div key={signal} className="flex items-start gap-2.5 text-xs text-[var(--muted)] leading-relaxed">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--primary)] shrink-0 mt-1.5" />
+                    <span>{signal}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            {/* Direct Resume Download Callout */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-5">
+              <div>
+                <h4 className="text-sm font-bold text-[var(--foreground)]">
+                  Verified Candidate Credentials
+                </h4>
+                <p className="text-xs text-[var(--muted)] mt-0.5">
+                  Complete ATS-ready resume with detailed project metrics and coursework.
+                </p>
+              </div>
+              <a
+                href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm shrink-0"
+              >
+                Download Resume <Download size={14} />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Experience & Education Timeline */}
+          <div className="space-y-6">
+            <Card className="p-6 md:p-8">
+              <h3 className="text-base font-bold text-[var(--foreground)] mb-6 flex items-center gap-2">
+                <Briefcase size={18} className="text-[var(--primary)]" />
+                Industry Experience
+              </h3>
+
+              <div className="space-y-6">
+                {USER_DATA.experience.map((exp) => (
+                  <div key={exp.id} className="relative pl-6 border-l-2 border-[var(--border)]">
+                    <span className="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-[var(--primary)]" />
+                    <div className="flex items-baseline justify-between gap-2">
+                      <h4 className="text-sm font-bold text-[var(--foreground)]">
+                        {exp.role}
+                      </h4>
+                    </div>
+                    <p className="text-xs font-semibold text-[var(--primary)] mt-0.5">
+                      {exp.company} &bull; <span className="font-mono text-[11px] text-[var(--muted)]">{exp.period}</span>
+                    </p>
+                    <ul className="mt-2.5 space-y-1.5 text-xs text-[var(--muted)]">
+                      {exp.achievements.map((ach, i) => (
+                        <li key={i} className="leading-relaxed">
+                          &bull; {ach}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              {/* Education Section */}
+              <div className="mt-8 pt-6 border-t border-[var(--border)]">
+                <h3 className="text-base font-bold text-[var(--foreground)] mb-4 flex items-center gap-2">
+                  <GraduationCap size={18} className="text-[var(--primary)]" />
+                  Education Credentials
+                </h3>
+                <div className="space-y-4">
+                  {USER_DATA.education.map((edu) => (
+                    <div key={edu.degree} className="text-xs">
+                      <h4 className="font-bold text-[var(--foreground)]">
+                        {edu.degree} in {edu.field}
+                      </h4>
+                      <p className="text-[var(--muted)] mt-0.5">
+                        {edu.institution} &bull; <span className="font-mono">{edu.year}</span>
+                      </p>
+                      {edu.details && (
+                        <p className="mt-1 text-[var(--muted)] text-[11px] italic">
+                          {edu.details}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

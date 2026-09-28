@@ -1,79 +1,124 @@
 "use client";
 
 import { USER_DATA } from "@/lib/data";
-import { motion } from "framer-motion";
-import { BrainCircuit, ChartNoAxesCombined, Gauge, Layers3 } from "lucide-react";
+import { TrendingUp, BrainCircuit, Globe, Workflow } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
-const capabilityIcons = [BrainCircuit, Gauge, ChartNoAxesCombined];
-
-export default function SkillsGrid() {
-    return (
-        <section id="skills" className="relative py-20 md:py-32 page-noise">
-            <div className="container mx-auto px-5 md:px-8">
-                <div className="grid gap-10 border-t border-[var(--card-border)] pt-5 lg:grid-cols-[0.82fr_1.18fr]">
-                    <div>
-                        <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-7xl">
-                            Business brain. Technical hands.
-                        </h2>
-                    </div>
-
-                    <div className="grid gap-4">
-                        {USER_DATA.focusAreas.map((area, index) => {
-                            const Icon = capabilityIcons[index % capabilityIcons.length];
-                            return (
-                                <motion.div
-                                    key={area.title}
-                                    initial={{ opacity: 0, x: 22 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.08 }}
-                                    className="grid gap-5 border border-[var(--card-border)] bg-surface p-5 md:grid-cols-[56px_1fr]"
-                                >
-                                    <div className="grid h-14 w-14 place-items-center bg-foreground text-background">
-                                        <Icon size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-2xl font-black uppercase">{area.title}</h3>
-                                        <p className="mt-2 leading-7 text-muted">{area.detail}</p>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                <div className="mt-16 grid gap-4 md:grid-cols-2">
-                    <SkillColumn title="Business Strategy" skills={USER_DATA.skills.business} tone="bg-[color-mix(in_srgb,var(--warm)_20%,var(--surface))]" />
-                    <SkillColumn title="AI and Automation" skills={USER_DATA.skills.technical} tone="bg-[color-mix(in_srgb,var(--primary)_16%,var(--surface))]" />
-                </div>
-            </div>
-        </section>
-    );
+interface SkillLayer {
+  title: string;
+  category: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  description: string;
+  skills: string[];
 }
 
-function SkillColumn({ title, skills, tone }: { title: string; skills: string[]; tone: string }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={`${tone} border border-[var(--card-border)] p-6 md:p-8`}
-        >
-            <div className="mb-8 flex items-center justify-between gap-4 border-b border-[var(--card-border)] pb-5">
-                <h3 className="text-2xl font-black uppercase">{title}</h3>
-                <Layers3 size={22} className="text-[var(--accent)]" />
-            </div>
-            <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                    <motion.span
+const SKILL_LAYERS: SkillLayer[] = [
+  {
+    title: "Strategy & Financial ROI",
+    category: "Layer 01 - Business Acumen",
+    icon: TrendingUp,
+    description: "Framing technical investments into quantified operational margin, payback models, and strategic process mining.",
+    skills: USER_DATA.skills.business,
+  },
+  {
+    title: "Frontier AI & Local RAG",
+    category: "Layer 02 - Intelligence",
+    icon: BrainCircuit,
+    description: "Air-gapped on-prem models, semantic vector search, citation verification, and Pydantic schema guardrails.",
+    skills: [
+      "Generative AI (LLMs)",
+      "RAG Architecture",
+      "Ollama & DeepSeek",
+      "Vector DBs (Qdrant/Chroma)",
+      "LangChain",
+      "Python (Pandas, Scikit-learn)",
+    ],
+  },
+  {
+    title: "Modern Web & Edge Platforms",
+    category: "Layer 03 - Interface & Performance",
+    icon: Globe,
+    description: "Sub-second, accessible web applications engineered with Next.js App Router, React 19, TypeScript, and Tailwind CSS v4.",
+    skills: [
+      "Next.js 16 / App Router",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Motion Spring Physics",
+      "Cloudflare Workers",
+    ],
+  },
+  {
+    title: "Enterprise Automation & BI",
+    category: "Layer 04 - Operations",
+    icon: Workflow,
+    description: "End-to-end multi-step automated workflows, server-side attribution containers, and executive Power BI dashboards.",
+    skills: [
+      "n8n / Make.com Pipelines",
+      "Power Automate",
+      "Power BI (DAX)",
+      "Meta Conversions API (CAPI)",
+      "SQL",
+      "UiPath RPA",
+    ],
+  },
+];
+
+export default function SkillsGrid() {
+  return (
+    <section id="skills" className="relative py-20 md:py-28 overflow-hidden">
+      <div className="container mx-auto px-5 md:px-8">
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
+            Architectural Capabilities Matrix
+          </h2>
+          <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
+            A full-stack capability profile organized by architectural layer: spanning quantitative MBA strategy down to local private AI models and edge deployment.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {SKILL_LAYERS.map((layer) => {
+            const Icon = layer.icon;
+            return (
+              <Card
+                key={layer.title}
+                className="flex flex-col justify-between p-6 hover:shadow-md transition-shadow"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] text-[var(--primary)]">
+                      <Icon size={20} />
+                    </div>
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)]">
+                      {layer.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[var(--foreground)]">
+                    {layer.title}
+                  </h3>
+
+                  <p className="mt-2 text-xs text-[var(--muted)] leading-relaxed min-h-[48px]">
+                    {layer.description}
+                  </p>
+
+                  <div className="mt-5 space-y-1.5 pt-4 border-t border-[var(--border)]">
+                    {layer.skills.map((skill) => (
+                      <div
                         key={skill}
-                        whileHover={{ y: -3 }}
-                        className="border border-[var(--card-border)] bg-background/60 px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-foreground"
-                    >
-                        {skill}
-                    </motion.span>
-                ))}
-            </div>
-        </motion.div>
-    );
+                        className="rounded-md border border-[var(--border)] bg-[var(--surface-hover)] px-2.5 py-1 text-xs font-mono text-[var(--foreground)] flex items-center justify-between"
+                      >
+                        <span>{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }

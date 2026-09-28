@@ -84,7 +84,7 @@ export const USER_DATA = {
       role: "Data Strategy Associate (Industrial Trainee)",
       company: "Luminar Technolab",
       location: "Kochi, India",
-      period: "Jun 2024 -- Mar 2025",
+      period: "Jun 2024 - Mar 2025",
       achievements: [
         "End-to-End Development: Spearheaded the development of a portfolio of scalable data and analytics solutions, utilizing Python, SQL, and Deep Learning to address complex business logic challenges.",
         "Revenue Strategy: Engineered a predictive customer segmentation model using Machine Learning that identified a projected 15% revenue uplift opportunity, delivering actionable insights to sales teams.",
@@ -97,7 +97,7 @@ export const USER_DATA = {
       role: "Associate AI and Data Analytics Engineer",
       company: "Resemble Systems",
       location: "Kochi, India",
-      period: "Nov 2023 -- May 2024",
+      period: "Nov 2023 - May 2024",
       achievements: [
         "Digital Transformation: Led a finance automation initiative using Power Automate, streamlining invoice processing workflows and reducing manual data entry effort by 45%.",
         "Process Optimization: Conducted process mining to map operational workflows, identify bottlenecks, and support RPA-driven cycle time improvements of 20%.",
@@ -111,14 +111,14 @@ export const USER_DATA = {
       degree: "Master of Business Administration (MBA)",
       field: "Data Science & Analytics",
       institution: "JAIN University",
-      year: "2021 -- 2023",
+      year: "2021 - 2023",
       details: "Relevant Coursework: Financial Analysis, Business Statistics, Marketing Analytics, Strategic Management.",
     },
     {
       degree: "Bachelor of Commerce (B.Com)",
       field: "Computer Applications",
       institution: "Kannur University",
-      year: "2018 -- 2021",
+      year: "2018 - 2021",
     },
   ],
   projects: [
@@ -165,7 +165,7 @@ export const USER_DATA = {
     "Google Data Analytics Specialization",
     "KPMG Data Analytics Consulting Virtual Internship",
     "Accenture Data Analytics & Visualization Virtual Experience",
-    "1st Place, Marketing Event -- Encore 2020",
-    "3rd Place, Marketing Event -- Manaquest 2020",
+    "1st Place, Marketing Event - Encore 2020",
+    "3rd Place, Marketing Event - Manaquest 2020",
   ],
 };

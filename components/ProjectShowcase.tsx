@@ -1,107 +1,189 @@
 "use client";
 
+import { useState } from "react";
 import { USER_DATA } from "@/lib/data";
-import { motion } from "framer-motion";
-import { ArrowUpRight, Bot, Boxes, FileSearch, Github, Workflow } from "lucide-react";
+import { ArrowUpRight, Github, Bot, Workflow, FileSearch, Boxes, CheckCircle2 } from "lucide-react";
+import { SpotlightCard } from "@/components/magicui/spotlight-card";
+import { snappySpring } from "@/lib/motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const icons = [Workflow, Bot, FileSearch, Boxes];
-const tileTone = [
-    "bg-[var(--surface)]",
-    "bg-[color-mix(in_srgb,var(--primary)_18%,var(--surface))]",
-    "bg-[color-mix(in_srgb,var(--warm)_24%,var(--surface))]",
-    "bg-[color-mix(in_srgb,var(--accent)_16%,var(--surface))]",
-];
+
+type ProjectViewTab = "roi" | "arch" | "code";
 
 export default function ProjectShowcase() {
-    return (
-        <section id="projects" className="relative overflow-hidden py-20 md:py-32">
-            <div className="container mx-auto px-5 md:px-8">
-                <div className="mb-12 border-t border-[var(--card-border)] pt-5">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-80px" }}
+  const [activeTabs, setActiveTabs] = useState<Record<number, ProjectViewTab>>({
+    0: "roi",
+    1: "roi",
+    2: "roi",
+    3: "roi",
+  });
+
+  const setCardTab = (index: number, tab: ProjectViewTab) => {
+    setActiveTabs((prev) => ({ ...prev, [index]: tab }));
+  };
+
+  return (
+    <section id="projects" className="relative py-20 md:py-28 overflow-hidden">
+      <div className="container mx-auto px-5 md:px-8">
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
+            Shipped Systems & Proof
+          </h2>
+          <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
+            Production evidence across enterprise AI agents, automated receivables workflows, private local RAG pipelines, and full-stack web platforms.
+          </p>
+        </div>
+
+        {/* Bento Grid */}
+        <div className="grid auto-rows-[minmax(320px,auto)] gap-6 md:grid-cols-2">
+          {USER_DATA.projects.map((project, index) => {
+            const isGithub = project.link.includes("github");
+            const LinkIcon = isGithub ? Github : ArrowUpRight;
+            const ProjectIcon = icons[index % icons.length];
+            const currentTab = activeTabs[index] || "roi";
+
+            return (
+              <SpotlightCard
+                key={project.title}
+                enableTilt={true}
+                className="flex flex-col justify-between p-6 md:p-8"
+              >
+                <div>
+                  {/* Top Bar: Icon, Service Track, Link */}
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    <div className="grid h-11 w-11 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] text-[var(--primary)]">
+                      <ProjectIcon size={22} />
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                        {project.metric}
+                      </span>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full p-2 text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors"
+                        aria-label={`View ${project.title} external case study`}
+                      >
+                        <LinkIcon size={16} />
+                      </a>
+                    </div>
+                  </div>
+
+                  <h3 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
+                    {project.title}
+                  </h3>
+
+                  {/* 3-Way Perspective Selector */}
+                  <div className="my-4 flex items-center gap-1 rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] p-1 w-fit">
+                    <button
+                      onClick={() => setCardTab(index, "roi")}
+                      className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-md transition-colors cursor-pointer ${
+                        currentTab === "roi"
+                          ? "bg-[var(--surface)] text-[var(--foreground)] shadow-xs"
+                          : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                      }`}
                     >
-                        <h2 className="max-w-4xl text-4xl font-black uppercase leading-[0.95] md:text-7xl">
-                            Proof that strategy can ship.
-                        </h2>
-                        <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-                            Working production evidence across AI agents, full-stack Next.js platforms, zero-touch accounts receivable workflows, and computer vision QA.
-                        </p>
-                    </motion.div>
+                      Business Impact
+                    </button>
+                    <button
+                      onClick={() => setCardTab(index, "arch")}
+                      className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-md transition-colors cursor-pointer ${
+                        currentTab === "arch"
+                          ? "bg-[var(--surface)] text-[var(--foreground)] shadow-xs"
+                          : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                      }`}
+                    >
+                      Architecture
+                    </button>
+                    <button
+                      onClick={() => setCardTab(index, "code")}
+                      className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-md transition-colors cursor-pointer ${
+                        currentTab === "code"
+                          ? "bg-[var(--surface)] text-[var(--foreground)] shadow-xs"
+                          : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                      }`}
+                    >
+                      Stack & Deliverable
+                    </button>
+                  </div>
+
+                  {/* Perspective Content Body */}
+                  <div className="min-h-[110px] text-sm text-[var(--muted)] leading-relaxed">
+                    <AnimatePresence mode="wait">
+                      {currentTab === "roi" && (
+                        <motion.div
+                          key="roi"
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={snappySpring}
+                        >
+                          <p>{project.description}</p>
+                        </motion.div>
+                      )}
+                      {currentTab === "arch" && (
+                        <motion.div
+                          key="arch"
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={snappySpring}
+                        >
+                          <p className="font-mono text-xs leading-relaxed text-[var(--foreground)]">
+                            {project.caseStudy}
+                          </p>
+                        </motion.div>
+                      )}
+                      {currentTab === "code" && (
+                        <motion.div
+                          key="code"
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={snappySpring}
+                          className="space-y-3"
+                        >
+                          <p className="text-xs">
+                            Core Technologies deployed in production:
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {project.tech.map((t) => (
+                              <span
+                                key={t}
+                                className="rounded-md border border-[var(--border)] bg-[var(--surface-hover)] px-2.5 py-1 text-xs font-mono font-medium text-[var(--foreground)]"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </div>
 
-                <div className="grid auto-rows-[minmax(250px,auto)] gap-4 md:grid-cols-6">
-                    {USER_DATA.projects.map((project, index) => {
-                        const isGithub = project.link.includes("github");
-                        const LinkIcon = isGithub ? Github : ArrowUpRight;
-                        const ProjectIcon = icons[index % icons.length];
-                        const spanClass = index === 0 || index === 3 ? "md:col-span-3 md:row-span-2" : "md:col-span-3";
-
-                        return (
-                            <motion.article
-                                key={project.title}
-                                initial={{ opacity: 0, y: 24 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                whileHover={{ y: -6 }}
-                                viewport={{ once: true, margin: "-60px" }}
-                                transition={{ delay: index * 0.05, type: "spring", stiffness: 140, damping: 20 }}
-                                className={`${spanClass} ${tileTone[index % tileTone.length]} group relative flex min-h-[250px] flex-col justify-between overflow-hidden border border-[var(--card-border)] p-6 text-foreground shadow-sm hover:shadow-lg transition-all md:p-8`}
-                            >
-                                <div className="absolute inset-x-0 top-0 h-1 bg-foreground transition-transform duration-300 group-hover:scale-x-75" />
-                                
-                                <div className="flex items-start justify-between gap-6">
-                                    <div className="grid h-12 w-12 place-items-center border border-[var(--card-border)] bg-background/70">
-                                        <ProjectIcon size={24} />
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        {project.serviceTrack && (
-                                            <span className="border border-[var(--card-border)] bg-background/60 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-[var(--accent)]">
-                                                {project.serviceTrack}
-                                            </span>
-                                        )}
-                                        <LinkIcon size={20} aria-hidden="true" className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-                                    </div>
-                                </div>
-
-                                <div className="pt-8">
-                                    <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-[var(--accent)]">
-                                        {project.metric}
-                                    </p>
-                                    <h3 className="max-w-xl text-2xl font-black uppercase leading-tight md:text-4xl">
-                                        {project.title}
-                                    </h3>
-                                    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
-                                        {project.description}
-                                    </p>
-                                    <details className="mt-5 max-w-2xl border-t border-[var(--card-border)] pt-3 text-sm leading-6">
-                                        <summary className="cursor-pointer font-black uppercase tracking-[0.12em] text-[var(--accent)]">
-                                            Case-study details
-                                        </summary>
-                                        <p className="mt-3 text-muted">{project.caseStudy}</p>
-                                    </details>
-                                </div>
-
-                                <div className="mt-8 flex flex-wrap gap-2">
-                                    {project.tech.map((t) => (
-                                        <span key={t} className="border border-[var(--card-border)] bg-background/60 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em]">
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-5 inline-flex w-fit items-center gap-2 border border-[var(--card-border)] bg-background/80 px-3.5 py-2 text-xs font-black uppercase tracking-[0.14em] transition-transform hover:-translate-y-0.5"
-                                >
-                                    {isGithub ? "View repository" : "View published case study"} <ArrowUpRight size={14} aria-hidden="true" />
-                                </a>
-                            </motion.article>
-                        );
-                    })}
+                {/* Bottom External Action Link */}
+                <div className="pt-6 border-t border-[var(--border)] flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-[var(--muted)] uppercase">
+                    {project.serviceTrack}
+                  </span>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--primary)] hover:underline"
+                  >
+                    {isGithub ? "Repository Code" : "Read Case Study"} <ArrowUpRight size={14} />
+                  </a>
                 </div>
-            </div>
-        </section>
-    );
+              </SpotlightCard>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }

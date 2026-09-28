@@ -1,86 +1,113 @@
 "use client";
 
+import { ArrowUp, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { USER_DATA } from "@/lib/data";
-import { ArrowUpRight, Download, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
 
 export default function Footer() {
-    const cleanPhone = USER_DATA.contact.phone.replace(/[^0-9]/g, "");
-    const whatsAppLink = `https://wa.me/${cleanPhone}`;
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-    return (
-        <footer id="contact" className="border-t border-[var(--card-border)] bg-foreground py-20 text-background md:py-28">
-            <div className="container mx-auto px-5 md:px-8">
-                <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-                    <div>
-                        <h2 className="max-w-3xl text-4xl font-black uppercase leading-[0.92] md:text-7xl">
-                            Let&apos;s build useful systems into your business.
-                        </h2>
-                        <p className="mt-6 max-w-xl text-base leading-relaxed text-background/75 md:text-lg">
-                            Available in Dubai for strategic full-time roles (AI Solutions Architect / Business Analyst) and select turnkey client engagements across AI assistants, web platforms, and automated workflow pipelines.
-                        </p>
-                        <div className="mt-8 flex flex-wrap gap-3">
-                            <a
-                                href="#scope-builder"
-                                className="inline-flex items-center gap-2 bg-[var(--accent)] px-5 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
-                            >
-                                Configure Project Scope <ArrowUpRight size={14} />
-                            </a>
-                            <a
-                                href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 border border-background/20 bg-background/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.16em] text-background transition-transform hover:-translate-y-0.5"
-                            >
-                                Resume (PDF) <Download size={14} />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col justify-end gap-3">
-                        <a
-                            href={`mailto:${USER_DATA.contact.email}`}
-                            className="group flex items-center justify-between gap-4 border border-background/15 px-5 py-4 transition-colors hover:bg-background hover:text-foreground"
-                            aria-label={`Email ${USER_DATA.contact.email}`}
-                        >
-                            <span className="flex items-center gap-3"><Mail size={18} /> {USER_DATA.contact.email}</span>
-                            <span className="text-xs font-black uppercase tracking-[0.16em]">Email</span>
-                        </a>
-                        <a
-                            href={whatsAppLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center justify-between gap-4 border border-background/15 px-5 py-4 transition-colors hover:bg-background hover:text-foreground"
-                            aria-label="Chat on WhatsApp"
-                        >
-                            <span className="flex items-center gap-3"><MessageSquare size={18} className="text-[#25D366]" /> Chat on WhatsApp</span>
-                            <span className="text-xs font-black uppercase tracking-[0.16em]">Direct</span>
-                        </a>
-                        <a
-                            href={`tel:${USER_DATA.contact.phone.replace(/ /g, "")}`}
-                            className="group flex items-center justify-between gap-4 border border-background/15 px-5 py-4 transition-colors hover:bg-background hover:text-foreground"
-                            aria-label={`Call ${USER_DATA.contact.phone}`}
-                        >
-                            <span className="flex items-center gap-3"><Phone size={18} /> {USER_DATA.contact.phone}</span>
-                            <span className="text-xs font-black uppercase tracking-[0.16em]">Call</span>
-                        </a>
-                        <a
-                            href={USER_DATA.contact.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center justify-between gap-4 border border-background/15 px-5 py-4 transition-colors hover:bg-background hover:text-foreground"
-                            aria-label="Visit LinkedIn Profile"
-                        >
-                            <span className="flex items-center gap-3"><Linkedin size={18} /> LinkedIn Profile</span>
-                            <span className="text-xs font-black uppercase tracking-[0.16em]">Connect</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div className="mt-16 flex flex-col justify-between gap-4 border-t border-background/15 pt-5 text-xs font-semibold uppercase tracking-[0.18em] text-background/60 md:flex-row">
-                    <span>{USER_DATA.availability}</span>
-                    <span>© {new Date().getFullYear()} Razim Manzoor · All rights reserved</span>
-                </div>
+  return (
+    <footer id="contact" className="relative border-t border-[var(--border)] bg-[var(--surface)] py-16">
+      <div className="container mx-auto px-5 md:px-8">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 pb-12 border-b border-[var(--border)]">
+          {/* Col 1: Identity & Availability */}
+          <div className="space-y-3">
+            <a href="#home" className="text-lg font-black uppercase tracking-tight text-[var(--foreground)]">
+              Razim<span className="text-[var(--primary)]">.</span>
+            </a>
+            <p className="text-xs text-[var(--muted)] leading-relaxed">
+              AI Solutions Architect & Business Strategist based in Dubai, UAE. Available for full-time engineering appointments and turnkey client engagements.
+            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              Visit Visa | Available Immediately
             </div>
-        </footer>
-    );
+          </div>
+
+          {/* Col 2: Navigation Links */}
+          <div className="space-y-2">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-3">
+              Navigation
+            </span>
+            <div className="flex flex-col gap-2 text-xs">
+              <a href="#services" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Services & Delivery Tracks
+              </a>
+              <a href="#pipeline" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Live Systems Architecture
+              </a>
+              <a href="#projects" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Shipped Systems & Proof
+              </a>
+              <a href="#roi" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Operational ROI Simulator
+              </a>
+              <a href="#scope-builder" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Solution Scope Configurator
+              </a>
+              <a href="#dossier" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Recruiter Dossier
+              </a>
+            </div>
+          </div>
+
+          {/* Col 3: Direct Contact */}
+          <div className="space-y-2">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-3">
+              Direct Contact
+            </span>
+            <div className="flex flex-col gap-2.5 text-xs">
+              <a
+                href={`mailto:${USER_DATA.contact.email}`}
+                className="flex items-center gap-2 text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
+              >
+                <Mail size={14} className="text-[var(--primary)]" />
+                <span>{USER_DATA.contact.email}</span>
+              </a>
+              <a
+                href={`tel:${USER_DATA.contact.phone.replace(/[^0-9+]/g, "")}`}
+                className="flex items-center gap-2 text-[var(--foreground)] hover:text-[var(--primary)] transition-colors font-mono"
+              >
+                <Phone size={14} className="text-[var(--primary)]" />
+                <span>{USER_DATA.contact.phone}</span>
+              </a>
+              <a
+                href={USER_DATA.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
+              >
+                <Linkedin size={14} className="text-[var(--primary)]" />
+                <span>LinkedIn Profile</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Col 4: Handover & Guarantee */}
+          <div className="space-y-3">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] block">
+              Handover Standard
+            </span>
+            <p className="text-xs text-[var(--muted)] leading-relaxed">
+              Every turnkey engagement includes a complimentary 14-day defect warranty, 100% intellectual property transfer, and complete operational runbooks.
+            </p>
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--primary)] hover:underline cursor-pointer"
+            >
+              Back to top <ArrowUp size={13} />
+            </button>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--muted)]">
+          <p>&copy; {new Date().getFullYear()} Razim Manzoor. Built with Next.js 16, React 19 & Tailwind CSS v4.</p>
+          <p className="font-mono text-[11px]">Dubai, United Arab Emirates</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
