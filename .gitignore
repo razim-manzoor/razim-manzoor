@@ -42,4 +42,5 @@ next-env.d.ts
 
 # Obsidian Second Brain Junction
 .brain/
+.agents/
 

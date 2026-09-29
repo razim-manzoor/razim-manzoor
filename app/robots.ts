@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://razim-manzoor.github.io/razim-manzoor/sitemap.xml",
+    sitemap: "https://www.razim.work/sitemap.xml",
   };
 }

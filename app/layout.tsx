@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
   description: "Portfolio and Client Services of Razim Manzoor - MBA-trained AI Solutions Architect building enterprise AI assistants, high-performance web platforms, and automated workflow pipelines in Dubai and worldwide.",
   keywords: ["AI Solutions Architect Dubai", "Business Analyst Dubai", "AI Strategist UAE", "Next.js Web Developer", "n8n Make Automation", "GenAI Consultant UAE", "Razim Manzoor"],
-  authors: [{ name: "Razim Manzoor", url: "https://razim-manzoor.github.io/razim-manzoor/" }],
-  metadataBase: new URL("https://razim-manzoor.github.io/razim-manzoor/"),
+  authors: [{ name: "Razim Manzoor", url: "https://www.razim.work" }],
+  metadataBase: new URL("https://www.razim.work"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
     description: "Enterprise AI systems, turnkey web platforms, and automated workflow pipelines.",
-    url: "https://razim-manzoor.github.io/razim-manzoor/",
+    url: "https://www.razim.work",
     siteName: "Razim Manzoor Portfolio & Services",
     locale: "en_AE",
     type: "website",
