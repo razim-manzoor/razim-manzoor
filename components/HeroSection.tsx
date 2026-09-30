@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { ArrowRight, Download, MapPin, Sparkles, ShieldCheck } from "lucide-react";
-import { USER_DATA } from "@/lib/data";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { snappySpring, spatialSpring } from "@/lib/motion";
 

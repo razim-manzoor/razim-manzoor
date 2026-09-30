@@ -2,41 +2,55 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Check, Copy, MessageSquare, Send, Sparkles } from "lucide-react";
+import { Check, Copy, MessageSquare, Send } from "lucide-react";
 import { USER_DATA } from "@/lib/data";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { snappySpring } from "@/lib/motion";
+import {
+  SERVICES_CATALOG,
+  HANDOVER_GUARANTEES,
+  SPRINT_SCOPES,
+} from "@/lib/services";
 
 interface ServiceTrackOption {
   id: string;
   label: string;
+  pillarId: string;
   category: string;
+  scopeType: string;
   typicalSprint: string;
 }
 
-const TRACK_OPTIONS: ServiceTrackOption[] = [
-  { id: "rag", label: "Enterprise Local RAG Knowledge Assistant", category: "AI & RAG", typicalSprint: "2-3 weeks" },
-  { id: "private-llm", label: "Air-Gapped Private LLM (Ollama/DeepSeek)", category: "AI & RAG", typicalSprint: "2-3 weeks" },
-  { id: "doc-extract", label: "Automated Document Parsing & Extraction", category: "AI & RAG", typicalSprint: "1-2 weeks" },
-  { id: "web-platform", label: "Turnkey Next.js 16 Web Platform", category: "Web Platform", typicalSprint: "3-4 weeks" },
-  { id: "lead-wizard", label: "High-Ticket Lead Qualification Wizard", category: "Web Platform", typicalSprint: "1-2 weeks" },
-  { id: "n8n-make", label: "n8n / Make.com CRM & Operations Pipeline", category: "Automation", typicalSprint: "2-3 weeks" },
-  { id: "whatsapp-triage", label: "WhatsApp Speed-to-Lead Instant Triage", category: "Automation", typicalSprint: "1 week" },
-  { id: "powerbi", label: "Executive Power BI Analytics Dashboard", category: "Analytics", typicalSprint: "2-3 weeks" },
-  { id: "capi", label: "Meta Conversions API (CAPI) Cloudflare Worker", category: "Attribution", typicalSprint: "1 week" },
-  { id: "retainer", label: "Fractional Solutions & Platform Retainer", category: "Retainer", typicalSprint: "Monthly" },
-];
+const TRACK_OPTIONS: ServiceTrackOption[] = SERVICES_CATALOG.flatMap((pillar) =>
+  pillar.items.map((item) => ({
+    id: item.id,
+    label: item.title,
+    pillarId: pillar.id,
+    category: pillar.shortTitle,
+    scopeType: item.scopeType,
+    typicalSprint:
+      item.scopeType === "Fixed Milestone"
+        ? "1-2 weeks"
+        : item.scopeType === "Turnkey Build"
+        ? "3-4 weeks"
+        : "Monthly rolling",
+  }))
+);
+
+const CATEGORIES = ["All", ...SERVICES_CATALOG.map((p) => p.shortTitle)];
 
 const TIMELINES = [
-  "Sprint (1-2 weeks)",
-  "Turnkey Milestone (3-4 weeks)",
-  "Ongoing Monthly Retainer",
+  "Fixed Milestone (1-2 weeks)",
+  "Turnkey Build (3-4 weeks)",
+  "Monthly Retainer (Ongoing)",
   "Scoping Consultation Call First",
 ];
 
 export function ServiceScopeBuilder() {
-  const [selectedTracks, setSelectedTracks] = useState<string[]>(["rag", "web-platform"]);
+  const [selectedTracks, setSelectedTracks] = useState<string[]>([
+    "rag-assistant",
+    "turnkey-web",
+  ]);
+  const [activeCategory, setActiveCategory] = useState<string>("All");
   const [timeline, setTimeline] = useState<string>(TIMELINES[1]);
   const [companyName, setCompanyName] = useState<string>("");
   const [contactInfo, setContactInfo] = useState<string>("");
@@ -49,7 +63,14 @@ export function ServiceScopeBuilder() {
     );
   };
 
-  const selectedTrackObjects = TRACK_OPTIONS.filter((t) => selectedTracks.includes(t.id));
+  const displayedTracks =
+    activeCategory === "All"
+      ? TRACK_OPTIONS
+      : TRACK_OPTIONS.filter((t) => t.category === activeCategory);
+
+  const selectedTrackObjects = TRACK_OPTIONS.filter((t) =>
+    selectedTracks.includes(t.id)
+  );
 
   const generateInquiryText = () => {
     return (
@@ -57,12 +78,15 @@ export function ServiceScopeBuilder() {
       `* Company / Project: ${companyName.trim() || "Not specified"}\n` +
       `* Contact: ${contactInfo.trim() || "Not specified"}\n` +
       `* Target Timeline: ${timeline}\n` +
-      `* Selected Modules:\n${
+      `* Selected Modules (${selectedTrackObjects.length}):\n${
         selectedTrackObjects.length > 0
-          ? selectedTrackObjects.map((t) => `  - ${t.label}`).join("\n")
+          ? selectedTrackObjects
+              .map((t) => `  - [${t.category}] ${t.label} (${t.typicalSprint})`)
+              .join("\n")
           : "  - General Advisory Consultation"
       }\n` +
       (projectNotes.trim() ? `* Context & Goals: ${projectNotes.trim()}\n\n` : `\n`) +
+      `* Handover Terms: Includes 14-Day Defect Warranty, 100% IP & Asset Vesting, and Operational Runbooks.\n\n` +
       `Looking forward to discussing next steps.`
     );
   };
@@ -74,7 +98,9 @@ export function ServiceScopeBuilder() {
   };
 
   const cleanPhone = USER_DATA.contact.phone.replace(/[^0-9]/g, "");
-  const whatsAppLink = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(generateInquiryText())}`;
+  const whatsAppLink = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
+    generateInquiryText()
+  )}`;
   const mailtoLink = `mailto:${USER_DATA.contact.email}?subject=${encodeURIComponent(
     `Project Scope Inquiry: ${companyName.trim() || "New Client"}`
   )}&body=${encodeURIComponent(generateInquiryText())}`;
@@ -95,11 +121,43 @@ export function ServiceScopeBuilder() {
           {/* Left Column: Track Selection */}
           <div className="space-y-6">
             <div>
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-3">
-                1. Select Architectural Modules
-              </span>
-              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                {TRACK_OPTIONS.map((track) => {
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] block">
+                  1. Select Architectural Modules
+                </span>
+                <span className="text-xs font-mono text-[var(--muted)]">
+                  {selectedTracks.length} of {TRACK_OPTIONS.length} active
+                </span>
+              </div>
+
+              {/* Category Filter Tabs */}
+              <div className="flex flex-wrap gap-1.5 mb-3.5">
+                {CATEGORIES.map((cat) => {
+                  const isActive = activeCategory === cat;
+                  const count =
+                    cat === "All"
+                      ? TRACK_OPTIONS.length
+                      : TRACK_OPTIONS.filter((t) => t.category === cat).length;
+                  return (
+                    <button
+                      key={cat}
+                      type="button"
+                      onClick={() => setActiveCategory(cat)}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold transition-colors cursor-pointer ${
+                        isActive
+                          ? "bg-[var(--primary)] text-white"
+                          : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)] border border-[var(--border)]"
+                      }`}
+                    >
+                      {cat} ({count})
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Module Cards Grid */}
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 max-h-[460px] overflow-y-auto pr-1">
+                {displayedTracks.map((track) => {
                   const isSelected = selectedTracks.includes(track.id);
                   return (
                     <motion.button
@@ -111,15 +169,20 @@ export function ServiceScopeBuilder() {
                       onClick={() => toggleTrack(track.id)}
                       className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex items-start justify-between gap-3 ${
                         isSelected
-                          ? "border-[var(--primary)] bg-[var(--surface-hover)] shadow-sm"
+                          ? "border-[var(--primary)] bg-[var(--surface-hover)] shadow-xs"
                           : "border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-hover)]"
                       }`}
                     >
-                      <div>
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block">
-                          {track.category}
-                        </span>
-                        <p className="text-xs font-bold text-[var(--foreground)] mt-0.5 leading-snug">
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)]">
+                            {track.category}
+                          </span>
+                          <span className="text-[9px] font-mono px-1.5 py-0.2 rounded border border-[var(--border)] text-[var(--muted)]">
+                            {track.typicalSprint}
+                          </span>
+                        </div>
+                        <p className="text-xs font-bold text-[var(--foreground)] mt-1 leading-snug">
                           {track.label}
                         </p>
                       </div>
@@ -205,15 +268,29 @@ export function ServiceScopeBuilder() {
               </div>
 
               {/* Formatted Text Preview */}
-              <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] p-4 font-mono text-[11px] leading-relaxed text-[var(--foreground)] max-h-[300px] overflow-y-auto">
+              <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] p-4 font-mono text-[11px] leading-relaxed text-[var(--foreground)] max-h-[260px] overflow-y-auto">
                 <pre className="whitespace-pre-wrap font-mono">
                   {generateInquiryText()}
                 </pre>
               </div>
 
-              <div className="mt-4 flex items-center justify-between text-xs text-[var(--muted)]">
-                <span>Includes 14-day warranty</span>
-                <span>100% IP Vesting</span>
+              {/* The 3 Handover Guarantees Included */}
+              <div className="mt-4 pt-4 border-t border-[var(--border)]">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-2 text-center">
+                  Handover Guarantees Included
+                </span>
+                <div className="grid grid-cols-3 gap-1.5 text-center">
+                  {HANDOVER_GUARANTEES.map((g) => (
+                    <div
+                      key={g.title}
+                      className="rounded-md border border-[var(--border)] bg-[var(--surface-hover)] p-2 flex items-center justify-center text-center"
+                    >
+                      <span className="text-[10px] font-mono font-bold text-[var(--foreground)] leading-tight">
+                        {g.title}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
