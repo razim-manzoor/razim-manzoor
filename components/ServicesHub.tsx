@@ -15,7 +15,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { HANDOVER_GUARANTEES, SERVICES_CATALOG, ServicePillar } from "@/lib/services";
-import { SpotlightCard } from "@/components/magicui/spotlight-card";
 import { snappySpring, spatialSpring } from "@/lib/motion";
 
 const pillarIcons: Record<string, typeof BrainCircuit> = {
@@ -77,7 +76,7 @@ export default function ServicesHub() {
           })}
         </div>
 
-        {/* Active Pillar Hero Card */}
+        {/* Active Pillar Overview Banner */}
         <div className="mb-8 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
             <div className="flex items-center gap-4">
@@ -94,7 +93,7 @@ export default function ServicesHub() {
               </div>
             </div>
             <a
-              href="#scope-builder"
+              href="#studio"
               className="inline-flex w-fit items-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-102"
             >
               Inquire for Scope <ArrowRight size={14} />
@@ -106,19 +105,19 @@ export default function ServicesHub() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activePillar.id}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={spatialSpring}
             className="grid gap-6 md:grid-cols-2"
           >
             {activePillar.items.map((item) => (
-              <SpotlightCard
+              <div
                 key={item.title}
-                className="flex flex-col justify-between p-6 md:p-8"
+                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-7 flex flex-col justify-between hover:border-[var(--primary)]/50 transition-colors"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center justify-between gap-2 mb-3">
                     <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                       {item.scopeType}
                     </span>
@@ -135,58 +134,53 @@ export default function ServicesHub() {
                     {item.description}
                   </p>
 
-                  <div className="mt-5 space-y-2">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block">
-                      Core Deliverables
-                    </span>
+                  <div className="mt-4 space-y-1.5">
                     {item.deliverables.map((deliv) => (
                       <div key={deliv} className="flex items-start gap-2 text-xs text-[var(--foreground)]">
-                        <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 size={13} className="text-emerald-500 shrink-0 mt-0.5" />
                         <span>{deliv}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[var(--border)]">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-1">
+                <div className="mt-5 pt-3 border-t border-[var(--border)]">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-0.5">
                     Business Margin Impact
                   </span>
                   <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                     {item.businessImpact}
                   </p>
                 </div>
-              </SpotlightCard>
+              </div>
             ))}
           </motion.div>
         </AnimatePresence>
 
-        {/* Handover Guarantees Section */}
-        <div className="mt-16 rounded-2xl border border-[var(--border)] bg-[var(--surface-hover)] p-6 md:p-10">
-          <div className="mb-8 max-w-xl">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--primary)] block mb-1">
-              Institutional Delivery Standard
-            </span>
-            <h3 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              The 3 Handover Guarantees
-            </h3>
+        {/* Handover Guarantees Banner */}
+        <div className="mt-12 rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-6 md:p-8">
+          <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[var(--border)] pb-4">
+            <div>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--primary)] block">
+                Institutional Delivery Standard
+              </span>
+              <h3 className="text-xl font-bold tracking-tight text-[var(--foreground)]">
+                The 3 Handover Guarantees
+              </h3>
+            </div>
+            <span className="text-xs font-mono text-[var(--muted)]">All scopes include 100% transfer</span>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-3">
             {HANDOVER_GUARANTEES.map((g) => {
               const GIcon = guaranteeIcons[g.iconName] || ShieldCheck;
               return (
-                <div
-                  key={g.title}
-                  className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-xs"
-                >
-                  <div className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] text-[var(--primary)] mb-3">
-                    <GIcon size={20} />
+                <div key={g.title} className="space-y-1.5">
+                  <div className="flex items-center gap-2 text-[var(--primary)] font-bold text-sm">
+                    <GIcon size={16} />
+                    <span>{g.title}</span>
                   </div>
-                  <h4 className="text-base font-bold text-[var(--foreground)]">
-                    {g.title}
-                  </h4>
-                  <p className="mt-2 text-xs text-[var(--muted)] leading-relaxed">
+                  <p className="text-xs text-[var(--muted)] leading-relaxed">
                     {g.description}
                   </p>
                 </div>

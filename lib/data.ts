@@ -162,6 +162,19 @@ export const USER_DATA: UserData = {
   },
   experience: [
     {
+      id: 0,
+      role: "Independent AI & Business Solutions Consultant",
+      company: "Self-Employed",
+      location: "Dubai, UAE",
+      period: "2025 - Present",
+      achievements: [
+        "Reduced sales prospecting cycle time by 80% by architecting an automated lead intelligence web app utilizing Playwright RPA to scrape map targets and migrate verified records directly into client data stores.",
+        "Engineered an end-to-end sales enablement CRM featuring embedded call/WhatsApp playbooks and deal-tracking dashboards, boosting daily outbound sales outreach capacity by 2x.",
+        "Engineered Career-Ops, a local-first workspace orchestrating local Qwen LLMs and a custom Chrome extension to extract JDs, generate hallucination-free ATS-tailored LaTeX resumes, and manage pipeline velocity across interactive Kanban views.",
+        "Delivered a bespoke client web platform with 100% on-schedule milestone execution by managing the full technical lifecycle from stakeholder requirements gathering to deployment.",
+      ],
+    },
+    {
       id: 1,
       role: "Data Strategy Associate (Industrial Trainee)",
       company: "Luminar Technolab",

@@ -8,10 +8,9 @@ import { snappySpring } from "@/lib/motion";
 
 const navLinks = [
   { name: "Services", href: "#services" },
-  { name: "Architecture", href: "#pipeline" },
   { name: "Work", href: "#projects" },
-  { name: "ROI Model", href: "#roi" },
-  { name: "Scope", href: "#scope-builder" },
+  { name: "Architecture", href: "#pipeline" },
+  { name: "Studio", href: "#studio" },
   { name: "Dossier", href: "#dossier" },
 ];
 
@@ -81,7 +80,7 @@ export default function NavBar() {
             </a>
 
             <a
-              href="#scope-builder"
+              href="#studio"
               className="inline-flex items-center gap-1 rounded-full bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-102"
             >
               Inquire <ArrowUpRight size={13} />

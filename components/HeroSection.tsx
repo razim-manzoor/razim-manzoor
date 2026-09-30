@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
-import { ArrowRight, Download, MapPin, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { snappySpring, spatialSpring } from "@/lib/motion";
 
@@ -95,17 +95,8 @@ export default function HeroSection() {
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={spatialSpring}
-            className="relative mx-auto w-full max-w-[400px]"
+            className="relative mx-auto w-full max-w-[320px] md:max-w-[340px]"
           >
-            {/* Ambient Corner Spec Badges */}
-            <div className="absolute -left-3 top-6 z-20 rounded-md border border-[var(--border)] bg-[var(--surface)]/95 backdrop-blur-md px-3 py-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--foreground)] shadow-sm">
-              MBA x AI Systems
-            </div>
-
-            <div className="absolute -right-3 bottom-12 z-20 rounded-md border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-md px-3 py-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 shadow-sm flex items-center gap-1.5">
-              <ShieldCheck size={14} /> Dubai Visit Visa
-            </div>
-
             {/* Profile Image Frame */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl">
               <Image
@@ -113,10 +104,10 @@ export default function HeroSection() {
                 alt="Razim Manzoor - AI Solutions Architect"
                 fill
                 priority
-                sizes="(min-width: 1024px) 400px, 90vw"
-                className="object-cover object-top filter grayscale-[0.08] contrast-[1.05]"
+                sizes="(min-width: 1024px) 340px, 90vw"
+                className="object-cover object-top filter grayscale-[0.04] contrast-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/40 via-transparent to-transparent pointer-events-none" />
             </div>
           </motion.div>
         </div>
