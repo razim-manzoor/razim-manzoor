@@ -62,7 +62,7 @@ export default function HeroSection() {
               transition={{ ...spatialSpring, delay: 0.15 }}
               className="mt-6 max-w-[54ch] text-base sm:text-lg leading-relaxed text-[var(--foreground)]"
             >
-              MBA in Data Science & Analytics with hands-on systems engineering. I architect custom AI tools, automated workflow pipelines, and web platforms that solve real operational problems.
+              MBA in Data Science with hands-on systems engineering. I architect custom digital platforms, automated business pipelines, and private AI systems that eliminate operational bottlenecks—shipped in weeks, not months.
             </motion.p>
 
             {/* Primary & Secondary CTAs */}
@@ -73,10 +73,10 @@ export default function HeroSection() {
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <a
-                href="#projects"
+                href="#services"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all cursor-pointer"
               >
-                View Work <ArrowRight size={15} />
+                Explore Services <ArrowRight size={15} />
               </a>
               <a
                 href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
@@ -119,28 +119,28 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
             <div className="border-b sm:border-b-0 sm:border-r border-[var(--border)] pb-4 sm:pb-0 sm:pr-4">
               <div className="text-2xl md:text-3xl font-black font-mono text-[var(--primary)] tabular-nums">
-                +<NumberTicker value={15} suffix="%" />
+                Weeks vs Months
               </div>
               <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Revenue Opportunity Identified (Data Modeling)
+                Rapid Delivery & Prototyping
               </p>
             </div>
 
             <div className="border-b sm:border-b-0 sm:border-r border-[var(--border)] pb-4 sm:pb-0 sm:pr-4">
               <div className="text-2xl md:text-3xl font-black font-mono text-[var(--foreground)] tabular-nums">
-                3 Days &rarr; 2 Hrs
+                <NumberTicker value={80} suffix="%" />
               </div>
               <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Reporting Speedup (Power BI & SQL)
+                Manual Workflow Effort Eliminated
               </p>
             </div>
 
             <div>
               <div className="text-2xl md:text-3xl font-black font-mono text-[var(--foreground)] tabular-nums">
-                <NumberTicker value={80} suffix="%" />
+                3 Days &rarr; 2 Hrs
               </div>
               <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Manual Effort Saved (Automation Pipelines)
+                Reporting & Decision Latency Reduced
               </p>
             </div>
           </div>

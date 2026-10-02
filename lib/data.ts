@@ -77,14 +77,14 @@ export const USER_DATA: UserData = {
     linkedin: "https://www.linkedin.com/in/razim-manzoor",
   },
   summary:
-    "MBA in Data Science & Analytics bridging business strategy with production systems engineering. I architect custom AI tools, automated workflow pipelines, and web platforms that solve real operational bottlenecks.",
+    "I help founders and business leaders build custom digital platforms, intelligent tools, and automated operations without the months of delay or agency overhead. Combining an MBA in Data Science with hands-on systems engineering, I turn messy operational bottlenecks into clean, working systems in weeks instead of months.",
   detailedBio: [
-    "Combines rigorous business analytical strategy (MBA in Data Science) with hands-on systems engineering across local AI models (RAG), workflow automations (n8n, Python), and full-stack web platforms.",
-    "Based in Dubai on a visit visa with immediate availability for full-time architectural appointments, enterprise roles, and turnkey client builds.",
+    "Traditional development is painfully slow. Agencies take months, charge bloated retainers, and rarely understand the underlying business mechanics. I combine MBA strategic scoping (knowing what actually drives margin) with rapid, hands-on engineering execution to design, build, and deploy production software in weeks instead of months.",
+    "Based in Dubai on a visit visa with immediate availability. Whether you need a full-time architect, a dedicated technical sprint, or a turnkey system built from scratch, I can jump straight in.",
   ],
   stats: [
+    { label: "Delivery Speedup", value: "Weeks vs Months" },
     { label: "Manual Effort Saved", value: "80%" },
-    { label: "Reporting Speedup", value: "3 Days to 2 Hrs" },
     { label: "Location & Joining", value: "Dubai / Immediate" },
   ],
   recruiterSnapshot: [
@@ -98,7 +98,7 @@ export const USER_DATA: UserData = {
     },
     {
       label: "Core Competency",
-      value: "Next.js 16, React 19, TypeScript, Python, Local AI / RAG, and Workflow Automation",
+      value: "AI Solutions Architecture, Full-Stack Engineering, Python, Local RAG, and Workflow Automation",
     },
     {
       label: "Education Background",
@@ -106,57 +106,62 @@ export const USER_DATA: UserData = {
     },
   ],
   hiringSignals: [
-    "Builds production-ready, clean web applications with Next.js, React 19, and TypeScript.",
-    "Builds practical AI tools and local document search (RAG) running locally or via APIs.",
-    "Translates business requirements directly into working code without communication friction.",
-    "Available immediately in Dubai for on-site, hybrid, or remote roles.",
+    "Ships production web apps, MVPs, and internal tools in weeks instead of months with clean, maintainable architecture.",
+    "Builds practical AI tools and private local document search without runaway API bills or data privacy risks.",
+    "Understands the numbers (MBA in Data Science): builds software that directly recovers hours and protects profit margins.",
+    "Available immediately in Dubai for on-site, hybrid, or remote full-time roles and contract builds.",
   ],
   proofPoints: [
     "MBA in Data Science & Analytics",
-    "Next.js 16 & React 19 Web Apps",
-    "Local AI & Document Search (RAG)",
+    "Rapid MVP & Full-Stack Web Apps",
+    "Private AI & Local Document Search",
     "n8n & Python Workflow Automation",
-    "Power BI Dashboards & SQL Modeling",
+    "Executive Power BI Dashboards",
     "Dubai Visit Visa, Immediate Joining",
   ],
   focusAreas: [
     {
-      title: "Modern Web Apps & MVPs",
+      title: "Full-Stack Web Apps & Rapid MVPs",
       detail:
-        "Fast, responsive web apps designed with clean code, modern UX, and reliable architecture.",
+        "SaaS platforms, client portals, and internal tools built with Next.js, React 19, and Supabase. Shipped in weeks, not quarters.",
     },
     {
-      title: "Practical AI & Local LLMs",
+      title: "Applied AI & Private Local Copilots",
       detail:
-        "Private document search, assistants, and tools running on local hardware or via secure APIs.",
+        "Private document search, knowledge assistants, and task runners running on local hardware or secure APIs without data leaks.",
     },
     {
-      title: "Workflow Automation",
+      title: "Workflow & Operations Automation",
       detail:
-        "Connecting disparate tools and replacing manual spreadsheet tasks with automated pipelines.",
+        "Connecting CRMs, WhatsApp, spreadsheets, and databases with n8n and Python so teams never do repetitive manual data entry again.",
+    },
+    {
+      title: "Executive Dashboards & BI Engines",
+      detail:
+        "Turning fragmented spreadsheets into clean Power BI reports and automated daily digests that leadership can actually trust.",
     },
   ],
   skills: {
     business: [
-      "Requirements Gathering & Scoping",
-      "Workflow & Process Optimization",
-      "Executive KPI Dashboards",
-      "Business Analytics & Reporting",
-      "Cross-Functional Collaboration",
-      "Data Modeling & Forecasting",
+      "Business Requirements & Scope Definition",
+      "Process Optimization & Bottleneck Elimination",
+      "Operational Cost Reduction & ROI Modeling",
+      "Executive KPI & Performance Dashboards",
+      "Customer Lifetime Value & Churn Analytics",
+      "Cross-Functional Team & Stakeholder Communication",
     ],
     technical: [
       "Next.js 16 (App Router) & React 19",
-      "TypeScript & JavaScript",
-      "Tailwind CSS v4 & Modern UI",
+      "TypeScript, JavaScript & Modern Web Standards",
+      "Tailwind CSS v4 & Responsive UI Design",
       "Python (FastAPI, Pandas, Scikit-learn)",
-      "Local LLMs & Ollama",
-      "RAG & Vector Search (ChromaDB)",
-      "Workflow Automation (n8n, Make)",
-      "SQL & PostgreSQL",
-      "Business Intelligence (Power BI)",
-      "REST APIs & Webhooks",
-      "Git, Vercel & Cloudflare",
+      "Local LLMs & On-Premises Ollama",
+      "Document Search (RAG) & Vector Stores (ChromaDB)",
+      "Workflow Automation (n8n, Make, Power Automate)",
+      "SQL, PostgreSQL & Supabase",
+      "Power BI, DAX & Automated Reporting",
+      "REST APIs, Webhooks & Third-Party Integrations",
+      "Git, Vercel & Cloudflare Deployment",
     ],
   },
   experience: [
@@ -167,10 +172,10 @@ export const USER_DATA: UserData = {
       location: "Dubai, UAE",
       period: "2025 - Present",
       achievements: [
-        "Built an automated lead-discovery tool using Playwright that extracted verified business leads directly into structured spreadsheets, reducing manual searching time by 80%.",
-        "Developed an internal sales tracker and CRM with quick-action WhatsApp playbooks, helping double daily outreach capacity.",
-        "Created Career-Ops, a local-first workspace with local LLMs and a Chrome extension to extract job details, generate tailored LaTeX resumes, and track applications on an interactive board.",
-        "Delivered custom client web applications on time by handling requirements, UI design, and full-stack deployment.",
+        "Built automated lead-generation and prospecting pipelines that scrape verified business records into structured databases, cutting manual research time by 80%.",
+        "Engineered internal CRM tracking systems with one-tap WhatsApp reply playbooks, helping sales teams double daily outreach velocity.",
+        "Created Career-Ops, a local-first workspace orchestrating local Qwen LLMs and a Chrome extension to extract job requirements and generate tailored applications on an interactive board.",
+        "Delivered custom client web applications and MVPs on schedule by managing the full technical lifecycle from scoping to production deployment.",
       ],
     },
     {
@@ -180,9 +185,9 @@ export const USER_DATA: UserData = {
       location: "Kochi, India",
       period: "Jun 2024 - Mar 2025",
       achievements: [
-        "Built analytical pipelines in Python and SQL to extract insights from business datasets.",
-        "Developed a customer segmentation model (RFM) to help commercial teams prioritize high-value prospects.",
-        "Transformed manual spreadsheets into automated Power BI dashboards, cutting report delivery time from 3 days to under 2 hours.",
+        "Built analytical data pipelines in Python and SQL to extract actionable insights from raw company datasets.",
+        "Trained a customer segmentation model (RFM) that helped sales teams identify prioritized commercial accounts.",
+        "Converted messy legacy spreadsheets into automated Power BI dashboards, reducing reporting turnaround from 3 days to under 2 hours.",
         "Earned A+ distinction in Enterprise Data Science and Python Systems.",
       ],
     },
@@ -193,10 +198,10 @@ export const USER_DATA: UserData = {
       location: "Kochi, India",
       period: "Nov 2023 - May 2024",
       achievements: [
-        "Built automated invoice processing workflows using Power Automate, cutting manual entry time by 45%.",
-        "Mapped and streamlined internal approval processes to reduce turnaround delays.",
-        "Constructed executive HR and workforce dashboards tracking key operational metrics.",
-        "Integrated secure cloud storage and data logging pipelines on Azure.",
+        "Automated repetitive accounts-payable workflows using Power Automate, reducing manual invoice handling time by 45%.",
+        "Mapped operational bottlenecks across internal business processes to eliminate multi-day communication lags.",
+        "Constructed executive HR and workforce dashboards tracking headcount, retention, and department KPIs.",
+        "Configured secure Azure cloud integrations and structured data logging.",
       ],
     },
   ],
@@ -207,7 +212,7 @@ export const USER_DATA: UserData = {
       institution: "JAIN University",
       year: "2021 - 2023",
       details:
-        "Relevant Coursework: Financial Modeling, Business Statistics, Marketing Analytics, Strategic Decision Making, Machine Learning Applications.",
+        "Coursework: Financial Modeling, Business Statistics, Marketing Analytics, Strategic Decision Making, Applied Machine Learning.",
     },
     {
       degree: "Bachelor of Commerce (B.Com)",
@@ -215,77 +220,94 @@ export const USER_DATA: UserData = {
       institution: "Kannur University",
       year: "2018 - 2021",
       details:
-        "Relevant Coursework: Financial Accounting, Business Law, Corporate Taxation, Database Systems, Software Programming.",
+        "Coursework: Financial Accounting, Business Law, Corporate Taxation, Database Systems, Software Programming.",
     },
   ],
   projects: [
     {
-      title: "Manifest: AI Career CRM",
-      metric: "80% Time Saved",
-      serviceTrack: "Web Application",
-      tech: ["React 19", "TypeScript", "Tailwind CSS v4", "IndexedDB", "Framer Motion"],
-      link: "https://www.linkedin.com/posts/razim-manzoor_productmanagement-businessstrategy-dubai-activity-7402331627022192640-u-II",
+      title: "OmniFlow: WhatsApp & CRM Lead Engine",
+      metric: "Sub-30s Response",
+      serviceTrack: "Operations & Workflow Automation",
+      tech: ["n8n", "Python", "WhatsApp Cloud API", "HubSpot", "PostgreSQL"],
+      link: "https://www.linkedin.com/in/razim-manzoor",
       description:
-        "A fast, local-first web app to track job applications, milestones, and interview follow-ups without messy spreadsheets.",
+        "An automated pipeline that captures web leads, enriches their company data, updates the CRM, and sends an instant WhatsApp alert to the on-duty sales rep with a one-tap reply link.",
       caseStudy:
-        "Built with React 19 and IndexedDB for instant offline storage without requiring backend servers. Includes an interactive Kanban board and milestone reminders to keep applications organized.",
+        "Built using n8n and Python microservices to bridge incoming webhooks with WhatsApp Cloud API and HubSpot. Eliminates the hours leads normally sit untouched in an inbox.",
       problem:
-        "Tracking dozens of applications across spreadsheets is slow, messy, and makes it easy to miss crucial follow-up deadlines.",
+        "Inbound website leads sit cold for 4-8 hours before a rep notices them, while salespeople waste half their morning copy-pasting customer info between forms and spreadsheets.",
       solution:
-        "A responsive local-first web app with zero cloud lag, offline persistence, and automated reminders.",
+        "An automated pipeline that instantly validates incoming inquiries, creates clean CRM deals, and pings the right rep's phone in under 30 seconds with pre-addressed chat links.",
       impact:
-        "Cut application logging time down to 15 seconds, with 100% offline data privacy and clear deadline tracking.",
+        "Slashed lead response time from hours to under 30 seconds, eliminated lead drop-off, and saved sales reps 10+ hours of manual data entry every week.",
     },
     {
-      title: "LiquidityAI: Automated Accounts Receivable",
+      title: "VaultDoc: Private Document Intelligence",
+      metric: "100% Private / 0 Cloud API Fees",
+      serviceTrack: "Applied AI & Local Models",
+      tech: ["Ollama", "DeepSeek", "ChromaDB", "LangChain", "Python"],
+      link: "https://www.linkedin.com/posts/razim-manzoor_rag-llm-ai-activity-7313875466493259776-90vf",
+      description:
+        "A private on-premises AI assistant that lets internal teams search and chat with confidential contracts, SOPs, and board packets with zero data leaving the company network.",
+      caseStudy:
+        "Engineered with Ollama, ChromaDB, and open-weights models running completely on local hardware. Performs vector search across hundreds of PDFs with exact page-level citations.",
+      problem:
+        "Companies have hundreds of pages of confidential contracts and internal manuals, but strict data privacy rules prevent them from uploading sensitive files to ChatGPT or third-party cloud tools.",
+      solution:
+        "A completely isolated, local-first search assistant that indexes internal documents and answers complex questions locally with exact source citations.",
+      impact:
+        "Guarantees 100% data privacy with zero bytes sent to public clouds, cuts internal document lookup time from 40 minutes to 15 seconds, and has zero recurring API token costs.",
+    },
+    {
+      title: "LaunchPad: Rapid Production SaaS Platform",
+      metric: "Shipped in 14 Days",
+      serviceTrack: "Web Applications & Digital Products",
+      tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Supabase", "Stripe"],
+      link: "https://www.linkedin.com/posts/razim-manzoor_productmanagement-businessstrategy-dubai-activity-7402331627022192640-u-II",
+      description:
+        "A production-ready full-stack web application with user authentication, role-based dashboards, Stripe subscription billing, and database backends built in a rapid 2-week sprint.",
+      caseStudy:
+        "Built on Next.js 16 App Router, React 19, and Supabase. Combines clean UI design with sub-second page performance, automated email notifications, and mobile responsiveness.",
+      problem:
+        "Founders and businesses waste 4-6 months and tens of thousands of dollars waiting for slow agencies just to build a functional web platform or customer portal.",
+      solution:
+        "A modern full-stack web application engineered with modern AI-accelerated workflows, shipping auth, database, payments, and dashboards in days instead of months.",
+      impact:
+        "Delivered a complete, deployable platform in under 2 weeks, allowing the client to start onboarding users and testing market demand immediately without burning runway.",
+    },
+    {
+      title: "CashFlow Pulse: Automated Invoicing & AR",
       metric: "15+ Hrs/Wk Saved",
-      serviceTrack: "Workflow Automation",
+      serviceTrack: "Business Automation & Finance",
       tech: ["Python", "Pandas", "Streamlit", "SMTP / SendGrid", "REST APIs"],
       link: "https://www.linkedin.com/posts/razim-manzoor_the-operational-efficiency-post-activity-7411345989959147520-ghxo",
       description:
-        "An automated Python tool that tracks overdue invoices and schedules tailored client reminders based on payment history.",
+        "An automated receivables tool that syncs overdue invoices, groups clients by payment habits, and triggers polite, staged reminders so finance teams stop chasing late payments manually.",
       caseStudy:
-        "Engineered with Python and Streamlit, this tool automatically parses aging invoices and categorizes clients into priority tiers so teams know exactly which accounts need follow-ups.",
+        "Built with Python and Streamlit, this tool automatically parses aging invoices and flags delinquent balances with tiered reminder schedules tailored to client relationship tiers.",
       problem:
-        "Finance teams spend 15+ hours every week manually checking spreadsheets and drafting repetitive invoice reminder emails.",
+        "Finance teams spend 15+ hours every week manually cross-referencing bank spreadsheets and drafting repetitive, awkward reminder emails for overdue accounts.",
       solution:
-        "An automated Python pipeline that parses balance sheets, groups clients by aging tier, and prepares structured reminders.",
+        "An automated pipeline that parses balance sheets, groups clients into priority buckets, and prepares scheduled reminders before invoices go delinquent.",
       impact:
-        "Saves over 15 hours of manual work weekly and speeds up cash collections while keeping client communication polite.",
+        "Saves over 15 hours of manual work weekly, accelerates cash collection cycles, and protects key client relationships with polite, staged communication.",
     },
     {
-      title: "Private Document Search (Local RAG)",
-      metric: "100% Private / 0 Cloud API Fees",
-      serviceTrack: "AI & Local LLM",
-      tech: ["DeepSeek", "Ollama", "ChromaDB", "LangChain", "Python"],
-      link: "https://www.linkedin.com/posts/razim-manzoor_rag-llm-ai-activity-7313875466493259776-90vf",
+      title: "ExecutivePulse: Live BI & Decision Dashboard",
+      metric: "3 Days to 2 Hours Latency",
+      serviceTrack: "Data Intelligence & Analytics",
+      tech: ["Power BI", "DAX", "SQL", "Python", "Power Query"],
+      link: "https://www.linkedin.com/in/razim-manzoor",
       description:
-        "A private AI assistant that lets users search and chat with internal PDFs and documents locally on their own computer.",
+        "An automated business intelligence system that pulls live data from Stripe, sales CRMs, and operations into a clean visual dashboard with automated morning KPI digests.",
       caseStudy:
-        "Built using Ollama and ChromaDB to run open-source language models completely on local hardware. Chunks documents and provides exact source citations for every answer.",
+        "Designed star-schema data models in Power BI and SQL, connecting disconnected sales and operational data into auto-refreshing visual screens accessible on desktop and mobile.",
       problem:
-        "Uploading sensitive contracts or financial documents to third-party cloud AI tools creates data privacy and security risks.",
+        "Leadership teams make critical growth and hiring decisions based on two-week-old spreadsheet exports full of broken formulas and conflicting numbers.",
       solution:
-        "A local-first document question-answering tool running open-source models directly on local hardware without sending data outside.",
+        "A centralized, automated business intelligence model that pulls directly from operational tools and presents clean, trustworthy KPIs in real time.",
       impact:
-        "Provides instant answers with exact source citations, keeping data 100% private with zero recurring API costs.",
-    },
-    {
-      title: "Automated Edge Defect Detection",
-      metric: "Sub-45ms Real-Time Vision",
-      serviceTrack: "Computer Vision & ML",
-      tech: ["TensorFlow", "Keras", "OpenCV", "Python", "ONNX Runtime"],
-      link: "https://github.com/razim-manzoor/Plant-Disease-Classification-CNN",
-      description:
-        "A computer vision tool that inspects products on production lines in real time to detect defects automatically.",
-      caseStudy:
-        "Trained a convolutional neural network (CNN) in TensorFlow and optimized it for fast edge execution using OpenCV and ONNX, running at over 22 frames per second.",
-      problem:
-        "Manual visual inspection on fast-moving lines leads to missed defects due to eye fatigue.",
-      solution:
-        "A lightweight CNN vision model that processes camera frames in real time and flags defects with high accuracy.",
-      impact:
-        "Achieves sub-45ms inspection speed without cloud lag, catching defects reliably before packaging.",
+        "Cut monthly reporting from 3 full days of manual copy-paste down to a 2-hour review, giving leadership real-time visibility into revenue, churn, and operational capacity.",
     },
   ],
   certifications: [

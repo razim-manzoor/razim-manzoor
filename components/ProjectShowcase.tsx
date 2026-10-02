@@ -30,15 +30,15 @@ export default function ProjectShowcase() {
       <div className="container mx-auto px-5 md:px-8">
         <div className="mb-12 max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs font-mono text-[var(--muted)] mb-3">
-            <span>Portfolio</span>
+            <span>Systems & Products</span>
             <span>&bull;</span>
-            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">New builds in progress</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Active builds in progress</span>
           </div>
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Featured Projects
+            Featured Systems & Applications
           </h2>
           <p className="mt-3 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Practical tools and web apps built with Next.js, Python, and local AI. Clean code, fast performance, and real utility.
+            Production-ready systems built with Next.js, Python, local AI models, and automated pipelines. Designed to eliminate operational drag and ship in days instead of months.
           </p>
         </div>
 

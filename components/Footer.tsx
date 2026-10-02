@@ -32,9 +32,6 @@ export default function Footer() {
               Navigation
             </span>
             <div className="flex flex-col gap-2 text-xs">
-              <a href="#projects" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-                Featured Projects
-              </a>
               <a href="#services" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
                 Services & What I Build
               </a>

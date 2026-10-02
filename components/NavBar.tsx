@@ -7,7 +7,6 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { snappySpring } from "@/lib/motion";
 
 const navLinks = [
-  { name: "Projects", href: "#projects" },
   { name: "Services", href: "#services" },
   { name: "How It Works", href: "#pipeline" },
   { name: "Skills", href: "#skills" },

@@ -37,9 +37,8 @@ export function AudiencePageLayout() {
               exit={{ opacity: 0, y: -12 }}
               transition={spatialSpring}
             >
-              <ProjectShowcase />
-              <InteractivePipeline />
               <ServicesHub />
+              <InteractivePipeline />
               <TurnkeyStudio />
             </motion.div>
           )}
@@ -53,9 +52,8 @@ export function AudiencePageLayout() {
               transition={spatialSpring}
             >
               <RecruiterSnapshot />
-              <ProjectShowcase />
-              <InteractivePipeline />
               <SkillsGrid />
+              <InteractivePipeline />
             </motion.div>
           )}
 
@@ -67,9 +65,8 @@ export function AudiencePageLayout() {
               exit={{ opacity: 0, y: -12 }}
               transition={spatialSpring}
             >
-              <ProjectShowcase />
-              <InteractivePipeline />
               <ServicesHub />
+              <InteractivePipeline />
               <TurnkeyStudio />
               <SkillsGrid />
               <RecruiterSnapshot />

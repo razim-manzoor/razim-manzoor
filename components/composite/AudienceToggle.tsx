@@ -26,7 +26,7 @@ export function AudienceToggle({ mode, onChange }: AudienceToggleProps) {
           aria-pressed={mode === "client"}
         >
           <Sparkles size={14} className={mode === "client" ? "text-emerald-300" : ""} />
-          Projects & Services
+          Services & Solutions
           {mode === "client" && (
             <motion.div
               layoutId="active-audience-pill"
