@@ -52,8 +52,8 @@ export function TurnkeyStudio() {
 
   // Scope Builder State
   const [selectedTracks, setSelectedTracks] = useState<string[]>([
-    "rag-assistant",
-    "turnkey-web",
+    "agentic-workflows",
+    "turnkey-saas",
   ]);
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [timeline, setTimeline] = useState<string>(TIMELINES[1]);

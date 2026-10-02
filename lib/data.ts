@@ -121,47 +121,47 @@ export const USER_DATA: UserData = {
   ],
   focusAreas: [
     {
-      title: "Full-Stack Web Apps & Rapid MVPs",
+      title: "Enterprise AI & Autonomous Agents",
       detail:
-        "SaaS platforms, client portals, and internal tools built with Next.js, React 19, and Supabase. Shipped in weeks, not quarters.",
+        "Production multi-agent workflows, private on-premises model deployments, and semantic search (RAG) across enterprise knowledge bases with strict citation grounding.",
     },
     {
-      title: "Applied AI & Private Local Copilots",
+      title: "Scalable Digital Platforms & Custom SaaS",
       detail:
-        "Private document search, knowledge assistants, and task runners running on local hardware or secure APIs without data leaks.",
+        "Production web applications, internal operational consoles, and high-throughput API architectures built for performance, security, and maintainability.",
     },
     {
-      title: "Workflow & Operations Automation",
+      title: "Enterprise Integration & Workflow Automation",
       detail:
-        "Connecting CRMs, WhatsApp, spreadsheets, and databases with n8n and Python so teams never do repetitive manual data entry again.",
+        "Connecting ERPs, CRMs, financial ledgers, and databases with resilient event-driven pipelines so teams never do manual data re-entry.",
     },
     {
-      title: "Executive Dashboards & BI Engines",
+      title: "Data Intelligence & Executive BI Cockpits",
       detail:
-        "Turning fragmented spreadsheets into clean Power BI reports and automated daily digests that leadership can actually trust.",
+        "Centralized data warehousing, automated ETL pipelines, and executive Power BI dashboards that provide leadership with verified operational visibility.",
     },
   ],
   skills: {
     business: [
-      "Business Requirements & Scope Definition",
-      "Process Optimization & Bottleneck Elimination",
+      "Enterprise Solutions Architecture",
+      "Process Optimization & Bottleneck Removal",
       "Operational Cost Reduction & ROI Modeling",
-      "Executive KPI & Performance Dashboards",
-      "Customer Lifetime Value & Churn Analytics",
-      "Cross-Functional Team & Stakeholder Communication",
+      "Executive KPI & Decision Dashboards",
+      "Unit Economics & Financial Analysis",
+      "Vendor Evaluation & Technical Roadmapping",
     ],
     technical: [
       "Next.js 16 (App Router) & React 19",
-      "TypeScript, JavaScript & Modern Web Standards",
-      "Tailwind CSS v4 & Responsive UI Design",
-      "Python (FastAPI, Pandas, Scikit-learn)",
-      "Local LLMs & On-Premises Ollama",
-      "Document Search (RAG) & Vector Stores (ChromaDB)",
-      "Workflow Automation (n8n, Make, Power Automate)",
-      "SQL, PostgreSQL & Supabase",
-      "Power BI, DAX & Automated Reporting",
-      "REST APIs, Webhooks & Third-Party Integrations",
-      "Git, Vercel & Cloudflare Deployment",
+      "TypeScript, Node.js & Modern Web Standards",
+      "Python (FastAPI, LangGraph, Scikit-learn)",
+      "Multi-Agent Orchestration & Autonomous Workflows",
+      "Private LLMs & On-Premises Inference (vLLM, Ollama)",
+      "Enterprise Semantic Search (RAG) & Vector DBs (Qdrant, ChromaDB)",
+      "Enterprise Integration & Automation (n8n, Webhooks)",
+      "SQL, PostgreSQL & Relational Data Modeling",
+      "Power BI, DAX & Automated BI Pipelines",
+      "REST APIs, Microservices & Docker",
+      "Git, Cloudflare & Edge Cloud Infrastructure",
     ],
   },
   experience: [
@@ -172,10 +172,10 @@ export const USER_DATA: UserData = {
       location: "Dubai, UAE",
       period: "2025 - Present",
       achievements: [
-        "Built automated lead-generation and prospecting pipelines that scrape verified business records into structured databases, cutting manual research time by 80%.",
-        "Engineered internal CRM tracking systems with one-tap WhatsApp reply playbooks, helping sales teams double daily outreach velocity.",
-        "Created Career-Ops, a local-first workspace orchestrating local Qwen LLMs and a Chrome extension to extract job requirements and generate tailored applications on an interactive board.",
-        "Delivered custom client web applications and MVPs on schedule by managing the full technical lifecycle from scoping to production deployment.",
+        "Architected and deployed custom autonomous AI agents and local RAG search pipelines, enabling enterprise teams to query complex documents with strict citation grounding.",
+        "Engineered end-to-end integration pipelines connecting ERPs, CRMs, and financial databases, eliminating manual reconciliation and cross-departmental data silos.",
+        "Delivered full-stack digital platforms, SaaS MVPs, and internal operational portals on schedule, managing the complete lifecycle from technical architecture to production edge deployment.",
+        "Designed centralized data models and executive Power BI reporting cockpits, giving leadership real-time visibility into operational KPIs and cash-flow metrics.",
       ],
     },
     {
