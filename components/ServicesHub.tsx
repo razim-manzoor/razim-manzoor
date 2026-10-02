@@ -7,7 +7,6 @@ import {
   Globe,
   Workflow,
   ChartSpline,
-  Layers,
   ArrowRight,
   ShieldCheck,
   KeyRound,
@@ -18,11 +17,10 @@ import { HANDOVER_GUARANTEES, SERVICES_CATALOG, ServicePillar } from "@/lib/serv
 import { snappySpring, spatialSpring } from "@/lib/motion";
 
 const pillarIcons: Record<string, typeof BrainCircuit> = {
+  "websites-apps": Globe,
   "ai-agents": BrainCircuit,
-  "web-mvps": Globe,
   "workflow-automation": Workflow,
-  "bi-analytics": ChartSpline,
-  "retainers-sprints": Layers,
+  "dashboards-sprints": ChartSpline,
 };
 
 const guaranteeIcons: Record<string, typeof ShieldCheck> = {
@@ -49,7 +47,7 @@ export default function ServicesHub() {
             Services & What I Build
           </h2>
           <p className="mt-3 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Custom AI agents, turnkey web applications, and automated operations built for founders, business owners, and growing teams. Fast delivery in weeks across any modern tech stack with 100% code ownership.
+            Custom AI agents, high-performance websites, turnkey web applications, and automated operations built for founders, business owners, and growing teams. Fast delivery in weeks across any modern tech stack with 100% code ownership.
           </p>
         </div>
 
@@ -170,6 +168,77 @@ export default function ServicesHub() {
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* 3-Step Delivery Workflow */}
+        <div className="mt-14 mb-10">
+          <div className="mb-6">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">
+              Clear & Predictable Delivery
+            </span>
+            <h3 className="text-2xl font-bold tracking-tight text-[var(--foreground)] mt-1">
+              How Working Together Works
+            </h3>
+            <p className="text-sm text-[var(--muted)] mt-1 max-w-2xl leading-relaxed">
+              Simple, transparent progression from day one to launch. Zero surprises, no hidden costs, and total visibility every step of the way.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 relative overflow-hidden flex flex-col justify-between">
+              <span className="text-4xl font-black font-mono text-[var(--muted)]/15 absolute top-4 right-5 select-none pointer-events-none">01</span>
+              <div>
+                <div className="inline-flex items-center justify-center rounded-lg bg-emerald-500/10 px-2.5 py-1 text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 mb-4">
+                  Phase 01
+                </div>
+                <h4 className="font-bold text-base text-[var(--foreground)]">
+                  Scope & Fixed Milestone
+                </h4>
+                <p className="mt-2 text-xs text-[var(--muted)] leading-relaxed">
+                  We translate your business goals into concrete specifications and deliverables. You get a clear timeline and fixed milestone pricing with zero surprise charges.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[var(--border)] text-[11px] font-mono text-[var(--primary)] font-semibold">
+                Turnaround: 24 to 48 hours scoping
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 relative overflow-hidden flex flex-col justify-between">
+              <span className="text-4xl font-black font-mono text-[var(--muted)]/15 absolute top-4 right-5 select-none pointer-events-none">02</span>
+              <div>
+                <div className="inline-flex items-center justify-center rounded-lg bg-[var(--primary)]/10 px-2.5 py-1 text-xs font-mono font-bold text-[var(--primary)] mb-4">
+                  Phase 02
+                </div>
+                <h4 className="font-bold text-base text-[var(--foreground)]">
+                  Rapid Sprint Execution
+                </h4>
+                <p className="mt-2 text-xs text-[var(--muted)] leading-relaxed">
+                  Production-grade build delivered in 1 to 3 weeks across your target tech stack. Continuous async progress updates and staging previews keep you in control.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[var(--border)] text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
+                Turnaround: 1 to 3 week sprints
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 relative overflow-hidden flex flex-col justify-between">
+              <span className="text-4xl font-black font-mono text-[var(--muted)]/15 absolute top-4 right-5 select-none pointer-events-none">03</span>
+              <div>
+                <div className="inline-flex items-center justify-center rounded-lg bg-emerald-500/10 px-2.5 py-1 text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 mb-4">
+                  Phase 03
+                </div>
+                <h4 className="font-bold text-base text-[var(--foreground)]">
+                  100% Handover & Guarantee
+                </h4>
+                <p className="mt-2 text-xs text-[var(--muted)] leading-relaxed">
+                  Full transfer of repositories, cloud hosting accounts, and domain credentials. Includes simple documentation and 14 days of complimentary bug-fix support.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[var(--border)] text-[11px] font-mono text-[var(--primary)] font-semibold">
+                Included: 14-day warranty
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Handover Guarantees Banner */}
         <div className="mt-12 rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-6 md:p-8">
