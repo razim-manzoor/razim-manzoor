@@ -42,11 +42,14 @@ export default function ServicesHub() {
       <div className="container mx-auto px-5 md:px-8">
         {/* Section Header */}
         <div className="mb-12 max-w-3xl">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+            Stack-Agnostic Execution &bull; Rapid Delivery
+          </div>
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
             Services & What I Build
           </h2>
-          <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Custom AI agents, turnkey web applications, and automated operations built for founders, business owners, and growing teams. Fast delivery in weeks with 100% code ownership.
+          <p className="mt-3 text-base text-[var(--muted)] leading-relaxed md:text-lg">
+            Custom AI agents, turnkey web applications, and automated operations built for founders, business owners, and growing teams. Fast delivery in weeks across any modern tech stack with 100% code ownership.
           </p>
         </div>
 
@@ -121,6 +124,9 @@ export default function ServicesHub() {
                     <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                       {item.scopeType}
                     </span>
+                    <span className="text-[10px] font-mono font-semibold text-emerald-600 dark:text-emerald-400">
+                      {item.tech[0]}
+                    </span>
                   </div>
 
                   <h4 className="text-xl font-bold tracking-tight text-[var(--foreground)]">
@@ -140,6 +146,14 @@ export default function ServicesHub() {
                         <CheckCircle2 size={13} className="text-emerald-500 shrink-0 mt-0.5" />
                         <span>{deliv}</span>
                       </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {item.tech.slice(1).map((t) => (
+                      <span key={t} className="rounded-md border border-[var(--border)] bg-[var(--surface-hover)] px-2 py-0.5 text-[10px] font-mono text-[var(--muted)]">
+                        {t}
+                      </span>
                     ))}
                   </div>
                 </div>

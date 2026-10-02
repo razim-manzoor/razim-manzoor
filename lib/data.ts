@@ -77,7 +77,7 @@ export const USER_DATA: UserData = {
     linkedin: "https://www.linkedin.com/in/razim-manzoor",
   },
   summary:
-    "I help founders and business leaders build custom digital platforms, intelligent tools, and automated operations without the months of delay or agency overhead. Combining an MBA in Data Science with hands-on systems engineering, I turn messy operational bottlenecks into clean, working systems in weeks instead of months.",
+    "I help founders and business leaders build custom digital platforms, intelligent tools, and automated operations across any modern tech stack without the months of delay or agency overhead. Combining an MBA in Data Science with hands-on systems engineering, I turn messy operational bottlenecks into clean, working systems in weeks instead of months.",
   detailedBio: [
     "Traditional development is painfully slow. Agencies take months, charge bloated retainers, and rarely understand the underlying business mechanics. I combine MBA strategic scoping (knowing what actually drives margin) with rapid, hands-on engineering execution to design, build, and deploy production software in weeks instead of months.",
     "Based in Dubai on a visit visa with immediate availability. Whether you need a full-time architect, a dedicated technical sprint, or a turnkey system built from scratch, I can jump straight in.",
@@ -106,7 +106,7 @@ export const USER_DATA: UserData = {
     },
   ],
   hiringSignals: [
-    "Ships production web apps, MVPs, and internal tools in weeks instead of months with clean, maintainable architecture.",
+    "Ships production web apps, MVPs, and internal tools in weeks instead of months across any modern tech stack.",
     "Builds practical AI tools and private local document search without runaway API bills or data privacy risks.",
     "Understands the numbers (MBA in Data Science): builds software that directly recovers hours and protects profit margins.",
     "Available immediately in Dubai for on-site, hybrid, or remote full-time roles and contract builds.",
@@ -128,7 +128,7 @@ export const USER_DATA: UserData = {
     {
       title: "Full-Stack Web Apps & Rapid MVPs",
       detail:
-        "Turnkey SaaS platforms, client portals, and bespoke internal tools engineered with Next.js, React, and PostgreSQL. Shipped in 3 to 4 weeks.",
+        "Turnkey SaaS platforms, client portals, and bespoke internal tools engineered across any modern tech stack (React, Next.js, Vue, Node, Python, SQL). Shipped in 3 to 4 weeks.",
     },
     {
       title: "Workflow & Operations Automation",

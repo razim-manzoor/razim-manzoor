@@ -62,7 +62,7 @@ export default function HeroSection() {
               transition={{ ...spatialSpring, delay: 0.15 }}
               className="mt-6 max-w-[54ch] text-base sm:text-lg leading-relaxed text-[var(--foreground)]"
             >
-              MBA in Data Science with hands-on systems engineering. I architect custom digital platforms, automated business pipelines, and private AI systems that eliminate operational bottlenecks—shipped in weeks, not months.
+              MBA in Data Science with hands-on systems engineering. I build across any modern tech stack to deliver custom digital platforms, automated business pipelines, and intelligent tools in weeks instead of months.
             </motion.p>
 
             {/* Primary & Secondary CTAs */}

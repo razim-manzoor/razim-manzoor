@@ -139,7 +139,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Instant lead qualification, FAQ handling, and automated appointment booking",
         description: "An intelligent conversational assistant deployed on WhatsApp, web chat, or Telegram. Engages inbound leads in natural language, answers service questions, qualifies budget and intent, and books meetings directly into your calendar.",
         scopeType: "Fixed Milestone",
-        tech: ["Python", "WhatsApp Cloud API", "OpenAI / Claude API", "Cal.com / Calendly", "Webhooks"],
+        tech: ["Any Modern Stack", "Python / Node.js", "WhatsApp Cloud API", "OpenAI / Claude", "Webhooks"],
         deliverables: [
           "Conversational assistant trained on your services, pricing, and qualification rules",
           "Automated calendar booking and CRM contact creation",
@@ -153,7 +153,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Chat and search across company documents, SOPs, and contracts with citations",
         description: "A private knowledge base assistant that searches your company PDFs, Notion workspaces, handbooks, and client records. Provides accurate answers with exact page and document source references to prevent hallucinations.",
         scopeType: "Fixed Milestone",
-        tech: ["Python", "Qdrant / ChromaDB", "Hybrid Search", "LangChain", "FastAPI"],
+        tech: ["Any Modern Stack", "Python / TypeScript", "Vector DBs (Qdrant / Chroma)", "Hybrid Search", "FastAPI"],
         deliverables: [
           "Automated ingestion pipeline for PDFs, spreadsheets, and documentation",
           "Strict citation grounding showing exact source paragraphs for every answer",
@@ -167,7 +167,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "AI task runners that coordinate research, data extraction, and tool actions",
         description: "Multi-agent systems (LangGraph / CrewAI) that break down complex operational tasks into steps: researching data, verifying constraints, querying databases, and drafting outputs with human approval checkpoints.",
         scopeType: "Turnkey Build",
-        tech: ["Python", "LangGraph", "CrewAI", "FastAPI", "Pydantic"],
+        tech: ["Any Modern Stack", "LangGraph / CrewAI", "Python", "Tool Validation", "Redis"],
         deliverables: [
           "Specialized agent roles for research, validation, and content generation",
           "Human-in-the-loop approval gate before any external action or database write",
@@ -181,7 +181,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Convert unstructured invoices, receipts, and forms into clean database records",
         description: "Multimodal AI pipeline that extracts line items, totals, dates, vendor details, and tax numbers from uploaded PDFs and image scans, validating data against schema rules before exporting.",
         scopeType: "Fixed Milestone",
-        tech: ["Vision LLMs", "Python", "Pydantic", "OCR", "JSON Schema"],
+        tech: ["Any Modern Stack", "Vision AI", "Python", "Pydantic", "Structured JSON Schema"],
         deliverables: [
           "Automated processing pipeline for multi-page invoices, receipts, and contracts",
           "Validation rules with automated flagging for low-confidence fields",
@@ -204,7 +204,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Complete web app with auth, database, payments, and responsive design",
         description: "Full-cycle MVP development designed to get your product in front of real paying users fast. Includes secure authentication, relational database architecture, Stripe billing, and a modern responsive user interface.",
         scopeType: "Turnkey Build",
-        tech: ["Next.js (App Router)", "React 19", "TypeScript", "PostgreSQL / Supabase", "Stripe"],
+        tech: ["Any Modern Stack", "React / Next.js / Vue", "TypeScript / Node / Python", "PostgreSQL / Supabase", "Stripe"],
         deliverables: [
           "Full-stack responsive web application optimized for mobile and desktop",
           "User authentication, passwordless login, and account management",
@@ -219,7 +219,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Branded self-service hub for client onboarding, file sharing, and project tracking",
         description: "A secure, professional client dashboard where your customers can log in to view project milestones, download deliverables, upload required documents, and track invoices in real time.",
         scopeType: "Turnkey Build",
-        tech: ["Next.js", "TypeScript", "Supabase Auth", "Tailwind CSS", "S3 Storage"],
+        tech: ["Any Modern Stack", "Modern Frontend & Auth", "PostgreSQL", "Tailwind CSS", "Cloud Storage"],
         deliverables: [
           "Secure client login with magic links or password authentication",
           "Real-time milestone progress tracker and file upload portal",
@@ -233,7 +233,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Tailored admin consoles and inventory screens that replace messy Google Sheets",
         description: "Bespoke internal web tools built specifically for your team: custom order management consoles, warehouse dispatch screens, customer directories, or approval dashboards with role-based permissions.",
         scopeType: "Turnkey Build",
-        tech: ["React", "TypeScript", "PostgreSQL", "Tailwind CSS", "REST APIs"],
+        tech: ["Any Modern Stack", "React / TypeScript", "PostgreSQL", "REST / GraphQL", "Tailwind CSS"],
         deliverables: [
           "Data grid interface with search, multi-filter, and bulk export capabilities",
           "Role-based staff permissions (Admin, Manager, Staff view)",
@@ -247,7 +247,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Fast, documented API layers connecting your applications and third-party tools",
         description: "Lightweight, resilient backend services built with Python (FastAPI) or Node.js. Handles complex business calculations, webhook routing, data transformations, and caching with sub-100ms response times.",
         scopeType: "Fixed Milestone",
-        tech: ["FastAPI / Node.js", "PostgreSQL", "Redis", "Docker", "OpenAPI"],
+        tech: ["Any Modern Stack", "FastAPI / Node.js / Go", "PostgreSQL", "Redis", "Docker / Cloud"],
         deliverables: [
           "Documented REST API endpoints with interactive Swagger documentation",
           "Redis caching and rate limiting for stability under sudden traffic spikes",
@@ -270,7 +270,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Sync forms, CRMs, spreadsheets, and messaging platforms without manual copy-paste",
         description: "Automated pipelines that connect your disconnected SaaS tools: capturing form submissions, updating HubSpot/Pipedrive, logging records into Airtable, and pinging team channels in real time.",
         scopeType: "Fixed Milestone",
-        tech: ["n8n", "Make.com", "HubSpot / Pipedrive", "Airtable", "Slack / WhatsApp API"],
+        tech: ["Any Modern Stack", "n8n / Make", "Python", "Enterprise REST APIs", "Webhooks"],
         deliverables: [
           "Multi-step automated scenario with robust error handling and fallback alerts",
           "Real-time bidirectional synchronization between your primary tools",
@@ -284,7 +284,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Qualify website leads and ping sales reps in under 30 seconds",
         description: "An automated lead acceleration pipeline: when a prospect submits a website form, the system immediately enriches company details, scores the lead, creates a CRM deal, and sends an instant WhatsApp alert to the assigned rep with a pre-filled chat link.",
         scopeType: "Fixed Milestone",
-        tech: ["n8n", "Python", "WhatsApp Cloud API", "HubSpot / Pipedrive", "Webhooks"],
+        tech: ["Any Modern Stack", "n8n / Python", "WhatsApp Cloud API", "CRM Webhooks", "Instant Alerts"],
         deliverables: [
           "Instant lead validation, enrichment, and spam filtering",
           "Automatic deal creation and round-robin sales rep assignment",
@@ -298,7 +298,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Automate milestone invoices, payment receipts, and accounting sync",
         description: "End-to-end payment workflow connecting Stripe checkout links or bank feeds directly into QuickBooks or Xero. Generates branded tax invoices, logs accounting entries, and triggers polite payment reminders.",
         scopeType: "Fixed Milestone",
-        tech: ["Stripe Invoicing API", "QuickBooks / Xero APIs", "Python", "Webhooks"],
+        tech: ["Any Modern Stack", "Stripe API", "QuickBooks / Xero APIs", "Python", "Webhooks"],
         deliverables: [
           "Automated invoice generation upon contract signing or milestone triggers",
           "Automatic payment receipts and ledger reconciliation",
@@ -312,7 +312,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Extract clean, verified market listings and business directories into databases",
         description: "Automated scraping and data extraction engines in Python that pull public business directories, real estate listings, or competitor pricing into clean, structured spreadsheets or relational databases on a scheduled basis.",
         scopeType: "Fixed Milestone",
-        tech: ["Python", "Playwright / BeautifulSoup", "PostgreSQL / Airtable", "Proxy Rotation"],
+        tech: ["Any Modern Stack", "Python", "Playwright / Crawlers", "PostgreSQL / Airtable", "Proxy Rotation"],
         deliverables: [
           "Resilient scraping pipeline with anti-blocking and proxy handling",
           "Data cleaning and deduplication logic ensuring pristine datasets",
@@ -335,7 +335,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Live revenue, pipeline, and operational performance without manual spreadsheets",
         description: "Custom business intelligence dashboards consolidating sales, marketing spend, and operational data into clear, interactive visual reports. Features automated data refreshes and mobile-friendly layouts.",
         scopeType: "Fixed Milestone",
-        tech: ["Power BI", "DAX", "SQL", "Power Query", "PostgreSQL"],
+        tech: ["Any Modern Stack", "Power BI / Metabase", "DAX / SQL", "Power Query", "PostgreSQL"],
         deliverables: [
           "Interactive dashboard with drill-down views by product, channel, and timeframe",
           "Scheduled automatic data refreshes so numbers are always current",
@@ -349,7 +349,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Automated tracking of MRR, customer acquisition cost, and lifetime value",
         description: "Analytical models that connect transactional databases to track recurring revenue (MRR/ARR), churn cohorts, customer acquisition costs (CAC), and gross margins automatically.",
         scopeType: "Fixed Milestone",
-        tech: ["Python (Pandas)", "SQL", "Power BI", "Financial Modeling"],
+        tech: ["Any Modern Stack", "Python (Pandas)", "SQL", "Power BI", "Financial Modeling"],
         deliverables: [
           "Automated customer cohort retention and churn analysis",
           "Unit economics breakdown by acquisition channel and customer tier",
@@ -363,7 +363,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Key operational metrics and anomalies delivered directly to WhatsApp or Slack",
         description: "Automated daily or weekly summary digests querying your database or CRM and sending a clean executive snapshot (daily sales, cash collected, pending tickets, hot leads) straight to leadership channels.",
         scopeType: "Fixed Milestone",
-        tech: ["Python", "SQL", "Slack / WhatsApp API", "Scheduled Cron"],
+        tech: ["Any Modern Stack", "Python / SQL", "Slack / WhatsApp API", "Scheduled Cron", "Webhooks"],
         deliverables: [
           "Custom morning digest format customized to your leadership priorities",
           "Real-time threshold alerts for sudden dips in conversion or failed payments",
@@ -386,7 +386,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "High-focus engineering sprint to ship a specific tool, integration, or feature",
         description: "A fast, dedicated 2-week development sprint focused on building and deploying a single high-priority feature, custom AI tool, or integration into your existing codebase.",
         scopeType: "Fixed Milestone",
-        tech: ["Full Stack", "Python", "Next.js", "AI Integration", "Fast Delivery"],
+        tech: ["Any Modern Stack", "Polyglot Full-Stack", "AI Integrations", "Rapid Production Delivery"],
         deliverables: [
           "Pre-sprint scoping session to lock in requirements and acceptance criteria",
           "Daily async updates and rapid prototype iteration",
@@ -400,7 +400,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Dedicated development hours for continuous improvements and priority support",
         description: "An ongoing monthly technical partnership providing dedicated hours for prompt tuning, adding new automation workflows, building small features, and keeping all your systems running smoothly.",
         scopeType: "Monthly Retainer",
-        tech: ["Full Stack", "n8n / Python", "Prompt Tuning", "Direct Chat Channel"],
+        tech: ["Any Modern Stack", "Full Stack & Automations", "Prompt Tuning", "Direct Chat Support"],
         deliverables: [
           "Dedicated monthly engineering hours committed to your priority backlog",
           "Direct Slack or WhatsApp channel for fast turnarounds and questions",
@@ -414,7 +414,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
         tagline: "Clear technical roadmap, database schema, and tool selection before you build",
         description: "A comprehensive technical teardown of your product or automation idea. Evaluates technical feasibility, designs the database schema and API flow, selects the most cost-effective tools, and provides a clear milestone plan.",
         scopeType: "Fixed Milestone",
-        tech: ["System Architecture", "Database Design", "API Mapping", "Tech Stack Selection"],
+        tech: ["Any Modern Stack", "System Design & Schemas", "API Mapping", "Tech Stack Selection"],
         deliverables: [
           "Written architecture blueprint with recommended tools, schemas, and API flows",
           "Realistic timeline and budget breakdown avoiding common technical traps",

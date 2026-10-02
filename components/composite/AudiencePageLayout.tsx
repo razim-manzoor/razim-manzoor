@@ -38,7 +38,6 @@ export function AudiencePageLayout() {
               transition={spatialSpring}
             >
               <ServicesHub />
-              <InteractivePipeline />
               <TurnkeyStudio />
             </motion.div>
           )}
@@ -66,8 +65,8 @@ export function AudiencePageLayout() {
               transition={spatialSpring}
             >
               <ServicesHub />
-              <InteractivePipeline />
               <TurnkeyStudio />
+              <InteractivePipeline />
               <SkillsGrid />
               <RecruiterSnapshot />
             </motion.div>
