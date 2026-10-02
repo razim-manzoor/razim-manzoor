@@ -50,9 +50,9 @@ export default function HeroSection() {
               initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...spatialSpring, delay: 0.1 }}
-              className="mt-3 text-lg sm:text-xl font-bold uppercase tracking-wider text-[var(--muted)]"
+              className="mt-3 text-base sm:text-lg font-bold uppercase tracking-wider text-[var(--muted)]"
             >
-              AI Solutions Architect & Systems Strategist
+              Business Analyst | Full-Stack Developer | AI & Systems Builder
             </motion.div>
 
             {/* Subtext */}
@@ -62,7 +62,7 @@ export default function HeroSection() {
               transition={{ ...spatialSpring, delay: 0.15 }}
               className="mt-6 max-w-[54ch] text-base sm:text-lg leading-relaxed text-[var(--foreground)]"
             >
-              MBA in Data Science with hands-on systems engineering. I build across any modern tech stack to deliver custom websites, digital platforms, automated business pipelines, and intelligent tools in weeks instead of months.
+              MBA in Data Science with hands-on systems engineering. Delivering custom web platforms, automated business workflows, AI tools, and data analytics across any modern tech stack. Available immediately in Dubai.
             </motion.p>
 
             {/* Primary & Secondary CTAs */}
@@ -101,13 +101,20 @@ export default function HeroSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl">
               <Image
                 src="/profilepic.jpeg"
-                alt="Razim Manzoor - AI Solutions Architect"
+                alt="Razim Manzoor - Business Analyst & Systems Engineer"
                 fill
                 priority
                 sizes="(min-width: 1024px) 340px, 90vw"
                 className="object-cover object-top filter grayscale-[0.04] contrast-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/40 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/70 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-3 left-3 right-3 rounded-lg border border-[var(--border)] bg-[var(--surface)]/90 backdrop-blur-md px-3 py-2 flex items-center justify-between text-[11px] font-mono shadow-sm">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="font-bold text-[var(--foreground)]">Dubai, UAE</span>
+                </div>
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">Immediate Joiner</span>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -50,7 +50,7 @@ export default function NavBar() {
           >
             Razim<span className="text-[var(--primary)]">.</span>
             <span className="hidden sm:inline text-[10px] font-mono font-bold text-[var(--muted)] border-l border-[var(--border)] pl-2">
-              AI Solutions Architect
+              Business Analyst & Systems Builder
             </span>
           </a>
 

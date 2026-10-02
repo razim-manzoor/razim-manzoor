@@ -18,7 +18,7 @@ export default function Footer() {
               Razim<span className="text-[var(--primary)]">.</span>
             </a>
             <p className="text-xs text-[var(--muted)] leading-relaxed">
-              AI Solutions Architect & Systems Strategist based in Dubai, UAE. Available for full-time roles and client projects.
+              Business Analyst, Full-Stack Developer & Systems Builder based in Dubai, UAE. Available for full-time roles and client projects.
             </p>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />

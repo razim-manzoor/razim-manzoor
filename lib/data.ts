@@ -68,19 +68,19 @@ export interface UserData {
 
 export const USER_DATA: UserData = {
   name: "Razim Manzoor",
-  role: "MBA | AI Solutions Architect & Systems Strategist",
+  role: "Business Analyst, Full-Stack Developer & AI Systems Engineer (MBA)",
   location: "Dubai, UAE",
-  availability: "Visit Visa | Available immediately in Dubai",
+  availability: "Visit Visa (Immediate Joiner) | Dubai, UAE",
   contact: {
     email: "manzoorrazim@gmail.com",
     phone: "+971 50 300 1697",
     linkedin: "https://www.linkedin.com/in/razim-manzoor",
   },
   summary:
-    "I help founders and business leaders build custom websites, digital platforms, intelligent tools, and automated operations across any modern tech stack without the months of delay or agency overhead. Combining an MBA in Data Science with hands-on systems engineering, I turn messy operational bottlenecks into clean, working systems in weeks instead of months.",
+    "Results-oriented MBA in Data Science & Analytics with commercial acumen and hands-on execution across business analysis, full-stack web development, and intelligent automation. Experienced in identifying operational bottlenecks, conducting ROI analysis, and engineering scalable digital solutions across any modern tech stack. Based in Dubai on a visit visa with immediate availability.",
   detailedBio: [
-    "Traditional development is painfully slow. Agencies take months, charge bloated retainers, and rarely understand the underlying business mechanics. I combine MBA strategic scoping (knowing what actually drives margin) with rapid, hands-on engineering execution to design, build, and deploy production software in weeks instead of months.",
-    "Based in Dubai on a visit visa with immediate availability. Whether you need a full-time architect, a dedicated technical sprint, or a turnkey system built from scratch, I can jump straight in.",
+    "I bridge business strategy and hands-on technical execution. With an MBA in Data Science and deep engineering fluency across full-stack web platforms, Python, Power BI, and workflow automation, I identify core operational bottlenecks and translate complex requirements into clean, working production systems.",
+    "Based in Dubai on a visit visa with immediate availability and zero notice period. Open to full-time, contract, or hybrid roles across Business Analyst, Full-Stack Developer, AI/Automation Engineer, and Data/BI positions at Junior, Mid, or Senior levels.",
   ],
   stats: [
     { label: "Delivery Speedup", value: "Weeks vs Months" },
@@ -90,105 +90,105 @@ export const USER_DATA: UserData = {
   recruiterSnapshot: [
     {
       label: "Target Roles",
-      value: "AI Solutions Architect, Enterprise AI & Automation Specialist, Senior Systems Analyst",
+      value: "Business Analyst, Full-Stack Developer, AI & Automation Engineer, Software Engineer, Data / BI Analyst, Systems Analyst",
+    },
+    {
+      label: "Seniority & Availability",
+      value: "Flexible across Junior, Mid-Level, and Senior roles | Immediate joining in Dubai with zero notice period",
     },
     {
       label: "Work Authorization",
-      value: "Visit Visa, available immediately in Dubai with zero notice period",
+      value: "Visit Visa (Immediate Joiner), open to on-site, hybrid, or remote positions in Dubai & UAE",
     },
     {
-      label: "Core Competency",
-      value: "AI Solutions Architecture, Full-Stack Engineering, Python, Local RAG, and Workflow Automation",
-    },
-    {
-      label: "Education Background",
-      value: "MBA in Data Science & Analytics + B.Com in Computer Applications",
+      label: "Core Competencies",
+      value: "Business Analysis, Process Mining, Full-Stack Web Development, Power BI (Advanced DAX), Python, SQL, and Intelligent Automation",
     },
   ],
   hiringSignals: [
-    "Ships custom websites, production web apps, MVPs, and internal tools in weeks instead of months across any modern tech stack.",
-    "Builds practical AI tools and private local document search without runaway API bills or data privacy risks.",
-    "Understands the numbers (MBA in Data Science): builds software that directly recovers hours and protects profit margins.",
-    "Available immediately in Dubai for on-site, hybrid, or remote full-time roles and contract builds.",
+    "Flexible on role scope and seniority: open to Business Analyst, Full-Stack Developer, AI/Automation, or Data/BI roles with immediate joining in Dubai.",
+    "Proven track record in requirement elicitation, process mining, and translating complex executive workflows into scalable digital solutions.",
+    "Hands-on builder across modern tech stacks (React, Next.js, Python, SQL, Power BI, n8n, Playwright RPA) delivering web apps and tools in weeks.",
+    "Commercial acumen (MBA in Data Science & Analytics): conducts ROI analysis and builds systems that directly recover hours and protect margins.",
+    "Proven enterprise execution: delivered client workflows under official IBM partnership initiatives, Power Automate, and Azure cloud.",
   ],
   proofPoints: [
     "MBA in Data Science & Analytics",
-    "High-Performance Websites & MVPs",
-    "Private AI & Local Document Search",
-    "n8n & Python Workflow Automation",
-    "Executive Power BI Dashboards",
-    "Dubai Visit Visa, Immediate Joining",
+    "Business Analysis & Process Mining",
+    "Full-Stack Web & MVP Development",
+    "Power BI (Advanced DAX) & SQL Pipelines",
+    "AI Agents, Local RAG & RPA Automation",
+    "Dubai Visit Visa, Immediate Joiner",
   ],
   focusAreas: [
     {
-      title: "AI Agents & Intelligent Copilots",
+      title: "Business Analysis & Strategic Scoping",
       detail:
-        "24/7 conversational sales agents on WhatsApp and web, custom internal knowledge search (RAG), and autonomous task runners built to handle repetitive operational workflows.",
+        "Requirement elicitation, process mining across multi-tier client operations, KPI modeling, and conducting ROI analyses to eliminate operational bottlenecks and protect margins.",
     },
     {
-      title: "Websites & Digital Platforms",
+      title: "Websites & Full-Stack Web Platforms",
       detail:
-        "High-performance marketing websites, turnkey SaaS platforms, and client portals engineered across any modern tech stack (React, Next.js, Vue, Node, Python, SQL). Shipped in weeks, not quarters.",
+        "High-performance business websites, turnkey SaaS platforms, and client portals engineered across any modern tech stack (React, Next.js, Vue, Node, Python, SQL). Shipped in weeks, not quarters.",
     },
     {
-      title: "Workflow & Operations Automation",
+      title: "AI Agents & Intelligent Automation",
       detail:
-        "Connecting CRMs, spreadsheets, messaging apps, and billing gateways with n8n and Python so teams eliminate manual data re-entry completely.",
+        "24/7 conversational sales agents on WhatsApp and web, private on-premises document intelligence (Local RAG), and automated workflows with n8n, Power Automate, and Playwright RPA.",
     },
     {
-      title: "Business Intelligence & Decision Dashboards",
+      title: "Data Ecosystem & Decision Dashboards",
       detail:
-        "Turning fragmented spreadsheets into interactive Power BI dashboards and automated daily digests that provide leadership with verified operational visibility.",
+        "Automated data pipelines in Python and SQL, customer segmentation models, and interactive Power BI executive dashboards slashing reporting latency from days to hours.",
     },
   ],
   skills: {
     business: [
-      "Enterprise Solutions Architecture",
-      "Process Optimization & Bottleneck Removal",
-      "Operational Cost Reduction & ROI Modeling",
-      "Executive KPI & Decision Dashboards",
-      "Unit Economics & Financial Analysis",
+      "Business Strategy & Strategic Planning",
+      "Requirement Elicitation & Stakeholder Management",
+      "Process Mining & Bottleneck Removal",
+      "ROI Analysis & Financial Modeling",
+      "KPI Modeling & Executive Decision Dashboards",
       "Vendor Evaluation & Technical Roadmapping",
     ],
     technical: [
-      "Next.js 16 (App Router) & React 19",
-      "TypeScript, Node.js & Modern Web Standards",
-      "Python (FastAPI, LangGraph, Scikit-learn)",
-      "Multi-Agent Orchestration & Autonomous Workflows",
-      "Private LLMs & On-Premises Inference (vLLM, Ollama)",
-      "Enterprise Semantic Search (RAG) & Vector DBs (Qdrant, ChromaDB)",
-      "Enterprise Integration & Automation (n8n, Webhooks)",
-      "SQL, PostgreSQL & Relational Data Modeling",
-      "Power BI, DAX & Automated BI Pipelines",
-      "REST APIs, Microservices & Docker",
-      "Git, Cloudflare & Edge Cloud Infrastructure",
+      "Power BI (Advanced DAX, Power Query) & Tableau",
+      "Python (Pandas, NumPy, Scikit-learn, FastAPI)",
+      "SQL (PostgreSQL, MS SQL) & Relational Data Modeling",
+      "Next.js 16, React 19, TypeScript & Modern Web Standards",
+      "Generative AI, Local RAG Architectures & Prompt Engineering",
+      "Autonomous Workflow Agents, n8n & Webhooks",
+      "Power Automate, UiPath RPA & Playwright Automation",
+      "IBM BAW (Business Automation Workflow)",
+      "Microsoft Azure Cloud Infrastructure",
+      "Git, REST APIs & Docker",
     ],
   },
   experience: [
     {
       id: 0,
-      role: "Independent AI & Solutions Architect",
+      role: "Independent AI & Business Solutions Consultant",
       company: "Self-Employed",
       location: "Dubai, UAE",
       period: "2025 - Present",
       achievements: [
-        "Architected and deployed custom autonomous AI agents and local RAG search pipelines, enabling enterprise teams to query complex documents with strict citation grounding.",
-        "Engineered end-to-end integration pipelines connecting ERPs, CRMs, and financial databases, eliminating manual reconciliation and cross-departmental data silos.",
-        "Delivered full-stack digital platforms, SaaS MVPs, and internal operational portals on schedule, managing the complete lifecycle from technical architecture to production edge deployment.",
-        "Designed centralized data models and executive Power BI reporting cockpits, giving leadership real-time visibility into operational KPIs and cash-flow metrics.",
+        "Reduced sales prospecting cycle time by 80% by architecting an automated lead intelligence web app utilizing Playwright RPA to scrape map targets and migrate verified records directly into client data stores.",
+        "Engineered an end-to-end sales enablement CRM featuring embedded call/WhatsApp playbooks and deal-tracking dashboards, boosting daily outbound sales outreach capacity by 2x.",
+        "Engineered Career-Ops, a local-first workspace orchestrating local Qwen LLMs and a custom Chrome extension to extract JDs, generate ATS-tailored LaTeX resumes, and manage pipeline velocity across interactive Kanban views.",
+        "Delivered a bespoke client web platform with 100% on-schedule milestone execution by managing the full technical lifecycle from stakeholder requirements gathering to deployment.",
       ],
     },
     {
       id: 1,
-      role: "Data Strategy Associate (Industrial Trainee)",
+      role: "Data Science Intern",
       company: "Luminar Technolab",
-      location: "Kochi, India",
+      location: "Kerala, India",
       period: "Jun 2024 - Mar 2025",
       achievements: [
-        "Built analytical data pipelines in Python and SQL to extract actionable insights from raw company datasets.",
-        "Trained a customer segmentation model (RFM) that helped sales teams identify prioritized commercial accounts.",
-        "Converted messy legacy spreadsheets into automated Power BI dashboards, reducing reporting turnaround from 3 days to under 2 hours.",
-        "Earned A+ distinction in Enterprise Data Science and Python Systems.",
+        "Enhanced forecasting throughput and predictive accuracy across business test scenarios by developing scalable data and analytics pipelines in Python and SQL.",
+        "Projected a 15% revenue uplift for targeted sales campaigns by engineering a predictive customer segmentation machine learning pipeline.",
+        "Slashed reporting latency by 95% (from 3 days to under 2 hours) by orchestrating the end-to-end migration of legacy reporting workflows to interactive Power BI dashboards.",
+        "Eliminated reporting anomalies and ensured high-fidelity executive metrics by engineering automated data validation scripts across multi-source datasets.",
       ],
     },
     {
@@ -198,10 +198,11 @@ export const USER_DATA: UserData = {
       location: "Kochi, India",
       period: "Nov 2023 - May 2024",
       achievements: [
-        "Automated repetitive accounts-payable workflows using Power Automate, reducing manual invoice handling time by 45%.",
-        "Mapped operational bottlenecks across internal business processes to eliminate multi-day communication lags.",
-        "Constructed executive HR and workforce dashboards tracking headcount, retention, and department KPIs.",
-        "Configured secure Azure cloud integrations and structured data logging.",
+        "Delivered enterprise consulting and workflow solutions for regional corporate clients under Resemble Systems' official IBM Partnership, leveraging IBM BAW and AI automation.",
+        "Slashed repetitive manual data processing time by 45% by spearheading a finance process automation initiative using Power Automate.",
+        "Drove a 20% cycle time efficiency gain by conducting process mining across multi-tier client operations to identify and eliminate workflow bottlenecks.",
+        "Guided executive staffing and retention decisions by architecting interactive HR analytics dashboards in Power BI unifying workforce engagement and attrition metrics.",
+        "Ensured operational high availability and enterprise security compliance by deploying scalable cloud automation modules on Microsoft Azure.",
       ],
     },
   ],
@@ -242,21 +243,21 @@ export const USER_DATA: UserData = {
         "Slashed lead response time from hours to under 30 seconds, eliminated lead drop-off, and saved sales reps 10+ hours of manual data entry every week.",
     },
     {
-      title: "VaultDoc: Private Document Intelligence",
+      title: "Local RAG: Secure Enterprise Document Intelligence",
       metric: "100% Private / 0 Cloud API Fees",
       serviceTrack: "Applied AI & Local Models",
-      tech: ["Ollama", "DeepSeek", "ChromaDB", "LangChain", "Python"],
+      tech: ["Ollama", "DeepSeek", "ChromaDB", "BM25 Hybrid Search", "Python"],
       link: "https://www.linkedin.com/posts/razim-manzoor_rag-llm-ai-activity-7313875466493259776-90vf",
       description:
-        "A private on-premises AI assistant that lets internal teams search and chat with confidential contracts, SOPs, and board packets with zero data leaving the company network.",
+        "A privacy-first retrieval-augmented generation (RAG) assistant allowing secure querying of internal PDFs and documents with zero external cloud exposure.",
       caseStudy:
-        "Engineered with Ollama, ChromaDB, and open-weights models running completely on local hardware. Performs vector search across hundreds of PDFs with exact page-level citations.",
+        "Engineered with Ollama, DeepSeek, and ChromaDB vector search running locally. Combines vector embeddings with BM25 hybrid search to ensure high retrieval precision and sub-second query response times.",
       problem:
-        "Companies have hundreds of pages of confidential contracts and internal manuals, but strict data privacy rules prevent them from uploading sensitive files to ChatGPT or third-party cloud tools.",
+        "Companies possess sensitive contracts and internal manuals, but strict data compliance prevents them from uploading confidential files to third-party cloud APIs.",
       solution:
-        "A completely isolated, local-first search assistant that indexes internal documents and answers complex questions locally with exact source citations.",
+        "A completely isolated, local-first search assistant that indexes internal documents and answers complex operational questions with verified source citations.",
       impact:
-        "Guarantees 100% data privacy with zero bytes sent to public clouds, cuts internal document lookup time from 40 minutes to 15 seconds, and has zero recurring API token costs.",
+        "Guarantees 100% data privacy with zero bytes sent to public clouds, cuts internal document lookup time from 40 minutes to 15 seconds, and operates with zero recurring API fees.",
     },
     {
       title: "LaunchPad: Rapid Production SaaS Platform",
@@ -271,20 +272,20 @@ export const USER_DATA: UserData = {
       problem:
         "Founders and businesses waste 4-6 months and tens of thousands of dollars waiting for slow agencies just to build a functional web platform or customer portal.",
       solution:
-        "A modern full-stack web application engineered with modern AI-accelerated workflows, shipping auth, database, payments, and dashboards in days instead of months.",
+        "A modern full-stack web application engineered for rapid delivery, shipping auth, database, payments, and dashboards in days instead of months.",
       impact:
         "Delivered a complete, deployable platform in under 2 weeks, allowing the client to start onboarding users and testing market demand immediately without burning runway.",
     },
     {
-      title: "CashFlow Pulse: Automated Invoicing & AR",
-      metric: "15+ Hrs/Wk Saved",
+      title: "LiquidityAI: Automated Accounts Receivable Engine",
+      metric: "80% Follow-Up Effort Saved",
       serviceTrack: "Business Automation & Finance",
-      tech: ["Python", "Pandas", "Streamlit", "SMTP / SendGrid", "REST APIs"],
+      tech: ["Python", "Pandas", "Streamlit", "Multi-Agent Logic", "REST APIs"],
       link: "https://www.linkedin.com/posts/razim-manzoor_the-operational-efficiency-post-activity-7411345989959147520-ghxo",
       description:
-        "An automated receivables tool that syncs overdue invoices, groups clients by payment habits, and triggers polite, staged reminders so finance teams stop chasing late payments manually.",
+        "An autonomous Python workflow for overdue invoice recovery that reduces routine accounting follow-up effort by 80% while preserving client relationships.",
       caseStudy:
-        "Built with Python and Streamlit, this tool automatically parses aging invoices and flags delinquent balances with tiered reminder schedules tailored to client relationship tiers.",
+        "Built with Python and Streamlit, implementing dual-tier risk prioritization (VIP vs. High Risk) and a human-in-the-loop review portal for high-value accounts.",
       problem:
         "Finance teams spend 15+ hours every week manually cross-referencing bank spreadsheets and drafting repetitive, awkward reminder emails for overdue accounts.",
       solution:
@@ -311,12 +312,11 @@ export const USER_DATA: UserData = {
     },
   ],
   certifications: [
-    "Google Advanced Data Analytics Professional Certificate",
-    "Generative AI with Large Language Models (Coursera)",
-    "Google Data Analytics Specialization",
-    "KPMG Data Analytics Consulting Virtual Internship",
-    "Accenture Data Analytics & Visualization Virtual Experience",
-    "1st Place, Marketing Event - Encore 2020",
-    "3rd Place, Marketing Event - Manaquest 2020",
+    "Google Advanced Data Analytics Professional Certificate (Coursera)",
+    "Generative AI with Large Language Models (DeepLearning.AI / Coursera)",
+    "Google Data Analytics Specialisation (Coursera)",
+    "KPMG Data Analytics Consulting Virtual Internship (Forage)",
+    "Accenture Data Analytics & Visualisation Virtual Experience (Forage)",
+    "1st Place, Strategic Marketing Case Competition (Encore 2020)",
   ],
 };

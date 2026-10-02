@@ -17,6 +17,44 @@ export default function RecruiterSnapshot() {
           </p>
         </div>
 
+        {/* Open Roles & Seniority Flexibility Banner */}
+        <div className="mb-8 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5 md:p-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Immediate Joining in Dubai &bull; Visit Visa &bull; Zero Notice Period
+              </div>
+              <h3 className="text-lg md:text-xl font-bold tracking-tight text-[var(--foreground)]">
+                Open to Full-Time, Contract, or Hybrid Roles Across All Related Disciplines
+              </h3>
+              <p className="mt-1 text-xs md:text-sm text-[var(--muted)] max-w-2xl leading-relaxed">
+                Flexible on title, scope, and seniority (Junior, Mid-Level, or Senior). Available immediately for on-site or hybrid teams in Dubai and across the UAE.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 max-w-md">
+              {[
+                "Business Analyst",
+                "Full-Stack Developer",
+                "AI & Automation Engineer",
+                "Software Engineer",
+                "Data & BI Analyst",
+                "Systems Analyst",
+              ].map((role) => (
+                <span
+                  key={role}
+                  className="rounded-md border border-emerald-500/30 bg-[var(--surface)] px-2.5 py-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400"
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           {/* Left Column: Quick Snapshot Facts */}
           <div className="space-y-6">
