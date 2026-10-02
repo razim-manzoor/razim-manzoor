@@ -90,17 +90,17 @@ export function TurnkeyStudio() {
       selectedTracks.includes(t.id)
     ).map((t) => t.label);
 
-    return `*Project Inquiry & Scope Specification*
-*Client / Company:* ${companyName.trim() || "Not specified"}
+    return `*Project Inquiry & Scope*
+*Name / Company:* ${companyName.trim() || "Not specified"}
 *Contact:* ${contactInfo.trim() || "Not specified"}
-*Delivery Tracks (${selectedTracks.length}):*
+*Selected Areas (${selectedTracks.length}):*
 ${selectedNames.map((n) => `- ${n}`).join("\n")}
 *Preferred Timeline:* ${timeline}
-${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
-*Handover Guarantees Requested:*
-- 14-Day Defect Warranty on delivered code
-- 100% IP, repository, and credential vesting
-- Operational system runbooks`;
+${projectNotes.trim() ? `*Project Notes:*\n${projectNotes.trim()}` : ""}
+*Includes:*
+- 14 days of bug-fix support
+- 100% code & asset ownership
+- Clear walkthrough documentation`;
   };
 
   const handleCopyScope = () => {
@@ -121,13 +121,13 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
         {/* Section Header */}
         <div className="mb-10 max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-3">
-            <Sparkles size={13} /> Interactive Engagement Suite
+            <Sparkles size={13} /> Project Estimator & Scope Builder
           </div>
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Turnkey Solutions Studio
+            Start a Project
           </h2>
           <p className="mt-3 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Configure your technical sprint scope or model your operational payback timeline in AED before scheduling an architecture call.
+            Select the services you need or calculate the hours automation could save your team. Then send a quick message directly to my WhatsApp.
           </p>
         </div>
 
@@ -151,7 +151,7 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                 : "border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"
             }`}
           >
-            <Calculator size={15} /> 2. Simulate Payback & ROI
+            <Calculator size={15} /> 2. Time Savings Calculator
           </button>
         </div>
 
@@ -252,10 +252,10 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-[var(--border)] pb-3">
                   <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--foreground)]">
-                    Sprint Scope Summary
+                    Project Scope Summary
                   </h3>
                   <span className="text-xs font-mono text-emerald-500 font-bold">
-                    {selectedTracks.length} Tracks Selected
+                    {selectedTracks.length} Selected
                   </span>
                 </div>
 
@@ -266,7 +266,7 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. Faisal Al-Maktoum / Apex Logistics"
+                      placeholder="e.g. Faisal / Apex Logistics"
                       value={companyName}
                       onChange={(e) => setCompanyName(e.target.value)}
                       className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] px-3 py-2 text-xs text-[var(--foreground)] focus:border-[var(--primary)] focus:outline-hidden"
@@ -275,11 +275,11 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
 
                   <div>
                     <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-1">
-                      Work Email / WhatsApp
+                      Email / WhatsApp
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. faisal@apexlogistics.ae or +971 50..."
+                      placeholder="e.g. faisal@example.com or +971 50..."
                       value={contactInfo}
                       onChange={(e) => setContactInfo(e.target.value)}
                       className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] px-3 py-2 text-xs text-[var(--foreground)] focus:border-[var(--primary)] focus:outline-hidden"
@@ -288,11 +288,11 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
 
                   <div>
                     <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-1">
-                      Specific Requirements / Current Bottleneck
+                      Project Notes / What You Need
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Describe current workflow friction, team size, or target integration..."
+                      placeholder="Describe what you want to build or automate..."
                       value={projectNotes}
                       onChange={(e) => setProjectNotes(e.target.value)}
                       className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] p-3 text-xs text-[var(--foreground)] focus:border-[var(--primary)] focus:outline-hidden resize-none"
@@ -303,9 +303,9 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                 {/* Handover Notice */}
                 <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3 text-[11px] text-[var(--muted)] space-y-1">
                   <div className="font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
-                    <ShieldCheck size={13} /> Institutional Handover Guarantees
+                    <ShieldCheck size={13} /> Clear Delivery Standard
                   </div>
-                  <p>Includes 14-day defect warranty, 100% IP vesting, and operations runbook.</p>
+                  <p>Includes 14 days of bug-fix support, 100% code ownership, and clear walkthrough docs.</p>
                 </div>
               </div>
 
@@ -316,7 +316,7 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                   onClick={handleWhatsAppDispatch}
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all cursor-pointer"
                 >
-                  <Send size={14} /> Send WhatsApp Scope
+                  <Send size={14} /> Send via WhatsApp
                 </button>
                 <button
                   type="button"
@@ -324,7 +324,7 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] hover:bg-[var(--surface)] px-4 py-3 text-xs font-bold uppercase tracking-wider text-[var(--foreground)] transition-colors cursor-pointer"
                 >
                   {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
-                  {copied ? "Copied" : "Copy Scope"}
+                  {copied ? "Copied" : "Copy Details"}
                 </button>
               </div>
             </div>
@@ -438,10 +438,10 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                 <div className="flex items-center justify-between border-b border-[var(--border)] pb-4 mb-6">
                   <div>
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)]">
-                      Capital Model
+                      Estimated Value
                     </span>
                     <h3 className="text-xl font-bold text-[var(--foreground)]">
-                      Financial Return & Payback
+                      Time Saved & Payback
                     </h3>
                   </div>
                   <TrendingUp size={22} className="text-emerald-500" />
@@ -450,19 +450,19 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                 <div className="grid gap-4 sm:grid-cols-2 mb-6">
                   <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-4">
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)]">
-                      Annual Capacity Recovered
+                      Annual Hours Saved
                     </span>
                     <div className="mt-1 text-2xl font-black font-mono text-[var(--primary)] tabular-nums">
                       <NumberTicker value={Math.round(hours * 52 * (automationRate / 100))} suffix=" hrs/yr" />
                     </div>
                     <p className="mt-1 text-[11px] text-[var(--muted)]">
-                      Reallocated to revenue operations
+                      Hours freed from repetitive tasks
                     </p>
                   </div>
 
                   <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                      Annual Net Savings
+                      Estimated Annual Savings
                     </span>
                     <div className="mt-1 text-2xl font-black font-mono text-emerald-600 dark:text-emerald-400 tabular-nums">
                       $<NumberTicker value={annualSavings} />
@@ -476,7 +476,7 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                 <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-4">
                   <div className="flex items-baseline justify-between">
                     <span className="text-xs font-bold text-[var(--foreground)]">
-                      Estimated Payback Velocity:
+                      Estimated Payback Time:
                     </span>
                     <span className="text-lg font-black font-mono text-[var(--primary)] tabular-nums">
                       {paybackMonths} Months
@@ -491,7 +491,7 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                     />
                   </div>
                   <p className="mt-2 text-[11px] text-[var(--muted)] leading-relaxed">
-                    Based on standard working capital models. Once operational, systems run autonomously with zero recurring token waste.
+                    Estimated savings from automating repetitive manual tasks into reliable workflows.
                   </p>
                 </div>
               </div>
@@ -501,7 +501,7 @@ ${projectNotes.trim() ? `*Operational Context:*\n${projectNotes.trim()}` : ""}
                   onClick={() => setActiveTab("scope")}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all cursor-pointer"
                 >
-                  Apply Metrics to Scope Solution &rarr;
+                  Configure Project Scope &rarr;
                 </button>
               </div>
             </div>

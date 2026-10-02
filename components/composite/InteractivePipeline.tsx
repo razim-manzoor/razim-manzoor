@@ -34,86 +34,84 @@ const PIPELINE_NODES: PipelineNode[] = [
     id: "ingestion",
     stageNumber: "01",
     title: "Inbound Ingestion",
-    category: "Source Trigger",
+    category: "Data Capture",
     icon: FileText,
     latency: "15ms",
-    privacy: "Encrypted In-Transit",
-    businessImpact: "Captures 100% of incoming PDFs, WhatsApp messages, and Webhook leads with zero drop.",
-    techStack: ["Webhooks", "FastAPI", "Cloudflare Workers", "S3 Storage"],
+    privacy: "Encrypted",
+    businessImpact: "Captures incoming PDFs, web forms, emails, or WhatsApp messages automatically with zero lost leads.",
+    techStack: ["Webhooks", "FastAPI", "Cloudflare", "Cloud Storage"],
     schemaExample: `{
-  "source": "pdf_invoice_or_whatsapp",
+  "source": "pdf_invoice_or_web_lead",
   "payload_type": "multipart/form-data",
   "raw_size_bytes": 142850,
-  "timestamp": "2026-09-28T15:00:00Z"
+  "timestamp": "2026-10-02T10:00:00Z"
 }`,
   },
   {
     id: "guardrail",
     stageNumber: "02",
-    title: "Schema Guardrail",
-    category: "Data Validation",
+    title: "Data Cleaning",
+    category: "Validation",
     icon: ShieldCheck,
     latency: "25ms",
-    privacy: "Local Schema Sanitizer",
-    businessImpact: "Eliminates prompt injection and halts malformed payloads before they consume token budget.",
-    techStack: ["Pydantic v2", "JSON Schema", "Guardrails AI", "Zod"],
+    privacy: "Sanitized",
+    businessImpact: "Validates fields, removes junk inputs, and formats data cleanly before passing to workflows.",
+    techStack: ["Python", "JSON Schema", "Pydantic", "Zod"],
     schemaExample: `{
   "is_valid": true,
-  "sanitized_tokens": 340,
-  "injection_risk_score": 0.002,
-  "pydantic_validated": true
+  "fields_cleaned": 12,
+  "spam_detected": false,
+  "ready_for_processing": true
 }`,
   },
   {
     id: "rag",
     stageNumber: "03",
-    title: "Local RAG Engine",
-    category: "Private Intelligence",
+    title: "AI Search & QA",
+    category: "Knowledge Engine",
     icon: BrainCircuit,
     latency: "85ms",
-    privacy: "100% Air-Gapped / On-Prem",
-    businessImpact: "Queries internal SOPs, contracts, and financial PDFs with zero third-party API exposure.",
-    techStack: ["DeepSeek", "Ollama", "ChromaDB", "LangChain", "Vector Embeddings"],
+    privacy: "100% Private / Local",
+    businessImpact: "Searches internal documents and contracts to answer questions with accurate source references.",
+    techStack: ["Local LLMs", "Ollama", "ChromaDB", "LangChain", "Vector Embeddings"],
     schemaExample: `{
-  "model": "deepseek-r1:8b",
-  "vector_match_k": 4,
+  "model": "deepseek-r1 / llama3",
+  "source_matched": "Company_SOP_v2.pdf",
   "similarity_score": 0.94,
-  "citations": ["Contract_SOP_v2.pdf#p14"],
-  "external_api_leak": false
+  "external_cloud_leak": false
 }`,
   },
   {
     id: "orchestration",
     stageNumber: "04",
     title: "Workflow Engine",
-    category: "Process Automation",
+    category: "Automation",
     icon: Workflow,
     latency: "40ms",
-    privacy: "Dedicated Instance",
-    businessImpact: "Automates multi-step decision branches, CRM deals, and vendor alerts with automatic retries.",
-    techStack: ["n8n", "Make.com", "Python Microservice", "PostgreSQL"],
+    privacy: "Internal Server",
+    businessImpact: "Automates multi-step business actions: CRM deal updates, team alerts, and automated task assignments.",
+    techStack: ["n8n", "Make.com", "Python", "PostgreSQL"],
     schemaExample: `{
-  "workflow_id": "ar_followup_v3",
+  "workflow_id": "lead_intake_v2",
   "execution_status": "success",
-  "retry_attempts": 0,
-  "branches_evaluated": 3
+  "crm_record_created": true,
+  "team_alert_sent": true
 }`,
   },
   {
     id: "delivery",
     stageNumber: "05",
-    title: "Executive Action",
-    category: "Delivery & UI",
+    title: "Live Action & Output",
+    category: "Output & Dashboards",
     icon: BarChart3,
     latency: "10ms",
     privacy: "Direct Output",
-    businessImpact: "Generates real-time Power BI visual updates, instant WhatsApp speed-to-lead, and Stripe invoices.",
-    techStack: ["Power BI (DAX)", "WhatsApp Cloud API", "Stripe Invoicing", "Next.js 16"],
+    businessImpact: "Delivers the final output: auto-refreshed Power BI dashboards, instant WhatsApp notifications, or invoices.",
+    techStack: ["Power BI (DAX)", "WhatsApp Cloud API", "Stripe", "Next.js"],
     schemaExample: `{
   "dashboard_refreshed": true,
-  "reporting_latency": "2 hours vs 3 days",
-  "whatsapp_triage_sent": true,
-  "roi_realized_aed": 45000
+  "mobile_alert_dispatched": true,
+  "reporting_speedup": "3 days to 2 hours"
 }`,
   },
 ];
@@ -137,10 +135,10 @@ export function InteractivePipeline() {
         {/* Section Header */}
         <div className="mb-12 max-w-3xl">
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Live Systems Architecture
+            How The Systems Work
           </h2>
           <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            How I architect enterprise AI systems: from messy inbound document triggers, through private on-prem local RAG, to automated n8n workflows and executive decision loops.
+            An interactive look at how data moves from inbound files and leads into automated processing, private AI search, and instant team action.
           </p>
         </div>
 

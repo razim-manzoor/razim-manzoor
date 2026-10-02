@@ -52,20 +52,20 @@ export default function HeroSection() {
               transition={{ ...spatialSpring, delay: 0.1 }}
               className="mt-3 text-lg sm:text-xl font-bold uppercase tracking-wider text-[var(--muted)]"
             >
-              AI Solutions Architect & Business Strategist
+              AI Solutions Architect & Systems Strategist
             </motion.div>
 
-            {/* Subtext - Strictly <= 20 words per Anti-Slop specification */}
+            {/* Subtext */}
             <motion.p
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...spatialSpring, delay: 0.15 }}
               className="mt-6 max-w-[54ch] text-base sm:text-lg leading-relaxed text-[var(--foreground)]"
             >
-              MBA strategist building autonomous AI assistants, high-performance web platforms, and automated workflow pipelines that turn friction into measurable margin.
+              MBA in Data Science & Analytics with hands-on systems engineering. I architect custom AI tools, automated workflow pipelines, and web platforms that solve real operational problems.
             </motion.p>
 
-            {/* Primary & Secondary Dual CTAs */}
+            {/* Primary & Secondary CTAs */}
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -73,10 +73,10 @@ export default function HeroSection() {
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <a
-                href="#services"
+                href="#projects"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all cursor-pointer"
               >
-                Inquire for Scope <ArrowRight size={15} />
+                View Work <ArrowRight size={15} />
               </a>
               <a
                 href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
@@ -122,7 +122,7 @@ export default function HeroSection() {
                 +<NumberTicker value={15} suffix="%" />
               </div>
               <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Revenue Growth Opportunity (ML Segmentation)
+                Revenue Opportunity Identified (Data Modeling)
               </p>
             </div>
 
@@ -131,7 +131,7 @@ export default function HeroSection() {
                 3 Days &rarr; 2 Hrs
               </div>
               <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Executive Reporting Latency (Power BI)
+                Reporting Speedup (Power BI & SQL)
               </p>
             </div>
 
@@ -140,7 +140,7 @@ export default function HeroSection() {
                 <NumberTicker value={80} suffix="%" />
               </div>
               <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Daily Manual Effort Reduced (AI Workflows)
+                Manual Effort Saved (Automation Pipelines)
               </p>
             </div>
           </div>

@@ -43,10 +43,10 @@ export default function ServicesHub() {
         {/* Section Header */}
         <div className="mb-12 max-w-3xl">
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Client Services & Delivery Tracks
+            Services & What I Build
           </h2>
           <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Institutional-grade AI assistants, automated operational pipelines, and sub-second web platforms. Delivered with fixed milestone scopes, complete asset handover, and a 14-day warranty.
+            Practical web applications, custom AI tools, and automated pipelines designed to solve real operational bottlenecks. Delivered with full code ownership and post-launch support.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export default function ServicesHub() {
               href="#studio"
               className="inline-flex w-fit items-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-102"
             >
-              Inquire for Scope <ArrowRight size={14} />
+              Inquire About a Project <ArrowRight size={14} />
             </a>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function ServicesHub() {
 
                 <div className="mt-5 pt-3 border-t border-[var(--border)]">
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-0.5">
-                    Business Margin Impact
+                    The Value
                   </span>
                   <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                     {item.businessImpact}
@@ -162,13 +162,13 @@ export default function ServicesHub() {
           <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[var(--border)] pb-4">
             <div>
               <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--primary)] block">
-                Institutional Delivery Standard
+                Clear & Simple Handover
               </span>
               <h3 className="text-xl font-bold tracking-tight text-[var(--foreground)]">
-                The 3 Handover Guarantees
+                How I Work & What You Get
               </h3>
             </div>
-            <span className="text-xs font-mono text-[var(--muted)]">All scopes include 100% transfer</span>
+            <span className="text-xs font-mono text-[var(--muted)]">All projects include 100% transfer</span>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-3">

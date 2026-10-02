@@ -26,7 +26,7 @@ export function AudienceToggle({ mode, onChange }: AudienceToggleProps) {
           aria-pressed={mode === "client"}
         >
           <Sparkles size={14} className={mode === "client" ? "text-emerald-300" : ""} />
-          Turnkey Solutions & Advisory
+          Projects & Services
           {mode === "client" && (
             <motion.div
               layoutId="active-audience-pill"
@@ -47,7 +47,7 @@ export function AudienceToggle({ mode, onChange }: AudienceToggleProps) {
           aria-pressed={mode === "recruiter"}
         >
           <Briefcase size={14} className={mode === "recruiter" ? "text-emerald-300" : ""} />
-          Recruiter & Tech Lead Dossier
+          Recruiter & Hiring
           {mode === "recruiter" && (
             <motion.div
               layoutId="active-audience-pill"
@@ -57,7 +57,7 @@ export function AudienceToggle({ mode, onChange }: AudienceToggleProps) {
           )}
         </button>
 
-        {/* Full Architecture View Tab */}
+        {/* Full View Tab */}
         <button
           onClick={() => onChange("all")}
           className={`relative z-10 inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer select-none ${
@@ -68,7 +68,7 @@ export function AudienceToggle({ mode, onChange }: AudienceToggleProps) {
           aria-pressed={mode === "all"}
         >
           <Layers size={14} className={mode === "all" ? "text-emerald-300" : ""} />
-          Full Overview
+          Complete View
           {mode === "all" && (
             <motion.div
               layoutId="active-audience-pill"

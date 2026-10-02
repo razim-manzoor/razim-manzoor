@@ -13,19 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
-  description: "Portfolio and Client Services of Razim Manzoor - MBA-trained AI Solutions Architect building enterprise AI assistants, high-performance web platforms, and automated workflow pipelines in Dubai and worldwide.",
-  keywords: ["AI Solutions Architect Dubai", "Business Analyst Dubai", "AI Strategist UAE", "Next.js Web Developer", "n8n Make Automation", "GenAI Consultant UAE", "Razim Manzoor"],
+  title: "Razim Manzoor | AI Solutions Architect & Systems Strategist",
+  description: "Portfolio of Razim Manzoor. MBA in Data Science & Analytics bridging business strategy with production systems engineering. Architecting custom AI systems, automated workflow pipelines, and web platforms in Dubai.",
+  keywords: ["AI Solutions Architect Dubai", "AI Strategist UAE", "Enterprise AI Specialist", "Workflow Automation n8n", "Next.js Developer Dubai", "Razim Manzoor"],
   authors: [{ name: "Razim Manzoor", url: "https://www.razim.work" }],
   metadataBase: new URL("https://www.razim.work"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
-    description: "Enterprise AI systems, turnkey web platforms, and automated workflow pipelines.",
+    title: "Razim Manzoor | AI Solutions Architect & Systems Strategist",
+    description: "AI solutions architecture, automated workflow pipelines, and high-performance web platforms.",
     url: "https://www.razim.work",
-    siteName: "Razim Manzoor Portfolio & Services",
+    siteName: "Razim Manzoor Portfolio",
     locale: "en_AE",
     type: "website",
     images: [
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Razim Manzoor | AI Strategy & Operations Portfolio",
+        alt: "Razim Manzoor | AI Solutions Architect Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Razim Manzoor | AI Solutions Architect & Business Strategist",
-    description: "Enterprise AI systems, turnkey web platforms, and automated workflow pipelines.",
+    title: "Razim Manzoor | AI Solutions Architect & Systems Strategist",
+    description: "AI solutions architecture, automated workflow pipelines, and high-performance web platforms.",
     images: ["/opengraph-image"],
   },
 };

@@ -14,53 +14,53 @@ interface SkillLayer {
 
 const SKILL_LAYERS: SkillLayer[] = [
   {
-    title: "Strategy & Financial ROI",
-    category: "Layer 01 - Business Acumen",
-    icon: TrendingUp,
-    description: "Framing technical investments into quantified operational margin, payback models, and strategic process mining.",
-    skills: USER_DATA.skills.business,
-  },
-  {
-    title: "Frontier AI & Local RAG",
-    category: "Layer 02 - Intelligence",
-    icon: BrainCircuit,
-    description: "Air-gapped on-prem models, semantic vector search, citation verification, and Pydantic schema guardrails.",
-    skills: [
-      "Generative AI (LLMs)",
-      "RAG Architecture",
-      "Ollama & DeepSeek",
-      "Vector DBs (Qdrant/Chroma)",
-      "LangChain",
-      "Python (Pandas, Scikit-learn)",
-    ],
-  },
-  {
-    title: "Modern Web & Edge Platforms",
-    category: "Layer 03 - Interface & Performance",
+    title: "Web & Full-Stack",
+    category: "Web Engineering",
     icon: Globe,
-    description: "Sub-second, accessible web applications engineered with Next.js App Router, React 19, TypeScript, and Tailwind CSS v4.",
+    description: "Fast, responsive web applications built with Next.js, React, and TypeScript. Clean code, modern UI, and accessible design.",
     skills: [
-      "Next.js 16 / App Router",
+      "Next.js 16 (App Router)",
       "React 19",
       "TypeScript",
       "Tailwind CSS v4",
-      "Motion Spring Physics",
-      "Cloudflare Workers",
+      "REST APIs & Webhooks",
+      "SQL & PostgreSQL",
     ],
   },
   {
-    title: "Enterprise Automation & BI",
-    category: "Layer 04 - Operations",
-    icon: Workflow,
-    description: "End-to-end multi-step automated workflows, server-side attribution containers, and executive Power BI dashboards.",
+    title: "AI & Local LLMs",
+    category: "AI & Intelligence",
+    icon: BrainCircuit,
+    description: "Practical AI tools, private document search (RAG), and open-source models running locally or via APIs.",
     skills: [
-      "n8n / Make.com Pipelines",
+      "Generative AI & LLMs",
+      "Document Search (RAG)",
+      "Ollama & Local Models",
+      "Vector DBs (ChromaDB)",
+      "LangChain",
+      "Python (FastAPI, Pandas)",
+    ],
+  },
+  {
+    title: "Workflow Automation",
+    category: "Automation & Operations",
+    icon: Workflow,
+    description: "Connecting tools and automating repetitive manual tasks across CRMs, spreadsheets, and messaging platforms.",
+    skills: [
+      "n8n & Make.com",
+      "Python Scripting",
       "Power Automate",
       "Power BI (DAX)",
-      "Meta Conversions API (CAPI)",
-      "SQL",
-      "UiPath RPA",
+      "SQL Queries",
+      "API Integrations",
     ],
+  },
+  {
+    title: "Business & Strategy",
+    category: "MBA Grounding",
+    icon: TrendingUp,
+    description: "MBA in Data Science. Translating business goals and operational bottlenecks into working software.",
+    skills: USER_DATA.skills.business,
   },
 ];
 
@@ -70,10 +70,10 @@ export default function SkillsGrid() {
       <div className="container mx-auto px-5 md:px-8">
         <div className="mb-12 max-w-3xl">
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Architectural Capabilities Matrix
+            Skills & Tech Stack
           </h2>
           <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            A full-stack capability profile organized by architectural layer: spanning quantitative MBA strategy down to local private AI models and edge deployment.
+            A full-stack capability profile: from Next.js web applications and local AI tools down to workflow automation and business analytics.
           </p>
         </div>
 

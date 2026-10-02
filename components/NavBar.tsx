@@ -7,11 +7,11 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { snappySpring } from "@/lib/motion";
 
 const navLinks = [
+  { name: "Projects", href: "#projects" },
   { name: "Services", href: "#services" },
-  { name: "Work", href: "#projects" },
-  { name: "Architecture", href: "#pipeline" },
-  { name: "Studio", href: "#studio" },
-  { name: "Dossier", href: "#dossier" },
+  { name: "How It Works", href: "#pipeline" },
+  { name: "Skills", href: "#skills" },
+  { name: "Inquire", href: "#studio" },
 ];
 
 export default function NavBar() {
@@ -51,7 +51,7 @@ export default function NavBar() {
           >
             Razim<span className="text-[var(--primary)]">.</span>
             <span className="hidden sm:inline text-[10px] font-mono font-bold text-[var(--muted)] border-l border-[var(--border)] pl-2">
-              Systems Architect
+              AI Solutions Architect
             </span>
           </a>
 

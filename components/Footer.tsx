@@ -18,7 +18,7 @@ export default function Footer() {
               Razim<span className="text-[var(--primary)]">.</span>
             </a>
             <p className="text-xs text-[var(--muted)] leading-relaxed">
-              AI Solutions Architect & Business Strategist based in Dubai, UAE. Available for full-time engineering appointments and turnkey client engagements.
+              AI Solutions Architect & Systems Strategist based in Dubai, UAE. Available for full-time roles and client projects.
             </p>
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -32,23 +32,23 @@ export default function Footer() {
               Navigation
             </span>
             <div className="flex flex-col gap-2 text-xs">
+              <a href="#projects" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Featured Projects
+              </a>
               <a href="#services" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-                Services & Delivery Tracks
+                Services & What I Build
               </a>
               <a href="#pipeline" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-                Live Systems Architecture
+                How It Works
               </a>
-              <a href="#projects" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-                Shipped Systems & Proof
+              <a href="#studio" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Start a Project
               </a>
-              <a href="#roi" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-                Operational ROI Simulator
-              </a>
-              <a href="#scope-builder" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-                Solution Scope Configurator
+              <a href="#skills" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
+                Skills & Tech Stack
               </a>
               <a href="#dossier" className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-                Recruiter Dossier
+                Profile Overview
               </a>
             </div>
           </div>
@@ -88,10 +88,10 @@ export default function Footer() {
           {/* Col 4: Handover & Guarantee */}
           <div className="space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] block">
-              Handover Standard
+              Delivery Standard
             </span>
             <p className="text-xs text-[var(--muted)] leading-relaxed">
-              Every turnkey engagement includes a complimentary 14-day defect warranty, 100% intellectual property transfer, and complete operational runbooks.
+              All projects include 14 days of bug-fix support, 100% code ownership, and clear walkthrough documentation.
             </p>
             <button
               onClick={scrollToTop}

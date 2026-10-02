@@ -10,10 +10,10 @@ export default function RecruiterSnapshot() {
       <div className="container mx-auto px-5 md:px-8">
         <div className="mb-12 max-w-3xl">
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Recruiter & Leadership Dossier
+            Profile Overview & Experience
           </h2>
           <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Essential profile context for engineering leadership, CTOs, and talent acquisition teams evaluating full-time architectural appointments in Dubai.
+            Quick facts, work history, and qualifications for hiring managers, engineering leads, and teams looking to collaborate in Dubai.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export default function RecruiterSnapshot() {
             <Card className="p-6">
               <h3 className="text-base font-bold text-[var(--foreground)] mb-4 flex items-center gap-2">
                 <CheckCircle2 size={18} className="text-emerald-500" />
-                Key Capability Signals
+                Core Strengths
               </h3>
               <div className="space-y-3">
                 {USER_DATA.hiringSignals.map((signal) => (
@@ -53,10 +53,10 @@ export default function RecruiterSnapshot() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-5">
               <div>
                 <h4 className="text-sm font-bold text-[var(--foreground)]">
-                  Verified Candidate Credentials
+                  Resume & Qualifications
                 </h4>
                 <p className="text-xs text-[var(--muted)] mt-0.5">
-                  Complete ATS-ready resume with detailed project metrics and coursework.
+                  Updated resume with detailed work history, projects, and education.
                 </p>
               </div>
               <a

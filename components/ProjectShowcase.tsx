@@ -29,11 +29,16 @@ export default function ProjectShowcase() {
     <section id="projects" className="relative py-20 md:py-28 overflow-hidden">
       <div className="container mx-auto px-5 md:px-8">
         <div className="mb-12 max-w-3xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs font-mono text-[var(--muted)] mb-3">
+            <span>Portfolio</span>
+            <span>&bull;</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">New builds in progress</span>
+          </div>
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Shipped Systems & Proof
+            Featured Projects
           </h2>
-          <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Production evidence across enterprise AI agents, automated receivables workflows, private local RAG pipelines, and full-stack web platforms.
+          <p className="mt-3 text-base text-[var(--muted)] leading-relaxed md:text-lg">
+            Practical tools and web apps built with Next.js, Python, and local AI. Clean code, fast performance, and real utility.
           </p>
         </div>
 
@@ -104,9 +109,9 @@ export default function ProjectShowcase() {
                     onClick={() => openProjectDetails(project)}
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--primary)] hover:underline cursor-pointer"
                   >
-                    Deep Dive Case Study & Architecture <ArrowRight size={14} />
+                    View Project Details <ArrowRight size={14} />
                   </button>
-                  <span className="text-[11px] font-mono text-[var(--muted)]">Verified Metric</span>
+                  <span className="text-[11px] font-mono text-[var(--muted)]">Key Metric</span>
                 </div>
               </SpotlightCard>
             );
@@ -114,7 +119,7 @@ export default function ProjectShowcase() {
         </div>
       </div>
 
-      {/* Slide-Out Case Study Drawer */}
+      {/* Slide-Out Project Details Drawer */}
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetContent side="right" className="w-full sm:max-w-2xl">
           {selectedProject && (
@@ -139,7 +144,7 @@ export default function ProjectShowcase() {
               {/* Problem Constraint */}
               <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-5">
                 <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-rose-500 dark:text-rose-400 flex items-center gap-1.5 mb-2">
-                  <ShieldCheck size={14} /> The Operational Constraint & Bottleneck
+                  <ShieldCheck size={14} /> The Problem
                 </h4>
                 <p className="text-sm text-[var(--foreground)] leading-relaxed">
                   {selectedProject.problem}
@@ -149,7 +154,7 @@ export default function ProjectShowcase() {
               {/* Technical Architecture Solution */}
               <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-5">
                 <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--primary)] flex items-center gap-1.5 mb-2">
-                  <Cpu size={14} /> Technical Architecture & Decision
+                  <Cpu size={14} /> What Was Built
                 </h4>
                 <p className="text-sm text-[var(--foreground)] leading-relaxed">
                   {selectedProject.caseStudy}
@@ -159,7 +164,7 @@ export default function ProjectShowcase() {
               {/* Quantified Business Outcome */}
               <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-5">
                 <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 mb-2">
-                  <CheckCircle2 size={14} /> Quantified Impact & Verified Result
+                  <CheckCircle2 size={14} /> The Result & Impact
                 </h4>
                 <p className="text-sm text-[var(--foreground)] leading-relaxed">
                   {selectedProject.impact}
@@ -169,7 +174,7 @@ export default function ProjectShowcase() {
               {/* Tech Stack */}
               <div>
                 <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] mb-3">
-                  Production Stack & Frameworks
+                  Technologies Used
                 </h5>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tech.map((t) => (
@@ -191,11 +196,11 @@ export default function ProjectShowcase() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all w-full sm:w-auto"
                   >
-                    View External Evidence <ArrowUpRight size={14} />
+                    View Project / Source <ArrowUpRight size={14} />
                   </a>
                   <SheetClose asChild>
                     <button className="rounded-lg border border-[var(--border)] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors w-full sm:w-auto cursor-pointer">
-                      Close Case Study
+                      Close
                     </button>
                   </SheetClose>
                 </div>
