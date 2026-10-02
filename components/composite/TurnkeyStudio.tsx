@@ -52,8 +52,8 @@ export function TurnkeyStudio() {
 
   // Scope Builder State
   const [selectedTracks, setSelectedTracks] = useState<string[]>([
-    "agentic-workflows",
-    "turnkey-saas",
+    "whatsapp-sales-agent",
+    "turnkey-mvp",
   ]);
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [timeline, setTimeline] = useState<string>(TIMELINES[1]);

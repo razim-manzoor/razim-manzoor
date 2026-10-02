@@ -18,11 +18,11 @@ import { HANDOVER_GUARANTEES, SERVICES_CATALOG, ServicePillar } from "@/lib/serv
 import { snappySpring, spatialSpring } from "@/lib/motion";
 
 const pillarIcons: Record<string, typeof BrainCircuit> = {
-  "enterprise-ai": BrainCircuit,
-  "digital-platforms": Globe,
-  "workflow-integration": Workflow,
-  "data-intelligence": ChartSpline,
-  "systems-advisory": Layers,
+  "ai-agents": BrainCircuit,
+  "web-mvps": Globe,
+  "workflow-automation": Workflow,
+  "bi-analytics": ChartSpline,
+  "retainers-sprints": Layers,
 };
 
 const guaranteeIcons: Record<string, typeof ShieldCheck> = {
@@ -43,10 +43,10 @@ export default function ServicesHub() {
         {/* Section Header */}
         <div className="mb-12 max-w-3xl">
           <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Services & Systems Architecture
+            Services & What I Build
           </h2>
           <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Scalable digital platforms, enterprise AI systems, and automated operations engineered for reliability and measurable business impact. Delivered with complete source code ownership and transparent sprint milestones.
+            Custom AI agents, turnkey web applications, and automated operations built for founders, business owners, and growing teams. Fast delivery in weeks with 100% code ownership.
           </p>
         </div>
 

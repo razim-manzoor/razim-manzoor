@@ -121,24 +121,24 @@ export const USER_DATA: UserData = {
   ],
   focusAreas: [
     {
-      title: "Enterprise AI & Autonomous Agents",
+      title: "AI Agents & Intelligent Copilots",
       detail:
-        "Production multi-agent workflows, private on-premises model deployments, and semantic search (RAG) across enterprise knowledge bases with strict citation grounding.",
+        "24/7 conversational sales agents on WhatsApp and web, custom internal knowledge search (RAG), and autonomous task runners built to handle repetitive operational workflows.",
     },
     {
-      title: "Scalable Digital Platforms & Custom SaaS",
+      title: "Full-Stack Web Apps & Rapid MVPs",
       detail:
-        "Production web applications, internal operational consoles, and high-throughput API architectures built for performance, security, and maintainability.",
+        "Turnkey SaaS platforms, client portals, and bespoke internal tools engineered with Next.js, React, and PostgreSQL. Shipped in 3 to 4 weeks.",
     },
     {
-      title: "Enterprise Integration & Workflow Automation",
+      title: "Workflow & Operations Automation",
       detail:
-        "Connecting ERPs, CRMs, financial ledgers, and databases with resilient event-driven pipelines so teams never do manual data re-entry.",
+        "Connecting CRMs, spreadsheets, messaging apps, and billing gateways with n8n and Python so teams eliminate manual data re-entry completely.",
     },
     {
-      title: "Data Intelligence & Executive BI Cockpits",
+      title: "Business Intelligence & Decision Dashboards",
       detail:
-        "Centralized data warehousing, automated ETL pipelines, and executive Power BI dashboards that provide leadership with verified operational visibility.",
+        "Turning fragmented spreadsheets into interactive Power BI dashboards and automated daily digests that provide leadership with verified operational visibility.",
     },
   ],
   skills: {
