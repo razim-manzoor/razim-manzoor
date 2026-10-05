@@ -1,21 +1,21 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+
+const subscribe = () => () => {};
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
 
 export function ThemeToggle() {
     const { setTheme, resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+    const mounted = useSyncExternalStore(subscribe, clientSnapshot, serverSnapshot);
 
     if (!mounted) {
         return (
-            <div className="grid h-10 w-10 place-items-center border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] opacity-50 rounded-lg" />
+            <div aria-hidden="true" className="h-11 w-11 rounded-lg border border-[var(--border)] bg-[var(--surface)]" />
         );
     }
 
@@ -23,18 +23,19 @@ export function ThemeToggle() {
 
     return (
         <button
+            type="button"
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition-transform hover:-translate-y-0.5 cursor-pointer"
+            className="grid h-11 w-11 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition-colors hover:bg-[var(--surface-hover)] cursor-pointer"
             aria-label="Toggle theme"
             title={isDark ? "Switch to light theme" : "Switch to dark theme"}
         >
             <motion.span
                 key={isDark ? "dark" : "light"}
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
+                initial={false}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
             >
-                {isDark ? <Moon size={18} /> : <Sun size={18} />}
+                {isDark ? <Moon size={18} aria-hidden="true" /> : <Sun size={18} aria-hidden="true" />}
             </motion.span>
         </button>
     );

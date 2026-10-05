@@ -1,512 +1,194 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Check, Copy, MessageSquare, Send, Clock, TrendingUp, Calculator, Settings2, ShieldCheck, Sparkles } from "lucide-react";
-import { USER_DATA } from "@/lib/data";
-import { snappySpring } from "@/lib/motion";
-import { NumberTicker } from "@/components/magicui/number-ticker";
-import { Card } from "@/components/ui/card";
-import {
-  SERVICES_CATALOG,
-  HANDOVER_GUARANTEES,
-  SPRINT_SCOPES,
-} from "@/lib/services";
+import { useEffect, useRef, useState } from "react";
+import { Check, Copy, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { SERVICES_CATALOG } from "@/lib/services";
+import { emailDraft, whatsappDraft, WHATSAPP_URL } from "@/lib/contact";
+import { estimateAutomation } from "@/lib/estimate";
+import { projectSelectionEvent } from "@/lib/project-planner";
 
-interface ServiceTrackOption {
-  id: string;
-  label: string;
-  pillarId: string;
-  category: string;
-  scopeType: string;
-  typicalSprint: string;
+const tracks = SERVICES_CATALOG.flatMap((pillar) => pillar.items.map((item) => ({ ...item, category: pillar.shortTitle, needId: pillar.id })));
+const timelines = ["Help me decide", "A new build", "An improvement to an existing system", "Ongoing development or support"];
+const number = new Intl.NumberFormat("en-AE", { maximumFractionDigits: 0 });
+
+function RangeField({ id, label, value, max, step = 1, display, onChange }: {
+  id: string; label: string; value: number; max: number; step?: number; display: string; onChange: (value: number) => void;
+}) {
+  return (
+    <div>
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+        <label htmlFor={id} className="text-sm font-medium">{label}</label>
+        <output htmlFor={id} className="text-sm font-semibold tabular-nums text-[var(--accent)]">{display}</output>
+      </div>
+      <input id={id} name={id} type="range" min={0} max={max} step={step} value={value} aria-valuetext={display} onChange={(event) => onChange(Number(event.target.value))} className="min-h-11 w-full accent-[var(--primary)]" />
+    </div>
+  );
 }
 
-const TRACK_OPTIONS: ServiceTrackOption[] = SERVICES_CATALOG.flatMap((pillar) =>
-  pillar.items.map((item) => ({
-    id: item.id,
-    label: item.title,
-    pillarId: pillar.id,
-    category: pillar.shortTitle,
-    scopeType: item.scopeType,
-    typicalSprint:
-      item.scopeType === "Fixed Milestone"
-        ? "1-2 weeks"
-        : item.scopeType === "Turnkey Build"
-        ? "3-4 weeks"
-        : "Monthly rolling",
-  }))
-);
-
-const CATEGORIES = ["All", ...SERVICES_CATALOG.map((p) => p.shortTitle)];
-
-const TIMELINES = [
-  "Fixed Milestone (1-2 weeks)",
-  "Turnkey Build (3-4 weeks)",
-  "Monthly Retainer (Ongoing)",
-  "Scoping Consultation Call First",
-];
-
 export function TurnkeyStudio() {
-  const [activeTab, setActiveTab] = useState<"scope" | "roi">("scope");
+  const [activeTab, setActiveTab] = useState<"scope" | "estimate">("scope");
+  const [selected, setSelected] = useState<string[]>([]);
+  const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
+  const [timeline, setTimeline] = useState(timelines[0]);
+  const [company, setCompany] = useState("");
+  const [contact, setContact] = useState("");
+  const [notes, setNotes] = useState("");
+  const [existingTools, setExistingTools] = useState("");
+  const [deadline, setDeadline] = useState("");
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copying" | "success" | "error">("idle");
+  const [copiedText, setCopiedText] = useState("");
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [currency, setCurrency] = useState("AED");
+  const [hours, setHours] = useState(14);
+  const [hourlyValue, setHourlyValue] = useState(100);
+  const [automationPercent, setAutomationPercent] = useState(60);
+  const [upfrontCost, setUpfrontCost] = useState(7500);
+  const [runningCost, setRunningCost] = useState(200);
 
-  // Scope Builder State
-  const [selectedTracks, setSelectedTracks] = useState<string[]>([
-    "business-website",
-    "whatsapp-sales-agent",
-  ]);
-  const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [timeline, setTimeline] = useState<string>(TIMELINES[1]);
-  const [companyName, setCompanyName] = useState<string>("");
-  const [contactInfo, setContactInfo] = useState<string>("");
-  const [projectNotes, setProjectNotes] = useState<string>("");
-  const [copied, setCopied] = useState<boolean>(false);
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  useEffect(() => {
+    const handleSelection = (event: Event) => {
+      const id = (event as CustomEvent<string>).detail;
+      if (!tracks.some((track) => track.id === id)) return;
+      setSelected((previous) => previous.includes(id) ? previous : [...previous, id]);
+      setActiveTab("scope");
+    };
+    window.addEventListener(projectSelectionEvent, handleSelection);
+    return () => window.removeEventListener(projectSelectionEvent, handleSelection);
+  }, []);
 
-  // ROI Calculator State
-  const [hours, setHours] = useState<number>(14);
-  const [hourlyRate, setHourlyRate] = useState<number>(75);
-  const [automationRate, setAutomationRate] = useState<number>(80);
-  const [implementationCost, setImplementationCost] = useState<number>(7500);
+  const chosen = tracks.filter((track) => selected.includes(track.id));
+  const needs = SERVICES_CATALOG.filter((need) => selectedNeeds.includes(need.id) || chosen.some((track) => track.needId === need.id));
+  const message = [
+    "Hi Razim, I'd like to discuss a project.",
+    company.trim() ? `Name / company: ${company.trim()}` : "",
+    contact.trim() ? `Contact: ${contact.trim()}` : "",
+    needs.length ? `What I want to achieve:\n${needs.map((need) => `- ${need.shortTitle}`).join("\n")}` : "I'd like help defining the scope.",
+    chosen.length ? `Services I'd like to discuss:\n${chosen.map((track) => `- ${track.title}`).join("\n")}` : "",
+    `Starting point: ${timeline}`,
+    existingTools.trim() ? `Current tools / setup: ${existingTools.trim()}` : "",
+    deadline.trim() ? `Target date: ${deadline.trim()}` : "",
+    notes.trim() ? `What I need:\n${notes.trim()}` : "",
+  ].filter(Boolean).join("\n\n");
 
-  const annualSavings = Math.round(hours * 52 * hourlyRate * (automationRate / 100));
-  const paybackMonths =
-    annualSavings > 0
-      ? Number(((implementationCost / annualSavings) * 12).toFixed(1))
-      : 0;
-
-  const toggleTrack = (id: string) => {
-    setSelectedTracks((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
+  const copy = async () => {
+    setCopyStatus("copying");
+    if (timer.current) clearTimeout(timer.current);
+    try {
+      await navigator.clipboard.writeText(message);
+      setCopiedText(message);
+      setCopyStatus("success");
+      timer.current = setTimeout(() => setCopyStatus("idle"), 3000);
+    } catch {
+      setCopyStatus("error");
+    }
   };
 
-  const filteredTracks =
-    activeCategory === "All"
-      ? TRACK_OPTIONS
-      : TRACK_OPTIONS.filter((track) => track.category === activeCategory);
-
-  const generateSummaryText = () => {
-    const selectedNames = TRACK_OPTIONS.filter((t) =>
-      selectedTracks.includes(t.id)
-    ).map((t) => t.label);
-
-    return `*Project Inquiry & Scope*
-*Name / Company:* ${companyName.trim() || "Not specified"}
-*Contact:* ${contactInfo.trim() || "Not specified"}
-*Selected Areas (${selectedTracks.length}):*
-${selectedNames.map((n) => `- ${n}`).join("\n")}
-*Preferred Timeline:* ${timeline}
-${projectNotes.trim() ? `*Project Notes:*\n${projectNotes.trim()}` : ""}
-*Includes:*
-- 14 days of bug-fix support
-- 100% code & asset ownership
-- Clear walkthrough documentation`;
-  };
-
-  const handleCopyScope = () => {
-    navigator.clipboard.writeText(generateSummaryText());
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2200);
-  };
-
-  const handleWhatsAppDispatch = () => {
-    const text = encodeURIComponent(generateSummaryText());
-    const phone = "971503001697";
-    window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
-  };
+  const result = estimateAutomation({ weeklyHours: hours, hourlyValue, automationPercent, upfrontCost, monthlyRunningCost: runningCost });
+  const money = (value: number) => new Intl.NumberFormat("en-AE", { style: "currency", currency, maximumFractionDigits: 0 }).format(value);
+  const payback = result.paybackMonths === null ? "No modeled payback" : result.paybackMonths === 0 ? "No upfront cost" : result.paybackMonths < 0.1 ? "Under 0.1 months" : `${result.paybackMonths.toFixed(1)} months`;
+  const copied = copyStatus === "success" && copiedText === message;
 
   return (
-    <section id="studio" className="relative py-20 md:py-28 overflow-hidden blueprint-grid">
+    <section id="studio" tabIndex={-1} className="py-16 md:py-24">
       <div className="container mx-auto px-5 md:px-8">
-        {/* Section Header */}
-        <div className="mb-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-3">
-            <Sparkles size={13} /> Project Estimator & Scope Builder
+        <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Start with the problem or the idea.</h2>
+            <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">What happens today, and what would you like to happen instead? Use this optional planner to start the conversation. You do not need to know which tools or services to choose.</p>
           </div>
-          <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Start a Project
-          </h2>
-          <p className="mt-3 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            Select the services you need or calculate the hours automation could save your team. Then send a quick message directly to my WhatsApp.
-          </p>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="action-primary shrink-0"><MessageCircle size={18} aria-hidden="true" /> Just chat on WhatsApp</a>
+        </div>
+        <div role="group" aria-label="Project planning tools" className="mb-8 flex flex-wrap gap-2 border-b border-[var(--border)] pb-5">
+          {([{ id: "scope", label: "Project planner" }, { id: "estimate", label: "Time-value estimate" }] as const).map((tab) => (
+            <button key={tab.id} type="button" aria-pressed={activeTab === tab.id} aria-controls={`tool-${tab.id}`} onClick={() => setActiveTab(tab.id)} className={`min-h-12 rounded-lg px-4 text-sm font-semibold transition-colors ${activeTab === tab.id ? "bg-[var(--primary)] text-[var(--on-primary)]" : "bg-[var(--surface-hover)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}>{tab.label}</button>
+          ))}
         </div>
 
-        {/* Master Studio Tabs */}
-        <div className="mb-8 flex items-center gap-2 border-b border-[var(--border)] pb-4">
-          <button
-            onClick={() => setActiveTab("scope")}
-            className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-              activeTab === "scope"
-                ? "bg-[var(--primary)] text-white shadow-sm"
-                : "border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"
-            }`}
-          >
-            <Settings2 size={15} /> 1. Scope & Inquire
-          </button>
-          <button
-            onClick={() => setActiveTab("roi")}
-            className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-              activeTab === "roi"
-                ? "bg-[var(--primary)] text-white shadow-sm"
-                : "border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"
-            }`}
-          >
-            <Calculator size={15} /> 2. Time Savings Calculator
-          </button>
+        <div id="tool-scope" hidden={activeTab !== "scope"} className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-7">
+            <fieldset>
+              <legend className="mb-3 text-lg font-semibold">What would you like to achieve?</legend>
+              <p className="mb-4 text-sm leading-relaxed text-[var(--muted)]">Choose any that fit, combine several, or leave this blank. A custom idea is welcome.</p>
+              <div className="space-y-2">
+                {SERVICES_CATALOG.map((need) => {
+                  const implied = chosen.some((track) => track.needId === need.id);
+                  return <label key={need.id} className="flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[var(--border)] p-3 text-sm"><input type="checkbox" name="project-need" value={need.id} checked={selectedNeeds.includes(need.id) || implied} onChange={() => {
+                    if (selectedNeeds.includes(need.id) || implied) {
+                      setSelectedNeeds((previous) => previous.filter((id) => id !== need.id));
+                      setSelected((previous) => previous.filter((id) => !need.items.some((item) => item.id === id)));
+                    } else setSelectedNeeds((previous) => [...previous, need.id]);
+                  }} className="h-4 w-4 shrink-0 accent-[var(--primary)]" /><span>{need.shortTitle}</span></label>;
+                })}
+              </div>
+              <details className="mt-5">
+                <summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Choose specific services (optional)</summary>
+                <p className="mt-2 text-xs leading-relaxed text-[var(--muted)]">Only choose these if you already have a solution in mind. Services can be combined into one scope.</p>
+                <div className="mt-4 space-y-5">
+                  {SERVICES_CATALOG.map((need) => <fieldset key={need.id}><legend className="mb-2 text-sm font-semibold">{need.shortTitle}</legend><div className="space-y-1">{need.items.map((track) => <label key={track.id} className="flex min-h-11 cursor-pointer items-center gap-3 text-sm"><input type="checkbox" name="project-area" value={track.id} checked={selected.includes(track.id)} onChange={() => setSelected((previous) => previous.includes(track.id) ? previous.filter((id) => id !== track.id) : [...previous, track.id])} className="h-4 w-4 shrink-0 accent-[var(--primary)]" /><span>{track.title}</span></label>)}</div></fieldset>)}
+                </div>
+              </details>
+            </fieldset>
+            {chosen.length > 0 && <div className="border-t border-[var(--border)] pt-4"><h3 className="text-sm font-semibold">Services to discuss ({chosen.length})</h3><ul className="mt-2 divide-y divide-[var(--border)]">{chosen.map((track) => <li key={track.id} className="flex items-center justify-between gap-3 py-2 text-sm"><span>{track.title}</span><button type="button" onClick={() => setSelected((previous) => previous.filter((id) => id !== track.id))} aria-label={`Remove ${track.title}`} className="min-h-11 shrink-0 px-2 font-semibold text-[var(--accent)]">Remove</button></li>)}</ul></div>}
+            <fieldset>
+              <legend className="mb-3 text-lg font-semibold">Where are you starting?</legend>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {timelines.map((item) => <label key={item} className={`flex min-h-14 cursor-pointer items-center gap-3 rounded-lg border p-3 text-sm ${timeline === item ? "border-[var(--primary)] bg-[var(--surface-hover)]" : "border-[var(--border)] hover:bg-[var(--surface-hover)]"}`}><input type="radio" name="project-plan" value={item} checked={timeline === item} onChange={() => setTimeline(item)} className="h-4 w-4 shrink-0 accent-[var(--primary)]" /><span>{item}</span></label>)}
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">We work out the scope, approach, budget, and timing together before work starts.</p>
+            </fieldset>
+          </div>
+          <div className="min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
+            <h3 className="text-lg font-semibold">Your project note</h3>
+            <p className="mt-2 text-sm text-[var(--muted)]">All fields are optional. This creates a draft for you to review.</p>
+            <div className="mt-5 space-y-5">
+              <div><label htmlFor="project-name" className="mb-2 block text-sm font-medium">Your name or company</label><input id="project-name" name="name" autoComplete="name" maxLength={160} value={company} onChange={(event) => setCompany(event.target.value)} placeholder="For example, Alex / Acme" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+              <div><label htmlFor="project-contact" className="mb-2 block text-sm font-medium">Email or phone</label><input id="project-contact" name="contact" autoComplete="off" spellCheck={false} maxLength={160} value={contact} onChange={(event) => setContact(event.target.value)} placeholder="alex@example.com or +971…" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+              <div><label htmlFor="project-notes" className="mb-2 block text-sm font-medium">The problem, idea, or result you want</label><textarea id="project-notes" name="notes" autoComplete="off" maxLength={2000} rows={5} value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Who is this for? What should they be able to do? What is difficult or missing today?" className="w-full resize-y rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base leading-relaxed" /><p className="mt-1 text-right text-xs tabular-nums text-[var(--muted)]">{notes.length}/2,000</p></div>
+              <div><label htmlFor="project-tools" className="mb-2 block text-sm font-medium">Current tools or website</label><input id="project-tools" name="tools" maxLength={300} value={existingTools} onChange={(event) => setExistingTools(event.target.value)} placeholder="For example, Shopify, Excel, a CRM, or starting from scratch" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+              <div><label htmlFor="project-deadline" className="mb-2 block text-sm font-medium">Target date or timing</label><input id="project-deadline" name="deadline" maxLength={160} value={deadline} onChange={(event) => setDeadline(event.target.value)} placeholder="For example, before launch in November, or flexible" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+            </div>
+            <details className="mt-4"><summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Preview your message</summary><p className="mt-2 whitespace-pre-wrap break-words rounded-lg bg-[var(--surface-hover)] p-4 text-sm leading-relaxed">{message}</p></details>
+            <div className="mt-5 flex flex-col gap-2">
+              <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="action-primary"><MessageCircle size={18} aria-hidden="true" /> Review in WhatsApp <ArrowUpRight size={15} aria-hidden="true" /></a>
+              <a href={emailDraft(message)} className="action-secondary"><Mail size={17} aria-hidden="true" /> Open an email draft</a>
+              <button type="button" onClick={copy} disabled={copyStatus === "copying"} className="action-secondary disabled:opacity-60">{copied ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}{copyStatus === "copying" ? "Copying…" : copied ? "Copied" : "Copy message"}</button>
+            </div>
+            <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">Nothing is submitted here. WhatsApp or your email app opens a draft; you choose when to send it.</p>
+            <p role="status" aria-live="polite" className="mt-2 text-sm">{copied ? "Message copied." : copyStatus === "error" ? "Copy did not work. Select the message below and copy it manually." : ""}</p>
+            {copyStatus === "error" && <div className="mt-3"><label htmlFor="manual-copy" className="mb-2 block text-sm font-medium">Message to copy</label><textarea id="manual-copy" readOnly value={message} rows={6} className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] p-3 text-base" /></div>}
+          </div>
         </div>
 
-        {/* TAB 1: SCOPE BUILDER */}
-        {activeTab === "scope" && (
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-            {/* Left: Track Selection */}
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-sm font-mono font-bold uppercase tracking-wider text-[var(--muted)] mb-3">
-                  Step 1: Filter & Select Architectural Tracks
-                </h3>
-
-                {/* Category Pills */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {CATEGORIES.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setActiveCategory(category)}
-                      className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
-                        activeCategory === category
-                          ? "bg-[var(--foreground)] text-[var(--background)]"
-                          : "border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"
-                      }`}
-                    >
-                      {category}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Track Checkboxes */}
-                <div className="grid gap-2.5 sm:grid-cols-2 max-h-[360px] overflow-y-auto pr-1">
-                  {filteredTracks.map((track) => {
-                    const isSelected = selectedTracks.includes(track.id);
-                    return (
-                      <button
-                        key={track.id}
-                        type="button"
-                        onClick={() => toggleTrack(track.id)}
-                        className={`flex items-start gap-3 rounded-xl border p-3.5 text-left transition-all cursor-pointer select-none ${
-                          isSelected
-                            ? "border-[var(--primary)] bg-[var(--primary)]/10"
-                            : "border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-hover)]"
-                        }`}
-                      >
-                        <div
-                          className={`mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded border transition-colors ${
-                            isSelected
-                              ? "border-[var(--primary)] bg-[var(--primary)] text-white"
-                              : "border-[var(--border)] bg-transparent"
-                          }`}
-                        >
-                          {isSelected && <Check size={12} strokeWidth={3} />}
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-[var(--foreground)] leading-tight">
-                            {track.label}
-                          </p>
-                          <div className="mt-1 flex items-center gap-2">
-                            <span className="text-[10px] font-mono text-[var(--primary)]">
-                              {track.scopeType}
-                            </span>
-                            <span className="text-[10px] text-[var(--muted)]">&bull; {track.typicalSprint}</span>
-                          </div>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Timeline Selection */}
-              <div>
-                <h3 className="text-sm font-mono font-bold uppercase tracking-wider text-[var(--muted)] mb-3">
-                  Step 2: Preferred Execution Velocity
-                </h3>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  {TIMELINES.map((t) => (
-                    <button
-                      key={t}
-                      type="button"
-                      onClick={() => setTimeline(t)}
-                      className={`rounded-lg border px-3.5 py-2.5 text-left text-xs font-semibold transition-all cursor-pointer ${
-                        timeline === t
-                          ? "border-[var(--primary)] bg-[var(--primary)]/10 text-[var(--foreground)]"
-                          : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--foreground)]"
-                      }`}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Operational Summary & Direct Dispatch */}
-            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-[var(--border)] pb-3">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--foreground)]">
-                    Project Scope Summary
-                  </h3>
-                  <span className="text-xs font-mono text-emerald-500 font-bold">
-                    {selectedTracks.length} Selected
-                  </span>
-                </div>
-
-                <div className="space-y-3">
-                  <div>
-                    <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-1">
-                      Your Name / Company
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Faisal / Apex Logistics"
-                      value={companyName}
-                      onChange={(e) => setCompanyName(e.target.value)}
-                      className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] px-3 py-2 text-xs text-[var(--foreground)] focus:border-[var(--primary)] focus:outline-hidden"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-1">
-                      Email / WhatsApp
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. faisal@example.com or +971 50..."
-                      value={contactInfo}
-                      onChange={(e) => setContactInfo(e.target.value)}
-                      className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] px-3 py-2 text-xs text-[var(--foreground)] focus:border-[var(--primary)] focus:outline-hidden"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-[11px] font-mono font-bold uppercase tracking-wider text-[var(--muted)] block mb-1">
-                      Project Notes / What You Need
-                    </label>
-                    <textarea
-                      rows={3}
-                      placeholder="Describe what you want to build or automate..."
-                      value={projectNotes}
-                      onChange={(e) => setProjectNotes(e.target.value)}
-                      className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] p-3 text-xs text-[var(--foreground)] focus:border-[var(--primary)] focus:outline-hidden resize-none"
-                    />
-                  </div>
-                </div>
-
-                {/* Handover Notice */}
-                <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3 text-[11px] text-[var(--muted)] space-y-1">
-                  <div className="font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
-                    <ShieldCheck size={13} /> Clear Delivery Standard
-                  </div>
-                  <p>Includes 14 days of bug-fix support, 100% code ownership, and clear walkthrough docs.</p>
-                </div>
-              </div>
-
-              {/* Actions */}
-              <div className="mt-6 pt-4 border-t border-[var(--border)] flex flex-col sm:flex-row gap-2.5">
-                <button
-                  type="button"
-                  onClick={handleWhatsAppDispatch}
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all cursor-pointer"
-                >
-                  <Send size={14} /> Send via WhatsApp
-                </button>
-                <button
-                  type="button"
-                  onClick={handleCopyScope}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] hover:bg-[var(--surface)] px-4 py-3 text-xs font-bold uppercase tracking-wider text-[var(--foreground)] transition-colors cursor-pointer"
-                >
-                  {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
-                  {copied ? "Copied" : "Copy Details"}
-                </button>
-              </div>
+        <div id="tool-estimate" hidden={activeTab !== "estimate"} className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
+            <h3 className="text-xl font-semibold">Explore the value of time released</h3>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">An illustrative model using your assumptions. Changing currency changes the unit; it does not convert the amounts.</p>
+            <div className="mt-6 space-y-4">
+              <div><label htmlFor="estimate-currency" className="mb-2 block text-sm font-medium">Currency</label><select id="estimate-currency" name="currency" value={currency} onChange={(event) => setCurrency(event.target.value)} className="min-h-12 rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 text-base text-[var(--foreground)]"><option value="AED">AED</option><option value="USD">USD</option></select></div>
+              <RangeField id="manual-hours" label="Manual hours per week" value={hours} max={80} display={`${hours} hours`} onChange={setHours} />
+              <RangeField id="hourly-rate" label="Value per work hour" value={hourlyValue} max={500} step={5} display={money(hourlyValue)} onChange={setHourlyValue} />
+              <RangeField id="automation-rate" label="Share of work automated" value={automationPercent} max={100} step={5} display={`${automationPercent}%`} onChange={setAutomationPercent} />
+              <RangeField id="implementation-cost" label="Upfront build cost" value={upfrontCost} max={50000} step={500} display={money(upfrontCost)} onChange={setUpfrontCost} />
+              <RangeField id="running-cost" label="Monthly running & upkeep cost" value={runningCost} max={5000} step={50} display={money(runningCost)} onChange={setRunningCost} />
             </div>
           </div>
-        )}
-
-        {/* TAB 2: ROI CALCULATOR */}
-        {activeTab === "roi" && (
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
-            {/* Left: Input Sliders */}
-            <Card className="p-6 md:p-8 space-y-6">
-              <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
-                <h3 className="text-base font-bold text-[var(--foreground)]">
-                  Process Parameters
-                </h3>
-                <Clock size={16} className="text-[var(--primary)]" />
-              </div>
-
-              {/* Slider 1: Hours */}
-              <div>
-                <div className="flex items-center justify-between text-xs mb-2">
-                  <label htmlFor="manual-hours" className="font-semibold text-[var(--foreground)]">
-                    Manual hours spent per week
-                  </label>
-                  <span className="font-mono font-bold text-[var(--primary)] text-sm tabular-nums">
-                    {hours} hrs/wk
-                  </span>
-                </div>
-                <input
-                  id="manual-hours"
-                  type="range"
-                  min="2"
-                  max="40"
-                  step="1"
-                  value={hours}
-                  onChange={(e) => setHours(Number(e.target.value))}
-                  className="w-full accent-[var(--primary)] cursor-pointer"
-                />
-              </div>
-
-              {/* Slider 2: Rate */}
-              <div>
-                <div className="flex items-center justify-between text-xs mb-2">
-                  <label htmlFor="hourly-rate" className="font-semibold text-[var(--foreground)]">
-                    Blended fully-loaded hourly rate (USD)
-                  </label>
-                  <span className="font-mono font-bold text-[var(--primary)] text-sm tabular-nums">
-                    ${hourlyRate}/hr
-                  </span>
-                </div>
-                <input
-                  id="hourly-rate"
-                  type="range"
-                  min="30"
-                  max="200"
-                  step="5"
-                  value={hourlyRate}
-                  onChange={(e) => setHourlyRate(Number(e.target.value))}
-                  className="w-full accent-[var(--primary)] cursor-pointer"
-                />
-              </div>
-
-              {/* Slider 3: Automation Efficiency */}
-              <div>
-                <div className="flex items-center justify-between text-xs mb-2">
-                  <label htmlFor="automation-rate" className="font-semibold text-[var(--foreground)]">
-                    Target Automation Efficiency
-                  </label>
-                  <span className="font-mono font-bold text-emerald-500 text-sm tabular-nums">
-                    {automationRate}%
-                  </span>
-                </div>
-                <input
-                  id="automation-rate"
-                  type="range"
-                  min="40"
-                  max="95"
-                  step="5"
-                  value={automationRate}
-                  onChange={(e) => setAutomationRate(Number(e.target.value))}
-                  className="w-full accent-[var(--primary)] cursor-pointer"
-                />
-              </div>
-
-              {/* Slider 4: Implementation Sprint Scope */}
-              <div>
-                <div className="flex items-center justify-between text-xs mb-2">
-                  <label htmlFor="implementation-cost" className="font-semibold text-[var(--foreground)]">
-                    Estimated Solution Sprint Investment
-                  </label>
-                  <span className="font-mono font-bold text-[var(--foreground)] text-sm tabular-nums">
-                    ${implementationCost.toLocaleString()}
-                  </span>
-                </div>
-                <input
-                  id="implementation-cost"
-                  type="range"
-                  min="3000"
-                  max="25000"
-                  step="500"
-                  value={implementationCost}
-                  onChange={(e) => setImplementationCost(Number(e.target.value))}
-                  className="w-full accent-[var(--primary)] cursor-pointer"
-                />
-              </div>
-            </Card>
-
-            {/* Right: ROI Model Output */}
-            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between border-b border-[var(--border)] pb-4 mb-6">
-                  <div>
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)]">
-                      Estimated Value
-                    </span>
-                    <h3 className="text-xl font-bold text-[var(--foreground)]">
-                      Time Saved & Payback
-                    </h3>
-                  </div>
-                  <TrendingUp size={22} className="text-emerald-500" />
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2 mb-6">
-                  <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-4">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)]">
-                      Annual Hours Saved
-                    </span>
-                    <div className="mt-1 text-2xl font-black font-mono text-[var(--primary)] tabular-nums">
-                      <NumberTicker value={Math.round(hours * 52 * (automationRate / 100))} suffix=" hrs/yr" />
-                    </div>
-                    <p className="mt-1 text-[11px] text-[var(--muted)]">
-                      Hours freed from repetitive tasks
-                    </p>
-                  </div>
-
-                  <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                      Estimated Annual Savings
-                    </span>
-                    <div className="mt-1 text-2xl font-black font-mono text-emerald-600 dark:text-emerald-400 tabular-nums">
-                      $<NumberTicker value={annualSavings} />
-                    </div>
-                    <p className="mt-1 text-[11px] text-emerald-600/80 dark:text-emerald-400/80 font-mono">
-                      ≈ {(annualSavings * 3.67).toLocaleString()} AED/year
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-hover)] p-4">
-                  <div className="flex items-baseline justify-between">
-                    <span className="text-xs font-bold text-[var(--foreground)]">
-                      Estimated Payback Time:
-                    </span>
-                    <span className="text-lg font-black font-mono text-[var(--primary)] tabular-nums">
-                      {paybackMonths} Months
-                    </span>
-                  </div>
-                  <div className="mt-2 h-2 w-full rounded-full bg-[var(--border)] overflow-hidden">
-                    <div
-                      className="h-full bg-[var(--primary)] transition-all duration-300"
-                      style={{
-                        width: `${Math.min(100, Math.max(10, (12 / (paybackMonths || 1)) * 10))}%`,
-                      }}
-                    />
-                  </div>
-                  <p className="mt-2 text-[11px] text-[var(--muted)] leading-relaxed">
-                    Estimated savings from automating repetitive manual tasks into reliable workflows.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-[var(--border)]">
-                <button
-                  onClick={() => setActiveTab("scope")}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all cursor-pointer"
-                >
-                  Configure Project Scope &rarr;
-                </button>
-              </div>
-            </div>
+          <div className="min-w-0 rounded-xl bg-[var(--surface-hover)] p-5 md:p-7">
+            <h3 className="text-xl font-semibold">Estimated annual time value</h3>
+            <dl className="mt-6 divide-y divide-[var(--border)]">
+              {[
+                ["Hours released per year", `${number.format(result.annualHours)} hours`],
+                ["Value of that time", money(result.annualTimeValue)],
+                ["Annual running costs", money(runningCost * 12)],
+                ["Value after running costs", money(result.annualNetValue)],
+                ["Modeled payback", payback],
+              ].map(([label, value]) => <div key={label} className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-4"><dt className="text-sm text-[var(--muted)]">{label}</dt><dd className="break-words text-lg font-semibold tabular-nums">{value}</dd></div>)}
+            </dl>
+            <p className="mt-5 text-sm leading-relaxed text-[var(--muted)]">Assumes 52 working weeks and a constant automation rate. Time released is capacity, not guaranteed cash savings. Payback uses that time value after running costs; it is not a revenue forecast or a project quote.</p>
+            {result.annualNetValue <= 0 && <p className="mt-4 text-sm font-medium">At these assumptions, running costs meet or exceed the value of time released.</p>}
+            <button type="button" onClick={() => setActiveTab("scope")} className="action-secondary mt-6 w-full">Discuss a real scope <ArrowUpRight size={16} aria-hidden="true" /></button>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

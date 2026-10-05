@@ -1,122 +1,22 @@
 "use client";
 
-import { USER_DATA } from "@/lib/data";
-import { TrendingUp, BrainCircuit, Globe, Workflow } from "lucide-react";
-import { Card } from "@/components/ui/card";
-
-interface SkillLayer {
-  title: string;
-  category: string;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
-  description: string;
-  skills: string[];
-}
-
-const SKILL_LAYERS: SkillLayer[] = [
-  {
-    title: "Web & Full-Stack",
-    category: "Web Engineering",
-    icon: Globe,
-    description: "Fast, responsive web applications built with Next.js, React, and TypeScript. Clean code, modern UI, and accessible design.",
-    skills: [
-      "Next.js 16 (App Router)",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS v4",
-      "REST APIs & Webhooks",
-      "SQL & PostgreSQL",
-    ],
-  },
-  {
-    title: "AI & Local LLMs",
-    category: "AI & Intelligence",
-    icon: BrainCircuit,
-    description: "Practical AI tools, private document search (RAG), and open-source models running locally or via APIs.",
-    skills: [
-      "Generative AI & LLMs",
-      "Document Search (RAG)",
-      "Ollama & Local Models",
-      "Vector DBs (ChromaDB)",
-      "LangChain",
-      "Python (FastAPI, Pandas)",
-    ],
-  },
-  {
-    title: "Workflow Automation",
-    category: "Automation & Operations",
-    icon: Workflow,
-    description: "Connecting tools and automating repetitive manual tasks across CRMs, spreadsheets, and messaging platforms.",
-    skills: [
-      "n8n & Make.com",
-      "Python Scripting",
-      "Power Automate",
-      "Power BI (DAX)",
-      "SQL Queries",
-      "API Integrations",
-    ],
-  },
-  {
-    title: "Business & Strategy",
-    category: "MBA Grounding",
-    icon: TrendingUp,
-    description: "MBA in Data Science. Translating business goals and operational bottlenecks into working software.",
-    skills: USER_DATA.skills.business,
-  },
+const groups = [
+  { title: "Web & application development", tools: ["React / Next.js", "TypeScript", "Python / FastAPI", "SQL & PostgreSQL", "REST APIs", "Git & Docker"], detail: "Interfaces, backend logic, data models, and integrations." },
+  { title: "AI & automation", tools: ["n8n / Make", "Power Automate", "Local models / Ollama", "Document search (RAG)", "Webhooks", "Browser automation"], detail: "Assistants, connected workflows, document tools, and repetitive task automation." },
+  { title: "Data & reporting", tools: ["Power BI", "DAX / Power Query", "Python / Pandas", "SQL", "Tableau", "Data validation"], detail: "Data preparation, reporting models, and useful operational metrics." },
+  { title: "Business analysis", tools: ["Requirements gathering", "Process mapping", "KPI definition", "Stakeholder communication", "ROI analysis", "Project scoping"], detail: "Understanding the need, defining the work, and checking that the result is useful." },
 ];
 
 export default function SkillsGrid() {
   return (
-    <section id="skills" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="skills" tabIndex={-1} className="py-16 md:py-20">
       <div className="container mx-auto px-5 md:px-8">
-        <div className="mb-12 max-w-3xl">
-          <h2 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
-            Skills & Tech Stack
-          </h2>
-          <p className="mt-4 text-base text-[var(--muted)] leading-relaxed md:text-lg">
-            A full-stack capability profile: from Next.js web applications and local AI tools down to workflow automation and business analytics.
-          </p>
+        <div className="mb-9 max-w-2xl">
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">The toolkit behind the work.</h2>
+          <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">Business analysis and implementation belong together. These are the tools and methods I work with; the combination depends on the job.</p>
         </div>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SKILL_LAYERS.map((layer) => {
-            const Icon = layer.icon;
-            return (
-              <Card
-                key={layer.title}
-                className="flex flex-col justify-between p-6 hover:shadow-md transition-shadow"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] text-[var(--primary)]">
-                      <Icon size={20} />
-                    </div>
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--muted)]">
-                      {layer.category}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-[var(--foreground)]">
-                    {layer.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs text-[var(--muted)] leading-relaxed min-h-[48px]">
-                    {layer.description}
-                  </p>
-
-                  <div className="mt-5 space-y-1.5 pt-4 border-t border-[var(--border)]">
-                    {layer.skills.map((skill) => (
-                      <div
-                        key={skill}
-                        className="rounded-md border border-[var(--border)] bg-[var(--surface-hover)] px-2.5 py-1 text-xs font-mono text-[var(--foreground)] flex items-center justify-between"
-                      >
-                        <span>{skill}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            );
-          })}
+        <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
+          {groups.map((group) => <div key={group.title} className="border-t border-[var(--border)] pt-5"><h3 className="text-xl font-semibold">{group.title}</h3><p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{group.detail}</p><ul className="mt-4 flex flex-wrap gap-2">{group.tools.map((tool) => <li key={tool} className="rounded-lg bg-[var(--surface-hover)] px-3 py-2 text-sm">{tool}</li>)}</ul></div>)}
         </div>
       </div>
     </section>

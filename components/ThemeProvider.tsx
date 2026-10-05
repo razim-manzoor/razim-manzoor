@@ -2,7 +2,7 @@
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes";
-import { MotionConfig } from "framer-motion";
+import { MotionConfig } from "motion/react";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     return (

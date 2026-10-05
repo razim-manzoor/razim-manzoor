@@ -68,7 +68,7 @@ export interface UserData {
 
 export const USER_DATA: UserData = {
   name: "Razim Manzoor",
-  role: "Business Analyst, Full-Stack Developer & AI Systems Engineer (MBA)",
+  role: "Business Analyst & Developer (MBA) | Web, AI & Automation",
   location: "Dubai, UAE",
   availability: "Visit Visa (Immediate Joiner) | Dubai, UAE",
   contact: {
@@ -77,10 +77,10 @@ export const USER_DATA: UserData = {
     linkedin: "https://www.linkedin.com/in/razim-manzoor",
   },
   summary:
-    "Results-oriented MBA in Data Science & Analytics with commercial acumen and hands-on execution across business analysis, full-stack web development, and intelligent automation. Experienced in identifying operational bottlenecks, conducting ROI analysis, and engineering scalable digital solutions across any modern tech stack. Based in Dubai on a visit visa with immediate availability.",
+    "I build websites, applications, AI tools, automations, and dashboards around business needs. My background combines an MBA in Data Science & Analytics with hands-on work in business analysis, development, and reporting.",
   detailedBio: [
-    "I bridge business strategy and hands-on technical execution. With an MBA in Data Science and deep engineering fluency across full-stack web platforms, Python, Power BI, and workflow automation, I identify core operational bottlenecks and translate complex requirements into clean, working production systems.",
-    "Based in Dubai on a visit visa with immediate availability and zero notice period. Open to full-time, contract, or hybrid roles across Business Analyst, Full-Stack Developer, AI/Automation Engineer, and Data/BI positions at Junior, Mid, or Senior levels.",
+    "I work across business analysis and technical implementation: understanding a process, defining what needs to change, and building tools that help people do the work.",
+    "Based in Dubai and open to roles and project work. Junior and associate opportunities are welcome, particularly in business analysis, development, AI and automation, or data and BI.",
   ],
   stats: [
     { label: "Delivery Speedup", value: "Weeks vs Months" },
@@ -88,29 +88,16 @@ export const USER_DATA: UserData = {
     { label: "Location & Joining", value: "Dubai / Immediate" },
   ],
   recruiterSnapshot: [
-    {
-      label: "Target Roles",
-      value: "Business Analyst, Full-Stack Developer, AI & Automation Engineer, Software Engineer, Data / BI Analyst, Systems Analyst",
-    },
-    {
-      label: "Seniority & Availability",
-      value: "Flexible across Junior, Mid-Level, and Senior roles | Immediate joining in Dubai with zero notice period",
-    },
-    {
-      label: "Work Authorization",
-      value: "Visit Visa (Immediate Joiner), open to on-site, hybrid, or remote positions in Dubai & UAE",
-    },
-    {
-      label: "Core Competencies",
-      value: "Business Analysis, Process Mining, Full-Stack Web Development, Power BI (Advanced DAX), Python, SQL, and Intelligent Automation",
-    },
+    { label: "Location & availability", value: "Dubai, UAE · Available immediately" },
+    { label: "Roles of interest", value: "Business analysis, web development, AI / automation, and data / BI" },
+    { label: "Qualifications", value: "MBA in Data Science & Analytics · B.Com in Computer Applications" },
+    { label: "Working arrangements", value: "Full-time and contract opportunities; on-site, hybrid, or remote" },
   ],
   hiringSignals: [
-    "Flexible on role scope and seniority: open to Business Analyst, Full-Stack Developer, AI/Automation, or Data/BI roles with immediate joining in Dubai.",
-    "Proven track record in requirement elicitation, process mining, and translating complex executive workflows into scalable digital solutions.",
-    "Hands-on builder across modern tech stacks (React, Next.js, Python, SQL, Power BI, n8n, Playwright RPA) delivering web apps and tools in weeks.",
-    "Commercial acumen (MBA in Data Science & Analytics): conducts ROI analysis and builds systems that directly recover hours and protect margins.",
-    "Proven enterprise execution: delivered client workflows under official IBM partnership initiatives, Power Automate, and Azure cloud.",
+    "Business requirements and process analysis, supported by an MBA in Data Science & Analytics.",
+    "Hands-on work with web applications, Python, SQL, Power BI, and automation tools.",
+    "Experience with business workflows at Resemble Systems and data work at Luminar Technolab.",
+    "Independent development of applications and automation tools, from requirements to deployment.",
   ],
   proofPoints: [
     "MBA in Data Science & Analytics",
@@ -129,7 +116,7 @@ export const USER_DATA: UserData = {
     {
       title: "Websites & Full-Stack Web Platforms",
       detail:
-        "High-performance business websites, turnkey SaaS platforms, and client portals engineered across any modern tech stack (React, Next.js, Vue, Node, Python, SQL). Shipped in weeks, not quarters.",
+        "High-performance business websites, turnkey SaaS platforms, and client portals engineered using a stack selected for the project.",
     },
     {
       title: "AI Agents & Intelligent Automation",
@@ -139,7 +126,7 @@ export const USER_DATA: UserData = {
     {
       title: "Data Ecosystem & Decision Dashboards",
       detail:
-        "Automated data pipelines in Python and SQL, customer segmentation models, and interactive Power BI executive dashboards slashing reporting latency from days to hours.",
+        "Automated data pipelines in Python and SQL, customer segmentation models, and interactive Power BI executive dashboards with scheduled refreshes and clear operational metrics.",
     },
   ],
   skills: {

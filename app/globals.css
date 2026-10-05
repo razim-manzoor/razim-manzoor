@@ -20,31 +20,45 @@
   :root {
     --background: #f8fafc;
     --foreground: #09090b;
-    --primary: #059669;
+    --primary: #047857;
+    --primary-hover: #065f46;
+    --on-primary: #ffffff;
+    --accent: #047857;
     --primary-glow: rgba(5, 150, 105, 0.15);
     --surface: #ffffff;
     --surface-hover: #f1f5f9;
     --border: rgba(15, 23, 42, 0.08);
-    --muted: #64748b;
+    --control-border: #77869b;
+    --muted: #526176;
+    color-scheme: light;
   }
 
   .dark {
     --background: #09090b;
     --foreground: #f8fafc;
-    --primary: #10b981;
+    --primary: #047857;
+    --primary-hover: #065f46;
+    --on-primary: #ffffff;
+    --accent: #6ee7b7;
     --primary-glow: rgba(16, 185, 129, 0.2);
     --surface: #121215;
     --surface-hover: #1a1a20;
     --border: rgba(255, 255, 255, 0.08);
+    --control-border: #64748b;
     --muted: #94a3b8;
+    color-scheme: dark;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  section[id], footer[id] {
-    scroll-margin-top: 5rem;
+  section[id], footer[id], main[id], #audience-content {
+    scroll-margin-top: 10rem;
+  }
+
+  [hidden] {
+    display: none !important;
   }
 
   body {
@@ -53,6 +67,31 @@
     font-family: var(--font-sans);
     transition: background-color 0.25s, color 0.25s;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  button, a, input, summary {
+    touch-action: manipulation;
+  }
+
+  button, summary {
+    cursor: pointer;
+  }
+
+  input, textarea {
+    font-size: max(1rem, 16px);
+  }
+
+  input:not([type="range"]):not([type="checkbox"]):not([type="radio"]), textarea, select {
+    border-color: var(--control-border);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--muted);
+    opacity: 1;
   }
 
   /* Themed Browser Surfaces */
@@ -75,16 +114,55 @@
       scroll-behavior: auto;
     }
 
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      scroll-behavior: auto !important;
-      transition-duration: 0.01ms !important;
+    .animate-ping, .animate-pulse {
+      animation: none;
+    }
+
+    body {
+      transition: none;
     }
   }
 }
 
 @layer utilities {
+  .action-primary, .action-secondary {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.625rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .action-primary {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .action-primary:hover {
+    background: var(--primary-hover);
+  }
+
+  .action-secondary {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--foreground);
+  }
+
+  .action-secondary:hover {
+    background: var(--surface-hover);
+    border-color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .action-primary, .action-secondary {
+      transition: none;
+    }
+  }
   .blueprint-grid {
     background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
     background-size: 32px 32px;

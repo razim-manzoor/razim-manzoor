@@ -1,83 +1,28 @@
 "use client";
 
-import { motion } from "motion/react";
-import { Briefcase, Sparkles, Layers } from "lucide-react";
-import { snappySpring } from "@/lib/motion";
+import type { AudienceMode } from "@/lib/audience";
+export type { AudienceMode } from "@/lib/audience";
 
-export type AudienceMode = "client" | "recruiter" | "all";
+const options: { mode: AudienceMode; label: string }[] = [
+  { mode: "client", label: "For clients" },
+  { mode: "recruiter", label: "For hiring teams" },
+  { mode: "all", label: "Everything" },
+];
 
-interface AudienceToggleProps {
-  mode: AudienceMode;
-  onChange: (mode: AudienceMode) => void;
-}
-
-export function AudienceToggle({ mode, onChange }: AudienceToggleProps) {
+export function AudienceToggle({ mode, onChange }: { mode: AudienceMode; onChange: (mode: AudienceMode) => void }) {
   return (
-    <div className="flex items-center justify-center p-2">
-      <div className="relative inline-flex flex-wrap items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-hover)] p-1 shadow-inner gap-1">
-        {/* Client Mode Tab */}
+    <div role="group" aria-label="Choose what to explore" className="mx-auto flex w-full max-w-md gap-1 rounded-xl bg-[var(--surface-hover)] p-1">
+      {options.map((option) => (
         <button
-          onClick={() => onChange("client")}
-          className={`relative z-10 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer select-none ${
-            mode === "client"
-              ? "text-white"
-              : "text-[var(--muted)] hover:text-[var(--foreground)]"
-          }`}
-          aria-pressed={mode === "client"}
+          key={option.mode}
+          type="button"
+          aria-pressed={mode === option.mode}
+          onClick={() => onChange(option.mode)}
+          className={`min-h-11 flex-1 rounded-lg px-2 text-xs font-semibold transition-colors sm:text-sm ${mode === option.mode ? "bg-[var(--primary)] text-[var(--on-primary)]" : "text-[var(--muted)] hover:bg-[var(--surface)] hover:text-[var(--foreground)]"}`}
         >
-          <Sparkles size={14} className={mode === "client" ? "text-emerald-300" : ""} />
-          Services & Solutions
-          {mode === "client" && (
-            <motion.div
-              layoutId="active-audience-pill"
-              className="absolute inset-0 -z-10 rounded-full bg-[var(--primary)] shadow-sm"
-              transition={snappySpring}
-            />
-          )}
+          {option.label}
         </button>
-
-        {/* Recruiter Mode Tab */}
-        <button
-          onClick={() => onChange("recruiter")}
-          className={`relative z-10 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer select-none ${
-            mode === "recruiter"
-              ? "text-white"
-              : "text-[var(--muted)] hover:text-[var(--foreground)]"
-          }`}
-          aria-pressed={mode === "recruiter"}
-        >
-          <Briefcase size={14} className={mode === "recruiter" ? "text-emerald-300" : ""} />
-          Recruiter & Hiring
-          {mode === "recruiter" && (
-            <motion.div
-              layoutId="active-audience-pill"
-              className="absolute inset-0 -z-10 rounded-full bg-[var(--primary)] shadow-sm"
-              transition={snappySpring}
-            />
-          )}
-        </button>
-
-        {/* Full View Tab */}
-        <button
-          onClick={() => onChange("all")}
-          className={`relative z-10 inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer select-none ${
-            mode === "all"
-              ? "text-white"
-              : "text-[var(--muted)] hover:text-[var(--foreground)]"
-          }`}
-          aria-pressed={mode === "all"}
-        >
-          <Layers size={14} className={mode === "all" ? "text-emerald-300" : ""} />
-          Complete View
-          {mode === "all" && (
-            <motion.div
-              layoutId="active-audience-pill"
-              className="absolute inset-0 -z-10 rounded-full bg-[var(--primary)] shadow-sm"
-              transition={snappySpring}
-            />
-          )}
-        </button>
-      </div>
+      ))}
     </div>
   );
 }

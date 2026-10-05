@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { USER_DATA, ProjectItem } from "@/lib/data";
-import { ArrowUpRight, Github, Bot, Workflow, FileSearch, Boxes, CheckCircle2, ArrowRight, Layers, Cpu, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Github, Bot, Workflow, FileSearch, Boxes, CheckCircle2, ArrowRight, Cpu, ShieldCheck } from "lucide-react";
 import { SpotlightCard } from "@/components/magicui/spotlight-card";
 import {
   Sheet,

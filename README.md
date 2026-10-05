@@ -1,88 +1,42 @@
-# Portfolio: Business Strategy & AI
+# Razim Manzoor portfolio
 
-A premium, high-performance personal portfolio website built for **Business Analysts, AI Strategists, and Automation Specialists**.
-Designed to move beyond a static resume by *demonstrating* value through interactive elements like the **ROI Calculator**.
+A personal site for client projects and hiring conversations. It presents websites and applications, AI tools, automation, and reporting alongside professional experience.
 
-![Portfolio Preview](public/og-image.png)
+## Local development
 
-## 🚀 Key Features
+Use Node.js 22.18 or later (verified with Node 24).
 
--   **First Principles ROI Calculator**: An interactive component allowing visitors to calculate the dollar value of automation.
--   **Dark/Light Mode**: Fully responsive, accessible themes using Tailwind v4 semantic colors.
--   **Data-Driven**: All content (Experience, Skills, Projects) is managed in a single file (`lib/data.ts`) for easy updates.
--   **High Performance**: Built on Next.js 16 (Turbopack) for instant page loads and SEO.
--   **Premium Aesthetics**: Glassmorphism, Framer Motion animations, and modern typography.
+- Install dependencies: `npm ci`
+- Start development: `npm run dev`
+- Check code: `npm run lint` and `npx tsc --noEmit`
+- Check the estimation model: `npm test`
+- Build for production: `npm run build`
+- Preview the build: `npm start`
 
-## 🛠 Tech Stack
+## Content and behavior
 
--   **Framework**: [Next.js 16](https://nextjs.org/) (App Directory)
--   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
--   **Animations**: [Framer Motion](https://www.framer.com/motion/)
--   **Icons**: [Lucide React](https://lucide.dev/)
--   **Deployment**: [Vercel](https://vercel.com/)
+- `lib/data.ts`: personal details, work history, education, and project data.
+- `lib/services.ts`: five client needs and fourteen service scopes, plus handover terms. Service links feed the goal-led planner; specific service selection is optional and custom scopes are welcome.
+- `lib/contact.ts`: shared résumé path and WhatsApp/email draft links.
+- `lib/audience.ts`: URL-backed audience selection and section navigation.
+- `lib/estimate.ts`: illustrative time-value calculation including running costs.
 
-## 📂 Project Structure
+The old project showcase stays unrendered until replacement projects are ready. Its source and data are retained.
 
-```bash
-├── app/
-│   ├── layout.tsx       # Root layout, fonts, metadata
-│   ├── page.tsx         # Main landing page composition
-│   └── globals.css      # Global styles & Tailwind theme config
-├── components/
-│   ├── HeroSection.tsx  # Hero banner
-│   ├── RoiCalculator.tsx # Interactive value demo
-│   ├── NavBar.tsx       # Responsive navigation
-│   └── ...              # Other UI components
-├── lib/
-│   └── data.ts          # <--- EDIT THIS FILE TO UPDATE CONTENT
-└── public/              # Static assets (images, resumes)
-```
+Audience selection is reflected in `?view=client`, `?view=recruiter`, or `?view=all`. Both audience views remain mounted to preserve unsent planner text and calculator state. Section links reveal the appropriate audience; browser history and direct section URLs are supported.
 
-## ⚡ Quick Start
+Contact links open WhatsApp or email. The site has no inquiry backend and does not send a message automatically. Planner fields are optional and remain in memory for the current page session; refreshing the page clears the draft.
 
-4.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/razim-manzoor/razim-manzoor.git
-    cd razim-manzoor
-    ```
+The calculator models the value of released work time using visitor assumptions and 52 working weeks. It includes recurring costs. Results are neither guaranteed cash savings nor a project quotation.
 
-5.  **Install dependencies**:
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+## Publishing
 
-6.  **Run Development Server**:
-    ```bash
-    npm run dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) to view it.
+The production domain is configured in `app/layout.tsx`, `app/robots.ts`, and `app/sitemap.ts`. Validate the production build and review local changes before pushing to the deployed branch.
 
-## 📝 Customization Guide
+The ignored `.brain/` junction contains private working notes and is not part of the public site.
 
-### 1. Updating Content (The "CMS")
-You don't need to touch JSX to update your resume details.
-Go to `lib/data.ts`. This file contains the `USER_DATA` object:
--   `name`, `role`, `contact`: Basic info.
--   `experience`: Array of job roles. Support bullet points.
--   `skills`: Categorized into `business` and `technical`.
--   `projects`: Featured work.
+## Recent work
 
-### 2. Theming (Light/Dark Mode)
-This project uses **Tailwind v4** with CSS variables for theming.
--   **Configuration**: Defined in `app/globals.css`.
--   **Usage**: Use semantic classes like `text-foreground` (black in light, white in dark) or `bg-background`.
--   **Toggle**: Managed by `next-themes` in `components/ThemeToggle.tsx`.
+See `planning/2026-10-05_content-code-review.md` for the initial review and the dated implementation handoff for final verification. Review snapshots describe the checkout at the time they were written.
 
-## 🚀 Deployment
-
-The easiest way to deploy is **Vercel**.
-
-1.  Push your code to GitHub.
-2.  Import the project to Vercel.
-3.  Click **Deploy**. (Deployment is zero-config as the app is in the root directory).
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+MIT license; see `LICENSE`.

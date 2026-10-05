@@ -1,150 +1,78 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight, Menu, X, FileText } from "lucide-react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Menu, X, FileText, MessageCircle } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { snappySpring } from "@/lib/motion";
+import { RESUME_URL, WHATSAPP_URL } from "@/lib/contact";
 
 const navLinks = [
   { name: "Services", href: "#services" },
-  { name: "How It Works", href: "#pipeline" },
-  { name: "Skills", href: "#skills" },
-  { name: "Inquire", href: "#studio" },
+  { name: "Approach", href: "#pipeline" },
+  { name: "Background", href: "#dossier" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const { scrollY, scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 28, restDelta: 0.001 });
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const isPast = latest > 20;
-    if (isPast !== scrolled) {
-      setScrolled(isPast);
-    }
-  });
+  useEffect(() => {
+    if (!isOpen) return;
+    const dismiss = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+    const outside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !menuRef.current?.contains(event.target) && !triggerRef.current?.contains(event.target)) setIsOpen(false);
+    };
+    const media = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => { if (media.matches) setIsOpen(false); };
+    document.addEventListener("keydown", dismiss);
+    document.addEventListener("pointerdown", outside);
+    media.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("keydown", dismiss);
+      document.removeEventListener("pointerdown", outside);
+      media.removeEventListener("change", closeOnDesktop);
+    };
+  }, [isOpen]);
 
   return (
-    <header className="fixed top-0 z-50 w-full transition-all duration-300">
-      {/* Scroll Progress Line */}
-      <motion.div
-        className="absolute top-0 left-0 right-0 h-[2px] origin-left bg-[var(--primary)] z-50"
-        style={{ scaleX }}
-      />
-
-      <div className="container mx-auto px-4 sm:px-6 pt-3">
-        <nav
-          aria-label="Primary Navigation"
-          className={`mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full border px-4 transition-all duration-200 ${
-            scrolled
-              ? "glass-island shadow-md"
-              : "border-transparent bg-[var(--surface)]/70 backdrop-blur-md"
-          }`}
-        >
-          {/* Brand Logo */}
-          <a
-            href="#home"
-            className="flex items-center gap-2 text-sm font-black uppercase tracking-tight text-[var(--foreground)]"
-          >
-            Razim<span className="text-[var(--primary)]">.</span>
-            <span className="hidden sm:inline text-[10px] font-mono font-bold text-[var(--muted)] border-l border-[var(--border)] pl-2">
-              Business Analyst & Systems Builder
-            </span>
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="container mx-auto px-4 pt-3 sm:px-6">
+        <nav aria-label="Primary navigation" className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-3 md:px-5">
+          <a href="#home" className="inline-flex min-h-11 items-center text-lg font-black tracking-tight">
+            RAZIM<span className="text-[var(--primary)]">.</span>
           </a>
-
-          {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+          <div className="hidden items-center gap-5 lg:flex">
+            {navLinks.map((link) => <a key={link.href} href={link.href} className="inline-flex min-h-11 items-center text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)]">{link.name}</a>)}
           </div>
-
-          {/* Right Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
-            >
-              <FileText size={13} /> Resume
+          <div className="flex items-center gap-2">
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="hidden min-h-11 items-center gap-1.5 px-2 text-sm text-[var(--muted)] hover:text-[var(--foreground)] lg:inline-flex">
+              <FileText size={16} aria-hidden="true" /> Résumé
             </a>
-
-            <a
-              href="#studio"
-              className="inline-flex items-center gap-1 rounded-full bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-102"
-            >
-              Inquire <ArrowUpRight size={13} />
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Contact Razim on WhatsApp" className="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-3 text-sm font-semibold text-[var(--on-primary)] hover:bg-[var(--primary-hover)]">
+              <MessageCircle size={18} aria-hidden="true" /><span className="hidden sm:inline">WhatsApp</span><ArrowUpRight size={14} className="hidden lg:block" aria-hidden="true" />
             </a>
-
             <ThemeToggle />
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen((prev) => !prev)}
-              aria-label="Toggle navigation menu"
-              aria-expanded={isOpen}
-              className="rounded-full p-2 text-[var(--foreground)] hover:bg-[var(--surface-hover)]"
-            >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            <button ref={triggerRef} type="button" onClick={() => setIsOpen((prev) => !prev)} aria-label="Toggle navigation menu" aria-expanded={isOpen} aria-controls="mobile-navigation" className="grid h-11 w-11 place-items-center rounded-lg text-[var(--foreground)] hover:bg-[var(--surface-hover)] lg:hidden">
+              {isOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
             </button>
           </div>
         </nav>
       </div>
-
-      {/* Mobile Dropdown Sheet */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={snappySpring}
-            className="lg:hidden fixed inset-x-4 top-20 z-40 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-xl"
-          >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-base font-bold uppercase tracking-wide text-[var(--foreground)] hover:text-[var(--primary)]"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-[var(--border)] flex flex-col gap-2">
-                <a
-                  href="#scope-builder"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full text-center rounded-lg bg-[var(--primary)] p-3 text-xs font-bold uppercase tracking-wider text-white"
-                >
-                  Inquire for Scope
-                </a>
-                <a
-                  href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center rounded-lg border border-[var(--border)] bg-[var(--surface-hover)] p-3 text-xs font-bold uppercase tracking-wider text-[var(--foreground)]"
-                >
-                  Download Resume (PDF)
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div ref={menuRef} id="mobile-navigation" className="fixed inset-x-4 top-20 max-h-[calc(100dvh-6rem)] overflow-y-auto overscroll-contain rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-xl lg:hidden">
+          <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
+            {navLinks.map((link) => <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="flex min-h-12 items-center rounded-lg px-3 text-base font-semibold hover:bg-[var(--surface-hover)]">{link.name}</a>)}
+            <a href="#studio" onClick={() => setIsOpen(false)} className="action-primary mt-3">Plan a project</a>
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="action-secondary mt-2">Download résumé PDF</a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

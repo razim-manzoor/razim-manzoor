@@ -1,6 +1,9 @@
 import { ImageResponse } from 'next/og'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 
-export const runtime = 'edge'
+const profilePicData = await readFile(join(process.cwd(), 'public/profilepic.jpeg'), 'base64')
+const profilePicSrc = `data:image/jpeg;base64,${profilePicData}`
 
 export const alt = 'Razim Manzoor Portfolio'
 export const size = {
@@ -11,12 +14,6 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
-    // Load the profile picture
-    const profilePicData = await fetch(new URL('../public/profilepic.jpeg', import.meta.url)).then(
-        (res) => res.arrayBuffer()
-    )
-    const profilePicSrc = `data:image/jpeg;base64,${arrayBufferToBase64(profilePicData)}`
-
     return new ImageResponse(
         (
             <div
@@ -55,7 +52,7 @@ export default async function Image() {
                 </div>
 
                 <div style={{ fontSize: 40, marginTop: 50, color: '#A0A0A0', letterSpacing: '-0.02em' }}>
-                    Business Analyst & AI Strategist
+                    Websites, Apps, AI & Automation
                 </div>
             </div>
         ),
@@ -63,13 +60,4 @@ export default async function Image() {
             ...size,
         }
     )
-}
-
-function arrayBufferToBase64(buffer: ArrayBuffer) {
-    let binary = ''
-    const bytes = new Uint8Array(buffer)
-    for (let index = 0; index < bytes.byteLength; index += 1) {
-        binary += String.fromCharCode(bytes[index])
-    }
-    return btoa(binary)
 }

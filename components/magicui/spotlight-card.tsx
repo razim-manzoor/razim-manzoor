@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useMotionTemplate, useMotionValue, useSpring, useReducedMotion } from "motion/react";
+import { motion, type HTMLMotionProps, useMotionTemplate, useMotionValue, useSpring, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SpotlightCardProps extends Omit<HTMLMotionProps<"div">, "children"> {
+  children?: React.ReactNode;
   spotlightColor?: string;
   enableTilt?: boolean;
 }
@@ -21,6 +22,8 @@ export function SpotlightCard({
 
   const mouseX = useMotionValue(-1000);
   const mouseY = useMotionValue(-1000);
+  const spotlight = useMotionTemplate`radial-gradient(450px circle at ${mouseX}px ${mouseY}px, ${spotlightColor}, transparent 80%)`;
+  const mask = useMotionTemplate`radial-gradient(240px circle at ${mouseX}px ${mouseY}px, black, transparent 80%)`;
 
   // 3D Tilt springs
   const rotateXSpring = useSpring(0, { stiffness: 300, damping: 25 });
@@ -72,20 +75,14 @@ export function SpotlightCard({
         "group relative rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition-shadow duration-300 hover:shadow-lg",
         className
       )}
-      {...(props as any)}
+      {...props}
     >
       {/* Spotlight Radial Background Glow */}
       {!shouldReduceMotion && (
         <motion.div
           className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
-            background: useMotionTemplate`
-              radial-gradient(
-                450px circle at ${mouseX}px ${mouseY}px,
-                ${spotlightColor},
-                transparent 80%
-              )
-            `,
+            background: spotlight,
           }}
         />
       )}
@@ -95,20 +92,8 @@ export function SpotlightCard({
         <motion.div
           className="pointer-events-none absolute -inset-px rounded-xl border border-emerald-500/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
-            maskImage: useMotionTemplate`
-              radial-gradient(
-                240px circle at ${mouseX}px ${mouseY}px,
-                black,
-                transparent 80%
-              )
-            `,
-            WebkitMaskImage: useMotionTemplate`
-              radial-gradient(
-                240px circle at ${mouseX}px ${mouseY}px,
-                black,
-                transparent 80%
-              )
-            `,
+            maskImage: mask,
+            WebkitMaskImage: mask,
           }}
         />
       )}

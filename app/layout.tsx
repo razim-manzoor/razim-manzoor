@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Razim Manzoor | Business Analyst, Full-Stack Developer & AI Systems Engineer",
-  description: "Portfolio of Razim Manzoor (MBA in Data Science & Analytics). Business analysis, full-stack web platforms, automated workflows, and data intelligence in Dubai.",
+  title: "Razim Manzoor | Websites, Apps, AI & Automation",
+  description: "Websites, applications, AI tools, automation, and dashboards built around business needs. Razim Manzoor, MBA in Data Science & Analytics, based in Dubai.",
   keywords: [
     "Business Analyst Dubai",
     "Full Stack Developer Dubai",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Razim Manzoor | Business Analyst, Full-Stack Developer & AI Systems Engineer",
-    description: "Business analysis, full-stack web platforms, automated workflows, and data intelligence in Dubai.",
+    title: "Razim Manzoor | Websites, Apps, AI & Automation",
+    description: "Business understanding and hands-on development. Explore services, experience, and ways to work together.",
     url: "https://www.razim.work",
     siteName: "Razim Manzoor Portfolio",
     locale: "en_AE",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Razim Manzoor | Business Analyst, Full-Stack Developer & AI Systems Engineer",
-    description: "Business analysis, full-stack web platforms, automated workflows, and data intelligence in Dubai.",
+    title: "Razim Manzoor | Websites, Apps, AI & Automation",
+    description: "Business understanding and hands-on development. Explore services, experience, and ways to work together.",
     images: ["/opengraph-image"],
   },
 };

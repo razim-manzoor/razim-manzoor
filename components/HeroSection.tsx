@@ -1,156 +1,60 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
-import { ArrowRight, Download } from "lucide-react";
-import { NumberTicker } from "@/components/magicui/number-ticker";
-import { snappySpring, spatialSpring } from "@/lib/motion";
+import { motion, useReducedMotion } from "motion/react";
+import { ArrowRight, Download, MessageCircle } from "lucide-react";
+import { RESUME_URL, WHATSAPP_URL } from "@/lib/contact";
 
 export default function HeroSection() {
-  const { scrollY } = useScroll();
-  const imageY = useTransform(scrollY, [0, 500], [0, -40]);
-  const shouldReduceMotion = useReducedMotion();
+  const reducedMotion = useReducedMotion();
 
   return (
-    <section
-      id="home"
-      className="relative min-h-[100dvh] overflow-hidden pt-20 md:pt-24 flex flex-col justify-between blueprint-grid"
-    >
-      <div className="container relative z-10 mx-auto px-5 md:px-8 my-auto">
-        <div className="grid items-center gap-10 py-6 md:py-10 lg:grid-cols-[1.15fr_0.85fr]">
-          {/* Left Column: Value Prop & Builder Bio */}
+    <section id="home" tabIndex={-1} className="relative overflow-hidden pt-28 pb-14 md:pt-40 md:pb-24">
+      <div className="container mx-auto px-5 md:px-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
           <div>
-            {/* Live Operational Status Badge */}
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={snappySpring}
-              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
+            <p className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[var(--muted)]">
               <span>Dubai, UAE</span>
-              <span className="text-[var(--border)]">|</span>
-              <span>Available Immediately</span>
-            </motion.div>
-
-            {/* Display Headline */}
-            <motion.h1
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ...spatialSpring, delay: 0.05 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-[var(--foreground)] leading-[0.95]"
-            >
-              Razim <span className="text-[var(--primary)]">Manzoor</span>
-            </motion.h1>
-
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ...spatialSpring, delay: 0.1 }}
-              className="mt-3 text-base sm:text-lg font-bold uppercase tracking-wider text-[var(--muted)]"
-            >
-              Business Analyst | Full-Stack Developer | AI & Systems Builder
-            </motion.div>
-
-            {/* Subtext */}
-            <motion.p
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ...spatialSpring, delay: 0.15 }}
-              className="mt-6 max-w-[54ch] text-base sm:text-lg leading-relaxed text-[var(--foreground)]"
-            >
-              MBA in Data Science with hands-on systems engineering. Delivering custom web platforms, automated business workflows, AI tools, and data analytics across any modern tech stack. Available immediately in Dubai.
-            </motion.p>
-
-            {/* Primary & Secondary CTAs */}
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ...spatialSpring, delay: 0.2 }}
-              className="mt-8 flex flex-col gap-3 sm:flex-row"
-            >
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] hover:bg-[var(--primary)]/90 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all cursor-pointer"
-              >
-                Explore Services <ArrowRight size={15} />
+              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-[var(--primary)]" />
+              <span>Available for roles & projects</span>
+            </p>
+            <h1 className="text-4xl font-black uppercase leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              Razim <span className="text-[var(--accent)]">Manzoor</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-2xl font-semibold leading-tight tracking-tight md:text-3xl">
+              From business problem<br className="hidden sm:block" /> to working system.
+            </p>
+            <p className="mt-5 max-w-[60ch] text-base leading-relaxed text-[var(--muted)] md:text-lg">
+              I build websites, applications, AI tools, automations, and dashboards around what your business needs. My MBA in Data Science & Analytics connects the technical work to the business behind it.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="action-primary">
+                <MessageCircle size={18} aria-hidden="true" /> Let’s talk on WhatsApp
               </a>
-              <a
-                href="/Razim_Manzoor_MBA_AI_Analytics.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-hover)] px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--foreground)] transition-all cursor-pointer"
-              >
-                Download Resume <Download size={15} />
+              <a href="#services" className="action-secondary">
+                Explore services <ArrowRight size={17} aria-hidden="true" />
               </a>
-            </motion.div>
+            </div>
+            <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+              <a href="#dossier" className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-[var(--foreground)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)]">
+                Hiring? View my background <ArrowRight size={14} aria-hidden="true" />
+              </a>
+              <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 text-[var(--muted)] hover:text-[var(--foreground)]">
+                <Download size={15} aria-hidden="true" /> Résumé PDF
+              </a>
+            </div>
           </div>
-
-          {/* Right Column: Real Portrait in Sub-Pixel Engineering Frame */}
           <motion.div
-            style={shouldReduceMotion ? undefined : { y: imageY }}
-            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={spatialSpring}
-            className="relative mx-auto w-full max-w-[320px] md:max-w-[340px]"
+            initial={false}
+            animate={reducedMotion ? undefined : { y: [8, 0], opacity: [0.8, 1] }}
+            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px]"
           >
-            {/* Profile Image Frame */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl">
-              <Image
-                src="/profilepic.jpeg"
-                alt="Razim Manzoor - Business Analyst & Systems Engineer"
-                fill
-                priority
-                sizes="(min-width: 1024px) 340px, 90vw"
-                className="object-cover object-top filter grayscale-[0.04] contrast-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/70 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-3 right-3 rounded-lg border border-[var(--border)] bg-[var(--surface)]/90 backdrop-blur-md px-3 py-2 flex items-center justify-between text-[11px] font-mono shadow-sm">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="font-bold text-[var(--foreground)]">Dubai, UAE</span>
-                </div>
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold">Immediate Joiner</span>
-              </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--surface-hover)]">
+              <Image src="/profilepic.jpeg" alt="Razim Manzoor" fill priority sizes="(min-width: 640px) 320px, 280px" className="object-cover object-top" />
             </div>
+            <p className="mt-3 text-center text-sm text-[var(--muted)]">Business analysis. Hands-on development.</p>
           </motion.div>
-        </div>
-      </div>
-
-      {/* Verified Operational Impact Telemetry Strip */}
-      <div className="relative z-10 border-y border-[var(--border)] bg-[var(--surface)]/90 backdrop-blur-md py-4">
-        <div className="container mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
-            <div className="border-b sm:border-b-0 sm:border-r border-[var(--border)] pb-4 sm:pb-0 sm:pr-4">
-              <div className="text-2xl md:text-3xl font-black font-mono text-[var(--primary)] tabular-nums">
-                Weeks vs Months
-              </div>
-              <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Rapid Delivery & Prototyping
-              </p>
-            </div>
-
-            <div className="border-b sm:border-b-0 sm:border-r border-[var(--border)] pb-4 sm:pb-0 sm:pr-4">
-              <div className="text-2xl md:text-3xl font-black font-mono text-[var(--foreground)] tabular-nums">
-                <NumberTicker value={80} suffix="%" />
-              </div>
-              <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Manual Workflow Effort Eliminated
-              </p>
-            </div>
-
-            <div>
-              <div className="text-2xl md:text-3xl font-black font-mono text-[var(--foreground)] tabular-nums">
-                3 Days &rarr; 2 Hrs
-              </div>
-              <p className="mt-0.5 text-xs text-[var(--muted)] font-medium">
-                Reporting & Decision Latency Reduced
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
