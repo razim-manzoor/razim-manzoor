@@ -8,7 +8,7 @@ const steps = [
 
 export function InteractivePipeline() {
   return (
-    <section id="pipeline" tabIndex={-1} className="border-y border-[var(--border)] bg-[var(--surface)] py-16 md:py-20">
+    <section id="pipeline" tabIndex={-1} className="border-y border-[var(--border)] bg-[var(--surface)] py-12 md:py-16">
       <div className="container mx-auto px-5 md:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>

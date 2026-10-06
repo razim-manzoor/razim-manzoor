@@ -29,6 +29,7 @@ export function TurnkeyStudio() {
   const [activeTab, setActiveTab] = useState<"scope" | "estimate">("scope");
   const [selected, setSelected] = useState<string[]>([]);
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
+  const [briefOpen, setBriefOpen] = useState(true);
   const [timeline, setTimeline] = useState(timelines[0]);
   const [company, setCompany] = useState("");
   const [contact, setContact] = useState("");
@@ -52,6 +53,7 @@ export function TurnkeyStudio() {
       if (!tracks.some((track) => track.id === id)) return;
       setSelected((previous) => previous.includes(id) ? previous : [...previous, id]);
       setActiveTab("scope");
+      setBriefOpen(false);
     };
     window.addEventListener(projectSelectionEvent, handleSelection);
     return () => window.removeEventListener(projectSelectionEvent, handleSelection);
@@ -70,6 +72,7 @@ export function TurnkeyStudio() {
     deadline.trim() ? `Target date: ${deadline.trim()}` : "",
     notes.trim() ? `What I need:\n${notes.trim()}` : "",
   ].filter(Boolean).join("\n\n");
+  const hasProjectContext = chosen.length > 0 || needs.length > 0 || [company, contact, notes, existingTools, deadline].some((value) => value.trim()) || timeline !== timelines[0];
 
   const copy = async () => {
     setCopyStatus("copying");
@@ -90,23 +93,26 @@ export function TurnkeyStudio() {
   const copied = copyStatus === "success" && copiedText === message;
 
   return (
-    <section id="studio" tabIndex={-1} className="py-16 md:py-24">
+    <section id="studio" aria-labelledby="studio-title" tabIndex={-1} className="py-16 md:py-24">
       <div className="container mx-auto px-5 md:px-8">
         <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Start with the problem or the idea.</h2>
-            <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">What happens today, and what would you like to happen instead? Use this optional planner to start the conversation. You do not need to know which tools or services to choose.</p>
+            <h2 id="studio-title" className="text-3xl font-bold tracking-tight md:text-5xl">Start with the problem or the idea.</h2>
+            <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">{chosen.length ? "Your service selection is ready. Add a project note below, or continue straight to WhatsApp. You can combine or remove services." : "Describe what needs to change. This optional planner helps you start a conversation, even if you are still deciding on the solution."}</p>
           </div>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="action-primary shrink-0"><MessageCircle size={18} aria-hidden="true" /> Just chat on WhatsApp</a>
+          <a href={hasProjectContext ? whatsappDraft(message) : WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="action-primary shrink-0"><MessageCircle size={18} aria-hidden="true" /> {hasProjectContext ? "Discuss on WhatsApp" : "Just chat on WhatsApp"}</a>
         </div>
+        {chosen.length > 0 && <div className="mb-7 border-y border-[var(--border)] py-4"><h3 className="text-base font-semibold">Services to discuss ({chosen.length})</h3><ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2">{chosen.map((track) => <li key={track.id} className="flex min-w-0 items-center gap-3 text-sm"><span>{track.title}</span><button type="button" onClick={() => setSelected((previous) => previous.filter((id) => id !== track.id))} aria-label={`Remove ${track.title}`} className="min-h-11 shrink-0 px-2 font-semibold text-[var(--accent)]">Remove</button></li>)}</ul></div>}
         <div role="group" aria-label="Project planning tools" className="mb-8 flex flex-wrap gap-2 border-b border-[var(--border)] pb-5">
           {([{ id: "scope", label: "Project planner" }, { id: "estimate", label: "Time-value estimate" }] as const).map((tab) => (
             <button key={tab.id} type="button" aria-pressed={activeTab === tab.id} aria-controls={`tool-${tab.id}`} onClick={() => setActiveTab(tab.id)} className={`min-h-12 rounded-lg px-4 text-sm font-semibold transition-colors ${activeTab === tab.id ? "bg-[var(--primary)] text-[var(--on-primary)]" : "bg-[var(--surface-hover)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}>{tab.label}</button>
           ))}
         </div>
 
-        <div id="tool-scope" hidden={activeTab !== "scope"} className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-7">
+        <div id="tool-scope" hidden={activeTab !== "scope"} className={`grid gap-8 ${chosen.length ? "max-w-3xl" : "lg:grid-cols-[1.1fr_0.9fr]"}`}>
+          <details open={briefOpen} onToggle={(event) => setBriefOpen(event.currentTarget.open)}>
+            <summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Adjust goals & starting point (optional)</summary>
+            <div className="mt-4 space-y-7">
             <fieldset>
               <legend className="mb-3 text-lg font-semibold">What would you like to achieve?</legend>
               <p className="mb-4 text-sm leading-relaxed text-[var(--muted)]">Choose any that fit, combine several, or leave this blank. A custom idea is welcome.</p>
@@ -129,7 +135,6 @@ export function TurnkeyStudio() {
                 </div>
               </details>
             </fieldset>
-            {chosen.length > 0 && <div className="border-t border-[var(--border)] pt-4"><h3 className="text-sm font-semibold">Services to discuss ({chosen.length})</h3><ul className="mt-2 divide-y divide-[var(--border)]">{chosen.map((track) => <li key={track.id} className="flex items-center justify-between gap-3 py-2 text-sm"><span>{track.title}</span><button type="button" onClick={() => setSelected((previous) => previous.filter((id) => id !== track.id))} aria-label={`Remove ${track.title}`} className="min-h-11 shrink-0 px-2 font-semibold text-[var(--accent)]">Remove</button></li>)}</ul></div>}
             <fieldset>
               <legend className="mb-3 text-lg font-semibold">Where are you starting?</legend>
               <div className="grid gap-2 sm:grid-cols-2">
@@ -137,20 +142,23 @@ export function TurnkeyStudio() {
               </div>
               <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">We work out the scope, approach, budget, and timing together before work starts.</p>
             </fieldset>
-          </div>
+            </div>
+          </details>
           <div className="min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
             <h3 className="text-lg font-semibold">Your project note</h3>
             <p className="mt-2 text-sm text-[var(--muted)]">All fields are optional. This creates a draft for you to review.</p>
-            <div className="mt-5 space-y-5">
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
               <div><label htmlFor="project-name" className="mb-2 block text-sm font-medium">Your name or company</label><input id="project-name" name="name" autoComplete="name" maxLength={160} value={company} onChange={(event) => setCompany(event.target.value)} placeholder="For example, Alex / Acme" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
               <div><label htmlFor="project-contact" className="mb-2 block text-sm font-medium">Email or phone</label><input id="project-contact" name="contact" autoComplete="off" spellCheck={false} maxLength={160} value={contact} onChange={(event) => setContact(event.target.value)} placeholder="alex@example.com or +971…" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
-              <div><label htmlFor="project-notes" className="mb-2 block text-sm font-medium">The problem, idea, or result you want</label><textarea id="project-notes" name="notes" autoComplete="off" maxLength={2000} rows={5} value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Who is this for? What should they be able to do? What is difficult or missing today?" className="w-full resize-y rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base leading-relaxed" /><p className="mt-1 text-right text-xs tabular-nums text-[var(--muted)]">{notes.length}/2,000</p></div>
+              <div className="sm:col-span-2"><label htmlFor="project-notes" className="mb-2 block text-sm font-medium">The problem, idea, or result you want</label><textarea id="project-notes" name="notes" autoComplete="off" maxLength={2000} rows={4} value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Who is this for? What should they be able to do? What is difficult or missing today?" className="w-full resize-y rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base leading-relaxed" /><p className="mt-1 text-right text-xs tabular-nums text-[var(--muted)]">{notes.length}/2,000</p></div>
+              <details className="sm:col-span-2"><summary className="flex min-h-11 items-center justify-between gap-3 text-sm font-semibold text-[var(--accent)]">Add tools or timing (optional)</summary><div className="mt-3 grid gap-5 sm:grid-cols-2">
               <div><label htmlFor="project-tools" className="mb-2 block text-sm font-medium">Current tools or website</label><input id="project-tools" name="tools" maxLength={300} value={existingTools} onChange={(event) => setExistingTools(event.target.value)} placeholder="For example, Shopify, Excel, a CRM, or starting from scratch" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
               <div><label htmlFor="project-deadline" className="mb-2 block text-sm font-medium">Target date or timing</label><input id="project-deadline" name="deadline" maxLength={160} value={deadline} onChange={(event) => setDeadline(event.target.value)} placeholder="For example, before launch in November, or flexible" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+              </div></details>
             </div>
             <details className="mt-4"><summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Preview your message</summary><p className="mt-2 whitespace-pre-wrap break-words rounded-lg bg-[var(--surface-hover)] p-4 text-sm leading-relaxed">{message}</p></details>
-            <div className="mt-5 flex flex-col gap-2">
-              <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="action-primary"><MessageCircle size={18} aria-hidden="true" /> Review in WhatsApp <ArrowUpRight size={15} aria-hidden="true" /></a>
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="action-primary col-span-2"><MessageCircle size={18} aria-hidden="true" /> Review in WhatsApp <ArrowUpRight size={15} aria-hidden="true" /></a>
               <a href={emailDraft(message)} className="action-secondary"><Mail size={17} aria-hidden="true" /> Open an email draft</a>
               <button type="button" onClick={copy} disabled={copyStatus === "copying"} className="action-secondary disabled:opacity-60">{copied ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}{copyStatus === "copying" ? "Copying…" : copied ? "Copied" : "Copy message"}</button>
             </div>

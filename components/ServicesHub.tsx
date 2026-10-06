@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { BrainCircuit, Globe, Workflow, ChartSpline, Wrench, ArrowRight, Check, KeyRound, BookOpenCheck, ShieldCheck } from "lucide-react";
+import { BrainCircuit, Globe, Workflow, ChartSpline, Wrench, ArrowRight, Check, KeyRound, BookOpenCheck, ShieldCheck, ChevronDown, ShoppingBag, AppWindow, LayoutDashboard, Plug, MessagesSquare, Bot, FileText, Database, LineChart, RefreshCw } from "lucide-react";
 import { HANDOVER_GUARANTEES, SERVICES_CATALOG } from "@/lib/services";
 import { selectServiceForPlanner } from "@/lib/project-planner";
 
 const icons = { launch: Globe, operations: Workflow, ai: BrainCircuit, data: ChartSpline, improve: Wrench };
 const handoverIcons = [KeyRound, BookOpenCheck, ShieldCheck];
+const serviceIcons = { "business-website": Globe, "commerce-booking": ShoppingBag, "digital-product": AppWindow, "business-systems": LayoutDashboard, "workflow-automation": Workflow, "system-integration": Plug, "knowledge-assistant": MessagesSquare, "ai-workflows": Bot, "document-processing": FileText, "data-foundations": Database, reporting: ChartSpline, "analysis-models": LineChart, "system-improvements": Wrench, "ongoing-support": RefreshCw };
 
 export default function ServicesHub() {
   const [activeId, setActiveId] = useState(SERVICES_CATALOG[0].id);
@@ -18,7 +19,7 @@ export default function ServicesHub() {
         <div className="mb-8 max-w-3xl">
           <h2 className="text-3xl font-bold tracking-tight md:text-5xl">What do you want to make possible?</h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
-            Start with the result you need. I can take a project from understanding the problem through design, development, integration, and handover, using reusable foundations where they fit. Explore a need below, combine areas, or bring your own brief.
+            One partner from the first idea to a working system. Explore a need, combine services, or bring your own brief. I adapt reusable foundations to your business and existing tools.
           </p>
         </div>
         <div role="group" aria-label="Explore by business need" className="mb-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
@@ -34,27 +35,31 @@ export default function ServicesHub() {
         <div id="service-details">
           <h3 className="text-2xl font-semibold tracking-tight">{active.title}</h3>
           <p className="mt-2 max-w-2xl text-base leading-relaxed text-[var(--muted)]">{active.summary}</p>
-          <div className="mt-6 divide-y divide-[var(--border)] border-y border-[var(--border)]">
-            {active.items.map((item) => (
-              <article key={item.id} className="grid min-w-0 gap-x-10 gap-y-3 py-7 md:grid-cols-[0.8fr_1.2fr]">
-                <div>
+          <div className="mt-6 grid items-start gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {active.items.map((item) => {
+              const Icon = serviceIcons[item.id as keyof typeof serviceIcons];
+              return (
+              <article key={item.id} className="service-card flex min-w-0 flex-col rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-7">
+                <Icon size={26} className="mb-5 text-[var(--accent)]" aria-hidden="true" />
                 <h4 className="text-xl font-semibold leading-snug">{item.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{item.tagline}</p>
-                <a href="#studio" onClick={() => selectServiceForPlanner(item.id)} className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[var(--accent)]" aria-label={`Discuss this: ${item.title}`}>Discuss this <ArrowRight size={15} aria-hidden="true" /></a>
-                </div>
-                <div>
-                <p className="text-base leading-relaxed text-[var(--muted)]">{item.description}</p>
-                <p className="mt-3 text-sm font-medium text-[var(--foreground)]">{item.businessImpact}</p>
-                <details className="mt-5 border-t border-[var(--border)] pt-3">
-                  <summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">What the build can include</summary>
+                <p className="mt-3 min-h-12 text-sm leading-relaxed text-[var(--muted)]">{item.tagline}</p>
+                <ul aria-label={`Examples for ${item.title}`} className="mt-4 space-y-2 text-sm text-[var(--foreground)]">
+                  {item.deliverables.slice(0, 3).map((example) => <li key={example} className="flex gap-2"><Check size={15} className="mt-0.5 shrink-0 text-[var(--accent)]" aria-hidden="true" /><span>{example}</span></li>)}
+                </ul>
+                <details className="service-details mt-5 border-t border-[var(--border)] pt-2">
+                  <summary className="flex min-h-11 items-center justify-between gap-3 text-sm font-semibold text-[var(--accent)]">Scope & deliverables<ChevronDown size={16} className="disclosure-chevron shrink-0" aria-hidden="true" /></summary>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{item.description}</p>
+                  <p className="mt-3 text-sm leading-relaxed">{item.businessImpact}</p>
                   <ul className="mt-2 space-y-2 text-sm text-[var(--muted)]">
-                    {item.deliverables.map((deliverable) => <li key={deliverable} className="flex gap-2"><Check size={15} className="mt-0.5 shrink-0 text-[var(--accent)]" aria-hidden="true" /><span>{deliverable}</span></li>)}
+                    {item.deliverables.slice(3).map((deliverable) => <li key={deliverable} className="flex gap-2"><Check size={15} className="mt-0.5 shrink-0 text-[var(--accent)]" aria-hidden="true" /><span>{deliverable}</span></li>)}
                   </ul>
                   <p className="mt-4 text-xs leading-relaxed text-[var(--muted)]">Tools depend on your scope: {item.tech.slice(1).join(" · ")}.</p>
                 </details>
-                </div>
+                <a href="#studio" onClick={(event) => {
+                  if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) selectServiceForPlanner(item.id);
+                }} className="action-secondary mt-4 w-full justify-between" aria-label={`Discuss this: ${item.title}`}>Discuss this <ArrowRight size={16} className="service-action-arrow" aria-hidden="true" /></a>
               </article>
-            ))}
+            );})}
           </div>
         </div>
         <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

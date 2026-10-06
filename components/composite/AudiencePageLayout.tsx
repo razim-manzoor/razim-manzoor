@@ -52,7 +52,7 @@ export function AudiencePageLayout() {
     <>
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
-        <div className="sticky top-20 z-30 border-y border-[var(--border)] bg-[var(--surface)] py-2">
+        <div className="z-30 border-y border-[var(--border)] bg-[var(--surface)] py-2 lg:sticky lg:top-20">
           <div className="container mx-auto px-5">
             <AudienceToggle mode={mode} onChange={setAudienceMode} />
           </div>
@@ -63,8 +63,8 @@ export function AudiencePageLayout() {
           <div hidden={mode === "client"}><RecruiterSnapshot /></div>
         </div>
         <InteractivePipeline />
-        <SkillsGrid />
         <div hidden={mode === "recruiter"}><TurnkeyStudio /></div>
+        <SkillsGrid />
       </main>
       <Footer />
     </>

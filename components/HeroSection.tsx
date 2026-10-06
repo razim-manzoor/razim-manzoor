@@ -9,7 +9,7 @@ export default function HeroSection() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section id="home" tabIndex={-1} className="relative overflow-hidden pt-28 pb-14 md:pt-40 md:pb-24">
+    <section id="home" tabIndex={-1} className="relative overflow-hidden pt-28 pb-12 md:pt-36 md:pb-20">
       <div className="container mx-auto px-5 md:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
           <div>
@@ -48,10 +48,10 @@ export default function HeroSection() {
             initial={false}
             animate={reducedMotion ? undefined : { y: [8, 0], opacity: [0.8, 1] }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px]"
+            className="relative mx-auto w-full max-w-[200px] sm:max-w-[280px] lg:max-w-[320px]"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--surface-hover)]">
-              <Image src="/profilepic.jpeg" alt="Razim Manzoor" fill priority sizes="(min-width: 640px) 320px, 280px" className="object-cover object-top" />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--surface-hover)]">
+              <Image src="/profilepic.jpeg" alt="Razim Manzoor" fill priority sizes="(min-width: 1024px) 320px, (min-width: 640px) 280px, 200px" className="scale-[1.015] object-cover object-center" />
             </div>
             <p className="mt-3 text-center text-sm text-[var(--muted)]">Business analysis. Hands-on development.</p>
           </motion.div>
