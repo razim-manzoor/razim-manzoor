@@ -1,6 +1,6 @@
 # Application architecture
 
-Source reference checked 2026-10-08. The authorized portrait composition keeps the existing runtime and data flow. No backend, tracking, dependency or architectural change is introduced. Current verification and pending release evidence belong to the [integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md).
+Source reference checked 2026-10-08. The authorized portrait composition keeps the existing runtime and data flow. No backend, tracking, dependency or architectural change is introduced. Current verification and production release evidence belong to the [integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md).
 
 ## Runtime
 

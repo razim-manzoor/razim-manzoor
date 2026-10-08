@@ -39,7 +39,7 @@ The ignored `.brain/` junction contains private working notes and is not part of
 
 The preferred [2026-10-08 portrait direction](planning/2026-10-08_visual-direction/APP_INTEGRATION.md) is integrated into the application: authentic portrait with interface fragments, fourteen distinct illustrative service examples, a brief/build/handover passage with finite movement, rough-request planner artwork and a deep-green contact close. The existing journeys, supplied facts and runtime remain intact; real case studies are deferred.
 
-Local lint, TypeScript, five estimator tests and the final webpack production build passed. Current application captures and interaction evidence passed the independent [visual finish review](.impeccable/review/FINISH_REVIEW.md) with disposition ship and no material fixes. Motion was source-reviewed and journeys were not independently rerun by the reviewer. Git publication and live release verification remain pending; the integration record carries the detailed evidence and limits.
+Local lint, TypeScript, five estimator tests and the final webpack production build passed. Current application captures and interaction evidence passed the independent [visual finish review](.impeccable/review/FINISH_REVIEW.md) with disposition ship and no material fixes. Motion was source-reviewed and journeys were not independently rerun by the reviewer. The UI is published at [www.razim.work](https://www.razim.work); the integration record carries verified deployment identity, live path checks and limits.
 
 The [visual studies](planning/2026-10-08_visual-direction/mockups/README.md) and [preview publication scope](planning/2026-10-08_visual-direction/PUBLICATION.md) preserve the earlier proposal history.
 

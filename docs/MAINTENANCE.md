@@ -1,6 +1,6 @@
 # Maintaining and publishing the portfolio
 
-Checked against the current source and package scripts on 2026-10-08. The accepted portrait composition has passed current local application checks and an independent visual finish review. Git publication and live release verification remain pending. Consult the [integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md) for actual results and limitations; do not infer hosting readiness from this procedure.
+Checked against the current source and package scripts on 2026-10-08. The accepted portrait composition passed local application checks and an independent visual finish review, and its production release was verified. Consult the [integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md) for actual results and limitations; future hosting health requires fresh evidence.
 
 ## Develop and edit
 
@@ -53,4 +53,4 @@ For dependency or deployment changes, inspect the installed version, affected bu
 4. After publication, confirm the deployed revision and responses for `/`, `/robots.txt`, `/sitemap.xml`, `/opengraph-image`, the résumé and portrait. Verify redirects/canonical domain and configured response headers, then repeat critical public journeys on the deployed site.
 5. Report commit, deployment identity, checked journeys and unresolved limits separately. A successful local build or Git push does not establish a healthy hosted deployment.
 
-The canonical domain is `https://www.razim.work`. The Vercel project association was checked as healthy for `razim-manzoor`, GitHub `main`, and that domain; the integration's deployed revision and live paths remain unverified. Architectural changes require explicit user consent under the project instructions. Preserve decision history and update the short private project state at a meaningful stopping point, without copying it into public documentation.
+The canonical domain is `https://www.razim.work`. The Vercel project association, production revision and live paths were verified for `razim-manzoor`, GitHub `main`, and that domain on 2026-10-08; see the integration record. Architectural changes require explicit user consent under the project instructions. Preserve decision history and update the short private project state at a meaningful stopping point, without copying it into public documentation.

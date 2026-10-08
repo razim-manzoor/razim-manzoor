@@ -1,6 +1,6 @@
 # Razim Manzoor portfolio
 
-Current application reference, checked against source on 2026-10-08. The accepted portrait direction is integrated locally; current browser evidence and an independent visual finish disposition of ship are recorded in the [integration record](planning/2026-10-08_visual-direction/APP_INTEGRATION.md). Git publication and live release verification remain pending.
+Current application reference, checked against source on 2026-10-08. The accepted portrait direction is integrated and published. Current browser evidence, independent visual finish disposition of ship, and verified production release are recorded in the [integration record](planning/2026-10-08_visual-direction/APP_INTEGRATION.md).
 
 The site helps prospective clients start a project conversation and hiring teams review Razim's background. It connects business analysis with practical websites, applications, AI tools, automation and reporting. Preserve the existing green identity, Geist typography and authentic portrait. Professional history and claims are supplied content, not independently authenticated evidence.
 

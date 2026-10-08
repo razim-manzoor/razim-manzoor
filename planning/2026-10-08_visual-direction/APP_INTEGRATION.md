@@ -1,6 +1,6 @@
 # Portrait direction: application integration
 
-2026-10-08. Application integration and local review complete; Git publication and live release verification pending. The user authorised integrating the preferred portrait composition, checking the real application and publishing it. Real project case studies are deferred.
+2026-10-08. Application integration, local review, Git publication and live release verification complete. The user authorised integrating the preferred portrait composition, checking the real application and publishing it. Real project case studies are deferred.
 
 ## Direction contract
 
@@ -44,4 +44,14 @@ Documentation validation passed: YAML/JSON parsing; documented schema fields, co
 
 ## Release status
 
-The Vercel project association was verified healthy: `razim-manzoor`, GitHub `main`, canonical `https://www.razim.work`. No hosting settings, packages, backend or tracking changed. Git publication, deployed revision identity and live critical-path verification remain pending and must be recorded separately from the local ship disposition.
+The Vercel project association was verified healthy: `razim-manzoor`, GitHub `main`, canonical `https://www.razim.work`. No hosting settings, packages, backend or tracking changed.
+
+## Published application verification
+
+Implementation commit `6be5fcf9b34cafc2f072204e586e710a31a28bcb` was pushed to `origin/main`. Vercel deployment `dpl_8jXmvXzyUs59uNPzeRred7N9M2cf` reached READY in production with that exact Git SHA and the canonical domain alias. This hosted build completed separately from the local webpack fallback.
+
+The public site rendered the portrait, fragments and illustrative service cards with loaded fonts/image and no horizontal overflow at the observed 1280px browser width. Service-to-planner selection, matching WhatsApp/email drafts, hiring URL/visibility, planner hiding and retained project notes passed; no warning/error logs were captured in that test tab. No message was sent. [Live first-screen capture](../../.impeccable/review/live-first.png).
+
+`/`, `/robots.txt`, `/sitemap.xml`, `/opengraph-image`, `/Razim_Manzoor_MBA_AI_Analytics.pdf` and `/profilepic.jpeg` returned 200 with the expected content types. Responses retain SAMEORIGIN and nosniff headers. The deleted temporary capture path returns 404. Apex `https://razim.work/` redirects 308 to `https://www.razim.work/`, matching the rendered canonical URL.
+
+The release-record follow-up changes documentation and its screenshot evidence only; application source remains the reviewed implementation. Future hosting health requires fresh verification.
