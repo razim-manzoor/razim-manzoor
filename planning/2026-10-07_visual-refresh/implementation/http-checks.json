@@ -1,0 +1,80 @@
+{
+  "build_id": "2zleaJOgHv2AZK219u0tr",
+  "http": [
+    {
+      "route": "/",
+      "status": 200,
+      "bytes": 75217,
+      "elapsed_ms": 618,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "route": "/?view=recruiter",
+      "status": 200,
+      "bytes": 75217,
+      "elapsed_ms": 18,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "route": "/?view=all",
+      "status": 200,
+      "bytes": 75217,
+      "elapsed_ms": 6,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "route": "/profilepic.jpeg",
+      "status": 200,
+      "bytes": 105184,
+      "elapsed_ms": 38,
+      "content_type": "image/jpeg"
+    },
+    {
+      "route": "/Razim_Manzoor_MBA_AI_Analytics.pdf",
+      "status": 200,
+      "bytes": 239215,
+      "elapsed_ms": 105,
+      "content_type": "application/pdf"
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200,
+      "bytes": 68,
+      "elapsed_ms": 46,
+      "content_type": "text/plain"
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200,
+      "bytes": 257,
+      "elapsed_ms": 69,
+      "content_type": "application/xml"
+    },
+    {
+      "route": "/opengraph-image",
+      "status": 200,
+      "bytes": 87978,
+      "elapsed_ms": 212,
+      "content_type": "image/png"
+    }
+  ],
+  "source_html": {
+    "unique_ids": true,
+    "labelled_text_fields": true,
+    "sections_present": true,
+    "script_count": 9,
+    "css_count": 1
+  },
+  "uncompressed_js_bytes": 664089,
+  "uncompressed_css_bytes": 45119,
+  "security_headers": {
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Content-Security-Policy": "base-uri 'self'; form-action 'self'; frame-ancestors 'self'",
+    "Referrer-Policy": "origin-when-cross-origin"
+  },
+  "limitations": "HTTP and server-rendered HTML only; no browser, LCP, INP, CLS or responsive verification; no valid before/after performance baseline.",
+  "previous_verified_build_id": "yrcvVuR1MewqDBJYnDCdw",
+  "final_build": "npm run build -- --webpack: passed after separator and mobile offset corrections",
+  "final_http_verified": true
+}

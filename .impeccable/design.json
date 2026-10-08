@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T06:37:22Z",
+  "title": "Design System: Razim Manzoor portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Green action",
+        "canonical": "#047857",
+        "tonalRamp": [
+          "oklch(15.00% 0.10494 165.61)",
+          "oklch(26.43% 0.10494 165.61)",
+          "oklch(37.86% 0.10494 165.61)",
+          "oklch(49.29% 0.10494 165.61)",
+          "oklch(60.71% 0.10494 165.61)",
+          "oklch(72.14% 0.10494 165.61)",
+          "oklch(83.57% 0.10494 165.61)",
+          "oklch(95.00% 0.10494 165.61)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Green action hover",
+        "canonical": "#065f46",
+        "tonalRamp": [
+          "oklch(15.00% 0.08647 166.91)",
+          "oklch(26.43% 0.08647 166.91)",
+          "oklch(37.86% 0.08647 166.91)",
+          "oklch(49.29% 0.08647 166.91)",
+          "oklch(60.71% 0.08647 166.91)",
+          "oklch(72.14% 0.08647 166.91)",
+          "oklch(83.57% 0.08647 166.91)",
+          "oklch(95.00% 0.08647 166.91)"
+        ]
+      },
+      "on-primary": {
+        "role": "neutral",
+        "displayName": "Text on primary",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Light page",
+        "canonical": "#f8fafc",
+        "tonalRamp": [
+          "oklch(15.00% 0.00341 247.86)",
+          "oklch(26.43% 0.00341 247.86)",
+          "oklch(37.86% 0.00341 247.86)",
+          "oklch(49.29% 0.00341 247.86)",
+          "oklch(60.71% 0.00341 247.86)",
+          "oklch(72.14% 0.00341 247.86)",
+          "oklch(83.57% 0.00341 247.86)",
+          "oklch(95.00% 0.00341 247.86)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Light text",
+        "canonical": "#09090b",
+        "tonalRamp": [
+          "oklch(15.00% 0.00439 285.82)",
+          "oklch(26.43% 0.00439 285.82)",
+          "oklch(37.86% 0.00439 285.82)",
+          "oklch(49.29% 0.00439 285.82)",
+          "oklch(60.71% 0.00439 285.82)",
+          "oklch(72.14% 0.00439 285.82)",
+          "oklch(83.57% 0.00439 285.82)",
+          "oklch(95.00% 0.00439 285.82)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Light panel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Light supporting surface",
+        "canonical": "#f1f5f9",
+        "tonalRamp": [
+          "oklch(15.00% 0.00685 247.90)",
+          "oklch(26.43% 0.00685 247.90)",
+          "oklch(37.86% 0.00685 247.90)",
+          "oklch(49.29% 0.00685 247.90)",
+          "oklch(60.71% 0.00685 247.90)",
+          "oklch(72.14% 0.00685 247.90)",
+          "oklch(83.57% 0.00685 247.90)",
+          "oklch(95.00% 0.00685 247.90)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Light divider",
+        "canonical": "rgba(15, 23, 42, 0.08)",
+        "tonalRamp": [
+          "oklch(15.00% 0.03982 265.75 / 0.08)",
+          "oklch(26.43% 0.03982 265.75 / 0.08)",
+          "oklch(37.86% 0.03982 265.75 / 0.08)",
+          "oklch(49.29% 0.03982 265.75 / 0.08)",
+          "oklch(60.71% 0.03982 265.75 / 0.08)",
+          "oklch(72.14% 0.03982 265.75 / 0.08)",
+          "oklch(83.57% 0.03982 265.75 / 0.08)",
+          "oklch(95.00% 0.03982 265.75 / 0.08)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "Light field border",
+        "canonical": "#77869b",
+        "tonalRamp": [
+          "oklch(15.00% 0.03642 256.80)",
+          "oklch(26.43% 0.03642 256.80)",
+          "oklch(37.86% 0.03642 256.80)",
+          "oklch(49.29% 0.03642 256.80)",
+          "oklch(60.71% 0.03642 256.80)",
+          "oklch(72.14% 0.03642 256.80)",
+          "oklch(83.57% 0.03642 256.80)",
+          "oklch(95.00% 0.03642 256.80)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Light secondary text",
+        "canonical": "#526176",
+        "tonalRamp": [
+          "oklch(15.00% 0.03860 256.82)",
+          "oklch(26.43% 0.03860 256.82)",
+          "oklch(37.86% 0.03860 256.82)",
+          "oklch(49.29% 0.03860 256.82)",
+          "oklch(60.71% 0.03860 256.82)",
+          "oklch(72.14% 0.03860 256.82)",
+          "oklch(83.57% 0.03860 256.82)",
+          "oklch(95.00% 0.03860 256.82)"
+        ]
+      },
+      "primary-glow": {
+        "role": "primary",
+        "displayName": "Light tap highlight",
+        "canonical": "rgba(5, 150, 105, 0.15)",
+        "tonalRamp": [
+          "oklch(15.00% 0.12742 163.23 / 0.15)",
+          "oklch(26.43% 0.12742 163.23 / 0.15)",
+          "oklch(37.86% 0.12742 163.23 / 0.15)",
+          "oklch(49.29% 0.12742 163.23 / 0.15)",
+          "oklch(60.71% 0.12742 163.23 / 0.15)",
+          "oklch(72.14% 0.12742 163.23 / 0.15)",
+          "oklch(83.57% 0.12742 163.23 / 0.15)",
+          "oklch(95.00% 0.12742 163.23 / 0.15)"
+        ]
+      },
+      "dark-background": {
+        "role": "neutral",
+        "displayName": "Dark page",
+        "canonical": "#09090b",
+        "tonalRamp": [
+          "oklch(15.00% 0.00439 285.82)",
+          "oklch(26.43% 0.00439 285.82)",
+          "oklch(37.86% 0.00439 285.82)",
+          "oklch(49.29% 0.00439 285.82)",
+          "oklch(60.71% 0.00439 285.82)",
+          "oklch(72.14% 0.00439 285.82)",
+          "oklch(83.57% 0.00439 285.82)",
+          "oklch(95.00% 0.00439 285.82)"
+        ]
+      },
+      "dark-foreground": {
+        "role": "neutral",
+        "displayName": "Dark text",
+        "canonical": "#f8fafc",
+        "tonalRamp": [
+          "oklch(15.00% 0.00341 247.86)",
+          "oklch(26.43% 0.00341 247.86)",
+          "oklch(37.86% 0.00341 247.86)",
+          "oklch(49.29% 0.00341 247.86)",
+          "oklch(60.71% 0.00341 247.86)",
+          "oklch(72.14% 0.00341 247.86)",
+          "oklch(83.57% 0.00341 247.86)",
+          "oklch(95.00% 0.00341 247.86)"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Dark panel",
+        "canonical": "#121215",
+        "tonalRamp": [
+          "oklch(15.00% 0.00607 285.79)",
+          "oklch(26.43% 0.00607 285.79)",
+          "oklch(37.86% 0.00607 285.79)",
+          "oklch(49.29% 0.00607 285.79)",
+          "oklch(60.71% 0.00607 285.79)",
+          "oklch(72.14% 0.00607 285.79)",
+          "oklch(83.57% 0.00607 285.79)",
+          "oklch(95.00% 0.00607 285.79)"
+        ]
+      },
+      "dark-surface-hover": {
+        "role": "neutral",
+        "displayName": "Dark supporting surface",
+        "canonical": "#1a1a20",
+        "tonalRamp": [
+          "oklch(15.00% 0.01163 285.41)",
+          "oklch(26.43% 0.01163 285.41)",
+          "oklch(37.86% 0.01163 285.41)",
+          "oklch(49.29% 0.01163 285.41)",
+          "oklch(60.71% 0.01163 285.41)",
+          "oklch(72.14% 0.01163 285.41)",
+          "oklch(83.57% 0.01163 285.41)",
+          "oklch(95.00% 0.01163 285.41)"
+        ]
+      },
+      "dark-border": {
+        "role": "neutral",
+        "displayName": "Dark divider",
+        "canonical": "rgba(255, 255, 255, 0.08)",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88 / 0.08)",
+          "oklch(26.43% 0.00000 89.88 / 0.08)",
+          "oklch(37.86% 0.00000 89.88 / 0.08)",
+          "oklch(49.29% 0.00000 89.88 / 0.08)",
+          "oklch(60.71% 0.00000 89.88 / 0.08)",
+          "oklch(72.14% 0.00000 89.88 / 0.08)",
+          "oklch(83.57% 0.00000 89.88 / 0.08)",
+          "oklch(95.00% 0.00000 89.88 / 0.08)"
+        ]
+      },
+      "dark-control-border": {
+        "role": "neutral",
+        "displayName": "Dark field border",
+        "canonical": "#64748b",
+        "tonalRamp": [
+          "oklch(15.00% 0.04072 257.42)",
+          "oklch(26.43% 0.04072 257.42)",
+          "oklch(37.86% 0.04072 257.42)",
+          "oklch(49.29% 0.04072 257.42)",
+          "oklch(60.71% 0.04072 257.42)",
+          "oklch(72.14% 0.04072 257.42)",
+          "oklch(83.57% 0.04072 257.42)",
+          "oklch(95.00% 0.04072 257.42)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark secondary text",
+        "canonical": "#94a3b8",
+        "tonalRamp": [
+          "oklch(15.00% 0.03511 256.79)",
+          "oklch(26.43% 0.03511 256.79)",
+          "oklch(37.86% 0.03511 256.79)",
+          "oklch(49.29% 0.03511 256.79)",
+          "oklch(60.71% 0.03511 256.79)",
+          "oklch(72.14% 0.03511 256.79)",
+          "oklch(83.57% 0.03511 256.79)",
+          "oklch(95.00% 0.03511 256.79)"
+        ]
+      },
+      "dark-accent": {
+        "role": "primary",
+        "displayName": "Dark green text accent",
+        "canonical": "#6ee7b7",
+        "tonalRamp": [
+          "oklch(15.00% 0.12995 164.98)",
+          "oklch(26.43% 0.12995 164.98)",
+          "oklch(37.86% 0.12995 164.98)",
+          "oklch(49.29% 0.12995 164.98)",
+          "oklch(60.71% 0.12995 164.98)",
+          "oklch(72.14% 0.12995 164.98)",
+          "oklch(83.57% 0.12995 164.98)",
+          "oklch(95.00% 0.12995 164.98)"
+        ]
+      },
+      "dark-primary-glow": {
+        "role": "primary",
+        "displayName": "Dark tap highlight",
+        "canonical": "rgba(16, 185, 129, 0.2)",
+        "tonalRamp": [
+          "oklch(15.00% 0.14907 162.48 / 0.2)",
+          "oklch(26.43% 0.14907 162.48 / 0.2)",
+          "oklch(37.86% 0.14907 162.48 / 0.2)",
+          "oklch(49.29% 0.14907 162.48 / 0.2)",
+          "oklch(60.71% 0.14907 162.48 / 0.2)",
+          "oklch(72.14% 0.14907 162.48 / 0.2)",
+          "oklch(83.57% 0.14907 162.48 / 0.2)",
+          "oklch(95.00% 0.14907 162.48 / 0.2)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Personal identity",
+        "purpose": "Desktop hero name; responsive overrides are documented in DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Section heading",
+        "purpose": "Major section titles."
+      },
+      "title": {
+        "displayName": "Service title",
+        "purpose": "Service card heading."
+      },
+      "body": {
+        "displayName": "Description",
+        "purpose": "Hero and section description."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Buttons and text actions."
+      }
+    },
+    "shadows": [
+      {
+        "name": "keyboard-focus",
+        "value": "0 0 0 2px var(--background), 0 0 0 4px var(--primary)",
+        "purpose": "Global focus-visible ring; not resting card elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "portrait-enter",
+        "value": ".48s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Visible desktop portrait, opacity .92 to 1 and translateY(8px) to none; no-preference only."
+      },
+      {
+        "name": "audience-marker",
+        "value": ".22s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Selection marker; disabled during keyboard focus and reduced motion."
+      },
+      {
+        "name": "service-lift",
+        "value": ".18s cubic-bezier(.16,1,.3,1)",
+        "purpose": "3px fine-pointer hover lift; focus-within immediate, reduced motion removes transform."
+      },
+      {
+        "name": "service-arrow",
+        "value": ".15s cubic-bezier(.16,1,.3,1)",
+        "purpose": "3px action-arrow movement."
+      },
+      {
+        "name": "disclosure-chevron",
+        "value": ".2s",
+        "purpose": "180-degree native disclosure chevron rotation; disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-portrait",
+        "value": "350px"
+      },
+      {
+        "name": "utility-sm",
+        "value": "640px"
+      },
+      {
+        "name": "composition-mobile",
+        "value": "760px"
+      },
+      {
+        "name": "utility-md",
+        "value": "768px"
+      },
+      {
+        "name": "utility-lg",
+        "value": "1024px"
+      }
+    ],
+    "review": {
+      "basis": "Implemented source on 2026-10-08; browser verification and current review captures incomplete.",
+      "tonalRampUse": "Synthesized OKLCH preview strips from source colors, not additional implementation tokens. Browser gamut mapping may clip extreme tones.",
+      "componentUse": "Standalone style specimens; runtime state, navigation, contact and clipboard behavior remain in application components."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main contact or draft action.",
+      "html": "<button class=\"ds-primary ds-focus\">Review in WhatsApp</button>",
+      "css": ".ds-primary{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;transition:background-color .2s,color .2s,border-color .2s;border:0;background:var(--primary,#047857);color:var(--on-primary,#fff)}.ds-primary:hover{background:var(--primary-hover,#065f46)}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Alternative destination or copy action.",
+      "html": "<button class=\"ds-secondary ds-focus\">Copy message</button>",
+      "css": ".ds-secondary{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;transition:background-color .2s,color .2s,border-color .2s;border:1px solid var(--border,rgba(15,23,42,.08));background:var(--surface,#fff);color:var(--foreground,#09090b)}.ds-secondary:hover{background:var(--surface-hover,#f1f5f9);border-color:var(--muted,#526176)}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Project field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Optional labelled planner field.",
+      "html": "<label class=\"ds-label\" for=\"ds-name\">Your name or company</label><input class=\"ds-input ds-focus\" id=\"ds-name\" placeholder=\"For example, Alex / Acme\" autocomplete=\"name\">",
+      "css": ".ds-label{display:block;margin-bottom:8px;font-size:14px;font-weight:500;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;color:var(--foreground,#09090b)}.ds-input{width:calc(100% - 26px);border:1px solid var(--control-border,#77869b);border-radius:8px;background:var(--background,#f8fafc);color:var(--foreground,#09090b);padding:12px;font-size:16px;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;caret-color:var(--accent,#047857)}.ds-input::placeholder{color:var(--muted,#526176);opacity:1}.ds-input:hover{border-color:var(--control-border,#77869b)}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}"
+    },
+    {
+      "name": "Primary navigation",
+      "kind": "nav",
+      "description": "Desktop link treatment; mobile uses the actual application menu.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary navigation\"><a class=\"ds-focus\" href=\"#services\">Services</a><a class=\"ds-focus\" href=\"#dossier\">Background</a><a class=\"ds-focus\" href=\"#contact\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:20px;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-nav a{display:inline-flex;min-height:44px;align-items:center;font-size:14px;font-weight:500;color:var(--muted,#526176);text-decoration:none}.ds-nav a:hover{color:var(--foreground,#09090b)}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}"
+    },
+    {
+      "name": "Toolkit chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Static supporting tool label.",
+      "html": "<span class=\"ds-chip\">TypeScript</span>",
+      "css": ".ds-chip{display:inline-block;border-radius:8px;background:var(--surface-hover,#f1f5f9);color:var(--foreground,#09090b);padding:8px 12px;font-size:14px;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}"
+    },
+    {
+      "name": "Service card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Scope surface with native disclosure and planner link; shortened specimen copy.",
+      "html": "<article class=\"ds-card\"><h4>Websites &amp; digital presence</h4><p>A place for people to find you and take the next step.</p><details><summary class=\"ds-focus\">Scope &amp; deliverables</summary><p>Agreed page structure and responsive interface.</p></details><a class=\"ds-discuss ds-focus\" href=\"#studio\">Discuss this <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></a></article>",
+      "css": ".ds-card{min-width:0;border:1px solid var(--border,rgba(15,23,42,.08));border-radius:14px;background:var(--surface,#fff);color:var(--foreground,#09090b);padding:24px;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;transition:border-color .2s,background-color .2s,transform .18s cubic-bezier(.16,1,.3,1)}.ds-card h4{margin:0;font-size:20px;font-weight:600;line-height:1.375}.ds-card p{margin-top:12px;color:var(--muted,#526176);font-size:14px;line-height:1.625}.ds-card details{border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:8px;margin-top:20px}.ds-card summary{min-height:44px;display:flex;align-items:center;color:var(--accent,#047857);font-size:14px;font-weight:600;cursor:pointer}.ds-card summary::after{content:\"\";margin-left:auto;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}.ds-card details[open] summary::after{transform:rotate(225deg)}.ds-discuss{display:flex;min-height:44px;justify-content:space-between;align-items:center;border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:12px;margin-top:16px;color:var(--foreground,#09090b);font-size:14px;font-weight:600;text-decoration:none}.ds-discuss svg{transition:transform .15s cubic-bezier(.16,1,.3,1)}.ds-card:focus-within{border-color:var(--accent,#047857);transform:translateY(-3px);transition:none}.ds-discuss:focus-visible svg{transform:translateX(3px)}@media(hover:hover) and (pointer:fine){.ds-card:hover{border-color:var(--accent,#047857);transform:translateY(-3px)}.ds-discuss:hover svg{transform:translateX(3px)}}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(min-width:768px){.ds-card{padding:28px}}@media(prefers-reduced-motion:reduce){.ds-card,.ds-discuss svg{transition:none;transform:none!important}}"
+    },
+    {
+      "name": "Audience selection",
+      "kind": "custom",
+      "description": "Selected-state specimen of the three-button audience group; application owns URL/state behavior.",
+      "html": "<div class=\"ds-audience\" role=\"group\" aria-label=\"Choose what to explore\"><span class=\"ds-marker\" aria-hidden=\"true\"></span><button class=\"ds-focus\" aria-pressed=\"true\">For clients</button><button class=\"ds-focus\" aria-pressed=\"false\">For hiring teams</button><button class=\"ds-focus\" aria-pressed=\"false\">Everything</button></div>",
+      "css": ".ds-audience{position:relative;display:grid;grid-template-columns:repeat(3,1fr);width:450px;max-width:calc(100% - 10px);padding:5px;border-radius:12px;background:var(--surface-hover,#f1f5f9);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-marker{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);background:var(--primary,#047857);border-radius:8px;transition:transform .22s cubic-bezier(.16,1,.3,1)}.ds-audience button{position:relative;z-index:1;min-height:44px;border:0;background:transparent;border-radius:8px;padding:0 8px;font-size:13px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;color:var(--muted,#526176);cursor:pointer}.ds-audience button[aria-pressed=true]{color:var(--on-primary,#fff)}.ds-audience button[aria-pressed=false]:hover{color:var(--foreground,#09090b)}.ds-audience:has(:focus-visible) .ds-marker{transition:none}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(prefers-reduced-motion:reduce){.ds-marker{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A personal professional portfolio with the care of an editorial layout",
+    "overview": "The existing identity gives a real person the first impression: Razim's name, authentic portrait and the connection between business understanding and practical development. Open text regions, restrained green emphasis and quiet functional panels create variation without changing the brand.\n\nThis document records the implemented source on 2026-10-08, extending the [approved direction](planning/2026-10-07_visual-refresh/DESIGN.md). It does not certify rendered quality. Current desktop/mobile captures and browser interaction review are outstanding; proposal captures are not implementation evidence. CSS and rendered components are the implementation source of truth; reconcile this record when they change.",
+    "keyCharacteristics": [
+      "Authentic portrait and prominent personal identity.",
+      "Green actions with neutral reading surfaces in both themes.",
+      "Open section layouts mixed with compact functional panels.",
+      "Optional detail and immediate state feedback."
+    ],
+    "rules": [
+      {
+        "name": "The Theme Role Rule",
+        "body": "Use the live semantic CSS variables for component colors so the light and dark assignments remain connected.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Preserve Geist for the implemented identity; create hierarchy through size, weight, line length and whitespace.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quiet Surface Rule",
+        "body": "Use open regions and hairline dividers alongside panels; do not turn every section into a card.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the authentic portrait, green identity and Geist typography.",
+      "Do use semantic theme variables and visible keyboard focus.",
+      "Do keep optional detail in native disclosures and preserve mounted drafts.",
+      "Do reduce movement without removing information or feedback."
+    ],
+    "donts": [
+      "Don't substitute fabricated portraits, work evidence or performance claims.",
+      "Don't add competing decorative animation around the portrait.",
+      "Don't promote unused legacy effects into the current design vocabulary.",
+      "Don't treat proposal screenshots or source-only checks as a rendered application pass."
+    ]
+  }
+}

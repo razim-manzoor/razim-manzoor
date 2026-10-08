@@ -37,6 +37,16 @@ The ignored `.brain/` junction contains private working notes and is not part of
 
 ## Recent work
 
+The [2026-10-08 visual direction follow-up](planning/2026-10-08_visual-direction/README.md) researches a richer UI and proposes illustrated services, a stronger portrait composition, explanatory motion and green feature sections. Two [interactive visual studies](planning/2026-10-08_visual-direction/mockups/README.md) show portrait/panels and workflow/rows compositions in both themes. The preferred portrait study now has fourteen distinct service examples and aligned delivery/planner content. This richer direction is not integrated into the application.
+
+The preview and supporting documentation are published separately from the pending application edits. [Publication scope](planning/2026-10-08_visual-direction/PUBLICATION.md) records that boundary.
+
+The [website skill workflow](docs/SKILLS.md) maps design, motion, implementation and verification skills, with conditional tools and component-source adoption rules.
+
+The [2026-10-07 visual refresh packet](planning/2026-10-07_visual-refresh/README.md) retains the design proposal, PRD, TRD, flows, color profile and research. The accepted composition is now integrated locally; [implementation checks and outstanding browser verification](planning/2026-10-07_visual-refresh/IMPLEMENTATION.md) are recorded separately. It has not been published.
+
+Durable website references: [product and visitor flows](PRODUCT.md), [design system](DESIGN.md), [architecture](docs/ARCHITECTURE.md), and [maintenance and release](docs/MAINTENANCE.md).
+
 See `planning/2026-10-05_content-code-review.md` for the initial review and the dated implementation handoff for final verification. Review snapshots describe the checkout at the time they were written.
 
 MIT license; see `LICENSE`.

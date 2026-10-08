@@ -1,0 +1,1009 @@
+{
+  "date": "2026-10-08",
+  "scope": "Standalone content refinement; iframe widths, not physical devices",
+  "categories": [
+    {
+      "category": "launch",
+      "device": "desktop",
+      "theme": "light",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "business-website",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "commerce-booking",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "digital-product",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "launch",
+      "device": "desktop",
+      "theme": "dark",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "business-website",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "commerce-booking",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "digital-product",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "launch",
+      "device": "phone",
+      "theme": "light",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.65625,
+          "id": "business-website",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "commerce-booking",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 318.15625,
+          "id": "digital-product",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "launch",
+      "device": "phone",
+      "theme": "dark",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.65625,
+          "id": "business-website",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "commerce-booking",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 318.15625,
+          "id": "digital-product",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "operations",
+      "device": "desktop",
+      "theme": "light",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "business-systems",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "workflow-automation",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "system-integration",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "operations",
+      "device": "desktop",
+      "theme": "dark",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "business-systems",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "workflow-automation",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "system-integration",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "operations",
+      "device": "phone",
+      "theme": "light",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "business-systems",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "workflow-automation",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "system-integration",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "operations",
+      "device": "phone",
+      "theme": "dark",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "business-systems",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "workflow-automation",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "system-integration",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "ai",
+      "device": "desktop",
+      "theme": "light",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "knowledge-assistant",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "ai-workflows",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "document-processing",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "ai",
+      "device": "desktop",
+      "theme": "dark",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "knowledge-assistant",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "ai-workflows",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "document-processing",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "ai",
+      "device": "phone",
+      "theme": "light",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "knowledge-assistant",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "ai-workflows",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "document-processing",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "ai",
+      "device": "phone",
+      "theme": "dark",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "knowledge-assistant",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "ai-workflows",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "document-processing",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "data",
+      "device": "desktop",
+      "theme": "light",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "data-foundations",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "reporting",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "analysis-models",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "data",
+      "device": "desktop",
+      "theme": "dark",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "data-foundations",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "reporting",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "analysis-models",
+          "overflow": false,
+          "width": 357.34375,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "data",
+      "device": "phone",
+      "theme": "light",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "data-foundations",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "reporting",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "analysis-models",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "data",
+      "device": "phone",
+      "theme": "dark",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "data-foundations",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "reporting",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "analysis-models",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "improve",
+      "device": "desktop",
+      "theme": "light",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "system-improvements",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "ongoing-support",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "improve",
+      "device": "desktop",
+      "theme": "dark",
+      "client": 1425,
+      "examples": [
+        {
+          "height": 309.9375,
+          "id": "system-improvements",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        },
+        {
+          "height": 309.9375,
+          "id": "ongoing-support",
+          "overflow": false,
+          "width": 357.328125,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 1440,
+      "scroll": 1425
+    },
+    {
+      "category": "improve",
+      "device": "phone",
+      "theme": "light",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "system-improvements",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "ongoing-support",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    },
+    {
+      "category": "improve",
+      "device": "phone",
+      "theme": "dark",
+      "client": 375,
+      "examples": [
+        {
+          "height": 317.390625,
+          "id": "system-improvements",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        },
+        {
+          "height": 317.390625,
+          "id": "ongoing-support",
+          "overflow": false,
+          "width": 335,
+          "windowOverflow": false
+        }
+      ],
+      "inner": 390,
+      "scroll": 375
+    }
+  ],
+  "sections": [
+    {
+      "section": "pipeline",
+      "device": "desktop",
+      "theme": "light",
+      "client": 1425,
+      "height": 908.375,
+      "inner": 1440,
+      "scroll": 1425,
+      "top": 159.65625
+    },
+    {
+      "section": "pipeline",
+      "device": "desktop",
+      "theme": "dark",
+      "client": 1425,
+      "height": 908.375,
+      "inner": 1440,
+      "scroll": 1425,
+      "top": 159.65625
+    },
+    {
+      "section": "pipeline",
+      "device": "phone",
+      "theme": "light",
+      "client": 375,
+      "height": 1598.03125,
+      "inner": 390,
+      "scroll": 375,
+      "top": 160.171875
+    },
+    {
+      "section": "pipeline",
+      "device": "phone",
+      "theme": "dark",
+      "client": 375,
+      "height": 1598.03125,
+      "inner": 390,
+      "scroll": 375,
+      "top": 160.171875
+    },
+    {
+      "section": "studio",
+      "device": "desktop",
+      "theme": "light",
+      "client": 1425,
+      "height": 1287.390625,
+      "inner": 1440,
+      "scroll": 1425,
+      "top": 459.03125
+    },
+    {
+      "section": "studio",
+      "device": "desktop",
+      "theme": "dark",
+      "client": 1425,
+      "height": 1287.390625,
+      "inner": 1440,
+      "scroll": 1425,
+      "top": 459.03125
+    },
+    {
+      "section": "studio",
+      "device": "phone",
+      "theme": "light",
+      "client": 375,
+      "height": 2168.90625,
+      "inner": 390,
+      "scroll": 375,
+      "top": 160.203125
+    },
+    {
+      "section": "studio",
+      "device": "phone",
+      "theme": "dark",
+      "client": 375,
+      "height": 2168.90625,
+      "inner": 390,
+      "scroll": 375,
+      "top": 160.203125
+    }
+  ],
+  "boundaries": [
+    {
+      "category": "launch",
+      "device": "small",
+      "theme": "light",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "business-website",
+          "overflow": false
+        },
+        {
+          "id": "commerce-booking",
+          "overflow": false
+        },
+        {
+          "id": "digital-product",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "launch",
+      "device": "small",
+      "theme": "dark",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "business-website",
+          "overflow": false
+        },
+        {
+          "id": "commerce-booking",
+          "overflow": false
+        },
+        {
+          "id": "digital-product",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "operations",
+      "device": "small",
+      "theme": "light",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "business-systems",
+          "overflow": false
+        },
+        {
+          "id": "workflow-automation",
+          "overflow": false
+        },
+        {
+          "id": "system-integration",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "operations",
+      "device": "small",
+      "theme": "dark",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "business-systems",
+          "overflow": false
+        },
+        {
+          "id": "workflow-automation",
+          "overflow": false
+        },
+        {
+          "id": "system-integration",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "ai",
+      "device": "small",
+      "theme": "light",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "knowledge-assistant",
+          "overflow": false
+        },
+        {
+          "id": "ai-workflows",
+          "overflow": false
+        },
+        {
+          "id": "document-processing",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "ai",
+      "device": "small",
+      "theme": "dark",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "knowledge-assistant",
+          "overflow": false
+        },
+        {
+          "id": "ai-workflows",
+          "overflow": false
+        },
+        {
+          "id": "document-processing",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "data",
+      "device": "small",
+      "theme": "light",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "data-foundations",
+          "overflow": false
+        },
+        {
+          "id": "reporting",
+          "overflow": false
+        },
+        {
+          "id": "analysis-models",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "data",
+      "device": "small",
+      "theme": "dark",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "data-foundations",
+          "overflow": false
+        },
+        {
+          "id": "reporting",
+          "overflow": false
+        },
+        {
+          "id": "analysis-models",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "improve",
+      "device": "small",
+      "theme": "light",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "system-improvements",
+          "overflow": false
+        },
+        {
+          "id": "ongoing-support",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "improve",
+      "device": "small",
+      "theme": "dark",
+      "client": 305,
+      "inner": 320,
+      "scroll": 305,
+      "windows": [
+        {
+          "id": "system-improvements",
+          "overflow": false
+        },
+        {
+          "id": "ongoing-support",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "launch",
+      "device": "current",
+      "theme": "light",
+      "client": 930,
+      "inner": 945,
+      "scroll": 930,
+      "windows": [
+        {
+          "id": "business-website",
+          "overflow": false
+        },
+        {
+          "id": "commerce-booking",
+          "overflow": false
+        },
+        {
+          "id": "digital-product",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "operations",
+      "device": "current",
+      "theme": "light",
+      "client": 930,
+      "inner": 945,
+      "scroll": 930,
+      "windows": [
+        {
+          "id": "business-systems",
+          "overflow": false
+        },
+        {
+          "id": "workflow-automation",
+          "overflow": false
+        },
+        {
+          "id": "system-integration",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "ai",
+      "device": "current",
+      "theme": "light",
+      "client": 930,
+      "inner": 945,
+      "scroll": 930,
+      "windows": [
+        {
+          "id": "knowledge-assistant",
+          "overflow": false
+        },
+        {
+          "id": "ai-workflows",
+          "overflow": false
+        },
+        {
+          "id": "document-processing",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "data",
+      "device": "current",
+      "theme": "light",
+      "client": 930,
+      "inner": 945,
+      "scroll": 930,
+      "windows": [
+        {
+          "id": "data-foundations",
+          "overflow": false
+        },
+        {
+          "id": "reporting",
+          "overflow": false
+        },
+        {
+          "id": "analysis-models",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "category": "improve",
+      "device": "current",
+      "theme": "light",
+      "client": 930,
+      "inner": 945,
+      "scroll": 930,
+      "windows": [
+        {
+          "id": "system-improvements",
+          "overflow": false
+        },
+        {
+          "id": "ongoing-support",
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "interaction": {
+    "draftRetained": true,
+    "selected": "Websites & digital presence\nWorkflow automation",
+    "direction": "portrait",
+    "briefHidden": null,
+    "copyStatus": "Message copied. Paste it wherever you prefer.",
+    "clipboardMatches": true
+  },
+  "consoleObservation": "One MutationObserver error without source URL observed in automation session. Prototype source has no MutationObserver; origin not established. Tested flows completed."
+}

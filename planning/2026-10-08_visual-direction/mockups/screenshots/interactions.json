@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-08",
+  "selectionsCombined": true,
+  "draftRetainedAcrossDirectionAndAudience": true,
+  "clipboardMatchesDraft": true,
+  "themeToggleBothWays": true,
+  "categoriesIllustrated": [
+    3,
+    3,
+    3,
+    3,
+    2
+  ],
+  "reducedMotionResult": "none",
+  "finiteMotion": {
+    "duration": "1.8s",
+    "name": "result-in",
+    "repeat": "1"
+  },
+  "phoneMenu": {
+    "expanded": "false",
+    "focused": true
+  },
+  "scope": "Standalone visual studies only; contact drafts inspected without opening or sending external messages."
+}

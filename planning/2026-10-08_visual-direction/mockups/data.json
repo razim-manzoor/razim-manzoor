@@ -1,0 +1,482 @@
+{
+  "services": [
+    {
+      "id": "launch",
+      "title": "Launch something people can use",
+      "shortTitle": "Launch online",
+      "iconName": "Globe",
+      "summary": "For a business that needs an online presence, a way to sell, or a new digital product.",
+      "items": [
+        {
+          "id": "business-website",
+          "title": "Websites & digital presence",
+          "tagline": "Make your business clear and easy to reach.",
+          "description": "Business websites, landing pages, portfolios, and content-managed sites. Shape the pages around what visitors need to understand and the action you want them to take.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "Web frameworks or CMS",
+            "Responsive design",
+            "Search metadata & analytics"
+          ],
+          "deliverables": [
+            "Page structure and responsive interface",
+            "Content editing where needed",
+            "Enquiry, booking, or signup journey",
+            "Search metadata, analytics, and deployment"
+          ],
+          "businessImpact": "Useful for a new business, a campaign, or a website that no longer reflects your work."
+        },
+        {
+          "id": "commerce-booking",
+          "title": "Online selling & bookings",
+          "tagline": "Let customers complete a purchase or reservation.",
+          "description": "Stores, service bookings, paid memberships, and checkout flows. Choose a ready-made platform or a custom implementation based on your catalogue, operations, and budget.",
+          "scopeType": "Turnkey Build",
+          "tech": [
+            "Project-fit stack",
+            "Commerce or booking platforms",
+            "Payment gateways",
+            "Order integrations"
+          ],
+          "deliverables": [
+            "Product or service catalogue",
+            "Purchase or reservation flow",
+            "Payments and customer notifications",
+            "Administration and end-to-end journey checks"
+          ],
+          "businessImpact": "Useful when orders, appointments, or payments need a more consistent online process."
+        },
+        {
+          "id": "digital-product",
+          "title": "Apps & new digital products",
+          "tagline": "Turn an idea into a working first version.",
+          "description": "Web applications, SaaS products, and interfaces designed for mobile use. Define the core user journey, build the needed data and integrations, and review a usable version before expanding.",
+          "scopeType": "Turnkey Build",
+          "tech": [
+            "Project-fit stack",
+            "Frontend & backend",
+            "Authentication & databases",
+            "Product integrations"
+          ],
+          "deliverables": [
+            "Core journeys and working interface",
+            "Accounts, permissions, and data model",
+            "Required integrations or billing",
+            "Testing, deployment, and handover"
+          ],
+          "businessImpact": "Useful when you need to test a product idea or replace a process with a dedicated application."
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Make everyday operations easier",
+      "shortTitle": "Simplify operations",
+      "iconName": "Workflow",
+      "summary": "For teams juggling spreadsheets, disconnected tools, repeated tasks, or scattered updates.",
+      "items": [
+        {
+          "id": "business-systems",
+          "title": "Internal systems & portals",
+          "tagline": "Give people one place to do the work.",
+          "description": "Client portals, CRM tools, admin panels, and systems for requests, inventory, projects, or service delivery. Build around the people, records, and decisions in your process.",
+          "scopeType": "Turnkey Build",
+          "tech": [
+            "Project-fit stack",
+            "Role-based access",
+            "Databases",
+            "Notifications"
+          ],
+          "deliverables": [
+            "Workflow and user-role design",
+            "Relevant forms, records, and admin views",
+            "Permissions and status updates",
+            "Team walkthrough and usage notes"
+          ],
+          "businessImpact": "Useful when important work is spread across messages, files, and manual trackers."
+        },
+        {
+          "id": "workflow-automation",
+          "title": "Workflow automation",
+          "tagline": "Remove repeated steps from a defined process.",
+          "description": "Automate approvals, follow-ups, onboarding, document generation, billing updates, or scheduled tasks. Start with the trigger and desired result, then define exceptions and human review.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "Workflow platforms",
+            "Custom scripts",
+            "Scheduled jobs"
+          ],
+          "deliverables": [
+            "Process map and trigger rules",
+            "Agreed automated steps",
+            "Review paths, failure alerts, and recovery",
+            "Run history and maintenance notes"
+          ],
+          "businessImpact": "Useful when the same sequence consumes time or depends on someone remembering the next step."
+        },
+        {
+          "id": "system-integration",
+          "title": "Integrations & connected tools",
+          "tagline": "Make your existing systems work together.",
+          "description": "Connect websites, CRMs, accounting tools, spreadsheets, databases, and external APIs. Move the right information between them with clear ownership, mappings, and duplicate handling.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "APIs & webhooks",
+            "Data mapping",
+            "Sync jobs"
+          ],
+          "deliverables": [
+            "Connection and field mapping",
+            "Sync rules and duplicate handling",
+            "Logging, retries, and failure notifications",
+            "Integration testing and access handover"
+          ],
+          "businessImpact": "Useful when people copy the same information between tools or records drift out of sync."
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "Put AI to work on a specific task",
+      "shortTitle": "Put AI to work",
+      "iconName": "BrainCircuit",
+      "summary": "For work involving questions, documents, language, or decisions that need assistance.",
+      "items": [
+        {
+          "id": "knowledge-assistant",
+          "title": "Assistants & knowledge search",
+          "tagline": "Help people find answers and take the next step.",
+          "description": "Website or WhatsApp assistants and search over your business information. Ground answers in agreed sources, connect useful tools, and define when to ask for clarification or hand over to a person.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "Local or hosted models",
+            "Document retrieval",
+            "Chat channels"
+          ],
+          "deliverables": [
+            "Knowledge sources and access rules",
+            "Conversation and source-reference behavior",
+            "Booking, lookup, or handoff where needed",
+            "Sample-question and conversation evaluation"
+          ],
+          "businessImpact": "Useful for customer enquiries, staff knowledge, or navigating a large collection of documents."
+        },
+        {
+          "id": "ai-workflows",
+          "title": "AI agents & application features",
+          "tagline": "Connect reasoning and language tasks to useful actions.",
+          "description": "Agents that work with business tools, or AI features inside an existing product. Scope tasks such as research, classification, drafting, summarisation, and record updates with defined permissions and approvals.",
+          "scopeType": "Turnkey Build",
+          "tech": [
+            "Project-fit stack",
+            "Model APIs or local models",
+            "Tool integrations",
+            "Evaluation & logging"
+          ],
+          "deliverables": [
+            "Defined tasks and permitted actions",
+            "Connections to agreed tools and records",
+            "Approval, fallback, and usage controls",
+            "Representative task tests and run visibility"
+          ],
+          "businessImpact": "Useful when a process needs interpretation as well as fixed rules."
+        },
+        {
+          "id": "document-processing",
+          "title": "Document & content processing",
+          "tagline": "Turn incoming information into usable output.",
+          "description": "Extract fields from documents, organise incoming messages, or prepare structured summaries and drafts. Validate the output and route uncertain or important results for review.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "OCR & vision",
+            "Structured outputs",
+            "Validation & exports"
+          ],
+          "deliverables": [
+            "Agreed input types and output format",
+            "Extraction or transformation pipeline",
+            "Validation and review flags",
+            "Sample-based checks and system export"
+          ],
+          "businessImpact": "Useful when files and unstructured text create repeated reading, sorting, or transcription work."
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Make better use of your data",
+      "shortTitle": "Use your data",
+      "iconName": "ChartSpline",
+      "summary": "For teams that need reliable records, clearer reporting, or an answer to a business question.",
+      "items": [
+        {
+          "id": "data-foundations",
+          "title": "Data preparation & migration",
+          "tagline": "Create a reliable foundation for the next step.",
+          "description": "Clean records, combine sources, build repeatable imports, or move data between systems. Agree on mappings and check the results before using the data in reports or applications.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "SQL & Python",
+            "Data pipelines",
+            "Validation"
+          ],
+          "deliverables": [
+            "Source review and field mapping",
+            "Cleaning and transformation rules",
+            "Repeatable import or migration",
+            "Record validation and exception report"
+          ],
+          "businessImpact": "Useful when spreadsheets disagree, data is fragmented, or a system change needs a careful transfer."
+        },
+        {
+          "id": "reporting",
+          "title": "Dashboards & business reporting",
+          "tagline": "See the measures that matter to your team.",
+          "description": "Define KPIs, connect data sources, and build dashboards or recurring reports around real business questions. Include refresh rules and checks so people know what they are looking at.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "Power BI or custom reporting",
+            "SQL & data models",
+            "Refresh pipelines"
+          ],
+          "deliverables": [
+            "Business questions and KPI definitions",
+            "Reporting model and interactive views",
+            "Refresh setup and data-quality checks",
+            "Report walkthrough and documentation"
+          ],
+          "businessImpact": "Useful when reports take too long to assemble or the numbers are difficult to interpret."
+        },
+        {
+          "id": "analysis-models",
+          "title": "Analysis & predictive models",
+          "tagline": "Investigate a question and test what the data can support.",
+          "description": "Explore trends, segments, forecasts, or classification problems. Start with the decision you want to make, check the available data, and evaluate a model against a practical baseline.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "Python & statistics",
+            "Machine learning",
+            "Evaluation"
+          ],
+          "deliverables": [
+            "Question definition and data assessment",
+            "Exploratory analysis or prototype model",
+            "Baseline comparison and limitations",
+            "Findings, recommendations, and reproducible work"
+          ],
+          "businessImpact": "Useful when a business decision needs analysis beyond a dashboard."
+        }
+      ]
+    },
+    {
+      "id": "improve",
+      "title": "Improve what you already have",
+      "shortTitle": "Improve a system",
+      "iconName": "Wrench",
+      "summary": "For a website, application, automation, or report that needs a fix, a new capability, or ongoing attention.",
+      "items": [
+        {
+          "id": "system-improvements",
+          "title": "Reviews, fixes & modernisation",
+          "tagline": "Work out the problem and improve the right part.",
+          "description": "Review an existing implementation, reproduce a fault, add a feature, improve usability or speed, or plan a migration. Start with the current system and the change you need.",
+          "scopeType": "Fixed Milestone",
+          "tech": [
+            "Project-fit stack",
+            "Existing codebases",
+            "Diagnostics & testing",
+            "Deployment"
+          ],
+          "deliverables": [
+            "Review or reproducible diagnosis",
+            "Agreed fix, feature, or migration plan",
+            "Relevant regression and journey checks",
+            "Change notes and deployment support"
+          ],
+          "businessImpact": "Useful when a system works only partly, has outgrown its setup, or needs a defined improvement."
+        },
+        {
+          "id": "ongoing-support",
+          "title": "Ongoing development & support",
+          "tagline": "Keep useful systems working and evolving.",
+          "description": "An agreed allocation for maintenance, new features, workflow changes, reporting updates, and technical support. Prioritise the backlog and agree on capacity and response expectations.",
+          "scopeType": "Monthly Retainer",
+          "tech": [
+            "Project-fit stack",
+            "Applications & workflows",
+            "System checks",
+            "Direct communication"
+          ],
+          "deliverables": [
+            "Agreed capacity and priorities",
+            "Maintenance and incremental improvements",
+            "Progress and issue updates",
+            "Maintained code access and documentation"
+          ],
+          "businessImpact": "Useful when your needs continue after launch and you want continuity across the work."
+        }
+      ]
+    }
+  ],
+  "handover": [
+    {
+      "title": "Your code & accounts",
+      "description": "Custom code, repositories, and deployment access are handed over to you.",
+      "scopeTerms": "Third-party products retain their own licenses and subscription terms.",
+      "iconName": "KeyRound"
+    },
+    {
+      "title": "A usable handover",
+      "description": "Setup notes, a walkthrough, and guidance for everyday use.",
+      "scopeTerms": "Documentation covers the agreed build and its dependencies.",
+      "iconName": "BookOpenCheck"
+    },
+    {
+      "title": "14 days of bug fixes",
+      "description": "Post-launch fixes for delivered functionality within the agreed scope.",
+      "scopeTerms": "New features, third-party outages, and external changes are scoped separately.",
+      "iconName": "ShieldCheck"
+    }
+  ],
+  "person": {
+    "name": "Razim Manzoor",
+    "summary": "I build websites, applications, AI tools, automations, and dashboards around business needs. My background combines an MBA in Data Science & Analytics with hands-on work in business analysis, development, and reporting.",
+    "contact": {
+      "email": "manzoorrazim@gmail.com",
+      "phone": "+971 50 300 1697",
+      "linkedin": "https://www.linkedin.com/in/razim-manzoor"
+    },
+    "recruiterSnapshot": [
+      {
+        "label": "Location & availability",
+        "value": "Dubai, UAE · Available immediately"
+      },
+      {
+        "label": "Roles of interest",
+        "value": "Business analysis, web development, AI / automation, and data / BI"
+      },
+      {
+        "label": "Qualifications",
+        "value": "MBA in Data Science & Analytics · B.Com in Computer Applications"
+      },
+      {
+        "label": "Working arrangements",
+        "value": "Full-time and contract opportunities; on-site, hybrid, or remote"
+      }
+    ],
+    "experience": [
+      {
+        "id": 0,
+        "role": "Independent AI & Business Solutions Consultant",
+        "company": "Self-Employed",
+        "location": "Dubai, UAE",
+        "period": "2025 - Present",
+        "achievements": [
+          "Reduced sales prospecting cycle time by 80% by architecting an automated lead intelligence web app utilizing Playwright RPA to scrape map targets and migrate verified records directly into client data stores.",
+          "Engineered an end-to-end sales enablement CRM featuring embedded call/WhatsApp playbooks and deal-tracking dashboards, boosting daily outbound sales outreach capacity by 2x.",
+          "Engineered Career-Ops, a local-first workspace orchestrating local Qwen LLMs and a custom Chrome extension to extract JDs, generate ATS-tailored LaTeX resumes, and manage pipeline velocity across interactive Kanban views.",
+          "Delivered a bespoke client web platform with 100% on-schedule milestone execution by managing the full technical lifecycle from stakeholder requirements gathering to deployment."
+        ]
+      },
+      {
+        "id": 1,
+        "role": "Data Science Intern",
+        "company": "Luminar Technolab",
+        "location": "Kerala, India",
+        "period": "Jun 2024 - Mar 2025",
+        "achievements": [
+          "Enhanced forecasting throughput and predictive accuracy across business test scenarios by developing scalable data and analytics pipelines in Python and SQL.",
+          "Projected a 15% revenue uplift for targeted sales campaigns by engineering a predictive customer segmentation machine learning pipeline.",
+          "Slashed reporting latency by 95% (from 3 days to under 2 hours) by orchestrating the end-to-end migration of legacy reporting workflows to interactive Power BI dashboards.",
+          "Eliminated reporting anomalies and ensured high-fidelity executive metrics by engineering automated data validation scripts across multi-source datasets."
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Associate AI & Data Analytics Engineer",
+        "company": "Resemble Systems",
+        "location": "Kochi, India",
+        "period": "Nov 2023 - May 2024",
+        "achievements": [
+          "Delivered enterprise consulting and workflow solutions for regional corporate clients under Resemble Systems' official IBM Partnership, leveraging IBM BAW and AI automation.",
+          "Slashed repetitive manual data processing time by 45% by spearheading a finance process automation initiative using Power Automate.",
+          "Drove a 20% cycle time efficiency gain by conducting process mining across multi-tier client operations to identify and eliminate workflow bottlenecks.",
+          "Guided executive staffing and retention decisions by architecting interactive HR analytics dashboards in Power BI unifying workforce engagement and attrition metrics.",
+          "Ensured operational high availability and enterprise security compliance by deploying scalable cloud automation modules on Microsoft Azure."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Business Administration (MBA)",
+        "field": "Data Science & Analytics",
+        "institution": "JAIN University",
+        "year": "2021 - 2023",
+        "details": "Coursework: Financial Modeling, Business Statistics, Marketing Analytics, Strategic Decision Making, Applied Machine Learning."
+      },
+      {
+        "degree": "Bachelor of Commerce (B.Com)",
+        "field": "Computer Applications",
+        "institution": "Kannur University",
+        "year": "2018 - 2021",
+        "details": "Coursework: Financial Accounting, Business Law, Corporate Taxation, Database Systems, Software Programming."
+      }
+    ],
+    "certifications": [
+      "Google Advanced Data Analytics Professional Certificate (Coursera)",
+      "Generative AI with Large Language Models (DeepLearning.AI / Coursera)",
+      "Google Data Analytics Specialisation (Coursera)",
+      "KPMG Data Analytics Consulting Virtual Internship (Forage)",
+      "Accenture Data Analytics & Visualisation Virtual Experience (Forage)",
+      "1st Place, Strategic Marketing Case Competition (Encore 2020)"
+    ],
+    "skills": {
+      "business": [
+        "Business Strategy & Strategic Planning",
+        "Requirement Elicitation & Stakeholder Management",
+        "Process Mining & Bottleneck Removal",
+        "ROI Analysis & Financial Modeling",
+        "KPI Modeling & Executive Decision Dashboards",
+        "Vendor Evaluation & Technical Roadmapping"
+      ],
+      "technical": [
+        "Power BI (Advanced DAX, Power Query) & Tableau",
+        "Python (Pandas, NumPy, Scikit-learn, FastAPI)",
+        "SQL (PostgreSQL, MS SQL) & Relational Data Modeling",
+        "Next.js 16, React 19, TypeScript & Modern Web Standards",
+        "Generative AI, Local RAG Architectures & Prompt Engineering",
+        "Autonomous Workflow Agents, n8n & Webhooks",
+        "Power Automate, UiPath RPA & Playwright Automation",
+        "IBM BAW (Business Automation Workflow)",
+        "Microsoft Azure Cloud Infrastructure",
+        "Git, REST APIs & Docker"
+      ]
+    }
+  },
+  "icons": {
+    "ArrowRight": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg>",
+    "ArrowUpRight": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>",
+    "Download": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\" aria-hidden=\"true\"><path d=\"M12 15V3\"></path><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path><path d=\"m7 10 5 5 5-5\"></path></svg>",
+    "MessageCircle": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-message-circle\" aria-hidden=\"true\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"></path></svg>",
+    "Sun": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sun\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2\"></path><path d=\"M12 20v2\"></path><path d=\"m4.93 4.93 1.41 1.41\"></path><path d=\"m17.66 17.66 1.41 1.41\"></path><path d=\"M2 12h2\"></path><path d=\"M20 12h2\"></path><path d=\"m6.34 17.66-1.41 1.41\"></path><path d=\"m19.07 4.93-1.41 1.41\"></path></svg>",
+    "Moon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-moon\" aria-hidden=\"true\"><path d=\"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401\"></path></svg>",
+    "Menu": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><path d=\"M4 5h16\"></path><path d=\"M4 12h16\"></path><path d=\"M4 19h16\"></path></svg>",
+    "X": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-x\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path></svg>",
+    "Check": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>",
+    "Copy": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-copy\" aria-hidden=\"true\"><rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\"></rect><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"></path></svg>",
+    "ChevronDown": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg>",
+    "Globe": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-globe\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"></path><path d=\"M2 12h20\"></path></svg>",
+    "Workflow": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-workflow\" aria-hidden=\"true\"><rect width=\"8\" height=\"8\" x=\"3\" y=\"3\" rx=\"2\"></rect><path d=\"M7 11v4a2 2 0 0 0 2 2h4\"></path><rect width=\"8\" height=\"8\" x=\"13\" y=\"13\" rx=\"2\"></rect></svg>",
+    "BrainCircuit": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-brain-circuit\" aria-hidden=\"true\"><path d=\"M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z\"></path><path d=\"M9 13a4.5 4.5 0 0 0 3-4\"></path><path d=\"M6.003 5.125A3 3 0 0 0 6.401 6.5\"></path><path d=\"M3.477 10.896a4 4 0 0 1 .585-.396\"></path><path d=\"M6 18a4 4 0 0 1-1.967-.516\"></path><path d=\"M12 13h4\"></path><path d=\"M12 18h6a2 2 0 0 1 2 2v1\"></path><path d=\"M12 8h8\"></path><path d=\"M16 8V5a2 2 0 0 1 2-2\"></path><circle cx=\"16\" cy=\"13\" r=\".5\"></circle><circle cx=\"18\" cy=\"3\" r=\".5\"></circle><circle cx=\"20\" cy=\"21\" r=\".5\"></circle><circle cx=\"20\" cy=\"8\" r=\".5\"></circle></svg>",
+    "ChartSpline": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chart-spline\" aria-hidden=\"true\"><path d=\"M3 3v16a2 2 0 0 0 2 2h16\"></path><path d=\"M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7\"></path></svg>",
+    "Wrench": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-wrench\" aria-hidden=\"true\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z\"></path></svg>"
+  }
+}

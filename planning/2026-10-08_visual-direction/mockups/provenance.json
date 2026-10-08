@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-08",
+  "scope": "Local standalone visual studies; no app integration",
+  "assets": [
+    {
+      "file": "data.json",
+      "origin": "planning/2026-10-07_visual-refresh/preview/data.json",
+      "sha256": "164fad6f2899ac7e35b133afee176da9e2da654a9b971f28836cd08fa7925674",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/resume.pdf",
+      "origin": "planning/2026-10-07_visual-refresh/preview/assets/resume.pdf",
+      "sha256": "df3993b15fb8fb95587826f568c46eb163bae21a667a99687ea29271a233bad1",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/geist-latin.woff2",
+      "origin": "planning/2026-10-07_visual-refresh/preview/assets/geist-latin.woff2",
+      "sha256": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/OFL-Geist.txt",
+      "origin": "planning/2026-10-07_visual-refresh/preview/assets/OFL-Geist.txt",
+      "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/LICENSE-Lucide",
+      "origin": "planning/2026-10-07_visual-refresh/preview/assets/LICENSE-Lucide",
+      "sha256": "668dcc52803480e0a026b31140a4cae668772663cd764e5991d252eef03f98db",
+      "byteIdentical": true
+    },
+    {
+      "file": "assets/portrait.jpeg",
+      "origin": "public/profilepic.jpeg, user-provided portrait",
+      "sha256": "0b15d8d4dead9bd08f8d853ad875bcf6a545be854867f667806173c2871eeb5b",
+      "sourceSha256": "e42813cee6e0eee4fbde722b09d8451e45b26b6e5f49d59e76a073887b2c25c4",
+      "metadata": "Origin embedded with impeccable embed-prompt; original source unchanged.",
+      "jpegCodingBytesIdenticalExcludingComments": true,
+      "verification": "JPEG content byte-for-byte identical after ignoring COM metadata segments; pixel decoding was not run."
+    }
+  ],
+  "scenes": {
+    "file": "scenes.js (legacy hero fragments), examples.js (14 service demonstrations, delivery and brief)",
+    "origin": "Original project-authored flat SVG geometry and static HTML demonstration interfaces",
+    "labels": "Illustrative example; sample document/source; example data. Delivery labels describe the collaboration process.",
+    "externalComponentCodeImported": false
+  },
+  "screenshots": {
+    "origin": "Browser captures of actual rendered standalone studies via responsive iframe viewport; no generated mockup images",
+    "motion": "Reduced motion enabled for stable captures",
+    "notPhysicalDeviceTesting": true
+  }
+}

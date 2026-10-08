@@ -15,3 +15,9 @@ This project uses an Obsidian-backed external memory layer located at `.brain/` 
 ### Architecture Rules
 - Architectural decisions in `.brain/adr/` are permanent. Do not change architectural patterns without explicit user consent.
 
+### Website Skills
+- Follow [docs/SKILLS.md](docs/SKILLS.md) for the relevant skill workflow; load only the skills needed for the task.
+- Use Impeccable for overall interface design and emil-design-eng for targeted component and motion craft. Keep the existing identity and runtime stack unless an authorized requirement warrants a change.
+- Use vercel-react-best-practices for relevant implementation review and web-design-guidelines for interface checks. Verify sample APIs and performance claims against installed versions and observed behavior.
+- review-animations and pick-ui-library are manual-invocation tools. Taste is an optional alternative, not a second default design workflow.
+

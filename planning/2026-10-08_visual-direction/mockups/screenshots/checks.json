@@ -1,0 +1,169 @@
+{
+  "date": "2026-10-08",
+  "method": "Actual responsive iframe layout viewports; native browser override had no effect.",
+  "finalWidths": [
+    {
+      "study": "portrait",
+      "device": "desktop",
+      "client": 1425,
+      "image": 819,
+      "inner": 1440,
+      "loadedFont": true,
+      "scroll": 1425
+    },
+    {
+      "study": "portrait",
+      "device": "phone",
+      "client": 375,
+      "image": 819,
+      "inner": 390,
+      "loadedFont": true,
+      "scroll": 375
+    },
+    {
+      "study": "portrait",
+      "device": "current",
+      "client": 930,
+      "image": 819,
+      "inner": 945,
+      "loadedFont": true,
+      "scroll": 930
+    },
+    {
+      "study": "portrait",
+      "device": "small",
+      "client": 305,
+      "image": 819,
+      "inner": 320,
+      "loadedFont": true,
+      "scroll": 305
+    },
+    {
+      "study": "workflow",
+      "device": "desktop",
+      "client": 1425,
+      "image": 819,
+      "inner": 1440,
+      "loadedFont": true,
+      "scroll": 1425
+    },
+    {
+      "study": "workflow",
+      "device": "phone",
+      "client": 375,
+      "image": 819,
+      "inner": 390,
+      "loadedFont": true,
+      "scroll": 375
+    },
+    {
+      "study": "workflow",
+      "device": "current",
+      "client": 930,
+      "image": 819,
+      "inner": 945,
+      "loadedFont": true,
+      "scroll": 930
+    },
+    {
+      "study": "workflow",
+      "device": "small",
+      "client": 305,
+      "image": 819,
+      "inner": 320,
+      "loadedFont": true,
+      "scroll": 305
+    }
+  ],
+  "themeMatrix": [
+    {
+      "label": "portrait-desktop-light",
+      "client": 1425,
+      "dark": false,
+      "direction": "portrait",
+      "image": 819,
+      "inner": 1440,
+      "reduced": true,
+      "scroll": 1425,
+      "svg": 3
+    },
+    {
+      "label": "portrait-desktop-dark",
+      "client": 1425,
+      "dark": true,
+      "direction": "portrait",
+      "image": 819,
+      "inner": 1440,
+      "reduced": true,
+      "scroll": 1425,
+      "svg": 3
+    },
+    {
+      "label": "portrait-mobile-light",
+      "client": 375,
+      "dark": false,
+      "direction": "portrait",
+      "image": 819,
+      "inner": 390,
+      "reduced": true,
+      "scroll": 375,
+      "svg": 3
+    },
+    {
+      "label": "portrait-mobile-dark",
+      "client": 375,
+      "dark": true,
+      "direction": "portrait",
+      "image": 819,
+      "inner": 390,
+      "reduced": true,
+      "scroll": 375,
+      "svg": 3
+    },
+    {
+      "label": "workflow-desktop-light",
+      "client": 1425,
+      "dark": false,
+      "direction": "workflow",
+      "image": 819,
+      "inner": 1440,
+      "reduced": true,
+      "scroll": 1425,
+      "svg": 3
+    },
+    {
+      "label": "workflow-desktop-dark",
+      "client": 1425,
+      "dark": true,
+      "direction": "workflow",
+      "image": 819,
+      "inner": 1440,
+      "reduced": true,
+      "scroll": 1425,
+      "svg": 3
+    },
+    {
+      "label": "workflow-mobile-light",
+      "client": 375,
+      "dark": false,
+      "direction": "workflow",
+      "image": 819,
+      "inner": 390,
+      "reduced": true,
+      "scroll": 375,
+      "svg": 3
+    },
+    {
+      "label": "workflow-mobile-dark",
+      "client": 375,
+      "dark": true,
+      "direction": "workflow",
+      "image": 819,
+      "inner": 390,
+      "reduced": true,
+      "scroll": 375,
+      "svg": 3
+    }
+  ],
+  "reviewFixes": "Three final source corrections captured in all sixteen primary review screenshots."
+}

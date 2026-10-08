@@ -1,0 +1,142 @@
+[
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "1.4:1 (need 4.5:1) — text #c3dece on #f8fafc"
+  },
+  {
+    "antipattern": "tiny-text",
+    "name": "Tiny body text",
+    "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "11px body text"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "<section> \"process\": children flush against bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "<details>: children flush against border-bottom on bottom (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "<details>: children flush against border-bottom on bottom (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "<section> \"wrap\": children flush against border-top on top (no inset)"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "background rgb(6, 61, 47) on button \"Portrait & panels\" is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "rgb(6, 61, 47)"
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "border-radius 6px on img is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "6px"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "text color rgb(195, 222, 206) on p \"The process stays simple even when the s\" is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "rgb(195, 222, 206)"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "text color rgb(20, 60, 43) on figcaption \"Illustrative example: from a rough reque\" is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "rgb(20, 60, 43)"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "background rgb(167, 243, 208) on a \"Message me on WhatsApp\" is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "rgb(167, 243, 208)"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "Primary font: geist"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "R:\\Projects\\PersonalWebsite\\planning\\2026-10-08_visual-direction\\mockups\\index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#093322) on dark page"
+  }
+]
