@@ -6,15 +6,15 @@ import { RESUME_URL, WHATSAPP_URL } from "@/lib/contact";
 
 export default function RecruiterSnapshot() {
   return (
-    <section id="dossier" tabIndex={-1} className="py-16 md:py-24">
-      <div className="container mx-auto px-5 md:px-8">
-        <div className="mb-10 max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Business understanding.<br />Practical technical work.</h2>
-          <p className="mt-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
+    <section id="dossier" tabIndex={-1} className="portfolio-section">
+      <div className="site-wrap">
+        <div className="section-heading">
+          <h2 className="section-title">Business understanding.<br />Practical technical work.</h2>
+          <p className="section-description">
             An MBA in Data Science & Analytics, experience in business workflows and reporting, and hands-on development of web applications and automation tools.
           </p>
         </div>
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div className="recruiter-layout">
           <div>
             <h3 className="text-xl font-semibold">Open to the right opportunity</h3>
             <p className="mt-3 text-base leading-relaxed text-[var(--muted)]">Junior and associate roles are welcome. I am interested in work where I can understand a business problem, build useful tools, and keep developing my skills with a team.</p>
@@ -34,13 +34,16 @@ export default function RecruiterSnapshot() {
             <h3 className="mb-6 text-xl font-semibold">Experience</h3>
             <div className="space-y-7">
               {USER_DATA.experience.map((experience) => (
-                <article key={experience.id} className="border-b border-[var(--border)] pb-7">
-                  <p className="text-sm text-[var(--muted)]">{experience.period} · {experience.location}</p>
-                  <h4 className="mt-2 text-lg font-semibold">{experience.role}</h4>
+                <article key={experience.id} className="experience-entry">
+                  <p className="experience-period">{experience.period}</p>
+                  <div>
+                  <h4 className="text-lg font-semibold">{experience.role}</h4>
                   <p className="mt-1 text-sm font-medium text-[var(--accent)]">{experience.company}</p>
+                  <p className="mt-2 text-sm text-[var(--muted)]">{experience.location}</p>
                   <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
                     {experience.achievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
                   </ul>
+                  </div>
                 </article>
               ))}
             </div>

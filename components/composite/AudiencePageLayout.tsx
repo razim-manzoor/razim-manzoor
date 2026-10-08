@@ -52,8 +52,9 @@ export function AudiencePageLayout() {
     <>
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
-        <div className="z-30 border-y border-[var(--border)] bg-[var(--surface)] py-2 lg:sticky lg:top-20">
-          <div className="container mx-auto px-5">
+        <div className="audience-bar">
+          <div className="site-wrap audience-inner">
+            <p className="text-sm text-[var(--muted)]">Choose what to explore</p>
             <AudienceToggle mode={mode} onChange={setAudienceMode} />
           </div>
         </div>

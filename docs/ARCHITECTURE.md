@@ -1,6 +1,6 @@
 # Application architecture
 
-Source reference checked 2026-10-08. The authorized composition refresh keeps the existing runtime and data flow. No backend, tracking, dependency or architectural change is introduced. Current release evidence belongs to the [implementation record](../planning/2026-10-07_visual-refresh/IMPLEMENTATION.md).
+Source reference checked 2026-10-08. The authorized portrait composition keeps the existing runtime and data flow. No backend, tracking, dependency or architectural change is introduced. Current verification and pending release evidence belong to the [integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md).
 
 ## Runtime
 
@@ -20,23 +20,27 @@ AudiencePageLayout → Hero → AudienceToggle
 
 | File | Responsibility |
 | --- | --- |
-| `app/globals.css` | Semantic light/dark colors, base focus/accessibility rules, responsive composition and CSS interaction timing. |
+| `app/globals.css` | Semantic light/dark colors including scene/feature roles, base focus/accessibility rules, responsive composition and finite CSS interaction timing. |
+| `app/illustrations.css` | Static service/brief example geometry, readable typography and responsive adjustments; imported after globals in the root layout. |
 | `lib/data.ts` | Personal facts, professional history, education, contact destinations and retained project data. |
-| `lib/services.ts` | Five business needs, fourteen service scopes, handover and scope definitions. |
+| `lib/services.ts` | Five business needs, fourteen stable service scopes with concise outcomes, handover and scope definitions. |
 | `lib/audience.ts` | URL-derived audience state, history updates and section navigation helpers. |
 | `lib/project-planner.ts` | Browser event connecting a service link to the mounted planner. |
 | `lib/contact.ts` | Shared résumé path; encoded WhatsApp/email draft URLs derived from public contact data. |
 | `lib/estimate.ts` | Pure illustrative time-value calculation; `tests/estimate.test.mjs` covers normal and edge cases. |
 | `components/composite/AudiencePageLayout.tsx` | Audience visibility, anchor interception, history scroll and focus on selected anchor targets. |
-| `components/ServicesHub.tsx` | Business-need filter, scope disclosures and service-to-planner actions. |
+| `components/ServicesHub.tsx` | Business-need filter, illustrative examples, scope disclosures and service-to-planner actions. |
+| `components/ServiceExample.tsx`, `HeroFragments.tsx` | Fourteen project-authored static HTML examples plus the rough-request brief; original decorative SVG portrait fragments. No injected HTML, runtime fetch or live illustrative controls. |
 | `components/composite/TurnkeyStudio.tsx` | Optional goals and message fields, selections, copy states, estimator inputs and output. |
 | `components/NavBar.tsx`, `ThemeToggle.tsx` | Responsive navigation dismissal/focus behavior and resolved-theme toggle. |
-| `components/HeroSection.tsx`, `RecruiterSnapshot.tsx`, `SkillsGrid.tsx`, `Footer.tsx`, `composite/InteractivePipeline.tsx` | Identity, hiring background, toolkit, contact and delivery sequence. |
+| `components/HeroSection.tsx`, `RecruiterSnapshot.tsx`, `SkillsGrid.tsx`, `Footer.tsx`, `composite/InteractivePipeline.tsx` | Authentic portrait composition, supplied hiring background, toolkit, deep-green contact and brief/build/handover sequence. |
 | `app/layout.tsx`, `robots.ts`, `sitemap.ts`, `opengraph-image.tsx`, `icon.tsx` | Canonical domain, search/social metadata and generated image routes. |
 | `next.config.ts` | Site-wide response headers. |
 | `public/profilepic.jpeg`, `public/Razim_Manzoor_MBA_AI_Analytics.pdf` | Current portrait and shared résumé download asset. |
 
 `PRODUCT.md` explains behavior; `DESIGN.md` and `.impeccable/design.json` record the active visual system. Update them alongside changes to their source. Planning documents and standalone preview snapshots describe decisions and proposals, not runtime truth.
+
+The delivery component uses the existing Motion `useInView` hook with `once: true` and `amount: 0.35` to add the play class. CSS runs connection and handover movement once over 1.8 seconds only under `prefers-reduced-motion: no-preference`; content is visible without animation. Portrait fragments are decorative and hidden from assistive technology. Service and brief examples have explicit illustrative captions and remain ordinary readable markup. Their sample values are not professional results.
 
 ## State and event boundaries
 

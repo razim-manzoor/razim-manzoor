@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-08T06:37:22Z",
+  "generatedAt": "2026-10-08T12:14:33.689Z",
   "title": "Design System: Razim Manzoor portfolio",
   "extensions": {
     "colorMeta": {
@@ -303,6 +303,381 @@
           "oklch(83.57% 0.14907 162.48 / 0.2)",
           "oklch(95.00% 0.14907 162.48 / 0.2)"
         ]
+      },
+      "feature": {
+        "role": "primary",
+        "displayName": "Feature",
+        "canonical": "#063d2f",
+        "tonalRamp": [
+          "oklch(15.00% 0.05971 170.63)",
+          "oklch(26.43% 0.05971 170.63)",
+          "oklch(37.86% 0.05971 170.63)",
+          "oklch(49.29% 0.05971 170.63)",
+          "oklch(60.71% 0.05971 170.63)",
+          "oklch(72.14% 0.05971 170.63)",
+          "oklch(83.57% 0.05971 170.63)",
+          "oklch(95.00% 0.05971 170.63)"
+        ]
+      },
+      "feature-ink": {
+        "role": "neutral",
+        "displayName": "Feature Ink",
+        "canonical": "#f3faf6",
+        "tonalRamp": [
+          "oklch(15.00% 0.00906 161.36)",
+          "oklch(26.43% 0.00906 161.36)",
+          "oklch(37.86% 0.00906 161.36)",
+          "oklch(49.29% 0.00906 161.36)",
+          "oklch(60.71% 0.00906 161.36)",
+          "oklch(72.14% 0.00906 161.36)",
+          "oklch(83.57% 0.00906 161.36)",
+          "oklch(95.00% 0.00906 161.36)"
+        ]
+      },
+      "feature-muted": {
+        "role": "neutral",
+        "displayName": "Feature Muted",
+        "canonical": "#c3dece",
+        "tonalRamp": [
+          "oklch(15.00% 0.03603 159.59)",
+          "oklch(26.43% 0.03603 159.59)",
+          "oklch(37.86% 0.03603 159.59)",
+          "oklch(49.29% 0.03603 159.59)",
+          "oklch(60.71% 0.03603 159.59)",
+          "oklch(72.14% 0.03603 159.59)",
+          "oklch(83.57% 0.03603 159.59)",
+          "oklch(95.00% 0.03603 159.59)"
+        ]
+      },
+      "feature-border": {
+        "role": "neutral",
+        "displayName": "Feature Border",
+        "canonical": "rgba(195,222,206,.3)",
+        "tonalRamp": [
+          "oklch(15.00% 0.03603 159.59 / 0.3)",
+          "oklch(26.43% 0.03603 159.59 / 0.3)",
+          "oklch(37.86% 0.03603 159.59 / 0.3)",
+          "oklch(49.29% 0.03603 159.59 / 0.3)",
+          "oklch(60.71% 0.03603 159.59 / 0.3)",
+          "oklch(72.14% 0.03603 159.59 / 0.3)",
+          "oklch(83.57% 0.03603 159.59 / 0.3)",
+          "oklch(95.00% 0.03603 159.59 / 0.3)"
+        ]
+      },
+      "feature-action": {
+        "role": "primary",
+        "displayName": "Feature Action",
+        "canonical": "#a7f3d0",
+        "tonalRamp": [
+          "oklch(15.00% 0.08949 164.15)",
+          "oklch(26.43% 0.08949 164.15)",
+          "oklch(37.86% 0.08949 164.15)",
+          "oklch(49.29% 0.08949 164.15)",
+          "oklch(60.71% 0.08949 164.15)",
+          "oklch(72.14% 0.08949 164.15)",
+          "oklch(83.57% 0.08949 164.15)",
+          "oklch(95.00% 0.08949 164.15)"
+        ]
+      },
+      "feature-action-hover": {
+        "role": "primary",
+        "displayName": "Feature Action Hover",
+        "canonical": "#c5f4db",
+        "tonalRamp": [
+          "oklch(15.00% 0.05895 161.79)",
+          "oklch(26.43% 0.05895 161.79)",
+          "oklch(37.86% 0.05895 161.79)",
+          "oklch(49.29% 0.05895 161.79)",
+          "oklch(60.71% 0.05895 161.79)",
+          "oklch(72.14% 0.05895 161.79)",
+          "oklch(83.57% 0.05895 161.79)",
+          "oklch(95.00% 0.05895 161.79)"
+        ]
+      },
+      "feature-secondary-hover": {
+        "role": "neutral",
+        "displayName": "Feature Secondary Hover",
+        "canonical": "#174f40",
+        "tonalRamp": [
+          "oklch(15.00% 0.06347 171.76)",
+          "oklch(26.43% 0.06347 171.76)",
+          "oklch(37.86% 0.06347 171.76)",
+          "oklch(49.29% 0.06347 171.76)",
+          "oklch(60.71% 0.06347 171.76)",
+          "oklch(72.14% 0.06347 171.76)",
+          "oklch(83.57% 0.06347 171.76)",
+          "oklch(95.00% 0.06347 171.76)"
+        ]
+      },
+      "delivery-label": {
+        "role": "neutral",
+        "displayName": "Delivery Label",
+        "canonical": "#496b57",
+        "tonalRamp": [
+          "oklch(15.00% 0.05074 158.10)",
+          "oklch(26.43% 0.05074 158.10)",
+          "oklch(37.86% 0.05074 158.10)",
+          "oklch(49.29% 0.05074 158.10)",
+          "oklch(60.71% 0.05074 158.10)",
+          "oklch(72.14% 0.05074 158.10)",
+          "oklch(83.57% 0.05074 158.10)",
+          "oklch(95.00% 0.05074 158.10)"
+        ]
+      },
+      "delivery-connection": {
+        "role": "primary",
+        "displayName": "Delivery Connection",
+        "canonical": "#9bdcb8",
+        "tonalRamp": [
+          "oklch(15.00% 0.08314 159.70)",
+          "oklch(26.43% 0.08314 159.70)",
+          "oklch(37.86% 0.08314 159.70)",
+          "oklch(49.29% 0.08314 159.70)",
+          "oklch(60.71% 0.08314 159.70)",
+          "oklch(72.14% 0.08314 159.70)",
+          "oklch(83.57% 0.08314 159.70)",
+          "oklch(95.00% 0.08314 159.70)"
+        ]
+      },
+      "scene-field": {
+        "role": "neutral",
+        "displayName": "Scene Field",
+        "canonical": "#e7f1eb",
+        "tonalRamp": [
+          "oklch(15.00% 0.01325 159.91)",
+          "oklch(26.43% 0.01325 159.91)",
+          "oklch(37.86% 0.01325 159.91)",
+          "oklch(49.29% 0.01325 159.91)",
+          "oklch(60.71% 0.01325 159.91)",
+          "oklch(72.14% 0.01325 159.91)",
+          "oklch(83.57% 0.01325 159.91)",
+          "oklch(95.00% 0.01325 159.91)"
+        ]
+      },
+      "scene-paper": {
+        "role": "neutral",
+        "displayName": "Scene Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "scene-tint": {
+        "role": "neutral",
+        "displayName": "Scene Tint",
+        "canonical": "#eef5f0",
+        "tonalRamp": [
+          "oklch(15.00% 0.00992 155.10)",
+          "oklch(26.43% 0.00992 155.10)",
+          "oklch(37.86% 0.00992 155.10)",
+          "oklch(49.29% 0.00992 155.10)",
+          "oklch(60.71% 0.00992 155.10)",
+          "oklch(72.14% 0.00992 155.10)",
+          "oklch(83.57% 0.00992 155.10)",
+          "oklch(95.00% 0.00992 155.10)"
+        ]
+      },
+      "scene-line": {
+        "role": "neutral",
+        "displayName": "Scene Line",
+        "canonical": "#bacdc1",
+        "tonalRamp": [
+          "oklch(15.00% 0.02641 158.09)",
+          "oklch(26.43% 0.02641 158.09)",
+          "oklch(37.86% 0.02641 158.09)",
+          "oklch(49.29% 0.02641 158.09)",
+          "oklch(60.71% 0.02641 158.09)",
+          "oklch(72.14% 0.02641 158.09)",
+          "oklch(83.57% 0.02641 158.09)",
+          "oklch(95.00% 0.02641 158.09)"
+        ]
+      },
+      "scene-mid": {
+        "role": "neutral",
+        "displayName": "Scene Mid",
+        "canonical": "#83b59a",
+        "tonalRamp": [
+          "oklch(15.00% 0.06597 160.60)",
+          "oklch(26.43% 0.06597 160.60)",
+          "oklch(37.86% 0.06597 160.60)",
+          "oklch(49.29% 0.06597 160.60)",
+          "oklch(60.71% 0.06597 160.60)",
+          "oklch(72.14% 0.06597 160.60)",
+          "oklch(83.57% 0.06597 160.60)",
+          "oklch(95.00% 0.06597 160.60)"
+        ]
+      },
+      "scene-green": {
+        "role": "primary",
+        "displayName": "Scene Green",
+        "canonical": "#047857",
+        "tonalRamp": [
+          "oklch(15.00% 0.10494 165.61)",
+          "oklch(26.43% 0.10494 165.61)",
+          "oklch(37.86% 0.10494 165.61)",
+          "oklch(49.29% 0.10494 165.61)",
+          "oklch(60.71% 0.10494 165.61)",
+          "oklch(72.14% 0.10494 165.61)",
+          "oklch(83.57% 0.10494 165.61)",
+          "oklch(95.00% 0.10494 165.61)"
+        ]
+      },
+      "scene-mint": {
+        "role": "primary",
+        "displayName": "Scene Mint",
+        "canonical": "#a7f3d0",
+        "tonalRamp": [
+          "oklch(15.00% 0.08949 164.15)",
+          "oklch(26.43% 0.08949 164.15)",
+          "oklch(37.86% 0.08949 164.15)",
+          "oklch(49.29% 0.08949 164.15)",
+          "oklch(60.71% 0.08949 164.15)",
+          "oklch(72.14% 0.08949 164.15)",
+          "oklch(83.57% 0.08949 164.15)",
+          "oklch(95.00% 0.08949 164.15)"
+        ]
+      },
+      "scene-ink": {
+        "role": "neutral",
+        "displayName": "Scene Ink",
+        "canonical": "#143c2b",
+        "tonalRamp": [
+          "oklch(15.00% 0.05470 162.62)",
+          "oklch(26.43% 0.05470 162.62)",
+          "oklch(37.86% 0.05470 162.62)",
+          "oklch(49.29% 0.05470 162.62)",
+          "oklch(60.71% 0.05470 162.62)",
+          "oklch(72.14% 0.05470 162.62)",
+          "oklch(83.57% 0.05470 162.62)",
+          "oklch(95.00% 0.05470 162.62)"
+        ]
+      },
+      "dark-scene-field": {
+        "role": "neutral",
+        "displayName": "Dark Scene Field",
+        "canonical": "#132c23",
+        "tonalRamp": [
+          "oklch(15.00% 0.03576 168.12)",
+          "oklch(26.43% 0.03576 168.12)",
+          "oklch(37.86% 0.03576 168.12)",
+          "oklch(49.29% 0.03576 168.12)",
+          "oklch(60.71% 0.03576 168.12)",
+          "oklch(72.14% 0.03576 168.12)",
+          "oklch(83.57% 0.03576 168.12)",
+          "oklch(95.00% 0.03576 168.12)"
+        ]
+      },
+      "dark-scene-paper": {
+        "role": "neutral",
+        "displayName": "Dark Scene Paper",
+        "canonical": "#203b30",
+        "tonalRamp": [
+          "oklch(15.00% 0.03879 166.14)",
+          "oklch(26.43% 0.03879 166.14)",
+          "oklch(37.86% 0.03879 166.14)",
+          "oklch(49.29% 0.03879 166.14)",
+          "oklch(60.71% 0.03879 166.14)",
+          "oklch(72.14% 0.03879 166.14)",
+          "oklch(83.57% 0.03879 166.14)",
+          "oklch(95.00% 0.03879 166.14)"
+        ]
+      },
+      "dark-scene-tint": {
+        "role": "neutral",
+        "displayName": "Dark Scene Tint",
+        "canonical": "#294a3b",
+        "tonalRamp": [
+          "oklch(15.00% 0.04704 163.45)",
+          "oklch(26.43% 0.04704 163.45)",
+          "oklch(37.86% 0.04704 163.45)",
+          "oklch(49.29% 0.04704 163.45)",
+          "oklch(60.71% 0.04704 163.45)",
+          "oklch(72.14% 0.04704 163.45)",
+          "oklch(83.57% 0.04704 163.45)",
+          "oklch(95.00% 0.04704 163.45)"
+        ]
+      },
+      "dark-scene-line": {
+        "role": "neutral",
+        "displayName": "Dark Scene Line",
+        "canonical": "#759987",
+        "tonalRamp": [
+          "oklch(15.00% 0.04807 163.03)",
+          "oklch(26.43% 0.04807 163.03)",
+          "oklch(37.86% 0.04807 163.03)",
+          "oklch(49.29% 0.04807 163.03)",
+          "oklch(60.71% 0.04807 163.03)",
+          "oklch(72.14% 0.04807 163.03)",
+          "oklch(83.57% 0.04807 163.03)",
+          "oklch(95.00% 0.04807 163.03)"
+        ]
+      },
+      "dark-scene-mid": {
+        "role": "neutral",
+        "displayName": "Dark Scene Mid",
+        "canonical": "#4e8a6a",
+        "tonalRamp": [
+          "oklch(15.00% 0.08050 159.23)",
+          "oklch(26.43% 0.08050 159.23)",
+          "oklch(37.86% 0.08050 159.23)",
+          "oklch(49.29% 0.08050 159.23)",
+          "oklch(60.71% 0.08050 159.23)",
+          "oklch(72.14% 0.08050 159.23)",
+          "oklch(83.57% 0.08050 159.23)",
+          "oklch(95.00% 0.08050 159.23)"
+        ]
+      },
+      "dark-scene-green": {
+        "role": "primary",
+        "displayName": "Dark Scene Green",
+        "canonical": "#a7f3d0",
+        "tonalRamp": [
+          "oklch(15.00% 0.08949 164.15)",
+          "oklch(26.43% 0.08949 164.15)",
+          "oklch(37.86% 0.08949 164.15)",
+          "oklch(49.29% 0.08949 164.15)",
+          "oklch(60.71% 0.08949 164.15)",
+          "oklch(72.14% 0.08949 164.15)",
+          "oklch(83.57% 0.08949 164.15)",
+          "oklch(95.00% 0.08949 164.15)"
+        ]
+      },
+      "dark-scene-mint": {
+        "role": "primary",
+        "displayName": "Dark Scene Mint",
+        "canonical": "#143c2b",
+        "tonalRamp": [
+          "oklch(15.00% 0.05470 162.62)",
+          "oklch(26.43% 0.05470 162.62)",
+          "oklch(37.86% 0.05470 162.62)",
+          "oklch(49.29% 0.05470 162.62)",
+          "oklch(60.71% 0.05470 162.62)",
+          "oklch(72.14% 0.05470 162.62)",
+          "oklch(83.57% 0.05470 162.62)",
+          "oklch(95.00% 0.05470 162.62)"
+        ]
+      },
+      "dark-scene-ink": {
+        "role": "neutral",
+        "displayName": "Dark Scene Ink",
+        "canonical": "#edf8f1",
+        "tonalRamp": [
+          "oklch(15.00% 0.01482 158.25)",
+          "oklch(26.43% 0.01482 158.25)",
+          "oklch(37.86% 0.01482 158.25)",
+          "oklch(49.29% 0.01482 158.25)",
+          "oklch(60.71% 0.01482 158.25)",
+          "oklch(72.14% 0.01482 158.25)",
+          "oklch(83.57% 0.01482 158.25)",
+          "oklch(95.00% 0.01482 158.25)"
+        ]
       }
     },
     "typographyMeta": {
@@ -325,30 +700,65 @@
       "label": {
         "displayName": "Action label",
         "purpose": "Buttons and text actions."
+      },
+      "hero-statement": {
+        "displayName": "Hero Statement",
+        "purpose": "Business-to-system proposition."
+      },
+      "footer-signature": {
+        "displayName": "Footer Signature",
+        "purpose": "Large contact close; mobile overrides in DESIGN.md."
+      },
+      "scene-body": {
+        "displayName": "Scene Body",
+        "purpose": "Static illustrative interface text; responsive overrides in DESIGN.md."
+      },
+      "scene-caption": {
+        "displayName": "Scene Caption",
+        "purpose": "Static illustrative interface text; responsive overrides in DESIGN.md."
+      },
+      "scene-display": {
+        "displayName": "Scene Display",
+        "purpose": "Static illustrative interface text; responsive overrides in DESIGN.md."
       }
     },
     "shadows": [
       {
         "name": "keyboard-focus",
         "value": "0 0 0 2px var(--background), 0 0 0 4px var(--primary)",
-        "purpose": "Global focus-visible ring; not resting card elevation."
+        "purpose": "Global focus-visible ring; not resting elevation."
+      },
+      {
+        "name": "service-card-light",
+        "value": "0 8px 28px rgba(0,0,0,.055)",
+        "purpose": "Resting service shell in light mode."
+      },
+      {
+        "name": "service-card-dark",
+        "value": "0 8px 28px rgba(0,0,0,.14)",
+        "purpose": "Resting service shell in dark mode."
+      },
+      {
+        "name": "portrait-fragment",
+        "value": "0 18px 38px rgba(0,0,0,.12)",
+        "purpose": "Overlapping desktop interface fragments."
+      },
+      {
+        "name": "portrait-fragment-mobile",
+        "value": "0 6px 16px rgba(0,0,0,.12)",
+        "purpose": "Smaller phone interface fragment."
+      },
+      {
+        "name": "delivery-panel",
+        "value": "0 12px 32px rgba(0,0,0,.12)",
+        "purpose": "Light brief/handover panels against deep green."
       }
     ],
     "motion": [
       {
-        "name": "portrait-enter",
-        "value": ".48s cubic-bezier(.16,1,.3,1)",
-        "purpose": "Visible desktop portrait, opacity .92 to 1 and translateY(8px) to none; no-preference only."
-      },
-      {
         "name": "audience-marker",
         "value": ".22s cubic-bezier(.16,1,.3,1)",
         "purpose": "Selection marker; disabled during keyboard focus and reduced motion."
-      },
-      {
-        "name": "service-lift",
-        "value": ".18s cubic-bezier(.16,1,.3,1)",
-        "purpose": "3px fine-pointer hover lift; focus-within immediate, reduced motion removes transform."
       },
       {
         "name": "service-arrow",
@@ -359,6 +769,16 @@
         "name": "disclosure-chevron",
         "value": ".2s",
         "purpose": "180-degree native disclosure chevron rotation; disabled under reduced motion."
+      },
+      {
+        "name": "delivery-route",
+        "value": "1.8s cubic-bezier(.16,1,.3,1) 1",
+        "purpose": "On 35% intersection once: scaleX(.4) to 1, opacity .6 to 1; enabled only for no-preference."
+      },
+      {
+        "name": "delivery-result",
+        "value": "1.8s cubic-bezier(.16,1,.3,1) 1",
+        "purpose": "On the same intersection once: translateY(8px) to 0 from visible content; enabled only for no-preference."
       }
     ],
     "breakpoints": [
@@ -381,13 +801,31 @@
       {
         "name": "utility-lg",
         "value": "1024px"
+      },
+      {
+        "name": "composition-tablet-max",
+        "value": "1100px"
       }
     ],
     "review": {
-      "basis": "Implemented source on 2026-10-08; browser verification and current review captures incomplete.",
+      "basis": "Actual source and current application captures checked 2026-10-08; independent visual finish disposition ship, no material fixes. Journey evidence supplied to reviewer, not independently rerun; motion source-reviewed only. Git publication and live release verification pending.",
       "tonalRampUse": "Synthesized OKLCH preview strips from source colors, not additional implementation tokens. Browser gamut mapping may clip extreme tones.",
-      "componentUse": "Standalone style specimens; runtime state, navigation, contact and clipboard behavior remain in application components."
-    }
+      "componentUse": "Standalone style specimens; runtime state, navigation, contact and clipboard behavior remain in application components.",
+      "detector": "One source run retained 60 advisory documentation-drift findings (36 sizes, 18 colors, six radii), with no non-advisory findings. System reconciled to actual reused values; detector not rerun and no clean rerun claimed.",
+      "limitations": "Same-origin width reflow, not physical devices or native 200% zoom. Forced OS reduced motion, denied clipboard, full screen-reader operation and field performance not established."
+    },
+    "focus": [
+      {
+        "name": "service-card",
+        "value": "1px solid var(--accent); outline-offset: 4px",
+        "purpose": "Immediate focus-within outline; no card lift."
+      },
+      {
+        "name": "feature",
+        "value": "2px solid #a7f3d0; outline-offset: 4px",
+        "purpose": "Delivery/footer focus-visible; replaces box shadow."
+      }
+    ]
   },
   "components": [
     {
@@ -433,9 +871,9 @@
       "name": "Service card",
       "kind": "card",
       "refersTo": "service-card",
-      "description": "Scope surface with native disclosure and planner link; shortened specimen copy.",
-      "html": "<article class=\"ds-card\"><h4>Websites &amp; digital presence</h4><p>A place for people to find you and take the next step.</p><details><summary class=\"ds-focus\">Scope &amp; deliverables</summary><p>Agreed page structure and responsive interface.</p></details><a class=\"ds-discuss ds-focus\" href=\"#studio\">Discuss this <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></a></article>",
-      "css": ".ds-card{min-width:0;border:1px solid var(--border,rgba(15,23,42,.08));border-radius:14px;background:var(--surface,#fff);color:var(--foreground,#09090b);padding:24px;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;transition:border-color .2s,background-color .2s,transform .18s cubic-bezier(.16,1,.3,1)}.ds-card h4{margin:0;font-size:20px;font-weight:600;line-height:1.375}.ds-card p{margin-top:12px;color:var(--muted,#526176);font-size:14px;line-height:1.625}.ds-card details{border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:8px;margin-top:20px}.ds-card summary{min-height:44px;display:flex;align-items:center;color:var(--accent,#047857);font-size:14px;font-weight:600;cursor:pointer}.ds-card summary::after{content:\"\";margin-left:auto;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}.ds-card details[open] summary::after{transform:rotate(225deg)}.ds-discuss{display:flex;min-height:44px;justify-content:space-between;align-items:center;border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:12px;margin-top:16px;color:var(--foreground,#09090b);font-size:14px;font-weight:600;text-decoration:none}.ds-discuss svg{transition:transform .15s cubic-bezier(.16,1,.3,1)}.ds-card:focus-within{border-color:var(--accent,#047857);transform:translateY(-3px);transition:none}.ds-discuss:focus-visible svg{transform:translateX(3px)}@media(hover:hover) and (pointer:fine){.ds-card:hover{border-color:var(--accent,#047857);transform:translateY(-3px)}.ds-discuss:hover svg{transform:translateX(3px)}}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(min-width:768px){.ds-card{padding:28px}}@media(prefers-reduced-motion:reduce){.ds-card,.ds-discuss svg{transition:none;transform:none!important}}"
+      "description": "Illustrated scope surface with static labelled example, native disclosure and enquiry link; abbreviated specimen.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-scene\"><strong>Illustrative example</strong><p>A website for your business</p></div><div class=\"ds-card-body\"><h4>Business website</h4><p>A place for people to find you and take the next step.</p><details><summary class=\"ds-focus\">Scope &amp; deliverables</summary><p>Agreed page structure and responsive interface.</p></details><a class=\"ds-discuss ds-focus\" href=\"#studio\">Discuss this <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></a></div></article>",
+      "css": ".ds-card{min-width:0;overflow:hidden;border-radius:14px;background:var(--surface,#fff);color:var(--foreground,#09090b);box-shadow:0 8px 28px rgba(0,0,0,.055);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-card-scene{padding:20px 18px 14px;background:var(--scene-field,#e7f1eb);color:var(--scene-ink,#143c2b);font-size:13px}.ds-card-body{padding:26px}.ds-card h4{margin:0;font-size:21px;font-weight:600;line-height:1.25}.ds-card-body p{margin-top:12px;color:var(--muted,#526176);font-size:14px;line-height:1.625}.ds-card details{border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:8px;margin-top:20px}.ds-card summary{min-height:44px;display:flex;align-items:center;color:var(--accent,#047857);font-size:14px;font-weight:600;cursor:pointer}.ds-card summary::after{content:\"\";margin-left:auto;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}.ds-card details[open] summary::after{transform:rotate(225deg)}.ds-discuss{display:flex;min-height:44px;justify-content:space-between;align-items:center;border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:12px;margin-top:16px;color:var(--foreground,#09090b);font-size:14px;font-weight:600;text-decoration:none}.ds-discuss svg{transition:transform .15s cubic-bezier(.16,1,.3,1)}.ds-card:focus-within{outline:1px solid var(--accent,#047857);outline-offset:4px}.ds-discuss:focus-visible svg{transform:translateX(3px)}@media(hover:hover) and (pointer:fine){.ds-discuss:hover svg{transform:translateX(3px)}}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(max-width:760px){.ds-card-body{padding:24px}.ds-card h4{font-size:22px}}@media(prefers-reduced-motion:reduce){.ds-discuss svg{transition:none;transform:none!important}}"
     },
     {
       "name": "Audience selection",
@@ -443,15 +881,39 @@
       "description": "Selected-state specimen of the three-button audience group; application owns URL/state behavior.",
       "html": "<div class=\"ds-audience\" role=\"group\" aria-label=\"Choose what to explore\"><span class=\"ds-marker\" aria-hidden=\"true\"></span><button class=\"ds-focus\" aria-pressed=\"true\">For clients</button><button class=\"ds-focus\" aria-pressed=\"false\">For hiring teams</button><button class=\"ds-focus\" aria-pressed=\"false\">Everything</button></div>",
       "css": ".ds-audience{position:relative;display:grid;grid-template-columns:repeat(3,1fr);width:450px;max-width:calc(100% - 10px);padding:5px;border-radius:12px;background:var(--surface-hover,#f1f5f9);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-marker{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);background:var(--primary,#047857);border-radius:8px;transition:transform .22s cubic-bezier(.16,1,.3,1)}.ds-audience button{position:relative;z-index:1;min-height:44px;border:0;background:transparent;border-radius:8px;padding:0 8px;font-size:13px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;color:var(--muted,#526176);cursor:pointer}.ds-audience button[aria-pressed=true]{color:var(--on-primary,#fff)}.ds-audience button[aria-pressed=false]:hover{color:var(--foreground,#09090b)}.ds-audience:has(:focus-visible) .ds-marker{transition:none}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(prefers-reduced-motion:reduce){.ds-marker{transition:none}}"
+    },
+    {
+      "name": "Feature contact action",
+      "kind": "button",
+      "refersTo": "button-feature",
+      "description": "Pale green action on the deep-green contact close.",
+      "html": "<div class=\"ds-feature\"><button class=\"ds-feature-action\">Let’s talk on WhatsApp</button></div>",
+      "css": ".ds-feature{padding:24px;background:var(--feature,#063d2f)}.ds-feature-action{display:inline-flex;min-height:48px;align-items:center;justify-content:center;border:0;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;background:#a7f3d0;color:var(--feature,#063d2f);transition:background-color .2s}.ds-feature-action:hover{background:#c5f4db}.ds-feature-action:focus-visible{outline:2px solid #a7f3d0;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-feature-action{transition:none}}"
+    },
+    {
+      "name": "Static service example",
+      "kind": "custom",
+      "refersTo": "scene-window",
+      "description": "Readable illustrative interface; its displayed action has no interaction.",
+      "html": "<figure class=\"ds-example\"><div class=\"ds-window\"><strong>Your business</strong><p>Make the next step clear.</p><span class=\"ds-example-action\">Explore services <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></span></div><figcaption>Illustrative example</figcaption></figure>",
+      "css": ".ds-example{margin:0;padding:20px 18px 14px;background:var(--scene-field,#e7f1eb);color:var(--scene-ink,#143c2b);font-size:13px;line-height:1.45;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-window{min-height:248px;padding:16px 15px;background:var(--scene-paper,#fff);border-radius:9px}.ds-window strong{font-weight:600}.ds-window p{font-size:20px;line-height:1.2;letter-spacing:-.02em}.ds-example-action{display:flex;justify-content:space-between;gap:8px;background:var(--scene-green,#047857);color:var(--scene-mint,#a7f3d0);padding:9px 11px;border-radius:5px;font-size:12px;font-weight:550}.ds-example figcaption{margin-top:12px;font-size:11px}"
+    },
+    {
+      "name": "Delivery handover",
+      "kind": "custom",
+      "description": "Visible light handover panel on deep green; static specimen of the finite in-view composition.",
+      "html": "<div class=\"ds-delivery\"><div class=\"ds-handover\"><strong>Ready for handover</strong><p>Code &amp; access</p><p>Setup notes</p><p>A walkthrough</p></div></div>",
+      "css": ".ds-delivery{padding:24px;background:var(--feature,#063d2f);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-handover{min-height:220px;padding:26px;border-radius:12px;background:#fff;color:#143c2b;box-shadow:0 12px 32px rgba(0,0,0,.12)}.ds-handover strong{display:block;font-size:20px;font-weight:600;line-height:1.25;letter-spacing:-.02em}.ds-handover p{margin-top:10px;font-size:12px}"
     }
   ],
   "narrative": {
     "northStar": "A personal professional portfolio with the care of an editorial layout",
-    "overview": "The existing identity gives a real person the first impression: Razim's name, authentic portrait and the connection between business understanding and practical development. Open text regions, restrained green emphasis and quiet functional panels create variation without changing the brand.\n\nThis document records the implemented source on 2026-10-08, extending the [approved direction](planning/2026-10-07_visual-refresh/DESIGN.md). It does not certify rendered quality. Current desktop/mobile captures and browser interaction review are outstanding; proposal captures are not implementation evidence. CSS and rendered components are the implementation source of truth; reconcile this record when they change.",
+    "overview": "The existing identity gives a real person the first impression: Razim's name, authentic portrait and the connection between business understanding and practical development. Open text regions, restrained green emphasis and quiet functional panels create variation without changing the brand.\n\nThe accepted portrait direction extends that identity with geometric interface fragments, substantial illustrative service examples and deep-green delivery/contact passages. This document merges the implemented source on 2026-10-08 with the existing system. Current application captures and an independent visual finish disposition of ship are recorded in the [integration record](planning/2026-10-08_visual-direction/APP_INTEGRATION.md); release verification remains pending. CSS and rendered components are the implementation source of truth; reconcile this record when they change.",
     "keyCharacteristics": [
       "Authentic portrait and prominent personal identity.",
       "Green actions with neutral reading surfaces in both themes.",
       "Open section layouts mixed with compact functional panels.",
+      "Static interface examples and contrasting deep-green feature sections.",
       "Optional detail and immediate state feedback."
     ],
     "rules": [
@@ -475,11 +937,12 @@
       "Do preserve the authentic portrait, green identity and Geist typography.",
       "Do use semantic theme variables and visible keyboard focus.",
       "Do keep optional detail in native disclosures and preserve mounted drafts.",
+      "Do label static interface examples as illustrative and place real enquiry actions outside them.",
       "Do reduce movement without removing information or feedback."
     ],
     "donts": [
       "Don't substitute fabricated portraits, work evidence or performance claims.",
-      "Don't add competing decorative animation around the portrait.",
+      "Don't add competing decorative animation around the portrait or make explanatory delivery motion perpetual.",
       "Don't promote unused legacy effects into the current design vocabulary.",
       "Don't treat proposal screenshots or source-only checks as a rendered application pass."
     ]

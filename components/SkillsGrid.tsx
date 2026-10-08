@@ -12,10 +12,10 @@ const groups = [
 export default function SkillsGrid() {
   return (
     <section id="skills" tabIndex={-1} className="pb-12 md:pb-16">
-      <div className="container mx-auto px-5 md:px-8">
+      <div className="site-wrap">
         <details className="border-y border-[var(--border)] py-5">
           <summary className="flex min-h-12 items-center justify-between gap-5">
-            <div><h2 className="text-2xl font-bold tracking-tight">The toolkit behind the work.</h2><p className="mt-2 text-sm text-[var(--muted)]">Development, AI, data, and business analysis. Explore the tools and methods.</p></div>
+            <div><h2 className="text-2xl font-semibold tracking-tight">The toolkit behind the work.</h2><p className="mt-2 text-sm text-[var(--muted)]">Development, AI, data, and business analysis. Explore the tools and methods.</p></div>
             <ChevronDown size={20} className="disclosure-chevron shrink-0 text-[var(--accent)]" aria-hidden="true" />
           </summary>
         <div className="mt-7 grid gap-x-12 gap-y-8 md:grid-cols-2">

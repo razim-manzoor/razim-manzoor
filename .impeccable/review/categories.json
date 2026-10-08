@@ -1,0 +1,498 @@
+[
+  {
+    "width": 1440,
+    "theme": "light",
+    "label": "Launch online",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-website",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "commerce-booking",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "digital-product",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "label": "Simplify operations",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-systems",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "workflow-automation",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "system-integration",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "label": "Put AI to work",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "knowledge-assistant",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ai-workflows",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "document-processing",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "label": "Use your data",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "data-foundations",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "reporting",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "analysis-models",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "label": "Improve a system",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "system-improvements",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ongoing-support",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "label": "Launch online",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-website",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "commerce-booking",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "digital-product",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "label": "Simplify operations",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-systems",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "workflow-automation",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "system-integration",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "label": "Put AI to work",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "knowledge-assistant",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ai-workflows",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "document-processing",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "label": "Use your data",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "data-foundations",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "reporting",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "analysis-models",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "label": "Improve a system",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "system-improvements",
+        "scrollWidth": 357,
+        "width": 357
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ongoing-support",
+        "scrollWidth": 357,
+        "width": 357
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "label": "Launch online",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-website",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "commerce-booking",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "digital-product",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "label": "Simplify operations",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-systems",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "workflow-automation",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "system-integration",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "label": "Put AI to work",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "knowledge-assistant",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ai-workflows",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "document-processing",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "label": "Use your data",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "data-foundations",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "reporting",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "analysis-models",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "label": "Improve a system",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "system-improvements",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ongoing-support",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "label": "Launch online",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-website",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "commerce-booking",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "digital-product",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "label": "Simplify operations",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "business-systems",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "workflow-automation",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "system-integration",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "label": "Put AI to work",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "knowledge-assistant",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ai-workflows",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "document-processing",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "label": "Use your data",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "data-foundations",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "reporting",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "analysis-models",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "label": "Improve a system",
+    "examples": [
+      {
+        "caption": "Illustrative example",
+        "id": "system-improvements",
+        "scrollWidth": 335,
+        "width": 335
+      },
+      {
+        "caption": "Illustrative example",
+        "id": "ongoing-support",
+        "scrollWidth": 335,
+        "width": 335
+      }
+    ],
+    "overflow": false
+  }
+]

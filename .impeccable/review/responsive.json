@@ -1,0 +1,120 @@
+[
+  {
+    "name": "desktop",
+    "fonts": "loaded",
+    "height": 5835,
+    "portrait": true,
+    "scrollWidth": 1440,
+    "theme": "light",
+    "width": 1440,
+    "view": "client"
+  },
+  {
+    "name": "desktop-dark",
+    "fonts": "loaded",
+    "height": 5835,
+    "portrait": true,
+    "scrollWidth": 1440,
+    "theme": "dark",
+    "width": 1440,
+    "view": "client"
+  },
+  {
+    "name": "mobile",
+    "fonts": "loaded",
+    "height": 9631,
+    "portrait": true,
+    "scrollWidth": 390,
+    "theme": "light",
+    "width": 390,
+    "view": "client"
+  },
+  {
+    "name": "mobile-dark",
+    "fonts": "loaded",
+    "height": 9545,
+    "portrait": true,
+    "scrollWidth": 390,
+    "theme": "dark",
+    "width": 390,
+    "view": "client"
+  },
+  {
+    "name": "phone-320",
+    "fonts": "loaded",
+    "height": 10375,
+    "portrait": true,
+    "scrollWidth": 320,
+    "theme": "light",
+    "width": 320,
+    "view": "client"
+  },
+  {
+    "name": "phone-320-dark",
+    "fonts": "loaded",
+    "height": 10375,
+    "portrait": true,
+    "scrollWidth": 320,
+    "theme": "dark",
+    "width": 320,
+    "view": "client"
+  },
+  {
+    "name": "tablet-768",
+    "fonts": "loaded",
+    "height": 6598,
+    "portrait": true,
+    "scrollWidth": 768,
+    "theme": "light",
+    "width": 768,
+    "view": "client"
+  },
+  {
+    "name": "tablet-945",
+    "fonts": "loaded",
+    "height": 6376,
+    "portrait": true,
+    "scrollWidth": 945,
+    "theme": "light",
+    "width": 945,
+    "view": "client"
+  },
+  {
+    "name": "tablet-1024",
+    "fonts": "loaded",
+    "height": 6293,
+    "portrait": true,
+    "scrollWidth": 1024,
+    "theme": "light",
+    "width": 1024,
+    "view": "client"
+  },
+  {
+    "name": "user-1280",
+    "fonts": "loaded",
+    "height": 5823,
+    "portrait": true,
+    "scrollWidth": 1280,
+    "theme": "light",
+    "width": 1280,
+    "view": "client"
+  },
+  {
+    "name": "recruiter-mobile",
+    "width": 390,
+    "height": 6989,
+    "theme": "light",
+    "view": "recruiter",
+    "mode": "For hiring teams"
+  },
+  {
+    "name": "recruiter-desktop",
+    "fonts": "loaded",
+    "height": 4797,
+    "portrait": true,
+    "scrollWidth": 1440,
+    "theme": "light",
+    "width": 1440,
+    "view": "recruiter"
+  }
+]

@@ -37,13 +37,15 @@ The ignored `.brain/` junction contains private working notes and is not part of
 
 ## Recent work
 
-The [2026-10-08 visual direction follow-up](planning/2026-10-08_visual-direction/README.md) researches a richer UI and proposes illustrated services, a stronger portrait composition, explanatory motion and green feature sections. Two [interactive visual studies](planning/2026-10-08_visual-direction/mockups/README.md) show portrait/panels and workflow/rows compositions in both themes. The preferred portrait study now has fourteen distinct service examples and aligned delivery/planner content. This richer direction is not integrated into the application.
+The preferred [2026-10-08 portrait direction](planning/2026-10-08_visual-direction/APP_INTEGRATION.md) is integrated into the application: authentic portrait with interface fragments, fourteen distinct illustrative service examples, a brief/build/handover passage with finite movement, rough-request planner artwork and a deep-green contact close. The existing journeys, supplied facts and runtime remain intact; real case studies are deferred.
 
-The preview and supporting documentation are published separately from the pending application edits. [Publication scope](planning/2026-10-08_visual-direction/PUBLICATION.md) records that boundary.
+Local lint, TypeScript, five estimator tests and the final webpack production build passed. Current application captures and interaction evidence passed the independent [visual finish review](.impeccable/review/FINISH_REVIEW.md) with disposition ship and no material fixes. Motion was source-reviewed and journeys were not independently rerun by the reviewer. Git publication and live release verification remain pending; the integration record carries the detailed evidence and limits.
+
+The [visual studies](planning/2026-10-08_visual-direction/mockups/README.md) and [preview publication scope](planning/2026-10-08_visual-direction/PUBLICATION.md) preserve the earlier proposal history.
 
 The [website skill workflow](docs/SKILLS.md) maps design, motion, implementation and verification skills, with conditional tools and component-source adoption rules.
 
-The [2026-10-07 visual refresh packet](planning/2026-10-07_visual-refresh/README.md) retains the design proposal, PRD, TRD, flows, color profile and research. The accepted composition is now integrated locally; [implementation checks and outstanding browser verification](planning/2026-10-07_visual-refresh/IMPLEMENTATION.md) are recorded separately. It has not been published.
+The [2026-10-07 visual refresh packet](planning/2026-10-07_visual-refresh/README.md) retains the earlier design proposal, PRD, TRD, flows, color profile and research. Its [implementation record](planning/2026-10-07_visual-refresh/IMPLEMENTATION.md) describes that earlier checkout; use the current portrait integration record for present status.
 
 Durable website references: [product and visitor flows](PRODUCT.md), [design system](DESIGN.md), [architecture](docs/ARCHITECTURE.md), and [maintenance and release](docs/MAINTENANCE.md).
 

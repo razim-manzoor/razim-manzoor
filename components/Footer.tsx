@@ -6,11 +6,12 @@ import { WHATSAPP_URL } from "@/lib/contact";
 
 export default function Footer() {
   return (
-    <footer id="contact" tabIndex={-1} className="border-t border-[var(--border)] bg-[var(--surface)] py-14 md:py-20">
-      <div className="container mx-auto px-5 md:px-8">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
+    <footer id="contact" tabIndex={-1} className="portfolio-section portfolio-footer">
+      <div className="site-wrap">
+        <p className="footer-signature">Razim Manzoor.</p>
+        <div className="footer-main grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <h2 className="max-w-xl text-3xl font-bold tracking-tight md:text-4xl">Have a project or role in mind?</h2>
+            <h2 className="section-title max-w-xl">Have a project<br />or role in mind?</h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-[var(--muted)]">Tell me what you are working on, what needs to change, or where I could help your team.</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="action-primary"><MessageCircle size={18} aria-hidden="true" /> Message me on WhatsApp <ArrowUpRight size={15} aria-hidden="true" /></a>

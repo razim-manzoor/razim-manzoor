@@ -1,0 +1,27 @@
+{
+  "duplicateSelection": true,
+  "combined": true,
+  "notesRetained": true,
+  "draftEncoding": true,
+  "copy": true,
+  "remove": true,
+  "removedFromDraft": true,
+  "recruiterVisible": true,
+  "plannerHidden": true,
+  "recruiterUrl": "http://127.0.0.1:3100/?view=recruiter",
+  "audienceDraftRetained": true,
+  "zeroHours": true,
+  "zeroEstimate": "Start with the problem or the idea.\n\nYour service selection is ready. Add a project note below, or continue straight to WhatsApp. You can combine or remove services.\n\nDiscuss on WhatsApp\nServices to discuss (1)\nWorkflow automation\nRemove\nProject planner\nTime-value estimate\nExplore the value of time released\n\nAn illustrative model using your assumptions. Changing currency changes the unit; it does not convert the amounts.\n\nCurrency\nAED\nUSD\nManual hours per week\n0 hours\nValue per work hour\n$100\nShare of work automated\n60%\nUpfront build cost\n$7,500\nMonthly running & upkeep cost\n$200\nEstimated annual time value\nHours released per year\n0 hours\nValue of that time\n$0\nAnnual running costs\n$2,400\nValue after running costs\n-$2,400\nModeled payback\nNo modeled payback\n\nAssumes 52 working weeks and a constant automation rate. Time released is capacity, not guaranteed cash savings. Payback uses that time value after running costs; it is not a revenue forecast or a project quote.\n\nAt these assumptions, running costs meet or exceed the value of time released.\n\nDiscuss a real scope",
+  "estimateDraftRetained": true,
+  "estimateRetained": true,
+  "menuOpened": "true",
+  "menuEscape": "false",
+  "focusAfterEscape": {
+    "label": "Open navigation menu",
+    "outline": "3px"
+  },
+  "console": [],
+  "historyBack": "http://127.0.0.1:3100/?view=recruiter",
+  "historyForward": "http://127.0.0.1:3100/?view=client",
+  "retainedAfterHistory": true
+}

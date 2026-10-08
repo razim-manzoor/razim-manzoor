@@ -3,7 +3,6 @@
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
-import { motion } from "motion/react";
 
 const subscribe = () => () => {};
 const clientSnapshot = () => true;
@@ -25,18 +24,11 @@ export function ThemeToggle() {
         <button
             type="button"
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className="grid h-11 w-11 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition-colors hover:bg-[var(--surface-hover)] cursor-pointer"
-            aria-label="Toggle theme"
+            className="grid h-11 w-11 place-items-center rounded-xl text-[var(--foreground)] hover:bg-[var(--surface-hover)]"
+            aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
             title={isDark ? "Switch to light theme" : "Switch to dark theme"}
         >
-            <motion.span
-                key={isDark ? "dark" : "light"}
-                initial={false}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-            >
-                {isDark ? <Moon size={18} aria-hidden="true" /> : <Sun size={18} aria-hidden="true" />}
-            </motion.span>
+            {isDark ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
         </button>
     );
 }

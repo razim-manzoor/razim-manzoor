@@ -87,7 +87,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
     items: [
       {
         id: "business-website", title: "Websites & digital presence",
-        tagline: "Make your business clear and easy to reach.",
+        tagline: "Present your services clearly and give visitors a way to enquire.",
         description: "Business websites, landing pages, portfolios, and content-managed sites. Shape the pages around what visitors need to understand and the action you want them to take.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "Web frameworks or CMS", "Responsive design", "Search metadata & analytics"],
         deliverables: ["Page structure and responsive interface", "Content editing where needed", "Enquiry, booking, or signup journey", "Search metadata, analytics, and deployment"],
@@ -95,7 +95,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "commerce-booking", title: "Online selling & bookings",
-        tagline: "Let customers complete a purchase or reservation.",
+        tagline: "Let customers choose a service, book a time, or buy online.",
         description: "Stores, service bookings, paid memberships, and checkout flows. Choose a ready-made platform or a custom implementation based on your catalogue, operations, and budget.",
         scopeType: "Turnkey Build", tech: ["Project-fit stack", "Commerce or booking platforms", "Payment gateways", "Order integrations"],
         deliverables: ["Product or service catalogue", "Purchase or reservation flow", "Payments and customer notifications", "Administration and end-to-end journey checks"],
@@ -103,7 +103,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "digital-product", title: "Apps & new digital products",
-        tagline: "Turn an idea into a working first version.",
+        tagline: "Give users a working interface for the core task in your product.",
         description: "Web applications, SaaS products, and interfaces designed for mobile use. Define the core user journey, build the needed data and integrations, and review a usable version before expanding.",
         scopeType: "Turnkey Build", tech: ["Project-fit stack", "Frontend & backend", "Authentication & databases", "Product integrations"],
         deliverables: ["Core journeys and working interface", "Accounts, permissions, and data model", "Required integrations or billing", "Testing, deployment, and handover"],
@@ -117,7 +117,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
     items: [
       {
         id: "business-systems", title: "Internal systems & portals",
-        tagline: "Give people one place to do the work.",
+        tagline: "Bring requests, records and responsibilities into one workspace.",
         description: "Client portals, CRM tools, admin panels, and systems for requests, inventory, projects, or service delivery. Build around the people, records, and decisions in your process.",
         scopeType: "Turnkey Build", tech: ["Project-fit stack", "Role-based access", "Databases", "Notifications"],
         deliverables: ["Workflow and user-role design", "Relevant forms, records, and admin views", "Permissions and status updates", "Team walkthrough and usage notes"],
@@ -125,7 +125,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "workflow-automation", title: "Workflow automation",
-        tagline: "Remove repeated steps from a defined process.",
+        tagline: "Turn a repeatable process into defined steps, with review where needed.",
         description: "Automate approvals, follow-ups, onboarding, document generation, billing updates, or scheduled tasks. Start with the trigger and desired result, then define exceptions and human review.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "Workflow platforms", "Custom scripts", "Scheduled jobs"],
         deliverables: ["Process map and trigger rules", "Agreed automated steps", "Review paths, failure alerts, and recovery", "Run history and maintenance notes"],
@@ -133,7 +133,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "system-integration", title: "Integrations & connected tools",
-        tagline: "Make your existing systems work together.",
+        tagline: "Move agreed information between tools without repeated re-entry.",
         description: "Connect websites, CRMs, accounting tools, spreadsheets, databases, and external APIs. Move the right information between them with clear ownership, mappings, and duplicate handling.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "APIs & webhooks", "Data mapping", "Sync jobs"],
         deliverables: ["Connection and field mapping", "Sync rules and duplicate handling", "Logging, retries, and failure notifications", "Integration testing and access handover"],
@@ -147,7 +147,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
     items: [
       {
         id: "knowledge-assistant", title: "Assistants & knowledge search",
-        tagline: "Help people find answers and take the next step.",
+        tagline: "Answer questions from your business information, with sources to check.",
         description: "Website or WhatsApp assistants and search over your business information. Ground answers in agreed sources, connect useful tools, and define when to ask for clarification or hand over to a person.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "Local or hosted models", "Document retrieval", "Chat channels"],
         deliverables: ["Knowledge sources and access rules", "Conversation and source-reference behavior", "Booking, lookup, or handoff where needed", "Sample-question and conversation evaluation"],
@@ -155,7 +155,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "ai-workflows", title: "AI agents & application features",
-        tagline: "Connect reasoning and language tasks to useful actions.",
+        tagline: "Prepare useful actions with clear permissions and human approval.",
         description: "Agents that work with business tools, or AI features inside an existing product. Scope tasks such as research, classification, drafting, summarisation, and record updates with defined permissions and approvals.",
         scopeType: "Turnkey Build", tech: ["Project-fit stack", "Model APIs or local models", "Tool integrations", "Evaluation & logging"],
         deliverables: ["Defined tasks and permitted actions", "Connections to agreed tools and records", "Approval, fallback, and usage controls", "Representative task tests and run visibility"],
@@ -163,7 +163,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "document-processing", title: "Document & content processing",
-        tagline: "Turn incoming information into usable output.",
+        tagline: "Extract useful fields and flag uncertain results for review.",
         description: "Extract fields from documents, organise incoming messages, or prepare structured summaries and drafts. Validate the output and route uncertain or important results for review.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "OCR & vision", "Structured outputs", "Validation & exports"],
         deliverables: ["Agreed input types and output format", "Extraction or transformation pipeline", "Validation and review flags", "Sample-based checks and system export"],
@@ -177,7 +177,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
     items: [
       {
         id: "data-foundations", title: "Data preparation & migration",
-        tagline: "Create a reliable foundation for the next step.",
+        tagline: "Clean, map and validate records before importing or reporting.",
         description: "Clean records, combine sources, build repeatable imports, or move data between systems. Agree on mappings and check the results before using the data in reports or applications.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "SQL & Python", "Data pipelines", "Validation"],
         deliverables: ["Source review and field mapping", "Cleaning and transformation rules", "Repeatable import or migration", "Record validation and exception report"],
@@ -185,7 +185,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "reporting", title: "Dashboards & business reporting",
-        tagline: "See the measures that matter to your team.",
+        tagline: "Bring the measures your team needs into a clear, repeatable report.",
         description: "Define KPIs, connect data sources, and build dashboards or recurring reports around real business questions. Include refresh rules and checks so people know what they are looking at.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "Power BI or custom reporting", "SQL & data models", "Refresh pipelines"],
         deliverables: ["Business questions and KPI definitions", "Reporting model and interactive views", "Refresh setup and data-quality checks", "Report walkthrough and documentation"],
@@ -193,7 +193,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "analysis-models", title: "Analysis & predictive models",
-        tagline: "Investigate a question and test what the data can support.",
+        tagline: "Use the available data to investigate a practical business question.",
         description: "Explore trends, segments, forecasts, or classification problems. Start with the decision you want to make, check the available data, and evaluate a model against a practical baseline.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "Python & statistics", "Machine learning", "Evaluation"],
         deliverables: ["Question definition and data assessment", "Exploratory analysis or prototype model", "Baseline comparison and limitations", "Findings, recommendations, and reproducible work"],
@@ -207,7 +207,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
     items: [
       {
         id: "system-improvements", title: "Reviews, fixes & modernisation",
-        tagline: "Work out the problem and improve the right part.",
+        tagline: "Fix a specific problem in the system your team already uses.",
         description: "Review an existing implementation, reproduce a fault, add a feature, improve usability or speed, or plan a migration. Start with the current system and the change you need.",
         scopeType: "Fixed Milestone", tech: ["Project-fit stack", "Existing codebases", "Diagnostics & testing", "Deployment"],
         deliverables: ["Review or reproducible diagnosis", "Agreed fix, feature, or migration plan", "Relevant regression and journey checks", "Change notes and deployment support"],
@@ -215,7 +215,7 @@ export const SERVICES_CATALOG: ServicePillar[] = [
       },
       {
         id: "ongoing-support", title: "Ongoing development & support",
-        tagline: "Keep useful systems working and evolving.",
+        tagline: "Keep a prioritised queue of improvements, fixes and maintenance.",
         description: "An agreed allocation for maintenance, new features, workflow changes, reporting updates, and technical support. Prioritise the backlog and agree on capacity and response expectations.",
         scopeType: "Monthly Retainer", tech: ["Project-fit stack", "Applications & workflows", "System checks", "Direct communication"],
         deliverables: ["Agreed capacity and priorities", "Maintenance and incremental improvements", "Progress and issue updates", "Maintained code access and documentation"],

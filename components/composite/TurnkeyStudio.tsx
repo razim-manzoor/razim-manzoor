@@ -6,6 +6,7 @@ import { SERVICES_CATALOG } from "@/lib/services";
 import { emailDraft, whatsappDraft, WHATSAPP_URL } from "@/lib/contact";
 import { estimateAutomation } from "@/lib/estimate";
 import { projectSelectionEvent } from "@/lib/project-planner";
+import { BriefExample } from "@/components/ServiceExample";
 
 const tracks = SERVICES_CATALOG.flatMap((pillar) => pillar.items.map((item) => ({ ...item, category: pillar.shortTitle, needId: pillar.id })));
 const timelines = ["Help me decide", "A new build", "An improvement to an existing system", "Ongoing development or support"];
@@ -93,15 +94,17 @@ export function TurnkeyStudio() {
   const copied = copyStatus === "success" && copiedText === message;
 
   return (
-    <section id="studio" aria-labelledby="studio-title" tabIndex={-1} className="py-16 md:py-24">
-      <div className="container mx-auto px-5 md:px-8">
-        <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+    <section id="studio" aria-labelledby="studio-title" tabIndex={-1} className="portfolio-section">
+      <div className={`site-wrap planner-layout ${activeTab === "estimate" ? "planner-estimating" : ""}`}>
+        <div className="planner-intro">
           <div className="max-w-2xl">
-            <h2 id="studio-title" className="text-3xl font-bold tracking-tight md:text-5xl">Start with the problem or the idea.</h2>
+            <h2 id="studio-title" className="section-title">Start with the problem or the idea.</h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">{chosen.length ? "Your service selection is ready. Add a project note below, or continue straight to WhatsApp. You can combine or remove services." : "Describe what needs to change. This optional planner helps you start a conversation, even if you are still deciding on the solution."}</p>
           </div>
-          <a href={hasProjectContext ? whatsappDraft(message) : WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="action-primary shrink-0"><MessageCircle size={18} aria-hidden="true" /> {hasProjectContext ? "Discuss on WhatsApp" : "Just chat on WhatsApp"}</a>
+          <a href={hasProjectContext ? whatsappDraft(message) : WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-action mt-6 text-[var(--accent)]"><MessageCircle size={18} aria-hidden="true" /> {hasProjectContext ? "Discuss on WhatsApp" : "Just chat on WhatsApp"}</a>
+          <BriefExample />
         </div>
+        <div className="planner-panel">
         {chosen.length > 0 && <div className="mb-7 border-y border-[var(--border)] py-4"><h3 className="text-base font-semibold">Services to discuss ({chosen.length})</h3><ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2">{chosen.map((track) => <li key={track.id} className="flex min-w-0 items-center gap-3 text-sm"><span>{track.title}</span><button type="button" onClick={() => setSelected((previous) => previous.filter((id) => id !== track.id))} aria-label={`Remove ${track.title}`} className="min-h-11 shrink-0 px-2 font-semibold text-[var(--accent)]">Remove</button></li>)}</ul></div>}
         <div role="group" aria-label="Project planning tools" className="mb-8 flex flex-wrap gap-2 border-b border-[var(--border)] pb-5">
           {([{ id: "scope", label: "Project planner" }, { id: "estimate", label: "Time-value estimate" }] as const).map((tab) => (
@@ -109,7 +112,7 @@ export function TurnkeyStudio() {
           ))}
         </div>
 
-        <div id="tool-scope" hidden={activeTab !== "scope"} className={`grid gap-8 ${chosen.length ? "max-w-3xl" : "lg:grid-cols-[1.1fr_0.9fr]"}`}>
+        <div id="tool-scope" hidden={activeTab !== "scope"} className="planner-scope">
           <details open={briefOpen} onToggle={(event) => setBriefOpen(event.currentTarget.open)}>
             <summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Adjust goals & starting point (optional)</summary>
             <div className="mt-4 space-y-7">
@@ -144,7 +147,7 @@ export function TurnkeyStudio() {
             </fieldset>
             </div>
           </details>
-          <div className="min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
+          <div className="min-w-0">
             <h3 className="text-lg font-semibold">Your project note</h3>
             <p className="mt-2 text-sm text-[var(--muted)]">All fields are optional. This creates a draft for you to review.</p>
             <div className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -196,6 +199,7 @@ export function TurnkeyStudio() {
             {result.annualNetValue <= 0 && <p className="mt-4 text-sm font-medium">At these assumptions, running costs meet or exceed the value of time released.</p>}
             <button type="button" onClick={() => setActiveTab("scope")} className="action-secondary mt-6 w-full">Discuss a real scope <ArrowUpRight size={16} aria-hidden="true" /></button>
           </div>
+        </div>
         </div>
       </div>
     </section>

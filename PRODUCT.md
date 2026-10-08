@@ -1,6 +1,6 @@
 # Razim Manzoor portfolio
 
-Current application reference, extracted from source on 2026-10-08. The visual refresh is implemented locally; release and browser verification remain incomplete. The dated [implementation record](planning/2026-10-07_visual-refresh/IMPLEMENTATION.md) owns verification results.
+Current application reference, checked against source on 2026-10-08. The accepted portrait direction is integrated locally; current browser evidence and an independent visual finish disposition of ship are recorded in the [integration record](planning/2026-10-08_visual-direction/APP_INTEGRATION.md). Git publication and live release verification remain pending.
 
 The site helps prospective clients start a project conversation and hiring teams review Razim's background. It connects business analysis with practical websites, applications, AI tools, automation and reporting. Preserve the existing green identity, Geist typography and authentic portrait. Professional history and claims are supplied content, not independently authenticated evidence.
 
@@ -20,8 +20,10 @@ Audience choice lives in `?view=client`, `?view=recruiter` or `?view=all`. Servi
 ## Product boundaries
 
 - No message is submitted by this website. There is no tracking integration or account flow in the current implementation.
-- Service examples describe offered work; they are not completed case studies. The retained project showcase and project data remain unrendered until replacement evidence is ready.
+- Each of the fourteen service scopes has a distinct labelled static interface example and concise outcome. The examples describe offered work; sample figures are illustrative, and their displayed controls do not act. Real scope disclosures and enquiry actions sit outside them. The retained project showcase and project data remain unrendered until replacement case studies and evidence are ready.
 - Keep requirements optional and contact available without completing a planner. Preserve meaningful labels, visible keyboard focus, native disclosures and reduced-motion behavior.
 - Keep public assets and documentation separate from private working memory. Do not export the private vault.
 
-Content and behavior ownership is in [Architecture](docs/ARCHITECTURE.md); visual rules are in [DESIGN.md](DESIGN.md); checks and publishing steps are in [Maintenance](docs/MAINTENANCE.md). The [preview](planning/2026-10-07_visual-refresh/preview/README.md) records the approved proposal, not application test evidence.
+The shared delivery section explains the agreed brief, build/review and handover. Its finite 1.8-second connection movement begins from visible content and is disabled for reduced motion. The planner's rough-request-to-brief example is explanatory; it is hidden while estimating. These treatments preserve the existing visitor journeys and supplied facts.
+
+Content and behavior ownership is in [Architecture](docs/ARCHITECTURE.md); visual rules are in [DESIGN.md](DESIGN.md); checks and publishing steps are in [Maintenance](docs/MAINTENANCE.md). The [portrait study](planning/2026-10-08_visual-direction/mockups/README.md) records the accepted proposal; current application evidence belongs to the integration record.
