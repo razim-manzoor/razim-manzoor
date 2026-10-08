@@ -19,7 +19,7 @@ export function AudienceToggle({ mode, onChange }: { mode: AudienceMode; onChang
           type="button"
           aria-pressed={mode === option.mode}
           onClick={() => onChange(option.mode)}
-          className={`relative z-10 min-h-11 rounded-lg px-2 text-[13px] font-semibold ${mode === option.mode ? "text-[var(--on-primary)]" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+          className={`relative z-10 min-h-9 sm:min-h-10 rounded-lg px-2 text-[13px] font-semibold ${mode === option.mode ? "text-[var(--on-primary)]" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
         >
           {option.label}
         </button>

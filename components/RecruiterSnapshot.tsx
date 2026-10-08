@@ -32,17 +32,17 @@ export default function RecruiterSnapshot() {
           </div>
           <div>
             <h3 className="mb-6 text-xl font-semibold">Experience</h3>
-            <div className="space-y-7">
+            <div className="experience-timeline space-y-7">
               {USER_DATA.experience.map((experience) => (
                 <article key={experience.id} className="experience-entry">
                   <p className="experience-period">{experience.period}</p>
-                  <div>
-                  <h4 className="text-lg font-semibold">{experience.role}</h4>
-                  <p className="mt-1 text-sm font-medium text-[var(--accent)]">{experience.company}</p>
-                  <p className="mt-2 text-sm text-[var(--muted)]">{experience.location}</p>
-                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
-                    {experience.achievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
-                  </ul>
+                  <div className="experience-content">
+                    <h4 className="text-lg font-semibold">{experience.role}</h4>
+                    <p className="mt-1 text-sm font-medium text-[var(--accent)]">{experience.company}</p>
+                    <p className="mt-2 text-sm text-[var(--muted)]">{experience.location}</p>
+                    <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+                      {experience.achievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
+                    </ul>
                   </div>
                 </article>
               ))}
