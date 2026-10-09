@@ -1,0 +1,46 @@
+[
+  {
+    "caption": "Business analyst & developer",
+    "captionAlignment": "space-between",
+    "contentCenter": 712.5,
+    "justifySelf": "end",
+    "openingLocationCount": 1,
+    "overflow": false,
+    "portraitCenter": 1140.5,
+    "portraitWidth": 344,
+    "width": 1440
+  },
+  {
+    "caption": "Business analyst & developer",
+    "captionAlignment": "center",
+    "contentCenter": 342.5,
+    "justifySelf": "center",
+    "openingLocationCount": 1,
+    "overflow": false,
+    "portraitCenter": 342.5,
+    "portraitWidth": 280,
+    "width": 700
+  },
+  {
+    "caption": "Business analyst & developer",
+    "captionAlignment": "center",
+    "contentCenter": 187.5,
+    "justifySelf": "center",
+    "openingLocationCount": 1,
+    "overflow": false,
+    "portraitCenter": 187.5,
+    "portraitWidth": 280,
+    "width": 390
+  },
+  {
+    "caption": "Business analyst & developer",
+    "captionAlignment": "center",
+    "contentCenter": 152.5,
+    "justifySelf": "center",
+    "openingLocationCount": 1,
+    "overflow": false,
+    "portraitCenter": 152.5,
+    "portraitWidth": 265,
+    "width": 320
+  }
+]

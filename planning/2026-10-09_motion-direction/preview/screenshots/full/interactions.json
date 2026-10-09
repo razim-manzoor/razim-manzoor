@@ -1,0 +1,109 @@
+{
+  "scopes": [
+    {
+      "category": "Launch online",
+      "items": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Websites & digital presence"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Online selling & bookings"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Apps & new digital products"
+        }
+      ]
+    },
+    {
+      "category": "Simplify operations",
+      "items": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Internal systems & portals"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Workflow automation"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Integrations & connected tools"
+        }
+      ]
+    },
+    {
+      "category": "Put AI to work",
+      "items": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Assistants & knowledge search"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "AI agents & application features"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Document & content processing"
+        }
+      ]
+    },
+    {
+      "category": "Use your data",
+      "items": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Data preparation & migration"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Dashboards & business reporting"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Analysis & predictive models"
+        }
+      ]
+    },
+    {
+      "category": "Improve a system",
+      "items": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Reviews, fixes & modernisation"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Ongoing development & support"
+        }
+      ]
+    }
+  ],
+  "retainedBrief": {
+    "chosen": "1",
+    "client": 375,
+    "estimateVisible": true,
+    "hours": "15",
+    "name": "Preview check",
+    "note": "Preview check: improve the enquiry flow without losing the current tools.",
+    "scroll": 375,
+    "url": "http://127.0.0.1:3114/?view=client"
+  }
+}

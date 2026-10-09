@@ -1,0 +1,6 @@
+{
+  "name": "razim-editorial-preview",
+  "private": true,
+  "scripts": { "dev": "next dev --webpack -p 3114 --hostname 127.0.0.1", "build": "next build --webpack" },
+  "dependencies": { "next": "16.3.8", "react": "19.2.3", "react-dom": "19.2.3", "motion": "13.4.4", "lucide-react": "0.563.0" }
+}

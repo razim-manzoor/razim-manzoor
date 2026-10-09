@@ -1,0 +1,250 @@
+[
+  {
+    "size": "desktop",
+    "audience": "client",
+    "buttons": [
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 146.65625
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 146.671875
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 146.671875
+      }
+    ],
+    "headerBottom": 77,
+    "overflow": false,
+    "theme": "__variable_2a0832 light",
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "audience": "hiring",
+    "buttons": [
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 146.65625
+      },
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 146.671875
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 146.671875
+      }
+    ],
+    "headerBottom": 77,
+    "overflow": false,
+    "theme": "__variable_2a0832 light",
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "audience": "client",
+    "buttons": [
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 146.65625
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 146.671875
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 146.671875
+      }
+    ],
+    "headerBottom": 77,
+    "overflow": false,
+    "theme": "__variable_2a0832 dark",
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "audience": "hiring",
+    "buttons": [
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 146.65625
+      },
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 146.671875
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 146.671875
+      }
+    ],
+    "headerBottom": 77,
+    "overflow": false,
+    "theme": "__variable_2a0832 dark",
+    "width": 1440
+  },
+  {
+    "size": "mobile",
+    "audience": "client",
+    "buttons": [
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 108.34375
+      }
+    ],
+    "headerBottom": 65,
+    "overflow": false,
+    "theme": "__variable_2a0832 light",
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "audience": "hiring",
+    "buttons": [
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 108.34375
+      }
+    ],
+    "headerBottom": 65,
+    "overflow": false,
+    "theme": "__variable_2a0832 light",
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "audience": "client",
+    "buttons": [
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 108.34375
+      }
+    ],
+    "headerBottom": 65,
+    "overflow": false,
+    "theme": "__variable_2a0832 dark",
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "audience": "hiring",
+    "buttons": [
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "For clients",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": true,
+        "height": 44,
+        "label": "For hiring teams",
+        "outline": "none",
+        "width": 108.328125
+      },
+      {
+        "focusVisible": false,
+        "height": 44,
+        "label": "Everything",
+        "outline": "none",
+        "width": 108.34375
+      }
+    ],
+    "headerBottom": 65,
+    "overflow": false,
+    "theme": "__variable_2a0832 dark",
+    "width": 390
+  }
+]

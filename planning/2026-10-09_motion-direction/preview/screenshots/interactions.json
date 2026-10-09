@@ -1,0 +1,107 @@
+[
+  {
+    "category": "Launch online",
+    "note": "Preview check: a website and reporting workflow.",
+    "rows": [
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Websites & digital presence"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Online selling & bookings"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Apps & new digital products"
+      }
+    ],
+    "selected": 2
+  },
+  {
+    "category": "Simplify operations",
+    "note": "Preview check: a website and reporting workflow.",
+    "rows": [
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Internal systems & portals"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Workflow automation"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Integrations & connected tools"
+      }
+    ],
+    "selected": 2
+  },
+  {
+    "category": "Put AI to work",
+    "note": "Preview check: a website and reporting workflow.",
+    "rows": [
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Assistants & knowledge search"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "AI agents & application features"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Document & content processing"
+      }
+    ],
+    "selected": 2
+  },
+  {
+    "category": "Use your data",
+    "note": "Preview check: a website and reporting workflow.",
+    "rows": [
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Data preparation & migration"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Dashboards & business reporting"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Analysis & predictive models"
+      }
+    ],
+    "selected": 2
+  },
+  {
+    "category": "Improve a system",
+    "note": "Preview check: a website and reporting workflow.",
+    "rows": [
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Reviews, fixes & modernisation"
+      },
+      {
+        "deliverables": 4,
+        "open": true,
+        "title": "Ongoing development & support"
+      }
+    ],
+    "selected": 2
+  }
+]

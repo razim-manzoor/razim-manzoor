@@ -1,0 +1,194 @@
+[
+  {
+    "bar": {
+      "bottom": 138,
+      "height": 54,
+      "left": 862.5,
+      "right": 1312.5,
+      "top": 84,
+      "width": 450,
+      "x": 862.5,
+      "y": 84
+    },
+    "buttons": [
+      {
+        "clientWidth": 147,
+        "height": 44,
+        "label": "For clients",
+        "scrollWidth": 147
+      },
+      {
+        "clientWidth": 147,
+        "height": 44,
+        "label": "For hiring teams",
+        "scrollWidth": 147
+      },
+      {
+        "clientWidth": 147,
+        "height": 44,
+        "label": "Everything",
+        "scrollWidth": 147
+      }
+    ],
+    "focusRect": {
+      "bottom": 133,
+      "height": 44,
+      "left": 1014.15625,
+      "right": 1160.828125,
+      "top": 89,
+      "width": 146.671875,
+      "x": 1014.15625,
+      "y": 89
+    },
+    "focusRing": "rgb(248, 250, 252) 0px 0px 0px 2px, rgb(4, 120, 87) 0px 0px 0px 4px",
+    "focusVisible": true,
+    "focused": "For hiring teams",
+    "headerBottom": 77,
+    "overflow": false,
+    "width": 1440
+  },
+  {
+    "bar": {
+      "bottom": 156,
+      "height": 54,
+      "left": 20,
+      "right": 355,
+      "top": 102,
+      "width": 335,
+      "x": 20,
+      "y": 102
+    },
+    "buttons": [
+      {
+        "clientWidth": 108,
+        "height": 44,
+        "label": "For clients",
+        "scrollWidth": 108
+      },
+      {
+        "clientWidth": 108,
+        "height": 44,
+        "label": "For hiring teams",
+        "scrollWidth": 108
+      },
+      {
+        "clientWidth": 108,
+        "height": 44,
+        "label": "Everything",
+        "scrollWidth": 108
+      }
+    ],
+    "focusRect": {
+      "bottom": 151,
+      "height": 44,
+      "left": 133.328125,
+      "right": 241.65625,
+      "top": 107,
+      "width": 108.328125,
+      "x": 133.328125,
+      "y": 107
+    },
+    "focusRing": "rgb(248, 250, 252) 0px 0px 0px 2px, rgb(4, 120, 87) 0px 0px 0px 4px",
+    "focusVisible": true,
+    "focused": "For hiring teams",
+    "headerBottom": 65,
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "bar": {
+      "bottom": 156,
+      "height": 54,
+      "left": 20,
+      "right": 285,
+      "top": 102,
+      "width": 265,
+      "x": 20,
+      "y": 102
+    },
+    "buttons": [
+      {
+        "clientWidth": 85,
+        "height": 44,
+        "label": "For clients",
+        "scrollWidth": 85
+      },
+      {
+        "clientWidth": 85,
+        "height": 44,
+        "label": "For hiring teams",
+        "scrollWidth": 85
+      },
+      {
+        "clientWidth": 85,
+        "height": 44,
+        "label": "Everything",
+        "scrollWidth": 85
+      }
+    ],
+    "focusRect": {
+      "bottom": 151,
+      "height": 44,
+      "left": 110,
+      "right": 195,
+      "top": 107,
+      "width": 85,
+      "x": 110,
+      "y": 107
+    },
+    "focusRing": "rgb(248, 250, 252) 0px 0px 0px 2px, rgb(4, 120, 87) 0px 0px 0px 4px",
+    "focusVisible": true,
+    "focused": "For hiring teams",
+    "headerBottom": 65,
+    "overflow": false,
+    "width": 320
+  },
+  {
+    "bar": {
+      "bottom": 169,
+      "height": 54,
+      "left": 32,
+      "right": 683,
+      "top": 115,
+      "width": 651,
+      "x": 32,
+      "y": 115
+    },
+    "buttons": [
+      {
+        "clientWidth": 214,
+        "height": 44,
+        "label": "For clients",
+        "scrollWidth": 214
+      },
+      {
+        "clientWidth": 214,
+        "height": 44,
+        "label": "For hiring teams",
+        "scrollWidth": 214
+      },
+      {
+        "clientWidth": 214,
+        "height": 44,
+        "label": "Everything",
+        "scrollWidth": 214
+      }
+    ],
+    "focusRect": {
+      "bottom": 164,
+      "height": 44,
+      "left": 250.65625,
+      "right": 464.328125,
+      "top": 120,
+      "width": 213.671875,
+      "x": 250.65625,
+      "y": 120
+    },
+    "focusRing": "rgb(248, 250, 252) 0px 0px 0px 2px, rgb(4, 120, 87) 0px 0px 0px 4px",
+    "focusVisible": true,
+    "focused": "For hiring teams",
+    "headerBottom": 77,
+    "overflow": false,
+    "width": 730
+  }
+]

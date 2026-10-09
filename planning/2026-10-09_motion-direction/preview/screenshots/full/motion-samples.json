@@ -1,0 +1,114 @@
+[
+  {
+    "clip": "inset(0% 0% 1.29593%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -2.20904, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 2.25014)",
+    "rule": "matrix(0.852134, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.83162%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -1.35561, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 1.43521)",
+    "rule": "matrix(0.905686, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.537359%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.845399, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.933592)",
+    "rule": "matrix(0.93865, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.337495%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.498654, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.582097)",
+    "rule": "matrix(0.961748, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.204771%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.286028, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.356459)",
+    "rule": "matrix(0.976576, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.158083%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.210533, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.273385)",
+    "rule": "matrix(0.982035, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.120067%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.153849, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.209277)",
+    "rule": "matrix(0.986247, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.0659095%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.0748362, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.11523)",
+    "rule": "matrix(0.992428, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.0475483%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.0495408, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.0828901)",
+    "rule": "matrix(0.994553, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.0338164%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.0318025, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.0588372)",
+    "rule": "matrix(0.996134, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.0231059%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.0189018, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.0399555)",
+    "rule": "matrix(0.997374, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.0151906%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.0105936, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.0262374)",
+    "rule": "matrix(0.998276, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.00547744%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.0021255, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.009426)",
+    "rule": "matrix(0.999381, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.00283402%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -0.0005986, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.0049174)",
+    "rule": "matrix(0.999677, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.00126428%)",
+    "keyboard": "false",
+    "name": "matrix(1, 0, 0, 1, -6.39e-05, 0)",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.0021398)",
+    "rule": "matrix(0.999859, 0, 0, 1, 0, 0)"
+  },
+  {
+    "clip": "inset(0% 0% 0.000435015%)",
+    "keyboard": "false",
+    "name": "none",
+    "portrait": "matrix(1, 0, 0, 1, 0, 0.0007586)",
+    "rule": "matrix(0.99995, 0, 0, 1, 0, 0)"
+  }
+]

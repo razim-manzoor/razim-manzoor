@@ -1,0 +1,22 @@
+[
+  {
+    "name": "light body",
+    "ratio": "6.96"
+  },
+  {
+    "name": "dark body",
+    "ratio": "10.00"
+  },
+  {
+    "name": "light action",
+    "ratio": "5.48"
+  },
+  {
+    "name": "dark action",
+    "ratio": "8.03"
+  },
+  {
+    "name": "contact body",
+    "ratio": "8.54"
+  }
+]
