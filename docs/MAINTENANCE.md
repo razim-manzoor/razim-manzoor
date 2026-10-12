@@ -1,6 +1,6 @@
 # Maintaining and publishing the portfolio
 
-Checked against current source and package scripts on 2026-10-12. The approved complete editorial composition is implemented in main source. Browser access is restored, fresh main captures and critical journey checks are recorded, and independent finish review returned ship with no material findings; production publication remains pending. The [editorial integration record](../planning/2026-10-12_editorial-integration/IMPLEMENTATION.md) owns current results and remaining limitations. The [2026-10-08 integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md) documents the earlier production release, not the current source's readiness.
+Checked against current source and package scripts on 2026-10-12. The approved complete editorial composition is implemented in main source. Browser access is restored, fresh main captures and critical journey checks are recorded, and independent finish review returned ship with no material findings; production publication and live verification are complete. The [editorial integration record](../planning/2026-10-12_editorial-integration/IMPLEMENTATION.md) owns current results and remaining limitations. The [2026-10-08 integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md) documents the earlier production release, not the current source's readiness.
 
 ## Develop and edit
 

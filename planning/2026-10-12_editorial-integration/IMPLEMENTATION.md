@@ -22,7 +22,7 @@ Original public portrait/résumé and supplied career facts retained; no new cla
 
 The accepted direction contract is in the Oct9 preview README; current implementation evidence belongs here. Canonical PRODUCT/DESIGN/sidecar and architecture/maintenance will be reconciled to adopted behavior after final corrections. Historical studies remain intact. Private vault/generated outputs/four older Oct5 untracked reports are excluded from publication.
 
-## Browser and finish-review blocker
+## Historical browser and finish-review blocker (resolved)
 
 CUA createBrowserTab timed out and reset its kernel. Subsequent getState calls fail before UI access with failed-to-write-kernel-assets/path-not-found; explicit js_reset did not resolve it. Existing temp directory, authorized visualization root and workspace exist; disk space is available. No screenshot or gesture evidence was fabricated or replaced with HTTP output.
 
@@ -43,3 +43,13 @@ Disposition: ship. Fresh reviewer inspected all twelve final main audience/theme
 Browser records corroborate fourteen actual disclosures, retained selections/name/note/15hours, encoded drafts/copy, menu Escape, header Background focus to dossier and Back/Forward audience state. Ten changing opening samples corroborate finite name/portrait/clip/rule movement; source honors OS reduced motion, but forced preference/clipboard and physical/reader/zoom/field checks are not claimed. Sampled browser warning/error logs are empty. The first fresh reviewer attempt failed immediately due model capacity; its replacement completed this full review. No second detector ran.
 
 Canonical five-file documentation/sidecar pass and bounded font-scope recheck are complete, with17 local links and16 specimens/schema checks. Actual current main evidence replaces historical certification; older studies remain comparison/history only. Production publication remains the next step.
+
+## Published release — 2026-10-12
+
+The integration is published at https://www.razim.work. UI commit bef1854cf1e9ef65b522ca771b41cc74bfd64f31 matches production deployment dpl_CwdWQBq52DoV2NsZ2FNbSAsjq9cY, READY with the canonical alias. Vercel build duration was approximately 30 seconds. Earlier pending statements above describe their chronological checkpoint; publication is complete.
+
+Live CUA inspection confirms the editorial composition, Geist font, loaded portrait and one opening location. Actual client → hiring → Everything switches retain a selected scope and sample name/note; the encoded draft includes all three, with one shared contact section. Direct mobile hiring at390px has no horizontal overflow, and the portrait is centered in the available document area (187.5px midpoint after the15px scrollbar). Menu Escape restores focus and closes the menu. Light/dark live hiring and client captures are stored beside the main review evidence. The opening capture made immediately after mobile navigation precedes the settled full-page captures. A create-tab timeout recovered through the existing tab; no alternate browser automation was used. Temporary viewport override was reset, the temporary localhost tab closed, and the live tab retained as the deliverable. Sampled live browser warnings/errors: none.
+
+Nine critical public routes/assets return200: root, all three audience URLs, robots, sitemap, social image, résumé and portrait. Apex redirects to https://www.razim.work/. Configured response headers are recorded in live-http-evidence.json. These HTTP checks do not certify field performance or the unperformed preference/device/accessibility cases above. No external enquiry was sent.
+
+Production runtime error/fatal grouped log query for this deployment over the last30minutes returned no groups; the first1hour query exceeded the plan's retention boundary and was corrected. Project-scoped drains: none. These are a bounded release snapshot, not ongoing monitoring. This documentation/evidence follow-up does not change the reviewed application source. Its subsequent Git deployment must be checked separately; this record deliberately identifies the UI release instead of attempting to name its own future commit.

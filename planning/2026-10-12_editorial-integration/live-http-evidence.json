@@ -1,0 +1,252 @@
+{
+  "Responses": [
+    {
+      "Path": "/",
+      "Status": 200,
+      "ContentType": [
+        "text/html; charset=utf-8"
+      ],
+      "Bytes": 67154,
+      "EditorialRoot": true,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/?view=client",
+      "Status": 200,
+      "ContentType": [
+        "text/html; charset=utf-8"
+      ],
+      "Bytes": 67208,
+      "EditorialRoot": true,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/?view=recruiter",
+      "Status": 200,
+      "ContentType": [
+        "text/html; charset=utf-8"
+      ],
+      "Bytes": 67191,
+      "EditorialRoot": true,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/?view=all",
+      "Status": 200,
+      "ContentType": [
+        "text/html; charset=utf-8"
+      ],
+      "Bytes": 67676,
+      "EditorialRoot": true,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/robots.txt",
+      "Status": 200,
+      "ContentType": [
+        "text/plain; charset=utf-8"
+      ],
+      "Bytes": 68,
+      "EditorialRoot": null,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/sitemap.xml",
+      "Status": 200,
+      "ContentType": [
+        "application/xml"
+      ],
+      "Bytes": 257,
+      "EditorialRoot": null,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/opengraph-image",
+      "Status": 200,
+      "ContentType": [
+        "image/png"
+      ],
+      "Bytes": 87978,
+      "EditorialRoot": null,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/Razim_Manzoor_MBA_AI_Analytics.pdf",
+      "Status": 200,
+      "ContentType": [
+        "application/pdf"
+      ],
+      "Bytes": 239215,
+      "EditorialRoot": null,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    },
+    {
+      "Path": "/profilepic.jpeg",
+      "Status": 200,
+      "ContentType": [
+        "image/jpeg"
+      ],
+      "Bytes": 105184,
+      "EditorialRoot": null,
+      "Frame": [
+        "SAMEORIGIN"
+      ],
+      "NoSniff": [
+        "nosniff"
+      ],
+      "CSP": [
+        "base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      ],
+      "HSTS": [
+        "max-age=63072000; includeSubDomains; preload"
+      ],
+      "Referrer": [
+        "origin-when-cross-origin"
+      ],
+      "Permissions": [
+        "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+      ]
+    }
+  ],
+  "Kind": "Published HTTP and configured-header evidence, not browser or performance certification",
+  "UICommit": "bef1854cf1e9ef65b522ca771b41cc74bfd64f31",
+  "ApexFinalUrl": "https://www.razim.work/",
+  "Checked": "2026-10-12",
+  "Deployment": "dpl_CwdWQBq52DoV2NsZ2FNbSAsjq9cY"
+}
