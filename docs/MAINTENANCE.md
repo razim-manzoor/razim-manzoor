@@ -1,16 +1,18 @@
 # Maintaining and publishing the portfolio
 
-Checked against the current source and package scripts on 2026-10-08. The accepted portrait composition passed local application checks and an independent visual finish review, and its production release was verified. Consult the [integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md) for actual results and limitations; future hosting health requires fresh evidence.
+Checked against current source and package scripts on 2026-10-12. The approved complete editorial composition is implemented in main source. Browser access is restored, fresh main captures and critical journey checks are recorded, and independent finish review returned ship with no material findings; production publication remains pending. The [editorial integration record](../planning/2026-10-12_editorial-integration/IMPLEMENTATION.md) owns current results and remaining limitations. The [2026-10-08 integration record](../planning/2026-10-08_visual-direction/APP_INTEGRATION.md) documents the earlier production release, not the current source's readiness.
 
 ## Develop and edit
 
 Use Node.js 22.18 or later; the repository has been run with Node 24. Install the locked dependencies with `npm ci`, then run `npm run dev`. No service credentials are required for the current local contact-draft flow. Fonts use `next/font/google`, so a fresh build may require access to its font source.
 
+Keep the existing Geist Sans/Mono variable classes on `html`, where Tailwind's root theme resolves them; body antialiasing remains separate. Inspect computed font-family after layout/font changes. The current main check resolves Geist after correcting the former body-only scope; documented font families and tokens are unchanged.
+
 Edit personal facts and public contact details in `lib/data.ts`; service content in `lib/services.ts`; the shared résumé URL in `lib/contact.ts`. Keep service IDs stable when changing names so planner selection remains coherent. The toolkit groups and delivery copy are currently authored in their components. Review résumé, recruiter content and public claims together rather than changing one in isolation.
 
-Keep all fourteen service IDs aligned with the static examples in `components/ServiceExample.tsx`. Edit their geometry in `app/illustrations.css`, decorative portrait fragments in `components/HeroFragments.tsx`, and scene/feature theme assignments in `app/globals.css`. Preserve illustrative captions, readable markup and separate real enquiry controls. Reconcile `DESIGN.md` tokens and `.impeccable/design.json` together after changes; the frontmatter owns primitives and the sidecar extends them with shadows, motion, breakpoints and specimens.
+Edit the active opening, service index, career rows, delivery and contact composition in `components/composite/EditorialPortfolio.jsx`; edit its scoped geometry in `app/editorial.css`. Keep the fourteen IDs and category membership aligned with `lib/services.ts` and the shared planner selection. `TurnkeyStudio.tsx` owns fields, draft generation/copy and estimation; its parent owns selected service IDs. Earlier `ServiceExample.tsx`, `HeroFragments.tsx` and illustration styles remain retained source and are not active evidence or UI. Semantic scene/feature theme assignments remain in `app/globals.css`. Reconcile `DESIGN.md` and `.impeccable/design.json` together: frontmatter owns primitives, while the extension-only sidecar carries motion, depth, breakpoints and self-contained specimens. Preserve historical records and distinguish retained vocabulary from active treatment.
 
-Replace the portrait or résumé in `public/` only with approved assets. The portrait's centered 3:4 crop cannot recover source pixels. Updating the domain requires consistent changes to layout metadata, robots and sitemap; review social-image output when identity or assets change. Keep the hidden showcase hidden until real replacement work and substantiated contribution/results are ready.
+Replace the portrait or résumé in `public/` only with approved assets. The editorial portrait uses a centered 4:5 display, slim matte and outside caption; framing cannot recover source pixels. Keep the phone figure/caption centered and the opening location only beside the name. Updating the domain requires consistent changes to layout metadata, robots and sitemap; review social-image output when identity or assets change. Keep the hidden showcase hidden until real replacement work and substantiated contribution/results are ready. Supplied career facts, certificates and availability require owner validation; matching asset bytes do not authenticate them.
 
 ## Verify a change
 
@@ -19,29 +21,30 @@ From the repository root:
 ```powershell
 npm run lint
 npm test
-npx tsc --noEmit
 npm run build
+npx tsc --noEmit
 git diff --check
 npm start
 ```
 
 Run TypeScript after route types exist; build generates them. The test script covers the five estimator cases, not the full interactive site. If generated `.next` files become corrupt, stop the associated development server and regenerate build output; do not alter application types to conceal cache errors. Any alternate build invocation and its result should be recorded explicitly.
 
-For this integration, the default local Turbopack build stalled and was stopped; `npm run build -- --webpack` passed after the final responsive correction. No configuration change was made. This fallback result does not establish that the default build problem is resolved.
+The repository provides `npm run build:local` for the webpack build. The current editorial integration used the existing webpack path; its success does not establish that earlier local Turbopack problems are resolved. The query-derived initial audience makes `/` request-rendered. Check direct recruiter/all response content as well as client-side switches; do not assume every generated route is static.
 
 Review the built application at its reported local address. Check desktop and mobile at 1440px, 390px and 320px, both themes, and intermediate layout changes. Capture the current implementation, not the proposal. Cover:
 
 - Audience URLs, direct service/studio/dossier anchors, history, sticky offsets and native modified clicks.
-- Category filters, native disclosures, service deduplication/removal, goals and selected-service consistency.
+- Category filters, native disclosures, shared Add/Remove state, brief count/status, service deduplication/removal and goal consistency.
 - Notes and estimate state surviving audience/tool switches; refresh clearing the in-memory draft.
 - Encoded WhatsApp/email drafts, optional field combinations and copy success/error feedback without sending a message.
 - Estimate zero/negative-net scenarios, currency unit wording and return to the planner.
 - Keyboard focus, skip link, mobile menu Escape/focus return and outside dismissal, reduced motion, loaded portrait/font, and console errors.
-- Horizontal overflow, long content, readability, all fourteen illustrative examples, portrait-fragment/caption clearance and contact/résumé destinations.
+- Horizontal overflow, long scope/career content, icon-only phone Add/Remove labels, centered portrait/caption, single opening location and contact/résumé destinations.
+- Finite opening/desktop delivery sequence, static phone delivery rules, immediate keyboard feedback and absence of preview-only replay/QA controls.
 
-Follow the [QA plan](../planning/2026-10-07_visual-refresh/QA_PLAN.md) and current integration contract for detailed coverage. Browser connection failure is a blocker to browser evidence; screenshots from the standalone preview cannot close it. The [current finish review](../.impeccable/review/FINISH_REVIEW.md) used actual application captures and returned ship with no material fixes. It sampled source and accepted supplied journey evidence without independently rerunning it; motion was source-reviewed. Width checks used same-origin reflow because native viewport override was ineffective. Physical-device, forced reduced-motion, full screen-reader, denied-clipboard, native 200% zoom and field-performance claims require their own evidence.
+Use the [adopted editorial contract](../planning/2026-10-09_motion-direction/preview/README.md) and [current integration record](../planning/2026-10-12_editorial-integration/IMPLEMENTATION.md) for coverage; the earlier [QA plan](../planning/2026-10-07_visual-refresh/QA_PLAN.md) supplies supplementary journey checks. Browser access is restored. Actual main captures cover all three audiences in both themes at 1440px and 390px, with additional 700px/320px, direct hiring and focus evidence. The recorded checks cover all fourteen scope disclosures, retained selection/name/note/estimate values, copy and draft destinations, menu Escape, URL history/focus and finite opening properties; the sampled browser output showed no warnings/errors. Fresh independent finish review returned ship with no material findings, and standalone-preview screenshots or an earlier ship verdict do not certify this main build. Physical-device, forced OS reduced-motion, full screen-reader, denied-clipboard, native 200% zoom and field-performance claims require their own evidence.
 
-The single retained detector run reported 60 advisory documentation-drift findings and no non-advisory findings. Canonical system values have been reconciled to source; no second run or clean detector result is claimed. Preserve that distinction when reporting checks.
+The current main-cycle detector output included typography-ramp advisories and was truncated. No complete count or clean result is claimed. This document/sidecar reconciliation is source-derived and does not imply a new detector pass. Preserve older detector results with their dated integration scope.
 
 For dependency or deployment changes, inspect the installed version, affected bundle/behavior and production dependency audit. Record unresolved findings with their actual scope rather than forcing an incompatible dependency change. Keep `package-lock.json` with approved dependency updates.
 

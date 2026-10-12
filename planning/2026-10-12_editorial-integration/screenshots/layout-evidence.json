@@ -1,0 +1,398 @@
+[
+  {
+    "size": "desktop",
+    "mode": "client",
+    "theme": "__variable_8eaea4 __variable_8c25df light",
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "overflow": false,
+    "portrait": {
+      "bottom": 721.671875,
+      "height": 454,
+      "left": 968.5,
+      "right": 1312.5,
+      "top": 267.671875,
+      "width": 344,
+      "x": 968.5,
+      "y": 267.671875
+    },
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "mode": "recruiter",
+    "theme": "__variable_8eaea4 __variable_8c25df light",
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "overflow": false,
+    "portrait": {
+      "bottom": 721.671875,
+      "height": 454,
+      "left": 968.5,
+      "right": 1312.5,
+      "top": 267.671875,
+      "width": 344,
+      "x": 968.5,
+      "y": 267.671875
+    },
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "mode": "all",
+    "theme": "__variable_8eaea4 __variable_8c25df light",
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "overflow": false,
+    "portrait": {
+      "bottom": 721.671875,
+      "height": 454,
+      "left": 968.5,
+      "right": 1312.5,
+      "top": 267.671875,
+      "width": 344,
+      "x": 968.5,
+      "y": 267.671875
+    },
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "mode": "client",
+    "theme": "__variable_8eaea4 __variable_8c25df dark",
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "overflow": false,
+    "portrait": {
+      "bottom": 721.671875,
+      "height": 454,
+      "left": 968.5,
+      "right": 1312.5,
+      "top": 267.671875,
+      "width": 344,
+      "x": 968.5,
+      "y": 267.671875
+    },
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "mode": "recruiter",
+    "theme": "__variable_8eaea4 __variable_8c25df dark",
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "overflow": false,
+    "portrait": {
+      "bottom": 721.671875,
+      "height": 454,
+      "left": 968.5,
+      "right": 1312.5,
+      "top": 267.671875,
+      "width": 344,
+      "x": 968.5,
+      "y": 267.671875
+    },
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "mode": "all",
+    "theme": "__variable_8eaea4 __variable_8c25df dark",
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "overflow": false,
+    "portrait": {
+      "bottom": 721.671875,
+      "height": 454,
+      "left": 968.5,
+      "right": 1312.5,
+      "top": 267.671875,
+      "width": 344,
+      "x": 968.5,
+      "y": 267.671875
+    },
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "mobile",
+    "mode": "client",
+    "theme": "__variable_8eaea4 __variable_8c25df light",
+    "buttons": [
+      {
+        "height": 44,
+        "text": "For clients"
+      },
+      {
+        "height": 44,
+        "text": "For hiring teams"
+      },
+      {
+        "height": 44,
+        "text": "Everything"
+      }
+    ],
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "opening": {
+      "bottom": 1061.75,
+      "height": 1061.75,
+      "left": 20,
+      "right": 355,
+      "top": 0,
+      "width": 335,
+      "x": 20,
+      "y": 0
+    },
+    "overflow": false,
+    "portrait": {
+      "bottom": 991.75,
+      "height": 373.5,
+      "left": 47.5,
+      "right": 327.5,
+      "top": 618.25,
+      "width": 280,
+      "x": 47.5,
+      "y": 618.25
+    },
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "mode": "recruiter",
+    "theme": "__variable_8eaea4 __variable_8c25df light",
+    "buttons": [
+      {
+        "height": 44,
+        "text": "For clients"
+      },
+      {
+        "height": 44,
+        "text": "For hiring teams"
+      },
+      {
+        "height": 44,
+        "text": "Everything"
+      }
+    ],
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "opening": {
+      "bottom": 1061.75,
+      "height": 1061.75,
+      "left": 20,
+      "right": 355,
+      "top": 0,
+      "width": 335,
+      "x": 20,
+      "y": 0
+    },
+    "overflow": false,
+    "portrait": {
+      "bottom": 991.75,
+      "height": 373.5,
+      "left": 47.5,
+      "right": 327.5,
+      "top": 618.25,
+      "width": 280,
+      "x": 47.5,
+      "y": 618.25
+    },
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "mode": "all",
+    "theme": "__variable_8eaea4 __variable_8c25df light",
+    "buttons": [
+      {
+        "height": 44,
+        "text": "For clients"
+      },
+      {
+        "height": 44,
+        "text": "For hiring teams"
+      },
+      {
+        "height": 44,
+        "text": "Everything"
+      }
+    ],
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "opening": {
+      "bottom": 1113.75,
+      "height": 1113.75,
+      "left": 20,
+      "right": 355,
+      "top": 0,
+      "width": 335,
+      "x": 20,
+      "y": 0
+    },
+    "overflow": false,
+    "portrait": {
+      "bottom": 1043.75,
+      "height": 373.5,
+      "left": 47.5,
+      "right": 327.5,
+      "top": 670.25,
+      "width": 280,
+      "x": 47.5,
+      "y": 670.25
+    },
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "mode": "client",
+    "theme": "__variable_8eaea4 __variable_8c25df dark",
+    "buttons": [
+      {
+        "height": 44,
+        "text": "For clients"
+      },
+      {
+        "height": 44,
+        "text": "For hiring teams"
+      },
+      {
+        "height": 44,
+        "text": "Everything"
+      }
+    ],
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "opening": {
+      "bottom": 1061.75,
+      "height": 1061.75,
+      "left": 20,
+      "right": 355,
+      "top": 0,
+      "width": 335,
+      "x": 20,
+      "y": 0
+    },
+    "overflow": false,
+    "portrait": {
+      "bottom": 991.75,
+      "height": 373.5,
+      "left": 47.5,
+      "right": 327.5,
+      "top": 618.25,
+      "width": 280,
+      "x": 47.5,
+      "y": 618.25
+    },
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "mode": "recruiter",
+    "theme": "__variable_8eaea4 __variable_8c25df dark",
+    "buttons": [
+      {
+        "height": 44,
+        "text": "For clients"
+      },
+      {
+        "height": 44,
+        "text": "For hiring teams"
+      },
+      {
+        "height": 44,
+        "text": "Everything"
+      }
+    ],
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "opening": {
+      "bottom": 1061.75,
+      "height": 1061.75,
+      "left": 20,
+      "right": 355,
+      "top": 0,
+      "width": 335,
+      "x": 20,
+      "y": 0
+    },
+    "overflow": false,
+    "portrait": {
+      "bottom": 991.75,
+      "height": 373.5,
+      "left": 47.5,
+      "right": 327.5,
+      "top": 618.25,
+      "width": 280,
+      "x": 47.5,
+      "y": 618.25
+    },
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "mode": "all",
+    "theme": "__variable_8eaea4 __variable_8c25df dark",
+    "buttons": [
+      {
+        "height": 44,
+        "text": "For clients"
+      },
+      {
+        "height": 44,
+        "text": "For hiring teams"
+      },
+      {
+        "height": 44,
+        "text": "Everything"
+      }
+    ],
+    "font": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "imageLoaded": true,
+    "locationCount": 1,
+    "opening": {
+      "bottom": 1113.75,
+      "height": 1113.75,
+      "left": 20,
+      "right": 355,
+      "top": 0,
+      "width": 335,
+      "x": 20,
+      "y": 0
+    },
+    "overflow": false,
+    "portrait": {
+      "bottom": 1043.75,
+      "height": 373.5,
+      "left": 47.5,
+      "right": 327.5,
+      "top": 670.25,
+      "width": 280,
+      "x": 47.5,
+      "y": 670.25
+    },
+    "scrollY": 0,
+    "width": 390
+  }
+]

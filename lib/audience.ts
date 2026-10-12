@@ -24,8 +24,8 @@ function subscribe(onChange: () => void) {
   };
 }
 
-export function useAudienceMode() {
-  return useSyncExternalStore(subscribe, () => modeForUrl(new URL(window.location.href)), () => "client" as AudienceMode);
+export function useAudienceMode(initialMode: AudienceMode = "client") {
+  return useSyncExternalStore(subscribe, () => modeForUrl(new URL(window.location.href)), () => initialMode);
 }
 
 export function setAudienceMode(mode: AudienceMode) {

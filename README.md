@@ -37,15 +37,16 @@ The ignored `.brain/` junction contains private working notes and is not part of
 
 ## Recent work
 
-The preferred [2026-10-08 portrait direction](planning/2026-10-08_visual-direction/APP_INTEGRATION.md) is integrated into the application: authentic portrait with interface fragments, fourteen distinct illustrative service examples, a brief/build/handover passage with finite movement, rough-request planner artwork and a deep-green contact close. The existing journeys, supplied facts and runtime remain intact; real case studies are deferred.
+The approved [editorial integration](planning/2026-10-12_editorial-integration/IMPLEMENTATION.md) now renders in the main application: authentic4:5 portrait with a slim matte and centered phone framing, compact five-category/fourteen-scope service rows, complete client/hiring/Everything views, retained planner/estimate, finite opening/delivery motion and a deep-green contact close. Large illustrative service interfaces and preview-only controls are absent from the active page. Existing supplied facts, green/Geist identity and runtime remain; real case studies are deferred.
 
-Local lint, TypeScript, five estimator tests and the final webpack production build passed. Current application captures and interaction evidence passed the independent [visual finish review](.impeccable/review/FINISH_REVIEW.md) with disposition ship and no material fixes. Motion was source-reviewed and journeys were not independently rerun by the reviewer. The UI is published at [www.razim.work](https://www.razim.work); the integration record carries verified deployment identity, live path checks and limits.
+Final main webpack build/TypeScript, full lint and five calculator tests pass. Actual desktop/phone captures in both themes, narrow breakpoints and supplied interaction evidence passed a fresh independent finish review with disposition ship and no material findings. Opening property samples corroborate finite movement; forced OS preferences and physical-device/reader/field-performance checks remain unperformed. Production publication and exact deployed revision verification are the next release step, recorded separately from local review.
 
+The [Oct8 integration record](planning/2026-10-08_visual-direction/APP_INTEGRATION.md) preserves the earlier illustrative application's verified release. Its checks do not certify this implementation.
 The [visual studies](planning/2026-10-08_visual-direction/mockups/README.md) and [preview publication scope](planning/2026-10-08_visual-direction/PUBLICATION.md) preserve the earlier proposal history.
 
 The [website skill workflow](docs/SKILLS.md) maps design, motion, implementation and verification skills, with conditional tools and component-source adoption rules.
 
-The [2026-10-07 visual refresh packet](planning/2026-10-07_visual-refresh/README.md) retains the earlier design proposal, PRD, TRD, flows, color profile and research. Its [implementation record](planning/2026-10-07_visual-refresh/IMPLEMENTATION.md) describes that earlier checkout; use the current portrait integration record for present status.
+The [2026-10-07 visual refresh packet](planning/2026-10-07_visual-refresh/README.md) retains the earlier design proposal, PRD, TRD, flows, color profile and research. Its [implementation record](planning/2026-10-07_visual-refresh/IMPLEMENTATION.md) describes that earlier checkout; use the current editorial integration record for present status.
 
 Durable website references: [product and visitor flows](PRODUCT.md), [design system](DESIGN.md), [architecture](docs/ARCHITECTURE.md), and [maintenance and release](docs/MAINTENANCE.md).
 

@@ -1,0 +1,113 @@
+{
+  "retention": {
+    "contactCount": 1,
+    "copyStatus": true,
+    "draft": "https://wa.me/971503001697?text=Hi%20Razim%2C%20I'd%20like%20to%20discuss%20a%20project.%0A%0AName%20%2F%20company%3A%20Integration%20check%0A%0AWhat%20I%20want%20to%20achieve%3A%0A-%20Launch%20online%0A%0AServices%20I'd%20like%20to%20discuss%3A%0A-%20Websites%20%26%20digital%20presence%0A%0AStarting%20point%3A%20Help%20me%20decide%0A%0AWhat%20I%20need%3A%0AReview%20the%20enquiry%20flow.",
+    "name": "Integration check",
+    "note": "Review the enquiry flow.",
+    "selected": "1",
+    "toolkitCount": 1,
+    "hours": "15"
+  },
+  "disclosures": [
+    {
+      "category": "Launch online",
+      "scopes": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Websites & digital presence"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Online selling & bookings"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Apps & new digital products"
+        }
+      ]
+    },
+    {
+      "category": "Simplify operations",
+      "scopes": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Internal systems & portals"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Workflow automation"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Integrations & connected tools"
+        }
+      ]
+    },
+    {
+      "category": "Put AI to work",
+      "scopes": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Assistants & knowledge search"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "AI agents & application features"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Document & content processing"
+        }
+      ]
+    },
+    {
+      "category": "Use your data",
+      "scopes": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Data preparation & migration"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Dashboards & business reporting"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Analysis & predictive models"
+        }
+      ]
+    },
+    {
+      "category": "Improve a system",
+      "scopes": [
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Reviews, fixes & modernisation"
+        },
+        {
+          "deliverables": 4,
+          "open": true,
+          "title": "Ongoing development & support"
+        }
+      ]
+    }
+  ],
+  "menuEscape": {
+    "focus": "Open navigation menu",
+    "expanded": "false"
+  }
+}

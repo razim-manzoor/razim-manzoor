@@ -1,0 +1,71 @@
+{
+  "directHiring": {
+    "clientHidden": true,
+    "heading": "Business understanding.Practical technical work.",
+    "hiringHidden": false,
+    "osReduced": false,
+    "query": "?view=recruiter",
+    "rootReduced": "false"
+  },
+  "narrowChecks": [
+    {
+      "locationCount": 1,
+      "opening": {
+        "bottom": 1041.90625,
+        "height": 1041.90625,
+        "left": 20,
+        "right": 665,
+        "top": 0,
+        "width": 645,
+        "x": 20,
+        "y": 0
+      },
+      "overflow": false,
+      "portrait": {
+        "bottom": 971.90625,
+        "height": 373.5,
+        "left": 202.5,
+        "right": 482.5,
+        "top": 598.40625,
+        "width": 280,
+        "x": 202.5,
+        "y": 598.40625
+      },
+      "scrollY": 0,
+      "width": 700
+    },
+    {
+      "locationCount": 1,
+      "opening": {
+        "bottom": -4441.6875,
+        "height": 1068.3125,
+        "left": 20,
+        "right": 285,
+        "top": -5510,
+        "width": 265,
+        "x": 20,
+        "y": -5510
+      },
+      "overflow": false,
+      "portrait": {
+        "bottom": -4511.6875,
+        "height": 354.75,
+        "left": 20,
+        "right": 285,
+        "top": -4866.4375,
+        "width": 265,
+        "x": 20,
+        "y": -4866.4375
+      },
+      "scrollY": 5510,
+      "width": 320
+    }
+  ],
+  "focusCheck": {
+    "focusTop": 199.75,
+    "focusVisible": true,
+    "focused": "For hiring teams",
+    "headerBottom": 65,
+    "ring": "rgb(248, 250, 252) 0px 0px 0px 2px, rgb(4, 120, 87) 0px 0px 0px 4px"
+  }
+}

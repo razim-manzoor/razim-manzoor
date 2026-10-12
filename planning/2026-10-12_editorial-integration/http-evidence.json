@@ -1,0 +1,54 @@
+{
+  "Audiences": [
+    {
+      "Mode": "client",
+      "Status": 200,
+      "EditorialRoot": true,
+      "ReviewControlsAbsent": true,
+      "DuplicateIds": [],
+      "Styles": [
+        "/_next/static/css/06f85a2926e37d38.css"
+      ],
+      "Canonical": true,
+      "FrameHeader": [
+        "SAMEORIGIN"
+      ]
+    },
+    {
+      "Mode": "recruiter",
+      "Status": 200,
+      "EditorialRoot": true,
+      "ReviewControlsAbsent": true,
+      "DuplicateIds": [],
+      "Styles": [
+        "/_next/static/css/06f85a2926e37d38.css"
+      ],
+      "Canonical": true,
+      "FrameHeader": [
+        "SAMEORIGIN"
+      ]
+    },
+    {
+      "Mode": "all",
+      "Status": 200,
+      "EditorialRoot": true,
+      "ReviewControlsAbsent": true,
+      "DuplicateIds": [],
+      "Styles": [
+        "/_next/static/css/06f85a2926e37d38.css"
+      ],
+      "Canonical": true,
+      "FrameHeader": [
+        "SAMEORIGIN"
+      ]
+    }
+  ],
+  "Stylesheets": [
+    {
+      "Path": "/_next/static/css/06f85a2926e37d38.css",
+      "Status": 200,
+      "Bytes": 80576
+    }
+  ],
+  "Kind": "HTTP/server markup evidence; not browser layout or interaction certification"
+}

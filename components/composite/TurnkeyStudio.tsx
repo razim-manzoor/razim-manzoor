@@ -6,7 +6,7 @@ import { SERVICES_CATALOG } from "@/lib/services";
 import { emailDraft, whatsappDraft, WHATSAPP_URL } from "@/lib/contact";
 import { estimateAutomation } from "@/lib/estimate";
 import { projectSelectionEvent } from "@/lib/project-planner";
-import { BriefExample } from "@/components/ServiceExample";
+import type { Dispatch, SetStateAction } from "react";
 
 const tracks = SERVICES_CATALOG.flatMap((pillar) => pillar.items.map((item) => ({ ...item, category: pillar.shortTitle, needId: pillar.id })));
 const timelines = ["Help me decide", "A new build", "An improvement to an existing system", "Ongoing development or support"];
@@ -26,9 +26,8 @@ function RangeField({ id, label, value, max, step = 1, display, onChange }: {
   );
 }
 
-export function TurnkeyStudio() {
+export function TurnkeyStudio({ selected, setSelected }: { selected: string[]; setSelected: Dispatch<SetStateAction<string[]>> }) {
   const [activeTab, setActiveTab] = useState<"scope" | "estimate">("scope");
-  const [selected, setSelected] = useState<string[]>([]);
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
   const [briefOpen, setBriefOpen] = useState(true);
   const [timeline, setTimeline] = useState(timelines[0]);
@@ -58,7 +57,7 @@ export function TurnkeyStudio() {
     };
     window.addEventListener(projectSelectionEvent, handleSelection);
     return () => window.removeEventListener(projectSelectionEvent, handleSelection);
-  }, []);
+  }, [setSelected]);
 
   const chosen = tracks.filter((track) => selected.includes(track.id));
   const needs = SERVICES_CATALOG.filter((need) => selectedNeeds.includes(need.id) || chosen.some((track) => track.needId === need.id));
@@ -102,7 +101,6 @@ export function TurnkeyStudio() {
             <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">{chosen.length ? "Your service selection is ready. Add a project note below, or continue straight to WhatsApp. You can combine or remove services." : "Describe what needs to change. This optional planner helps you start a conversation, even if you are still deciding on the solution."}</p>
           </div>
           <a href={hasProjectContext ? whatsappDraft(message) : WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-action mt-6 text-[var(--accent)]"><MessageCircle size={18} aria-hidden="true" /> {hasProjectContext ? "Discuss on WhatsApp" : "Just chat on WhatsApp"}</a>
-          <BriefExample />
         </div>
         <div className="planner-panel">
         {chosen.length > 0 && <div className="mb-7 border-y border-[var(--border)] py-4"><h3 className="text-base font-semibold">Services to discuss ({chosen.length})</h3><ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2">{chosen.map((track) => <li key={track.id} className="flex min-w-0 items-center gap-3 text-sm"><span>{track.title}</span><button type="button" onClick={() => setSelected((previous) => previous.filter((id) => id !== track.id))} aria-label={`Remove ${track.title}`} className="min-h-11 shrink-0 px-2 font-semibold text-[var(--accent)]">Remove</button></li>)}</ul></div>}

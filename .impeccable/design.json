@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-08T12:14:33.689Z",
+  "generatedAt": "2026-10-12T08:17:38.240Z",
   "title": "Design System: Razim Manzoor portfolio",
   "extensions": {
     "colorMeta": {
@@ -683,15 +683,15 @@
     "typographyMeta": {
       "display": {
         "displayName": "Personal identity",
-        "purpose": "Desktop hero name; responsive overrides are documented in DESIGN.md."
+        "purpose": "Retained earlier component vocabulary. Desktop hero name; responsive overrides are documented in DESIGN.md."
       },
       "headline": {
         "displayName": "Section heading",
-        "purpose": "Major section titles."
+        "purpose": "Retained earlier component vocabulary. Major section titles."
       },
       "title": {
         "displayName": "Service title",
-        "purpose": "Service card heading."
+        "purpose": "Retained earlier component vocabulary. Service card heading."
       },
       "body": {
         "displayName": "Description",
@@ -703,23 +703,43 @@
       },
       "hero-statement": {
         "displayName": "Hero Statement",
-        "purpose": "Business-to-system proposition."
+        "purpose": "Retained earlier component vocabulary. Business-to-system proposition."
       },
       "footer-signature": {
         "displayName": "Footer Signature",
-        "purpose": "Large contact close; mobile overrides in DESIGN.md."
+        "purpose": "Retained earlier component vocabulary. Large contact close; mobile overrides in DESIGN.md."
       },
       "scene-body": {
         "displayName": "Scene Body",
-        "purpose": "Static illustrative interface text; responsive overrides in DESIGN.md."
+        "purpose": "Retained earlier component vocabulary. Static illustrative interface text; responsive overrides in DESIGN.md."
       },
       "scene-caption": {
         "displayName": "Scene Caption",
-        "purpose": "Static illustrative interface text; responsive overrides in DESIGN.md."
+        "purpose": "Retained earlier component vocabulary. Static illustrative interface text; responsive overrides in DESIGN.md."
       },
       "scene-display": {
         "displayName": "Scene Display",
-        "purpose": "Static illustrative interface text; responsive overrides in DESIGN.md."
+        "purpose": "Retained earlier component vocabulary. Static illustrative interface text; responsive overrides in DESIGN.md."
+      },
+      "editorial-name": {
+        "displayName": "Editorial name",
+        "purpose": "Current opening identity; medium/phone adaptations are in DESIGN.md."
+      },
+      "editorial-headline": {
+        "displayName": "Editorial heading",
+        "purpose": "Current section hierarchy."
+      },
+      "editorial-statement": {
+        "displayName": "Editorial proposition",
+        "purpose": "Current opening positioning."
+      },
+      "editorial-service-title": {
+        "displayName": "Editorial scope title",
+        "purpose": "Current ruled service heading."
+      },
+      "editorial-contact-heading": {
+        "displayName": "Editorial contact heading",
+        "purpose": "Current project/role close."
       }
     },
     "shadows": [
@@ -731,27 +751,27 @@
       {
         "name": "service-card-light",
         "value": "0 8px 28px rgba(0,0,0,.055)",
-        "purpose": "Resting service shell in light mode."
+        "purpose": "Retained earlier component, not editorial resting elevation. Resting service shell in light mode."
       },
       {
         "name": "service-card-dark",
         "value": "0 8px 28px rgba(0,0,0,.14)",
-        "purpose": "Resting service shell in dark mode."
+        "purpose": "Retained earlier component, not editorial resting elevation. Resting service shell in dark mode."
       },
       {
         "name": "portrait-fragment",
         "value": "0 18px 38px rgba(0,0,0,.12)",
-        "purpose": "Overlapping desktop interface fragments."
+        "purpose": "Retained earlier component, not editorial resting elevation. Overlapping desktop interface fragments."
       },
       {
         "name": "portrait-fragment-mobile",
         "value": "0 6px 16px rgba(0,0,0,.12)",
-        "purpose": "Smaller phone interface fragment."
+        "purpose": "Retained earlier component, not editorial resting elevation. Smaller phone interface fragment."
       },
       {
         "name": "delivery-panel",
         "value": "0 12px 32px rgba(0,0,0,.12)",
-        "purpose": "Light brief/handover panels against deep green."
+        "purpose": "Retained earlier component, not editorial resting elevation. Light brief/handover panels against deep green."
       }
     ],
     "motion": [
@@ -763,7 +783,7 @@
       {
         "name": "service-arrow",
         "value": ".15s cubic-bezier(.16,1,.3,1)",
-        "purpose": "3px action-arrow movement."
+        "purpose": "Retained earlier component, not current editorial behavior. 3px action-arrow movement."
       },
       {
         "name": "disclosure-chevron",
@@ -773,17 +793,57 @@
       {
         "name": "delivery-route",
         "value": "1.8s cubic-bezier(.16,1,.3,1) 1",
-        "purpose": "On 35% intersection once: scaleX(.4) to 1, opacity .6 to 1; enabled only for no-preference."
+        "purpose": "Retained earlier component, not current editorial behavior. On 35% intersection once: scaleX(.4) to 1, opacity .6 to 1; enabled only for no-preference."
       },
       {
         "name": "delivery-result",
         "value": "1.8s cubic-bezier(.16,1,.3,1) 1",
-        "purpose": "On the same intersection once: translateY(8px) to 0 from visible content; enabled only for no-preference."
+        "purpose": "Retained earlier component, not current editorial behavior. On the same intersection once: translateY(8px) to 0 from visible content; enabled only for no-preference."
+      },
+      {
+        "name": "editorial-name",
+        "value": "720ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Once on mount: x -16px to 0; reduced motion starts finished."
+      },
+      {
+        "name": "editorial-portrait",
+        "value": "780ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Once on mount: y 14px to 0, bottom clip 8% to 0; reduced motion starts finished."
+      },
+      {
+        "name": "editorial-signature",
+        "value": "720ms cubic-bezier(.16,1,.3,1); delays 0ms,60ms,120ms",
+        "purpose": "Words x -18/-14/-10px to 0; no audience-switch replay."
+      },
+      {
+        "name": "editorial-opening-rules",
+        "value": "780ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "ScaleX .08 to 1; reduced motion shows full rules."
+      },
+      {
+        "name": "editorial-category-rule",
+        "value": "200ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared category marker; keyboard and reduced motion update immediately."
+      },
+      {
+        "name": "editorial-audience-arrival",
+        "value": "220ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Region y 7px to 0; keyboard and reduced motion remove arrival."
+      },
+      {
+        "name": "editorial-delivery-rules",
+        "value": "650ms cubic-bezier(.16,1,.3,1); step delay 160ms",
+        "purpose": "Once at 30% intersection: scaleX .06 to 1. Phones and reduced motion force full rules."
+      },
+      {
+        "name": "editorial-link-arrow",
+        "value": "160ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Fine-pointer hover translates 3px right/up; reduced motion removes movement."
       }
     ],
     "breakpoints": [
       {
-        "name": "narrow-portrait",
+        "name": "retained-narrow-portrait",
         "value": "350px"
       },
       {
@@ -791,7 +851,7 @@
         "value": "640px"
       },
       {
-        "name": "composition-mobile",
+        "name": "retained-composition-mobile",
         "value": "760px"
       },
       {
@@ -805,6 +865,10 @@
       {
         "name": "composition-tablet-max",
         "value": "1100px"
+      },
+      {
+        "name": "editorial-phone-max",
+        "value": "700px"
       }
     ],
     "review": {
@@ -832,7 +896,7 @@
       "name": "Primary action",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Main contact or draft action.",
+      "description": "Retained baseline specimen, not current editorial home treatment. Main contact or draft action.",
       "html": "<button class=\"ds-primary ds-focus\">Review in WhatsApp</button>",
       "css": ".ds-primary{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;transition:background-color .2s,color .2s,border-color .2s;border:0;background:var(--primary,#047857);color:var(--on-primary,#fff)}.ds-primary:hover{background:var(--primary-hover,#065f46)}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
     },
@@ -840,7 +904,7 @@
       "name": "Secondary action",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Alternative destination or copy action.",
+      "description": "Retained baseline specimen, not current editorial home treatment. Alternative destination or copy action.",
       "html": "<button class=\"ds-secondary ds-focus\">Copy message</button>",
       "css": ".ds-secondary{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;transition:background-color .2s,color .2s,border-color .2s;border:1px solid var(--border,rgba(15,23,42,.08));background:var(--surface,#fff);color:var(--foreground,#09090b)}.ds-secondary:hover{background:var(--surface-hover,#f1f5f9);border-color:var(--muted,#526176)}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
     },
@@ -871,22 +935,15 @@
       "name": "Service card",
       "kind": "card",
       "refersTo": "service-card",
-      "description": "Illustrated scope surface with static labelled example, native disclosure and enquiry link; abbreviated specimen.",
+      "description": "Retained baseline specimen, not current editorial home treatment. Illustrated scope surface with static labelled example, native disclosure and enquiry link; abbreviated specimen.",
       "html": "<article class=\"ds-card\"><div class=\"ds-card-scene\"><strong>Illustrative example</strong><p>A website for your business</p></div><div class=\"ds-card-body\"><h4>Business website</h4><p>A place for people to find you and take the next step.</p><details><summary class=\"ds-focus\">Scope &amp; deliverables</summary><p>Agreed page structure and responsive interface.</p></details><a class=\"ds-discuss ds-focus\" href=\"#studio\">Discuss this <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></a></div></article>",
       "css": ".ds-card{min-width:0;overflow:hidden;border-radius:14px;background:var(--surface,#fff);color:var(--foreground,#09090b);box-shadow:0 8px 28px rgba(0,0,0,.055);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-card-scene{padding:20px 18px 14px;background:var(--scene-field,#e7f1eb);color:var(--scene-ink,#143c2b);font-size:13px}.ds-card-body{padding:26px}.ds-card h4{margin:0;font-size:21px;font-weight:600;line-height:1.25}.ds-card-body p{margin-top:12px;color:var(--muted,#526176);font-size:14px;line-height:1.625}.ds-card details{border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:8px;margin-top:20px}.ds-card summary{min-height:44px;display:flex;align-items:center;color:var(--accent,#047857);font-size:14px;font-weight:600;cursor:pointer}.ds-card summary::after{content:\"\";margin-left:auto;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}.ds-card details[open] summary::after{transform:rotate(225deg)}.ds-discuss{display:flex;min-height:44px;justify-content:space-between;align-items:center;border-top:1px solid var(--border,rgba(15,23,42,.08));padding-top:12px;margin-top:16px;color:var(--foreground,#09090b);font-size:14px;font-weight:600;text-decoration:none}.ds-discuss svg{transition:transform .15s cubic-bezier(.16,1,.3,1)}.ds-card:focus-within{outline:1px solid var(--accent,#047857);outline-offset:4px}.ds-discuss:focus-visible svg{transform:translateX(3px)}@media(hover:hover) and (pointer:fine){.ds-discuss:hover svg{transform:translateX(3px)}}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(max-width:760px){.ds-card-body{padding:24px}.ds-card h4{font-size:22px}}@media(prefers-reduced-motion:reduce){.ds-discuss svg{transition:none;transform:none!important}}"
-    },
-    {
-      "name": "Audience selection",
-      "kind": "custom",
-      "description": "Selected-state specimen of the three-button audience group; application owns URL/state behavior.",
-      "html": "<div class=\"ds-audience\" role=\"group\" aria-label=\"Choose what to explore\"><span class=\"ds-marker\" aria-hidden=\"true\"></span><button class=\"ds-focus\" aria-pressed=\"true\">For clients</button><button class=\"ds-focus\" aria-pressed=\"false\">For hiring teams</button><button class=\"ds-focus\" aria-pressed=\"false\">Everything</button></div>",
-      "css": ".ds-audience{position:relative;display:grid;grid-template-columns:repeat(3,1fr);width:450px;max-width:calc(100% - 10px);padding:5px;border-radius:12px;background:var(--surface-hover,#f1f5f9);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-marker{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);background:var(--primary,#047857);border-radius:8px;transition:transform .22s cubic-bezier(.16,1,.3,1)}.ds-audience button{position:relative;z-index:1;min-height:44px;border:0;background:transparent;border-radius:8px;padding:0 8px;font-size:13px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;color:var(--muted,#526176);cursor:pointer}.ds-audience button[aria-pressed=true]{color:var(--on-primary,#fff)}.ds-audience button[aria-pressed=false]:hover{color:var(--foreground,#09090b)}.ds-audience:has(:focus-visible) .ds-marker{transition:none}.ds-focus:focus-visible{outline:none;box-shadow:0 0 0 2px var(--background,#f8fafc),0 0 0 4px var(--primary,#047857)}@media(prefers-reduced-motion:reduce){.ds-marker{transition:none}}"
     },
     {
       "name": "Feature contact action",
       "kind": "button",
       "refersTo": "button-feature",
-      "description": "Pale green action on the deep-green contact close.",
+      "description": "Retained baseline specimen, not current editorial home treatment. Pale green action on the deep-green contact close.",
       "html": "<div class=\"ds-feature\"><button class=\"ds-feature-action\">Let’s talk on WhatsApp</button></div>",
       "css": ".ds-feature{padding:24px;background:var(--feature,#063d2f)}.ds-feature-action{display:inline-flex;min-height:48px;align-items:center;justify-content:center;border:0;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;background:#a7f3d0;color:var(--feature,#063d2f);transition:background-color .2s}.ds-feature-action:hover{background:#c5f4db}.ds-feature-action:focus-visible{outline:2px solid #a7f3d0;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-feature-action{transition:none}}"
     },
@@ -894,26 +951,80 @@
       "name": "Static service example",
       "kind": "custom",
       "refersTo": "scene-window",
-      "description": "Readable illustrative interface; its displayed action has no interaction.",
+      "description": "Retained baseline specimen, not current editorial home treatment. Readable illustrative interface; its displayed action has no interaction.",
       "html": "<figure class=\"ds-example\"><div class=\"ds-window\"><strong>Your business</strong><p>Make the next step clear.</p><span class=\"ds-example-action\">Explore services <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></span></div><figcaption>Illustrative example</figcaption></figure>",
       "css": ".ds-example{margin:0;padding:20px 18px 14px;background:var(--scene-field,#e7f1eb);color:var(--scene-ink,#143c2b);font-size:13px;line-height:1.45;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-window{min-height:248px;padding:16px 15px;background:var(--scene-paper,#fff);border-radius:9px}.ds-window strong{font-weight:600}.ds-window p{font-size:20px;line-height:1.2;letter-spacing:-.02em}.ds-example-action{display:flex;justify-content:space-between;gap:8px;background:var(--scene-green,#047857);color:var(--scene-mint,#a7f3d0);padding:9px 11px;border-radius:5px;font-size:12px;font-weight:550}.ds-example figcaption{margin-top:12px;font-size:11px}"
     },
     {
       "name": "Delivery handover",
       "kind": "custom",
-      "description": "Visible light handover panel on deep green; static specimen of the finite in-view composition.",
+      "description": "Retained baseline specimen, not current editorial home treatment. Visible light handover panel on deep green; static specimen of the finite in-view composition.",
       "html": "<div class=\"ds-delivery\"><div class=\"ds-handover\"><strong>Ready for handover</strong><p>Code &amp; access</p><p>Setup notes</p><p>A walkthrough</p></div></div>",
       "css": ".ds-delivery{padding:24px;background:var(--feature,#063d2f);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-handover{min-height:220px;padding:26px;border-radius:12px;background:#fff;color:#143c2b;box-shadow:0 12px 32px rgba(0,0,0,.12)}.ds-handover strong{display:block;font-size:20px;font-weight:600;line-height:1.25;letter-spacing:-.02em}.ds-handover p{margin-top:10px;font-size:12px}"
+    },
+    {
+      "name": "Editorial action",
+      "kind": "button",
+      "refersTo": "editorial-action",
+      "description": "Current primary action with modest rounding.",
+      "html": "<a class=\"ds-editorial-action\" href=\"#services\">Explore services</a>",
+      "css": ".ds-editorial-action{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border-radius:5px;background:var(--primary,#047857);color:var(--on-primary,#fff);font-size:14px;font-weight:600;text-decoration:none;font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;transition:background-color .2s}.ds-editorial-action:hover{background:var(--primary-hover,#065f46)}.ds-editorial-action:focus-visible{outline:2px solid var(--accent,#047857);outline-offset:4px;}.ds-editorial-action:active{transform:scale(.97)}@media(prefers-reduced-motion:reduce){.ds-editorial-action{transition:none;transform:none}}"
+    },
+    {
+      "name": "Audience selection",
+      "kind": "nav",
+      "description": "Current pressed-state group; main owns URL and shared state.",
+      "html": "<div class=\"ds-audience\" role=\"group\" aria-label=\"Choose what to explore\"><button aria-pressed=\"true\">For clients</button><button aria-pressed=\"false\">For hiring teams</button><button aria-pressed=\"false\">Everything</button></div>",
+      "css": ".ds-audience{display:grid;grid-template-columns:repeat(3,1fr);padding:4px;border:1px solid var(--border,rgba(15,23,42,.08));border-radius:5px;background:var(--surface,#fff);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-audience button{min-height:44px;padding:0 8px;border:0;border-radius:3px;background:transparent;color:var(--muted,#526176);font-size:13px;font-weight:600;cursor:pointer}.ds-audience button[aria-pressed=true]{background:var(--primary,#047857);color:var(--on-primary,#fff)}.ds-audience button:hover{color:var(--foreground,#09090b)}.ds-audience button[aria-pressed=true]:hover{color:var(--on-primary,#fff)}.ds-audience button:focus-visible{outline:2px solid var(--accent,#047857);outline-offset:4px;}"
+    },
+    {
+      "name": "Editorial service row",
+      "kind": "custom",
+      "refersTo": "editorial-service-row",
+      "description": "Native optional scope and labelled Add control; snippet does not implement shared selection.",
+      "html": "<article class=\"ds-scope\"><div class=\"ds-scope-main\"><div><h3>Business website</h3><p>A clear online presence around your business needs.</p></div><button aria-pressed=\"false\" aria-label=\"Add Business website to brief\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg><span>Add</span></button></div><details><summary>Scope &amp; deliverables</summary><p>Final scope agreed before starting.</p></details></article>",
+      "css": ".ds-scope{border-block:1px solid var(--border,rgba(15,23,42,.08));padding:22px 0 16px;color:var(--foreground,#09090b);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-scope-main{display:flex;align-items:start;justify-content:space-between;gap:20px}.ds-scope h3{margin:0;font-size:21px;font-weight:550;line-height:1.25;letter-spacing:-.03em}.ds-scope p{font-size:14px;line-height:1.65;color:var(--muted,#526176)}.ds-scope button{display:flex;align-items:center;gap:7px;flex-shrink:0;min-height:44px;min-width:44px;border:1px solid var(--control-border,#77869b);border-radius:4px;padding:9px 12px;background:transparent;color:inherit;cursor:pointer}.ds-scope button[aria-pressed=true]{background:var(--surface-hover,#f1f5f9);color:var(--accent,#047857);border-color:var(--accent,#047857)}.ds-scope summary{display:flex;align-items:center;min-height:44px;width:fit-content;font-size:13px;color:var(--muted,#526176);cursor:pointer}.ds-scope button:hover{background:var(--surface-hover,#f1f5f9);color:var(--accent,#047857)}.ds-scope button:focus-visible,.ds-scope summary:focus-visible{outline:2px solid var(--accent,#047857);outline-offset:4px;}@media(max-width:700px){.ds-scope-main{gap:12px}.ds-scope h3{font-size:20px}.ds-scope button{padding:9px;justify-content:center}.ds-scope button span{display:none}}"
+    },
+    {
+      "name": "Shared brief selection",
+      "kind": "custom",
+      "description": "Compact brief count/removal summary; the application catalogue and planner share parent state.",
+      "html": "<div class=\"ds-brief\"><h3>Your brief <span>1</span></h3><ul><li>Business website<button aria-label=\"Remove Business website from brief\">×</button></li></ul><a href=\"#studio\">Review your brief</a></div>",
+      "css": ".ds-brief{border-block:1px solid var(--border,rgba(15,23,42,.08));padding:22px 0;color:var(--foreground,#09090b);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-brief h3{font-size:17px;font-weight:550;margin:0}.ds-brief h3 span{color:var(--accent,#047857);font-variant-numeric:tabular-nums}.ds-brief ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:12px 0}.ds-brief li{display:flex;align-items:center;gap:10px;padding-left:12px;background:var(--surface-hover,#f1f5f9);font-size:13px}.ds-brief button{display:grid;place-items:center;width:44px;height:44px;border:0;background:transparent;color:inherit;cursor:pointer}.ds-brief a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-underline-offset:5px;font-size:14px}.ds-brief button:hover,.ds-brief a:hover{color:var(--accent,#047857)}.ds-brief button:focus-visible,.ds-brief a:focus-visible{outline:2px solid var(--accent,#047857);outline-offset:4px;}"
+    },
+    {
+      "name": "Editorial career row",
+      "kind": "custom",
+      "refersTo": "editorial-career-row",
+      "description": "Date/detail row with native responsibilities; neutral specimen avoids inventing career facts.",
+      "html": "<article class=\"ds-career\"><p class=\"ds-career-date\">Period</p><div><h4>Role title</h4><p class=\"ds-career-company\">Company</p><details><summary>Work &amp; responsibilities</summary><p>Supplied role details belong here.</p></details></div></article>",
+      "css": ".ds-career{display:grid;grid-template-columns:110px minmax(0,1fr);gap:22px;padding:24px 0;border-top:1px solid var(--border,rgba(15,23,42,.08));color:var(--foreground,#09090b);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-career-date{font-size:13px;line-height:1.7;color:var(--muted,#526176);font-variant-numeric:tabular-nums;margin:0}.ds-career h4{margin:0;font-size:19px;font-weight:550;line-height:1.35;letter-spacing:-.03em}.ds-career-company{font-size:14px;color:var(--accent,#047857);margin:8px 0 0}.ds-career summary{display:flex;align-items:center;min-height:44px;width:fit-content;font-size:13px;cursor:pointer}.ds-career details p{font-size:14px;line-height:1.75;color:var(--muted,#526176)}.ds-career summary:hover{color:var(--accent,#047857)}.ds-career summary:focus-visible{outline:2px solid var(--accent,#047857);outline-offset:4px;}@media(max-width:1100px){.ds-career{grid-template-columns:1fr;gap:8px}}"
+    },
+    {
+      "name": "Editorial delivery step",
+      "kind": "custom",
+      "refersTo": "editorial-delivery-step",
+      "description": "Finished static form; application owns finite in-view rule motion.",
+      "html": "<div class=\"ds-delivery-step\"><div class=\"ds-delivery-rule\"><span>1</span><i aria-hidden=\"true\"></i></div><h3>The agreed brief</h3><p>Agree the scope and what successful delivery looks like.</p><small>A clear scope</small></div>",
+      "css": ".ds-delivery-step{padding:24px;background:var(--feature,#063d2f);color:var(--feature-ink,#f3faf6);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-delivery-rule{display:flex;align-items:center;gap:16px;color:var(--feature-muted,#c3dece);font-size:13px}.ds-delivery-rule i{height:1px;flex:1;background:currentColor}.ds-delivery-step h3{font-size:24px;font-weight:500;margin:24px 0 0;letter-spacing:-.03em}.ds-delivery-step p{font-size:15px;line-height:1.75;color:var(--feature-muted,#c3dece);margin:16px 0 0}.ds-delivery-step small{display:block;font-size:13px;color:var(--feature-muted,#c3dece);margin-top:24px}"
+    },
+    {
+      "name": "Editorial contact destination",
+      "kind": "custom",
+      "refersTo": "editorial-contact-link",
+      "description": "Ruled deep-green destination with supporting detail and pointer hover.",
+      "html": "<div class=\"ds-contact\"><a href=\"#contact\"><span>Write to me<small>Email destination</small></span><svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></div>",
+      "css": ".ds-contact{padding:24px;background:var(--feature,#063d2f);font-family:var(--font-geist-sans,Geist),ui-sans-serif,system-ui,sans-serif;}.ds-contact a{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--feature-muted,#c3dece);padding:25px 0;color:var(--feature-ink,#f3faf6);text-decoration:none;font-size:26px}.ds-contact small{display:block;font-size:13px;color:var(--feature-muted,#c3dece);margin-top:9px;overflow-wrap:anywhere}.ds-contact svg{flex-shrink:0;color:var(--feature-muted,#c3dece);transition:transform .16s cubic-bezier(.16,1,.3,1)}.ds-contact a:focus-visible{outline:2px solid var(--feature-muted,#c3dece);outline-offset:5px}@media(hover:hover) and (pointer:fine){.ds-contact a:hover svg{transform:translate(3px,-3px)}}@media(prefers-reduced-motion:reduce){.ds-contact svg{transition:none;transform:none}}"
     }
   ],
   "narrative": {
     "northStar": "A personal professional portfolio with the care of an editorial layout",
-    "overview": "The existing identity gives a real person the first impression: Razim's name, authentic portrait and the connection between business understanding and practical development. Open text regions, restrained green emphasis and quiet functional panels create variation without changing the brand.\n\nThe accepted portrait direction extends that identity with geometric interface fragments, substantial illustrative service examples and deep-green delivery/contact passages. This document merges the implemented source on 2026-10-08 with the existing system. Current application captures and an independent visual finish disposition of ship are recorded in the [integration record](planning/2026-10-08_visual-direction/APP_INTEGRATION.md); release verification remains pending. CSS and rendered components are the implementation source of truth; reconcile this record when they change.",
+    "overview": "The existing identity gives a real person the first impression: Razim's name, authentic portrait and the connection between business understanding and practical development. Open text regions, restrained green emphasis and quiet functional panels create variation without changing the brand.\n\nThe approved complete editorial direction is adopted in main source as of 2026-10-12: a centered vertical portrait, open ruled service/career regions, optional complete planner and deep-green delivery/contact passages. Fresh main captures and critical journey checks are recorded; independent finish review returned ship with no material findings; production publication remains pending in the [editorial integration record](planning/2026-10-12_editorial-integration/IMPLEMENTATION.md). The [preview direction contract](planning/2026-10-09_motion-direction/preview/README.md) remains the surface brief; its screenshots do not certify main. The [2026-10-08 integration](planning/2026-10-08_visual-direction/APP_INTEGRATION.md) records the earlier published composition.\n\nThis is a merge of the adopted vocabulary into the existing system. Existing palette, type, radius, spacing and illustration primitives remain available for maintained utilities and retained source. Editorial-prefixed roles describe the current home composition and override inherited roles there; they are not a new global identity. CSS and rendered components are implementation truth, and this document records source extraction rather than a new visual approval.",
     "keyCharacteristics": [
       "Authentic portrait and prominent personal identity.",
       "Green actions with neutral reading surfaces in both themes.",
-      "Open section layouts mixed with compact functional panels.",
-      "Static interface examples and contrasting deep-green feature sections.",
+      "Open ruled rows with compact optional controls.",
+      "Contrasting deep-green delivery and contact sections.",
       "Optional detail and immediate state feedback."
     ],
     "rules": [
@@ -937,12 +1048,14 @@
       "Do preserve the authentic portrait, green identity and Geist typography.",
       "Do use semantic theme variables and visible keyboard focus.",
       "Do keep optional detail in native disclosures and preserve mounted drafts.",
-      "Do label static interface examples as illustrative and place real enquiry actions outside them.",
+      "Do keep the portrait/caption centered on phones and the opening location beside the name.",
+      "Do retain scope names in accessible Add/Remove labels when the phone button becomes icon-only.",
+      "Do label retained static examples as illustrative if they are used again.",
       "Do reduce movement without removing information or feedback."
     ],
     "donts": [
       "Don't substitute fabricated portraits, work evidence or performance claims.",
-      "Don't add competing decorative animation around the portrait or make explanatory delivery motion perpetual.",
+      "Don't make opening or delivery motion perpetual or add production replay controls.",
       "Don't promote unused legacy effects into the current design vocabulary.",
       "Don't treat proposal screenshots or source-only checks as a rendered application pass."
     ]

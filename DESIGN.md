@@ -1,6 +1,6 @@
 ---
 name: Razim Manzoor portfolio
-description: Green and Geist identity with an authentic portrait, illustrative interfaces and deep-green feature sections
+description: Green and Geist identity with an authentic vertical portrait, open ruled sections and deep-green delivery/contact
 colors:
   primary: "#047857"
   primary-hover: "#065f46"
@@ -90,6 +90,32 @@ typography:
     fontSize: "20px"
     lineHeight: 1.2
     letterSpacing: "-0.02em"
+  editorial-name:
+    fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(56px,7.15vw,96px)"
+    fontWeight: 550
+    lineHeight: 1.08
+    letterSpacing: "-0.03em"
+  editorial-headline:
+    fontSize: "clamp(34px,4.2vw,56px)"
+    fontWeight: 500
+    lineHeight: 1.06
+    letterSpacing: "-0.03em"
+  editorial-statement:
+    fontSize: "clamp(30px,3.3vw,44px)"
+    fontWeight: 500
+    lineHeight: 1.12
+    letterSpacing: "-0.03em"
+  editorial-service-title:
+    fontSize: "21px"
+    fontWeight: 550
+    lineHeight: 1.25
+    letterSpacing: "-0.03em"
+  editorial-contact-heading:
+    fontSize: "clamp(40px,5vw,68px)"
+    fontWeight: 500
+    lineHeight: 1.06
+    letterSpacing: "-0.03em"
 rounded:
   control: "8px"
   action: "10px"
@@ -99,6 +125,9 @@ rounded:
   scene-small: "4px"
   scene-action: "5px"
   scene-window: "9px"
+  editorial-action: "5px"
+  editorial-scope: "4px"
+  editorial-marker: "3px"
 spacing:
   tight: "8px"
   related: "16px"
@@ -107,6 +136,11 @@ spacing:
   card-body: "26px"
   panel: "28px"
   layout: "40px"
+  editorial-section: "88px"
+  editorial-section-phone: "56px"
+  editorial-service-block: "22px 0 16px"
+  editorial-matte: "12px"
+  editorial-matte-phone: "10px"
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
@@ -152,6 +186,32 @@ components:
     textColor: "{colors.foreground}"
     rounded: "{rounded.control}"
     padding: "8px 12px"
+  editorial-action:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    rounded: "{rounded.editorial-action}"
+    padding: "12px 20px"
+  editorial-scope-action:
+    textColor: "{colors.foreground}"
+    rounded: "{rounded.editorial-scope}"
+    padding: "9px 12px"
+    height: "44px"
+  editorial-scope-action-selected:
+    backgroundColor: "{colors.surface-hover}"
+    textColor: "{colors.primary}"
+  editorial-service-row:
+    textColor: "{colors.foreground}"
+    padding: "{spacing.editorial-service-block}"
+  editorial-career-row:
+    textColor: "{colors.foreground}"
+    padding: "24px 0"
+  editorial-delivery-step:
+    backgroundColor: "{colors.feature}"
+    textColor: "{colors.feature-ink}"
+  editorial-contact-link:
+    backgroundColor: "{colors.feature}"
+    textColor: "{colors.feature-ink}"
+    padding: "25px 0"
 ---
 
 # Design System: Razim Manzoor portfolio
@@ -162,14 +222,16 @@ components:
 
 The existing identity gives a real person the first impression: Razim's name, authentic portrait and the connection between business understanding and practical development. Open text regions, restrained green emphasis and quiet functional panels create variation without changing the brand.
 
-The accepted portrait direction extends that identity with geometric interface fragments, substantial illustrative service examples and deep-green delivery/contact passages. This document merges the implemented source on 2026-10-08 with the existing system. Current application captures and an independent visual finish disposition of ship are recorded in the [integration record](planning/2026-10-08_visual-direction/APP_INTEGRATION.md); release verification remains pending. CSS and rendered components are the implementation source of truth; reconcile this record when they change.
+The approved complete editorial direction is adopted in main source as of 2026-10-12: a centered vertical portrait, open ruled service/career regions, optional complete planner and deep-green delivery/contact passages. Fresh main captures and critical journey checks are recorded; independent finish review returned ship with no material findings; production publication remains pending in the [editorial integration record](planning/2026-10-12_editorial-integration/IMPLEMENTATION.md). The [preview direction contract](planning/2026-10-09_motion-direction/preview/README.md) remains the surface brief; its screenshots do not certify main. The [2026-10-08 integration](planning/2026-10-08_visual-direction/APP_INTEGRATION.md) records the earlier published composition.
+
+This is a merge of the adopted vocabulary into the existing system. Existing palette, type, radius, spacing and illustration primitives remain available for maintained utilities and retained source. Editorial-prefixed roles describe the current home composition and override inherited roles there; they are not a new global identity. CSS and rendered components are implementation truth, and this document records source extraction rather than a new visual approval.
 
 **Key Characteristics:**
 
 - Authentic portrait and prominent personal identity.
 - Green actions with neutral reading surfaces in both themes.
-- Open section layouts mixed with compact functional panels.
-- Static interface examples and contrasting deep-green feature sections.
+- Open ruled rows with compact optional controls.
+- Contrasting deep-green delivery and contact sections.
 - Optional detail and immediate state feedback.
 
 ## Colors
@@ -178,58 +240,60 @@ The accepted portrait direction extends that identity with geometric interface f
 
 The green primary fills actions and selected controls; primary-hover deepens the fill. The on-primary color carries text on those fills. Accent text uses primary in light mode and dark-accent in dark mode. Primary and on-primary remain the same in both themes.
 
-Feature is the deep-green portrait ground, delivery passage and footer. Feature-ink and feature-muted keep text legible on that ground in both themes. Footer actions use the pale feature-action fill with feature text; their hover and secondary-hover treatments retain the same green family. Delivery panels deliberately retain light paper and scene-ink in both themes; delivery-label and delivery-connection support their explanatory labels and route.
+Feature is the deep-green portrait matte, delivery passage and contact close. Feature-ink and feature-muted carry text and rules on that ground in both themes. The current contact destinations are open ruled links. Feature-action, feature-action-hover, feature-secondary-hover, delivery-label and delivery-connection remain from the earlier feature buttons and illustrated delivery component; they are not instructions to restore those shapes to the current page.
 
 ### Neutral
 
 Background and surface separate the page from functional panels. Surface-hover groups selections and supporting material. Foreground carries main text; muted carries explanatory copy. Border is a quiet divider; control-border gives form fields and delivery rules stronger definition. Dark-prefixed tokens replace the matching neutral roles under the root dark class. Primary-glow supports tap highlighting rather than a decorative halo.
 
-Scene-field grounds the portrait fragments, service examples and brief artwork. Scene-paper, tint, line and mid establish their layered interface geometry; scene-green, mint and ink carry action-like marks and readable content. Every scene role has a dark-theme assignment. These illustrated surfaces describe capabilities; their sample figures do not represent client results.
+The scene roles and their dark assignments are preserved for retained portrait fragments, service examples and brief artwork. Those components are not rendered by the current editorial page. Their sample figures describe illustrative capabilities and must never be treated as client results. Editorial rows use the established foreground, muted, border, control-border and accent variables instead.
 
 **The Theme Role Rule.** Use the live semantic CSS variables for component colors so the light and dark assignments remain connected.
 
 ## Typography
 
-Display and body use Geist through `next/font` in `app/layout.tsx`; Geist Mono is retained for numerical/code contexts rather than a competing display face. The hero name uses display, section titles use headline, service titles use title, and hero/section descriptions use body. The footer signature has its own fluid scale. Smaller supporting copy uses 14px; facts and captions use 12–13px. Numerical outputs use tabular figures.
+Display and body use Geist through `next/font` in `app/layout.tsx`; Geist Mono is retained for numerical/code contexts. The current name, section titles, proposition, service headings and contact close use the editorial roles in frontmatter. Inherited display/headline/title/hero-statement/footer-signature and scene roles remain documented primitives for retained components, not the current opening hierarchy. Numerical outputs use tabular figures.
 
-At 760px and below the name becomes `clamp(36px, 10vw, 62px)`; at 350px and below it is 32px. The hero statement uses 28px, weight 600, line-height 1.18 and tracking -0.025em; mobile uses 26px. Long descriptions are constrained to 65ch. Headings balance text wrapping.
+Both existing font variables are defined on the root HTML element so Tailwind's root theme resolves them before inherited typography is applied; the body retains antialiasing. Main browser inspection now resolves Geist rather than the system fallback. This scope correction preserves the documented families, type roles and specimens; it introduces no font or token change.
 
-Illustration body and captions use the scene roles in frontmatter. Internal interface labels use 11–13px, with selected action labels at weight 550; these are static explanatory surfaces. Scene display becomes 23px on mobile, captions become 12px, and scene padding increases for reading. Service titles become 22px on mobile. Footer signature becomes 48px on mobile and 40px below 351px. These are component-specific responsive adaptations, not a new universal type scale.
+At 1100px and below the editorial name uses `clamp(54px,7.2vw,78px)`. At 700px and below it uses `clamp(42px,11.8vw,74px)`, line-height 1.03 and a two-line name without the accent dot. The phone proposition is 30px, section titles 36px, service titles 20px and contact heading 44px. Opening body copy is 17px with a 48ch limit, becoming 15px on phones; section copy is bounded to 54ch. Scope copy uses 14px/1.75 with a 70ch limit, and supporting dates/location/captions use 11–14px according to context. These are observed component adaptations, not a replacement universal type scale.
 
 **The One Family Rule.** Preserve Geist for the implemented identity; create hierarchy through size, weight, line length and whitespace.
 
 ## Layout
 
-The shared container is capped at 1120px with 32px side margins; at 760px and below it uses 20px side margins. The fixed header is 76px tall, becoming 64px on mobile. The audience selector remains sticky immediately below it. Anchor targets reserve 10.5rem above their content, increasing to 12rem at 760px and below for the taller mobile audience bar.
+The editorial container is capped at 1200px with 48px gutters, 32px gutters at 1100px and below, and 20px gutters at 700px and below. The fixed header is 76px, becoming 64px at the phone breakpoint; the audience selector is sticky below it. Root scroll padding is 156px desktop/180px phone and target/control scroll margin is 20px. Retained utility CSS also uses 640px, 760px, 768px and 1024px rules; inspect both layers at intermediate widths rather than assuming one common breakpoint.
 
-Desktop hero uses 1.12fr/1fr columns with a 58px gap and 144px/64px top/bottom padding. Name and copy occupy the left column; the portrait stage spans both rows on the right. Its deep-green ground contains the authentic 3:4 portrait and two overlapping interface fragments. Mobile pairs the name with a 120px stage containing a smaller portrait and one fragment, then places copy across the full width; at 350px the stage becomes 102px. The portrait caption and second fragment are hidden on mobile. Actions stack.
+The opening has 130px top/32px bottom padding. Its name/location line precedes a 1.25fr/.75fr proposition/portrait grid with a 9% gap; at 1100px it becomes 1.2fr/.8fr with a 5% gap. The portrait cap is 344px desktop/320px medium/280px phone. It uses the original centered 4:5 presentation, a slim matte and an outside caption. At 700px the opening stacks with copy/actions before a centered photograph, uses 104px top/24px bottom padding and retains the opening location only beside the name.
 
-Sections use 92px vertical padding, reduced to 56px on mobile. Heading/copy pairs use a 1.05fr/1fr grid; service cards use three columns and a 24px gap, two columns from 761px through 1100px and one below 761px. A final odd card spans both tablet columns with illustration and body side by side. The medium portrait fragment uses a fluid vertical position to clear its caption. Delivery has a connected brief/build/handover composition, then open three-column steps; mobile reflows the handover panel below the first two stages. Recruiter and planner regions use asymmetric two-column grids and stack on mobile. The estimate panel spans both planner columns and hides the brief illustration. Navigation switches to its menu below 1024px; Tailwind utility layouts also use 640px, 768px and 1024px breakpoints where declared.
+Sections use editorial-section spacing, with editorial-section-phone below 701px. Heading/copy pairs use 1.15fr/1fr and an 8% gap. Categories occupy a 29% sidebar with a 7% gap; ruled service rows occupy the remaining column. On phones categories wrap into compact buttons above the rows. Career and planner layouts use .8fr/1.2fr with a 9% gap; phone layouts stack. Career date/detail rows use 110px plus flexible copy with a 22px gap, stacking at 1100px. Delivery steps and handover guarantees use three columns, stacking on phones. The estimator remains inside the planner with its controls/results in one column. Contact destinations use two columns and stack on phones.
 
 ## Elevation & Depth
 
-The active page combines tonal surfaces and thin borders with restrained shadows on service cards, portrait fragments and the light delivery panels. Their exact shadow vocabulary lives in the sidecar; dark service cards use a stronger alpha. Global keyboard focus uses a background ring at 2px and a primary ring at 4px. Service-card focus-within adds an accent outline; delivery/footer focus uses a pale 2px outline with 4px offset. Keep these state treatments distinct from resting elevation. Retained frosted utilities and unrendered showcase styles are not the current composition's vocabulary.
+The editorial home is flat at rest: thin rules, open whitespace and tonal selected controls carry hierarchy. Its planner shell is transparent without an outer border, rounding, padding or shadow; individual fields/results retain their maintained treatments. Global keyboard focus uses a background ring at 2px and a primary ring at 4px; delivery/contact links add a pale 2px outline with 5px offset. Existing service-card, fragment and delivery-panel shadow values remain in the sidecar as retained vocabulary, not active resting elevation for editorial rows. Retained frosted utilities and the unrendered showcase do not define this composition.
 
 **The Quiet Surface Rule.** Use open regions and hairline dividers alongside panels; do not turn every section into a card.
 
 ## Shapes
 
-Controls and chips use gently curved corners; actions use a slightly fuller curve. The portrait frame, desktop fragments and audience group use frame rounding; service cards, brief art and planner use panel rounding. The green portrait ground uses feature rounding, with action rounding on mobile. Illustrated windows use scene-window rounding; small statuses and fields use scene-small and illustrated actions use scene-action. Service shells clip their illustration and carry no outer padding; bodies use 26px desktop and 24px mobile. Planner padding is 28px desktop and 20px mobile. The portrait is clipped to its frame with centered object-cover; retain the authentic source crop.
+Editorial actions and audience group use modest rounding (editorial-action); the audience marker uses editorial-marker and scope actions use editorial-scope. The portrait matte, service/career rows, selection summary and delivery/contact rules remain square. Fields retain control rounding, and toolkit/utility chips retain their own inherited treatment. Existing frame/panel/feature and illustration rounding remains for retained source; it does not restore a rounded outer planner or portrait stage. The portrait uses centered object-cover within its 4:5 display and preserves the original image asset; framing cannot recover pixels absent from the source.
 
 ## Components
 
-- **Actions:** primary and secondary use 48px minimum height, 14px semibold text and shared padding. Primary hover deepens green; secondary hover changes surface and border. Footer actions use the pale feature palette. Text actions and secondary links have 44px minimum height.
+- **Actions:** primary and secondary retain 48px minimum height, 14px semibold text and shared padding with editorial-action rounding. Primary hover deepens green; secondary hover changes surface and border. Underlined editorial text links have 44px minimum height and restrained arrow feedback for fine pointers.
 - **Navigation:** fixed opaque background, quiet divider and 44px icon controls. Mobile menu sits below the header with bounded scrolling. Escape closes it and returns focus; outside press, link selection and desktop resize dismiss it.
 - **Audience selector:** three equal buttons with pressed state, a primary selection marker and 44px minimum height. It fills available mobile width. Marker movement is 220ms with cubic-bezier(.16, 1, .3, 1); focused selection updates immediately.
-- **Filters/chips:** service filters use pressed state and a 48px minimum height; tool and role chips are compact supporting content. Do not infer interactive behavior from a static chip.
-- **Service cards:** each of fourteen scopes has a distinct labelled static interface example, concise outcome, three deliverable lines, native scope disclosure and named planner link. Static examples contain no working controls. Cards stay still on hover; the enquiry arrow moves 3px for fine pointers and keyboard focus. Focus-within outlines the card. Selected services update the existing planner rather than replacing it.
-- **Portrait and brief artwork:** original project-authored SVG interface fragments overlap the portrait ground; they are decorative and hidden from assistive technology. The planner's labelled rough-request-to-brief example uses readable HTML and disappears in estimate mode.
-- **Delivery:** content is visible by default. Once 35% of the illustration intersects, connection lines expand from scale .4 and opacity .6, and the handover panel moves upward from 8px over 1.8 seconds; each runs once. All information remains visible without movement.
+- **Categories:** vertical pressed-state choices use 58px minimum height and a fine accent rule; phone choices wrap with a 44px minimum. Tool and role labels are supporting content, not controls.
+- **Service rows:** fourteen stable scopes use title/outcome, native scope/deliverable disclosure and a named Add/Remove button with a 44px minimum height. On phones the visible button label becomes an icon while its accessible name retains the action and scope. Selected titles and buttons use the accent; the brief count is numerical, removals are labelled and status feedback is announced. Catalogue and planner share one selected-service state.
+- **Portrait:** original photograph in a square matte with outside caption, centered on phones. No interface fragments or brief artwork are rendered in the editorial page. Real work examples remain deferred; retained illustrative source is historical vocabulary.
+- **Career rows:** open dates/details with native responsibilities and certificate disclosures; the résumé/contact summary remains alongside the history on desktop and stacks on phones.
+- **Delivery:** three numbered steps keep their copy visible. Once 30% of the list intersects, desktop rules grow from scale .06 to 1 over 650ms with 160ms step delays, once. Phone and reduced-motion rules show their final form.
+- **Contact:** two large ruled WhatsApp/email destinations on deep green, with supporting call/LinkedIn/background/services/top links. Destination detail wraps when needed; hover arrows move 3px right/up for fine pointers.
 - **Fields:** persistent visible labels, at least 16px input text, control-border, background surface and accent caret. Optional fields and native checkboxes/radios retain their semantics. Global focus treatment applies.
 - **Disclosures:** native details/summary controls expose optional content. Chevron rotation is 200ms; the content does not depend on a reveal animation.
 - **Copy feedback:** the planner announces copying, success or failure, avoids stale copied status when message text changes, and offers a read-only manual-copy field after failure.
 
-The portrait and service examples have no entrance animation. Delivery movement is enabled only for `prefers-reduced-motion: no-preference`. Reduced motion removes smooth scrolling, audience marker movement and action/disclosure/arrow transitions and transforms. `ThemeProvider` retains MotionConfig with user reduced-motion support. Motion was source-reviewed; static captures do not prove playback or a forced OS preference. Legacy spring presets are not a mandate for current CSS interactions.
+Opening motion is finite: name translates from -16px over 720ms; portrait assembles from 14px below and an 8% bottom clip over 780ms; signature words arrive over 720ms with 60ms increments, and rules expand from scale .08 over 780ms. It does not replay on audience change. Category movement is 200ms; audience content arrives 7px upward over 220ms. The existing audience marker is 220ms. Keyboard mode removes audience arrival, uses immediate audience scrolling and disables category/selection layout movement through MotionConfig; it also removes link/chevron transitions. Reduced motion removes transitions, entrance transforms/clipping, animated rules and smooth scrolling while preserving information. The root ThemeProvider and local MotionConfig retain user preference handling. Current main captures and finite opening-property samples now support the implementation record; independent finish review returned ship with no material findings, and forced OS reduced-motion remains a separate unperformed check. There are no production replay or QA-copy controls. Legacy spring presets and earlier 1.8-second illustrated delivery motion are not current editorial instructions.
 
 ## Do's and Don'ts
 
@@ -238,12 +302,14 @@ The portrait and service examples have no entrance animation. Delivery movement 
 - Do preserve the authentic portrait, green identity and Geist typography.
 - Do use semantic theme variables and visible keyboard focus.
 - Do keep optional detail in native disclosures and preserve mounted drafts.
-- Do label static interface examples as illustrative and place real enquiry actions outside them.
+- Do keep the portrait/caption centered on phones and the opening location beside the name.
+- Do retain scope names in accessible Add/Remove labels when the phone button becomes icon-only.
+- Do label retained static examples as illustrative if they are used again.
 - Do reduce movement without removing information or feedback.
 
 ### Don't:
 
 - Don't substitute fabricated portraits, work evidence or performance claims.
-- Don't add competing decorative animation around the portrait or make explanatory delivery motion perpetual.
+- Don't make opening or delivery motion perpetual or add production replay controls.
 - Don't promote unused legacy effects into the current design vocabulary.
 - Don't treat proposal screenshots or source-only checks as a rendered application pass.
