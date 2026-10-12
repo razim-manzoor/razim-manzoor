@@ -13,6 +13,7 @@ import { HANDOVER_GUARANTEES, SERVICES_CATALOG } from '@/lib/services';
 import { RESUME_URL, WHATSAPP_URL } from '@/lib/contact';
 import { selectServiceForPlanner } from '@/lib/project-planner';
 import { TurnkeyStudio } from './TurnkeyStudio';
+import { QuickMessageModal } from './QuickMessageModal';
 import portrait from '../../public/profilepic.jpeg';
 
 const ease = [0.16, 1, 0.3, 1];
@@ -129,7 +130,7 @@ function ServiceIndex({ selected, setSelected, reduced }) {
   </section>;
 }
 
-function Hiring({ reduced }) {
+function Hiring({ reduced, onOpenMessage }) {
   return <section id="dossier" tabIndex={-1} className="portfolio-section editorial-hiring"><div className="site-wrap">
     <div className="section-heading"><h2 className="section-title">Business, data<br /><span>& development.</span></h2><p className="section-description">An MBA in Data Science & Analytics, experience in business workflows and reporting, and hands-on development of web applications and automation tools.</p></div>
     <div className="career-layout">
@@ -137,7 +138,7 @@ function Hiring({ reduced }) {
         <dl>{USER_DATA.recruiterSnapshot.map(fact => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
         <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="action-primary"><Download size={17} aria-hidden="true" />Download résumé PDF</a>
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="editorial-link">Discuss a role on WhatsApp<ArrowUpRight size={17} aria-hidden="true" /></a>
-        <a href={`mailto:${USER_DATA.contact.email}`} className="editorial-link">Email me instead<Mail size={16} aria-hidden="true" /></a>
+        <a href={`mailto:${USER_DATA.contact.email}`} onClick={(e) => { if (onOpenMessage) { e.preventDefault(); onOpenMessage(); } }} className="editorial-link">Email me instead<Mail size={16} aria-hidden="true" /></a>
       </aside>
       <div className="career-history"><h3>Experience</h3><div className="editorial-timeline">{USER_DATA.experience.map(entry => <article key={entry.id}><p className="career-period">{entry.period}</p><div><h4>{entry.role}</h4><p className="career-company">{entry.company}</p><p className="career-location">{entry.location}</p><SpringDisclosure label="Work & responsibilities" reduced={reduced} id={`exp-${entry.id}`}><ul>{entry.achievements.map(line => <li key={line}>{line}</li>)}</ul></SpringDisclosure></div></article>)}</div>
         <h3 className="education-title">Education</h3><div className="education-list">{USER_DATA.education.map(entry => <article key={entry.degree}><p className="career-period">{entry.year}</p><div><h4>{entry.degree}</h4><p>{entry.field}</p><p className="career-location">{entry.institution}</p></div></article>)}</div>
@@ -159,8 +160,8 @@ function Delivery({ reduced, mode }) {
   </div></section>;
 }
 
-function Contact({ mode }) {
-  return <footer id="contact" tabIndex={-1} className="editorial-contact"><div className="site-wrap"><div className="contact-heading"><h2>{mode === 'recruiter' ? <>Have a role<br />in mind?</> : mode === 'client' ? <>Have a project<br />in mind?</> : <>Have a project<br />or role in mind?</>}</h2><p>{mode === 'recruiter' ? 'Tell me about your team, the role, and where I could help.' : 'Tell me what you are working on, what needs to change, or where I could help your team.'}</p></div><div className="editorial-contact-links"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><span>Let’s talk<small>WhatsApp · {USER_DATA.contact.phone}</small></span><ArrowUpRight size={30} aria-hidden="true" /></a><a href={`mailto:${USER_DATA.contact.email}`}><span>Write to me<small>{USER_DATA.contact.email}</small></span><ArrowUpRight size={30} aria-hidden="true" /></a></div><nav aria-label="Contact and footer navigation" className="contact-secondary"><a href={`tel:${USER_DATA.contact.phone.replace(/[^0-9+]/g, '')}`}><Phone size={15} aria-hidden="true" />Call me</a><a href={USER_DATA.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<ArrowUpRight size={15} aria-hidden="true" /></a><a href="#dossier">Background</a><a href="#services">Services</a><a href="#home">Back to top</a></nav><div className="contact-colophon"><span>Razim Manzoor · Dubai, UAE</span><span>© {new Date().getFullYear()}</span></div></div></footer>;
+function Contact({ mode, onOpenMessage }) {
+  return <footer id="contact" tabIndex={-1} className="editorial-contact"><div className="site-wrap"><div className="contact-heading"><h2>{mode === 'recruiter' ? <>Have a role<br />in mind?</> : mode === 'client' ? <>Have a project<br />in mind?</> : <>Have a project<br />or role in mind?</>}</h2><p>{mode === 'recruiter' ? 'Tell me about your team, the role, and where I could help.' : 'Tell me what you are working on, what needs to change, or where I could help your team.'}</p></div><div className="editorial-contact-links"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><span>Let’s talk<small>WhatsApp · {USER_DATA.contact.phone}</small></span><ArrowUpRight size={30} aria-hidden="true" /></a><a href={`mailto:${USER_DATA.contact.email}`} onClick={(e) => { if (onOpenMessage) { e.preventDefault(); onOpenMessage(); } }}><span>Write to me<small>{USER_DATA.contact.email}</small></span><ArrowUpRight size={30} aria-hidden="true" /></a></div><nav aria-label="Contact and footer navigation" className="contact-secondary"><a href={`tel:${USER_DATA.contact.phone.replace(/[^0-9+]/g, '')}`}><Phone size={15} aria-hidden="true" />Call me</a><a href={USER_DATA.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<ArrowUpRight size={15} aria-hidden="true" /></a><a href="#dossier">Background</a><a href="#services">Services</a><a href="#home">Back to top</a></nav><div className="contact-colophon"><span>Razim Manzoor · Dubai, UAE</span><span>© {new Date().getFullYear()}</span></div></div></footer>;
 }
 
 export default function EditorialPortfolio({ initialMode = 'client' }) {
@@ -168,6 +169,7 @@ export default function EditorialPortfolio({ initialMode = 'client' }) {
   const systemReduced = useReducedMotion();
   const [selected, setSelected] = useState([]);
   const [keyboard, setKeyboard] = useState(false);
+  const [messageModalOpen, setMessageModalOpen] = useState(false);
   const reduced = Boolean(systemReduced);
   useEffect(() => {
     let frame = 0;
@@ -211,11 +213,19 @@ export default function EditorialPortfolio({ initialMode = 'client' }) {
       <div className="audience-bar"><div className="site-wrap audience-inner"><p>Choose what to explore</p><AudienceToggle mode={mode} onChange={changeAudience} /></div></div>
       <div id="audience-content">
         <div hidden={mode === 'recruiter'} className="audience-region"><ServiceIndex selected={selected} setSelected={setSelected} reduced={reduced || keyboard} /></div>
-        <div hidden={mode === 'client'} className="audience-region"><Hiring reduced={reduced || keyboard} /></div>
+        <div hidden={mode === 'client'} className="audience-region"><Hiring reduced={reduced || keyboard} onOpenMessage={() => setMessageModalOpen(true)} /></div>
       </div>
       <Delivery mode={mode} reduced={reduced} />
       <div hidden={mode === 'recruiter'}><TurnkeyStudio selected={selected} setSelected={setSelected} /></div>
       <SkillsGrid />
-    </main><Contact mode={mode} />
+    </main><Contact mode={mode} onOpenMessage={() => setMessageModalOpen(true)} />
+    <QuickMessageModal
+      open={messageModalOpen}
+      onClose={() => setMessageModalOpen(false)}
+      reduced={reduced || keyboard}
+      initialSource={mode === 'recruiter' ? 'Recruiter Inquiry' : 'Direct Message'}
+      title={mode === 'recruiter' ? 'Discuss an opportunity with Razim' : 'Send a message to Razim'}
+      description={mode === 'recruiter' ? 'Tell me about your team, the role, and where I could help. Your note goes straight to my inbox.' : 'Tell me what you are working on, what needs to change, or where I could help. Your message goes straight to my inbox.'}
+    />
   </div></MotionConfig>;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, Copy, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Loader2, MessageCircle, Send } from "lucide-react";
 import { SERVICES_CATALOG } from "@/lib/services";
 import { emailDraft, whatsappDraft, WHATSAPP_URL } from "@/lib/contact";
 import { estimateAutomation } from "@/lib/estimate";
@@ -36,6 +36,9 @@ export function TurnkeyStudio({ selected, setSelected }: { selected: string[]; s
   const [notes, setNotes] = useState("");
   const [existingTools, setExistingTools] = useState("");
   const [deadline, setDeadline] = useState("");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [submitError, setSubmitError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [copyStatus, setCopyStatus] = useState<"idle" | "copying" | "success" | "error">("idle");
   const [copiedText, setCopiedText] = useState("");
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -84,6 +87,44 @@ export function TurnkeyStudio({ selected, setSelected }: { selected: string[]; s
       timer.current = setTimeout(() => setCopyStatus("idle"), 3000);
     } catch {
       setCopyStatus("error");
+    }
+  };
+
+  const submitInquiry = async () => {
+    if (!contact.trim() && !notes.trim() && chosen.length === 0) {
+      setSubmitError("Please provide an email or phone number, or describe your project.");
+      setSubmitStatus("error");
+      return;
+    }
+    setSubmitStatus("submitting");
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: company,
+          contact,
+          notes,
+          needs: needs.map((n) => n.shortTitle),
+          services: chosen.map((c) => c.title),
+          timeline,
+          tools: existingTools,
+          deadline,
+          source: "Project Planner",
+          hp: honeypot,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setSubmitError(data.error || "Unable to send inquiry. Please reach out via WhatsApp or email directly.");
+        setSubmitStatus("error");
+        return;
+      }
+      setSubmitStatus("success");
+    } catch {
+      setSubmitError("Network connection error. Please use WhatsApp or email draft.");
+      setSubmitStatus("error");
     }
   };
 
@@ -158,13 +199,64 @@ export function TurnkeyStudio({ selected, setSelected }: { selected: string[]; s
               </div></details>
             </div>
             <details className="mt-4"><summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Preview your message</summary><p className="mt-2 whitespace-pre-wrap break-words rounded-lg bg-[var(--surface-hover)] p-4 text-sm leading-relaxed">{message}</p></details>
-            <div className="mt-5 grid grid-cols-2 gap-2">
-              <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="action-primary col-span-2"><MessageCircle size={18} aria-hidden="true" /> Review in WhatsApp <ArrowUpRight size={15} aria-hidden="true" /></a>
-              <a href={emailDraft(message)} className="action-secondary"><Mail size={17} aria-hidden="true" /> Open an email draft</a>
-              <button type="button" onClick={copy} disabled={copyStatus === "copying"} className="action-secondary disabled:opacity-60">{copied ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}{copyStatus === "copying" ? "Copying…" : copied ? "Copied" : "Copy message"}</button>
-            </div>
-            <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">Nothing is submitted here. WhatsApp or your email app opens a draft; you choose when to send it.</p>
-            <p role="status" aria-live="polite" className="mt-2 text-sm">{copied ? "Message copied." : copyStatus === "error" ? "Copy did not work. Select the message below and copy it manually." : ""}</p>
+            
+            {submitStatus === "success" ? (
+              <div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5 text-left">
+                <div className="flex items-center gap-2 text-base font-semibold text-emerald-600 dark:text-emerald-400">
+                  <Check size={20} aria-hidden="true" /> Brief delivered directly to Razim
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
+                  Thank you{company ? `, ${company}` : ""}! Your brief has been sent to Razim&apos;s inbox. You can expect a response within 24 hours.
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <button type="button" onClick={() => setSubmitStatus("idle")} className="action-secondary min-h-11 px-4 text-sm font-semibold">
+                    Send another note
+                  </button>
+                  <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="editorial-link text-sm">
+                    Follow up on WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <>
+                <input type="text" name="hp_planner" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+                <div className="mt-5 grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={submitInquiry}
+                    disabled={submitStatus === "submitting"}
+                    className="action-primary col-span-2 flex min-h-12 items-center justify-center gap-2 text-sm font-semibold disabled:opacity-60"
+                  >
+                    {submitStatus === "submitting" ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" aria-hidden="true" /> Delivering to Razim…
+                      </>
+                    ) : (
+                      <>
+                        <Send size={18} aria-hidden="true" /> Send brief directly to Razim
+                      </>
+                    )}
+                  </button>
+                  <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="action-secondary flex min-h-11 items-center justify-center gap-2 text-sm">
+                    <MessageCircle size={17} aria-hidden="true" /> Review in WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
+                  </a>
+                  <button type="button" onClick={copy} disabled={copyStatus === "copying"} className="action-secondary flex min-h-11 items-center justify-center gap-2 text-sm disabled:opacity-60">
+                    {copied ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}
+                    {copyStatus === "copying" ? "Copying…" : copied ? "Copied" : "Copy brief"}
+                  </button>
+                </div>
+                {submitStatus === "error" && (
+                  <p role="alert" className="mt-2 text-xs font-medium text-rose-500">
+                    {submitError}
+                  </p>
+                )}
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-[var(--muted)]">
+                  <span>Sends directly to Razim’s inbox via Resend.</span>
+                  <a href={emailDraft(message)} className="underline hover:text-[var(--foreground)]">Or open in email app</a>
+                </div>
+              </>
+            )}
+            <p role="status" aria-live="polite" className="mt-2 text-xs text-[var(--muted)]">{copied ? "Brief copied to clipboard." : copyStatus === "error" ? "Copy did not work. Select the message below and copy it manually." : ""}</p>
             {copyStatus === "error" && <div className="mt-3"><label htmlFor="manual-copy" className="mb-2 block text-sm font-medium">Message to copy</label><textarea id="manual-copy" readOnly value={message} rows={6} className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] p-3 text-base" /></div>}
           </div>
         </div>
