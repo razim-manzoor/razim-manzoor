@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { motion, MotionConfig, useInView, useReducedMotion } from 'motion/react';
+import { AnimatePresence, motion, MotionConfig, useInView, useReducedMotion } from 'motion/react';
 import { ArrowDown, ArrowUpRight, Check, ChevronDown, Download, Mail, Phone, Plus, X } from 'lucide-react';
 import NavBar from '@/components/NavBar';
 import SkillsGrid from '@/components/SkillsGrid';
@@ -22,6 +22,44 @@ const steps = [
   { title: 'Build & review', detail: 'Review a working version early, test the important journeys and agree the next changes together.', result: 'A reviewable build' },
   { title: 'Launch & hand over', detail: 'Deploy the agreed build, document how to use and maintain it, and walk your team through the result.', result: 'Code, access & setup notes' },
 ];
+
+function SpringDisclosure({ label, children, reduced, id, defaultOpen = false, className = '' }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className={`spring-disclosure ${className}`}>
+      <button
+        type="button"
+        className="spring-disclosure-trigger"
+        aria-expanded={open}
+        aria-controls={id ? `panel-${id}` : undefined}
+        onClick={() => setOpen(prev => !prev)}
+      >
+        <span>{label}</span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: reduced ? 0 : 0.2, ease }}
+          className="inline-flex"
+        >
+          <ChevronDown className="disclosure-chevron" size={15} aria-hidden="true" />
+        </motion.span>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            id={id ? `panel-${id}` : undefined}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: reduced ? 0 : 0.24, ease }}
+            style={{ overflow: 'hidden' }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 function Opening({ mode, reduced }) {
   const hiring = mode === 'recruiter';
@@ -78,9 +116,11 @@ function ServiceIndex({ selected, setSelected, reduced }) {
           <p className="catalogue-summary">{category.summary}</p>
           {category.items.map(item => <article key={item.id} className="editorial-service" data-selected={selected.includes(item.id)}>
             <div className="service-row-main"><div><h3>{item.title}</h3><p>{item.tagline}</p></div><button className="scope-add" aria-pressed={selected.includes(item.id)} aria-label={`${selected.includes(item.id) ? 'Remove' : 'Add'} ${item.title} ${selected.includes(item.id) ? 'from' : 'to'} brief`} onClick={() => toggle(item)}>{selected.includes(item.id) ? <Check size={17} aria-hidden="true" /> : <Plus size={17} aria-hidden="true" />}<span>{selected.includes(item.id) ? 'Added' : 'Add'}</span></button></div>
-            <details><summary>Scope & deliverables<ChevronDown className="disclosure-chevron" size={15} aria-hidden="true" /></summary><div className="scope-copy"><p>{item.description}</p><p>{item.businessImpact}</p><ul>{item.deliverables.map(line => <li key={line}>{line}</li>)}</ul><p className="scope-terms">{item.scopeType} · Final scope agreed before starting.</p></div></details>
+            <SpringDisclosure label="Scope & deliverables" reduced={reduced} id={`scope-${item.id}`}>
+              <div className="scope-copy"><p>{item.description}</p><p>{item.businessImpact}</p><ul>{item.deliverables.map(line => <li key={line}>{line}</li>)}</ul><p className="scope-terms">{item.scopeType} · Final scope agreed before starting.</p></div>
+            </SpringDisclosure>
           </article>)}
-          <div className="selection-summary"><div><h3>Your brief <span className="brief-count">{chosen.length}</span></h3>{chosen.length ? <ul>{chosen.map(item => <motion.li layout={!reduced} key={item.id}><span>{item.title}</span><button aria-label={`Remove ${item.title} from brief`} onClick={() => toggle(item)}><X size={16} aria-hidden="true" /></button></motion.li>)}</ul> : <p>Choose an area, or start with your own problem.</p>}</div><a className="editorial-link" href="#studio">{chosen.length ? 'Review your brief' : 'Help me define the project'}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
+          <div className="selection-summary"><div><h3>Your brief <motion.span key={chosen.length} initial={reduced ? false : { scale: 1.35 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 500, damping: 25 }} className="brief-count inline-block">{chosen.length}</motion.span></h3>{chosen.length ? <ul>{chosen.map(item => <motion.li layout={!reduced} key={item.id}><span>{item.title}</span><button aria-label={`Remove ${item.title} from brief`} onClick={() => toggle(item)}><X size={16} aria-hidden="true" /></button></motion.li>)}</ul> : <p>Choose an area, or start with your own problem.</p>}</div><a className="editorial-link" href="#studio">{chosen.length ? 'Review your brief' : 'Help me define the project'}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
           <p role="status" className="selection-status">{feedback}</p>
         </div>
       </div>
@@ -89,7 +129,7 @@ function ServiceIndex({ selected, setSelected, reduced }) {
   </section>;
 }
 
-function Hiring() {
+function Hiring({ reduced }) {
   return <section id="dossier" tabIndex={-1} className="portfolio-section editorial-hiring"><div className="site-wrap">
     <div className="section-heading"><h2 className="section-title">Business, data<br /><span>& development.</span></h2><p className="section-description">An MBA in Data Science & Analytics, experience in business workflows and reporting, and hands-on development of web applications and automation tools.</p></div>
     <div className="career-layout">
@@ -99,9 +139,9 @@ function Hiring() {
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="editorial-link">Discuss a role on WhatsApp<ArrowUpRight size={17} aria-hidden="true" /></a>
         <a href={`mailto:${USER_DATA.contact.email}`} className="editorial-link">Email me instead<Mail size={16} aria-hidden="true" /></a>
       </aside>
-      <div className="career-history"><h3>Experience</h3><div className="editorial-timeline">{USER_DATA.experience.map(entry => <article key={entry.id}><p className="career-period">{entry.period}</p><div><h4>{entry.role}</h4><p className="career-company">{entry.company}</p><p className="career-location">{entry.location}</p><details><summary>Work & responsibilities<ChevronDown className="disclosure-chevron" size={15} aria-hidden="true" /></summary><ul>{entry.achievements.map(line => <li key={line}>{line}</li>)}</ul></details></div></article>)}</div>
+      <div className="career-history"><h3>Experience</h3><div className="editorial-timeline">{USER_DATA.experience.map(entry => <article key={entry.id}><p className="career-period">{entry.period}</p><div><h4>{entry.role}</h4><p className="career-company">{entry.company}</p><p className="career-location">{entry.location}</p><SpringDisclosure label="Work & responsibilities" reduced={reduced} id={`exp-${entry.id}`}><ul>{entry.achievements.map(line => <li key={line}>{line}</li>)}</ul></SpringDisclosure></div></article>)}</div>
         <h3 className="education-title">Education</h3><div className="education-list">{USER_DATA.education.map(entry => <article key={entry.degree}><p className="career-period">{entry.year}</p><div><h4>{entry.degree}</h4><p>{entry.field}</p><p className="career-location">{entry.institution}</p></div></article>)}</div>
-        <details className="career-certificates"><summary>Courses, certificates & recognition<ChevronDown className="disclosure-chevron" size={15} aria-hidden="true" /></summary><ul>{USER_DATA.certifications.map(line => <li key={line}>{line}</li>)}</ul></details>
+        <SpringDisclosure label="Courses, certificates & recognition" reduced={reduced} id="certifications" className="career-certificates"><ul>{USER_DATA.certifications.map(line => <li key={line}>{line}</li>)}</ul></SpringDisclosure>
         <a href={USER_DATA.contact.linkedin} target="_blank" rel="noopener noreferrer" className="editorial-link">View LinkedIn profile<ArrowUpRight size={17} aria-hidden="true" /></a>
       </div>
     </div>
@@ -111,9 +151,11 @@ function Hiring() {
 function Delivery({ reduced, mode }) {
   const ref = useRef(null);
   const seen = useInView(ref, { once: true, amount: 0.3 });
+  const [activeStep, setActiveStep] = useState(0);
+
   return <section id="pipeline" tabIndex={-1} className="portfolio-section editorial-delivery"><div className="site-wrap">
     <div className="section-heading"><h2 className="section-title">{mode === 'recruiter' ? <>Understand the work.<br />Build something useful.</> : <>A clear path from<br />idea to handover.</>}</h2><div><p className="section-description">The process stays simple even when the system has many moving parts.</p>{mode !== 'recruiter' && <p className="delivery-timing">Focused work typically takes 1–2 weeks; a scoped application often takes 3–4. Timing is confirmed after we understand the requirements.</p>}</div></div>
-    <ol ref={ref} className="editorial-delivery-steps">{steps.map((step, index) => <li key={step.title}><div className="delivery-marker"><span aria-hidden="true">{index + 1}</span><motion.i aria-hidden="true" initial={false} animate={{ scaleX: reduced || seen ? 1 : 0.06 }} transition={{ duration: reduced ? 0 : 0.65, delay: reduced ? 0 : index * 0.16, ease }} /></div><h3>{step.title}</h3><p>{step.detail}</p><div className="delivery-result"><Check size={17} aria-hidden="true" />{step.result}</div></li>)}</ol>
+    <ol ref={ref} className="editorial-delivery-steps">{steps.map((step, index) => <li key={step.title} className={`editorial-step-card ${activeStep === index ? "is-active" : ""}`} onMouseEnter={() => setActiveStep(index)} onClick={() => setActiveStep(index)}><div className="delivery-marker"><span className={`step-badge ${activeStep === index ? "is-active-badge" : ""}`} aria-hidden="true">{index + 1}</span><motion.i aria-hidden="true" initial={false} animate={{ scaleX: reduced || seen ? 1 : 0.06, opacity: activeStep === index ? 1 : 0.55 }} transition={{ duration: reduced ? 0 : 0.65, delay: reduced ? 0 : index * 0.16, ease }} /></div><h3>{step.title}</h3><p>{step.detail}</p><div className={`delivery-result ${activeStep === index ? "is-active-result" : ""}`}><Check size={17} aria-hidden="true" />{step.result}</div></li>)}</ol>
   </div></section>;
 }
 
@@ -169,7 +211,7 @@ export default function EditorialPortfolio({ initialMode = 'client' }) {
       <div className="audience-bar"><div className="site-wrap audience-inner"><p>Choose what to explore</p><AudienceToggle mode={mode} onChange={changeAudience} /></div></div>
       <div id="audience-content">
         <div hidden={mode === 'recruiter'} className="audience-region"><ServiceIndex selected={selected} setSelected={setSelected} reduced={reduced || keyboard} /></div>
-        <div hidden={mode === 'client'} className="audience-region"><Hiring /></div>
+        <div hidden={mode === 'client'} className="audience-region"><Hiring reduced={reduced || keyboard} /></div>
       </div>
       <Delivery mode={mode} reduced={reduced} />
       <div hidden={mode === 'recruiter'}><TurnkeyStudio selected={selected} setSelected={setSelected} /></div>

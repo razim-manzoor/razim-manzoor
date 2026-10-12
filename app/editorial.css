@@ -65,6 +65,13 @@
 .editorial-service[data-selected=true] h3 { color:var(--accent); }
 .portfolio-editorial summary { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:44px; list-style:none; }
 .editorial-service summary { width:fit-content; gap:9px; margin-top:10px; font-size:13px; color:var(--muted); }
+.spring-disclosure-trigger { display:inline-flex; align-items:center; justify-content:space-between; gap:9px; min-height:44px; font-size:13px; color:var(--muted); cursor:pointer; background:transparent; border:0; padding:0; width:fit-content; text-align:left; transition:color .16s ease; }
+.spring-disclosure-trigger:hover { color:var(--accent); }
+.spring-disclosure-trigger:focus-visible { outline:2px solid var(--primary-glow); outline-offset:3px; }
+.editorial-service .spring-disclosure-trigger { margin-top:10px; }
+.editorial-timeline .spring-disclosure-trigger { margin-top:12px; }
+.career-certificates.spring-disclosure { border-top:1px solid var(--border); padding-top:12px; margin-top:20px; }
+.career-certificates .spring-disclosure-trigger { width:100%; font-size:14px; }
 .scope-copy { font-size:14px; line-height:1.75; max-width:70ch; padding:12px 0; }
 .scope-copy p + p { margin-top:12px; }
 .scope-copy ul { list-style:disc; padding-left:20px; margin:14px 0; }
@@ -113,6 +120,13 @@
 .delivery-marker { display:flex; align-items:center; gap:16px; }
 .delivery-marker > span { font-size:13px; color:var(--feature-muted); }
 .delivery-marker i { height:1px; flex:1; background:var(--feature-muted); transform-origin:left; }
+.editorial-step-card { transition:transform .22s cubic-bezier(.16,1,.3,1), opacity .22s ease; cursor:pointer; border-radius:8px; padding:8px; margin:-8px; }
+@media (hover:hover) and (pointer:fine) {
+  .editorial-step-card:hover { transform:translateY(-2px); background:rgba(255,255,255,.04); }
+}
+.editorial-step-card:active { transform:scale(.98); }
+.step-badge.is-active-badge { color:var(--feature-ink); font-weight:600; }
+.delivery-result.is-active-result { color:var(--feature-ink); }
 .editorial-delivery-steps h3 { font-size:24px; font-weight:500; margin-top:24px; }
 .editorial-delivery-steps li > p { color:var(--feature-muted); font-size:15px; line-height:1.75; margin-top:16px; }
 .delivery-result { display:flex; align-items:center; gap:9px; font-size:13px; color:var(--feature-muted); margin-top:24px; }
