@@ -114,13 +114,23 @@ function ServiceIndex({ selected, setSelected, reduced }) {
           {SERVICES_CATALOG.map(item => <button key={item.id} aria-pressed={active === item.id} aria-controls="service-list" onClick={() => setActive(item.id)}>{active === item.id && <motion.span className="category-rule" layoutId="category-rule" aria-hidden="true" transition={{ duration: reduced ? 0 : 0.2, ease }} />}<span>{item.shortTitle}</span><ArrowUpRight size={18} aria-hidden="true" /></button>)}
         </div>
         <div id="service-list">
-          <p className="catalogue-summary">{category.summary}</p>
-          {category.items.map(item => <article key={item.id} className="editorial-service" data-selected={selected.includes(item.id)}>
-            <div className="service-row-main"><div><h3>{item.title}</h3><p>{item.tagline}</p></div><button className="scope-add" aria-pressed={selected.includes(item.id)} aria-label={`${selected.includes(item.id) ? 'Remove' : 'Add'} ${item.title} ${selected.includes(item.id) ? 'from' : 'to'} brief`} onClick={() => toggle(item)}>{selected.includes(item.id) ? <Check size={17} aria-hidden="true" /> : <Plus size={17} aria-hidden="true" />}<span>{selected.includes(item.id) ? 'Added' : 'Add'}</span></button></div>
-            <SpringDisclosure label="Scope & deliverables" reduced={reduced} id={`scope-${item.id}`}>
-              <div className="scope-copy"><p>{item.description}</p><p>{item.businessImpact}</p><ul>{item.deliverables.map(line => <li key={line}>{line}</li>)}</ul><p className="scope-terms">{item.scopeType} · Final scope agreed before starting.</p></div>
-            </SpringDisclosure>
-          </article>)}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={category.id}
+              initial={reduced ? false : { opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduced ? undefined : { opacity: 0, y: -5 }}
+              transition={{ duration: reduced ? 0 : 0.16, ease }}
+            >
+              <p className="catalogue-summary">{category.summary}</p>
+              {category.items.map(item => <article key={item.id} className="editorial-service" data-selected={selected.includes(item.id)}>
+                <div className="service-row-main"><div><h3>{item.title}</h3><p>{item.tagline}</p></div><button className="scope-add" aria-pressed={selected.includes(item.id)} aria-label={`${selected.includes(item.id) ? 'Remove' : 'Add'} ${item.title} ${selected.includes(item.id) ? 'from' : 'to'} brief`} onClick={() => toggle(item)}>{selected.includes(item.id) ? <Check size={17} aria-hidden="true" /> : <Plus size={17} aria-hidden="true" />}<span>{selected.includes(item.id) ? 'Added' : 'Add'}</span></button></div>
+                <SpringDisclosure label="Scope & deliverables" reduced={reduced} id={`scope-${item.id}`}>
+                  <div className="scope-copy"><p>{item.description}</p><p>{item.businessImpact}</p><ul>{item.deliverables.map(line => <li key={line}>{line}</li>)}</ul><p className="scope-terms">{item.scopeType} · Final scope agreed before starting.</p></div>
+                </SpringDisclosure>
+              </article>)}
+            </motion.div>
+          </AnimatePresence>
           <div className="selection-summary"><div><h3>Your brief <motion.span key={chosen.length} initial={reduced ? false : { scale: 1.35 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 500, damping: 25 }} className="brief-count inline-block">{chosen.length}</motion.span></h3>{chosen.length ? <ul>{chosen.map(item => <motion.li layout={!reduced} key={item.id}><span>{item.title}</span><button aria-label={`Remove ${item.title} from brief`} onClick={() => toggle(item)}><X size={16} aria-hidden="true" /></button></motion.li>)}</ul> : <p>Choose an area, or start with your own problem.</p>}</div><a className="editorial-link" href="#studio">{chosen.length ? 'Review your brief' : 'Help me define the project'}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
           <p role="status" className="selection-status">{feedback}</p>
         </div>

@@ -1,16 +1,79 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Check, Copy, Loader2, MessageCircle, Send } from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, Copy, Loader2, MessageCircle, Send } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { SERVICES_CATALOG } from "@/lib/services";
 import { emailDraft, whatsappDraft, WHATSAPP_URL } from "@/lib/contact";
 import { estimateAutomation } from "@/lib/estimate";
 import { projectSelectionEvent } from "@/lib/project-planner";
-import type { Dispatch, SetStateAction } from "react";
+import { spatialSpring } from "@/lib/motion";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const tracks = SERVICES_CATALOG.flatMap((pillar) => pillar.items.map((item) => ({ ...item, category: pillar.shortTitle, needId: pillar.id })));
 const timelines = ["Help me decide", "A new build", "An improvement to an existing system", "Ongoing development or support"];
 const number = new Intl.NumberFormat("en-AE", { maximumFractionDigits: 0 });
+
+function StudioDisclosure({
+  title,
+  children,
+  isOpen,
+  defaultOpen = false,
+  onToggle,
+  className = "",
+  reduced = false,
+}: {
+  title: string;
+  children: ReactNode;
+  isOpen?: boolean;
+  defaultOpen?: boolean;
+  onToggle?: (open: boolean) => void;
+  className?: string;
+  reduced?: boolean;
+}) {
+  const [internalOpen, setInternalOpen] = useState(defaultOpen);
+  const open = isOpen !== undefined ? isOpen : internalOpen;
+
+  const toggle = () => {
+    const next = !open;
+    if (isOpen === undefined) setInternalOpen(next);
+    onToggle?.(next);
+  };
+
+  return (
+    <div className={className}>
+      <button
+        type="button"
+        aria-expanded={open}
+        onClick={toggle}
+        className="flex min-h-11 w-full items-center justify-between gap-3 py-1 text-left text-sm font-semibold text-[var(--accent)] transition-opacity hover:opacity-80"
+      >
+        <span>{title}</span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: reduced ? 0 : 0.2 }}
+          className="inline-flex shrink-0"
+        >
+          <ChevronDown size={17} aria-hidden="true" />
+        </motion.span>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={reduced ? { duration: 0 } : spatialSpring}
+            style={{ overflow: "hidden" }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 function RangeField({ id, label, value, max, step = 1, display, onChange }: {
   id: string; label: string; value: number; max: number; step?: number; display: string; onChange: (value: number) => void;
@@ -27,6 +90,7 @@ function RangeField({ id, label, value, max, step = 1, display, onChange }: {
 }
 
 export function TurnkeyStudio({ selected, setSelected }: { selected: string[]; setSelected: Dispatch<SetStateAction<string[]>> }) {
+  const reduced = useReducedMotion() ?? false;
   const [activeTab, setActiveTab] = useState<"scope" | "estimate">("scope");
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
   const [briefOpen, setBriefOpen] = useState(true);
@@ -146,150 +210,265 @@ export function TurnkeyStudio({ selected, setSelected }: { selected: string[]; s
         <div className="planner-panel">
         {chosen.length > 0 && <div className="mb-7 border-y border-[var(--border)] py-4"><h3 className="text-base font-semibold">Services to discuss ({chosen.length})</h3><ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2">{chosen.map((track) => <li key={track.id} className="flex min-w-0 items-center gap-3 text-sm"><span>{track.title}</span><button type="button" onClick={() => setSelected((previous) => previous.filter((id) => id !== track.id))} aria-label={`Remove ${track.title}`} className="min-h-11 shrink-0 px-2 font-semibold text-[var(--accent)]">Remove</button></li>)}</ul></div>}
         <div role="group" aria-label="Project planning tools" className="mb-8 flex flex-wrap gap-2 border-b border-[var(--border)] pb-5">
-          {([{ id: "scope", label: "Project planner" }, { id: "estimate", label: "Time-value estimate" }] as const).map((tab) => (
-            <button key={tab.id} type="button" aria-pressed={activeTab === tab.id} aria-controls={`tool-${tab.id}`} onClick={() => setActiveTab(tab.id)} className={`min-h-12 rounded-lg px-4 text-sm font-semibold transition-colors ${activeTab === tab.id ? "bg-[var(--primary)] text-[var(--on-primary)]" : "bg-[var(--surface-hover)] text-[var(--muted)] hover:text-[var(--foreground)]"}`}>{tab.label}</button>
-          ))}
-        </div>
-
-        <div id="tool-scope" hidden={activeTab !== "scope"} className="planner-scope">
-          <details open={briefOpen} onToggle={(event) => setBriefOpen(event.currentTarget.open)}>
-            <summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Adjust goals & starting point (optional)</summary>
-            <div className="mt-4 space-y-7">
-            <fieldset>
-              <legend className="mb-3 text-lg font-semibold">What would you like to achieve?</legend>
-              <p className="mb-4 text-sm leading-relaxed text-[var(--muted)]">Choose any that fit, combine several, or leave this blank. A custom idea is welcome.</p>
-              <div className="space-y-2">
-                {SERVICES_CATALOG.map((need) => {
-                  const implied = chosen.some((track) => track.needId === need.id);
-                  return <label key={need.id} className="flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[var(--border)] p-3 text-sm"><input type="checkbox" name="project-need" value={need.id} checked={selectedNeeds.includes(need.id) || implied} onChange={() => {
-                    if (selectedNeeds.includes(need.id) || implied) {
-                      setSelectedNeeds((previous) => previous.filter((id) => id !== need.id));
-                      setSelected((previous) => previous.filter((id) => !need.items.some((item) => item.id === id)));
-                    } else setSelectedNeeds((previous) => [...previous, need.id]);
-                  }} className="h-4 w-4 shrink-0 accent-[var(--primary)]" /><span>{need.shortTitle}</span></label>;
-                })}
-              </div>
-              <details className="mt-5">
-                <summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Choose specific services (optional)</summary>
-                <p className="mt-2 text-xs leading-relaxed text-[var(--muted)]">Only choose these if you already have a solution in mind. Services can be combined into one scope.</p>
-                <div className="mt-4 space-y-5">
-                  {SERVICES_CATALOG.map((need) => <fieldset key={need.id}><legend className="mb-2 text-sm font-semibold">{need.shortTitle}</legend><div className="space-y-1">{need.items.map((track) => <label key={track.id} className="flex min-h-11 cursor-pointer items-center gap-3 text-sm"><input type="checkbox" name="project-area" value={track.id} checked={selected.includes(track.id)} onChange={() => setSelected((previous) => previous.includes(track.id) ? previous.filter((id) => id !== track.id) : [...previous, track.id])} className="h-4 w-4 shrink-0 accent-[var(--primary)]" /><span>{track.title}</span></label>)}</div></fieldset>)}
-                </div>
-              </details>
-            </fieldset>
-            <fieldset>
-              <legend className="mb-3 text-lg font-semibold">Where are you starting?</legend>
-              <div className="grid gap-2 sm:grid-cols-2">
-                {timelines.map((item) => <label key={item} className={`flex min-h-14 cursor-pointer items-center gap-3 rounded-lg border p-3 text-sm ${timeline === item ? "border-[var(--primary)] bg-[var(--surface-hover)]" : "border-[var(--border)] hover:bg-[var(--surface-hover)]"}`}><input type="radio" name="project-plan" value={item} checked={timeline === item} onChange={() => setTimeline(item)} className="h-4 w-4 shrink-0 accent-[var(--primary)]" /><span>{item}</span></label>)}
-              </div>
-              <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">We work out the scope, approach, budget, and timing together before work starts.</p>
-            </fieldset>
-            </div>
-          </details>
-          <div className="min-w-0">
-            <h3 className="text-lg font-semibold">Your project note</h3>
-            <p className="mt-2 text-sm text-[var(--muted)]">All fields are optional. This creates a draft for you to review.</p>
-            <div className="mt-5 grid gap-5 sm:grid-cols-2">
-              <div><label htmlFor="project-name" className="mb-2 block text-sm font-medium">Your name or company</label><input id="project-name" name="name" autoComplete="name" maxLength={160} value={company} onChange={(event) => setCompany(event.target.value)} placeholder="For example, Alex / Acme" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
-              <div><label htmlFor="project-contact" className="mb-2 block text-sm font-medium">Email or phone</label><input id="project-contact" name="contact" autoComplete="off" spellCheck={false} maxLength={160} value={contact} onChange={(event) => setContact(event.target.value)} placeholder="alex@example.com or +971…" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
-              <div className="sm:col-span-2"><label htmlFor="project-notes" className="mb-2 block text-sm font-medium">The problem, idea, or result you want</label><textarea id="project-notes" name="notes" autoComplete="off" maxLength={2000} rows={4} value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Who is this for? What should they be able to do? What is difficult or missing today?" className="w-full resize-y rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base leading-relaxed" /><p className="mt-1 text-right text-xs tabular-nums text-[var(--muted)]">{notes.length}/2,000</p></div>
-              <details className="sm:col-span-2"><summary className="flex min-h-11 items-center justify-between gap-3 text-sm font-semibold text-[var(--accent)]">Add tools or timing (optional)</summary><div className="mt-3 grid gap-5 sm:grid-cols-2">
-              <div><label htmlFor="project-tools" className="mb-2 block text-sm font-medium">Current tools or website</label><input id="project-tools" name="tools" maxLength={300} value={existingTools} onChange={(event) => setExistingTools(event.target.value)} placeholder="For example, Shopify, Excel, a CRM, or starting from scratch" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
-              <div><label htmlFor="project-deadline" className="mb-2 block text-sm font-medium">Target date or timing</label><input id="project-deadline" name="deadline" maxLength={160} value={deadline} onChange={(event) => setDeadline(event.target.value)} placeholder="For example, before launch in November, or flexible" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
-              </div></details>
-            </div>
-            <details className="mt-4"><summary className="flex min-h-11 items-center text-sm font-semibold text-[var(--accent)]">Preview your message</summary><p className="mt-2 whitespace-pre-wrap break-words rounded-lg bg-[var(--surface-hover)] p-4 text-sm leading-relaxed">{message}</p></details>
-            
-            {submitStatus === "success" ? (
-              <div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5 text-left">
-                <div className="flex items-center gap-2 text-base font-semibold text-emerald-600 dark:text-emerald-400">
-                  <Check size={20} aria-hidden="true" /> Brief delivered directly to Razim
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
-                  Thank you{company ? `, ${company}` : ""}! Your brief has been sent to Razim&apos;s inbox. You can expect a response within 24 hours.
-                </p>
-                <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <button type="button" onClick={() => setSubmitStatus("idle")} className="action-secondary min-h-11 px-4 text-sm font-semibold">
-                    Send another note
-                  </button>
-                  <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="editorial-link text-sm">
-                    Follow up on WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
-                  </a>
-                </div>
-              </div>
-            ) : (
-              <>
-                <input type="text" name="hp_planner" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
-                <div className="mt-5 grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={submitInquiry}
-                    disabled={submitStatus === "submitting"}
-                    className="action-primary col-span-2 flex min-h-12 items-center justify-center gap-2 text-sm font-semibold disabled:opacity-60"
-                  >
-                    {submitStatus === "submitting" ? (
-                      <>
-                        <Loader2 size={18} className="animate-spin" aria-hidden="true" /> Delivering to Razim…
-                      </>
-                    ) : (
-                      <>
-                        <Send size={18} aria-hidden="true" /> Send brief directly to Razim
-                      </>
-                    )}
-                  </button>
-                  <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="action-secondary flex min-h-11 items-center justify-center gap-2 text-sm">
-                    <MessageCircle size={17} aria-hidden="true" /> Review in WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
-                  </a>
-                  <button type="button" onClick={copy} disabled={copyStatus === "copying"} className="action-secondary flex min-h-11 items-center justify-center gap-2 text-sm disabled:opacity-60">
-                    {copied ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}
-                    {copyStatus === "copying" ? "Copying…" : copied ? "Copied" : "Copy brief"}
-                  </button>
-                </div>
-                {submitStatus === "error" && (
-                  <p role="alert" className="mt-2 text-xs font-medium text-rose-500">
-                    {submitError}
-                  </p>
+          {([{ id: "scope", label: "Project planner" }, { id: "estimate", label: "Time-value estimate" }] as const).map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                aria-pressed={isActive}
+                aria-controls={`tool-${tab.id}`}
+                onClick={() => setActiveTab(tab.id)}
+                className={`relative min-h-12 rounded-lg px-4 text-sm font-semibold transition-colors ${
+                  isActive ? "text-[var(--on-primary)]" : "bg-[var(--surface-hover)] text-[var(--muted)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="studio-active-tab"
+                    className="absolute inset-0 rounded-lg bg-[var(--primary)]"
+                    transition={reduced ? { duration: 0 } : spatialSpring}
+                  />
                 )}
-                <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-[var(--muted)]">
-                  <span>Sends directly to Razim’s inbox via Resend.</span>
-                  <a href={emailDraft(message)} className="underline hover:text-[var(--foreground)]">Or open in email app</a>
-                </div>
-              </>
-            )}
-            <p role="status" aria-live="polite" className="mt-2 text-xs text-[var(--muted)]">{copied ? "Brief copied to clipboard." : copyStatus === "error" ? "Copy did not work. Select the message below and copy it manually." : ""}</p>
-            {copyStatus === "error" && <div className="mt-3"><label htmlFor="manual-copy" className="mb-2 block text-sm font-medium">Message to copy</label><textarea id="manual-copy" readOnly value={message} rows={6} className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] p-3 text-base" /></div>}
-          </div>
+                <span className="relative z-10">{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
 
-        <div id="tool-estimate" hidden={activeTab !== "estimate"} className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
-            <h3 className="text-xl font-semibold">Explore the value of time released</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">An illustrative model using your assumptions. Changing currency changes the unit; it does not convert the amounts.</p>
-            <div className="mt-6 space-y-4">
-              <div><label htmlFor="estimate-currency" className="mb-2 block text-sm font-medium">Currency</label><select id="estimate-currency" name="currency" value={currency} onChange={(event) => setCurrency(event.target.value)} className="min-h-12 rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 text-base text-[var(--foreground)]"><option value="AED">AED</option><option value="USD">USD</option></select></div>
-              <RangeField id="manual-hours" label="Manual hours per week" value={hours} max={80} display={`${hours} hours`} onChange={setHours} />
-              <RangeField id="hourly-rate" label="Value per work hour" value={hourlyValue} max={500} step={5} display={money(hourlyValue)} onChange={setHourlyValue} />
-              <RangeField id="automation-rate" label="Share of work automated" value={automationPercent} max={100} step={5} display={`${automationPercent}%`} onChange={setAutomationPercent} />
-              <RangeField id="implementation-cost" label="Upfront build cost" value={upfrontCost} max={50000} step={500} display={money(upfrontCost)} onChange={setUpfrontCost} />
-              <RangeField id="running-cost" label="Monthly running & upkeep cost" value={runningCost} max={5000} step={50} display={money(runningCost)} onChange={setRunningCost} />
-            </div>
-          </div>
-          <div className="min-w-0 rounded-xl bg-[var(--surface-hover)] p-5 md:p-7">
-            <h3 className="text-xl font-semibold">Estimated annual time value</h3>
-            <dl className="mt-6 divide-y divide-[var(--border)]">
-              {[
-                ["Hours released per year", `${number.format(result.annualHours)} hours`],
-                ["Value of that time", money(result.annualTimeValue)],
-                ["Annual running costs", money(runningCost * 12)],
-                ["Value after running costs", money(result.annualNetValue)],
-                ["Modeled payback", payback],
-              ].map(([label, value]) => <div key={label} className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-4"><dt className="text-sm text-[var(--muted)]">{label}</dt><dd className="break-words text-lg font-semibold tabular-nums">{value}</dd></div>)}
-            </dl>
-            <p className="mt-5 text-sm leading-relaxed text-[var(--muted)]">Assumes 52 working weeks and a constant automation rate. Time released is capacity, not guaranteed cash savings. Payback uses that time value after running costs; it is not a revenue forecast or a project quote.</p>
-            {result.annualNetValue <= 0 && <p className="mt-4 text-sm font-medium">At these assumptions, running costs meet or exceed the value of time released.</p>}
-            <button type="button" onClick={() => setActiveTab("scope")} className="action-secondary mt-6 w-full">Discuss a real scope <ArrowUpRight size={16} aria-hidden="true" /></button>
-          </div>
-        </div>
+        <AnimatePresence mode="wait" initial={false}>
+          {activeTab === "scope" ? (
+            <motion.div
+              key="tool-scope"
+              id="tool-scope"
+              initial={reduced ? false : { opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduced ? undefined : { opacity: 0, y: -6 }}
+              transition={{ duration: reduced ? 0 : 0.2, ease }}
+              className="planner-scope"
+            >
+              <StudioDisclosure
+                title="Adjust goals & starting point (optional)"
+                isOpen={briefOpen}
+                onToggle={setBriefOpen}
+                reduced={reduced}
+              >
+                <div className="mt-4 space-y-7">
+                  <fieldset>
+                    <legend className="mb-3 text-lg font-semibold">What would you like to achieve?</legend>
+                    <p className="mb-4 text-sm leading-relaxed text-[var(--muted)]">Choose any that fit, combine several, or leave this blank. A custom idea is welcome.</p>
+                    <div className="space-y-2">
+                      {SERVICES_CATALOG.map((need) => {
+                        const implied = chosen.some((track) => track.needId === need.id);
+                        return (
+                          <label
+                            key={need.id}
+                            className="flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[var(--border)] p-3 text-sm transition-all duration-150 active:scale-[0.985] hover:border-[var(--muted)]"
+                          >
+                            <input
+                              type="checkbox"
+                              name="project-need"
+                              value={need.id}
+                              checked={selectedNeeds.includes(need.id) || implied}
+                              onChange={() => {
+                                if (selectedNeeds.includes(need.id) || implied) {
+                                  setSelectedNeeds((previous) => previous.filter((id) => id !== need.id));
+                                  setSelected((previous) => previous.filter((id) => !need.items.some((item) => item.id === id)));
+                                } else setSelectedNeeds((previous) => [...previous, need.id]);
+                              }}
+                              className="h-4 w-4 shrink-0 accent-[var(--primary)]"
+                            />
+                            <span>{need.shortTitle}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                    <StudioDisclosure
+                      title="Choose specific services (optional)"
+                      className="mt-5 border-t border-[var(--border)] pt-3"
+                      reduced={reduced}
+                    >
+                      <p className="mt-2 text-xs leading-relaxed text-[var(--muted)]">Only choose these if you already have a solution in mind. Services can be combined into one scope.</p>
+                      <div className="mt-4 space-y-5">
+                        {SERVICES_CATALOG.map((need) => (
+                          <fieldset key={need.id}>
+                            <legend className="mb-2 text-sm font-semibold">{need.shortTitle}</legend>
+                            <div className="space-y-1">
+                              {need.items.map((track) => (
+                                <label
+                                  key={track.id}
+                                  className="flex min-h-11 cursor-pointer items-center gap-3 text-sm transition-transform active:scale-[0.99]"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    name="project-area"
+                                    value={track.id}
+                                    checked={selected.includes(track.id)}
+                                    onChange={() => setSelected((previous) => previous.includes(track.id) ? previous.filter((id) => id !== track.id) : [...previous, track.id])}
+                                    className="h-4 w-4 shrink-0 accent-[var(--primary)]"
+                                  />
+                                  <span>{track.title}</span>
+                                </label>
+                              ))}
+                            </div>
+                          </fieldset>
+                        ))}
+                      </div>
+                    </StudioDisclosure>
+                  </fieldset>
+                  <fieldset>
+                    <legend className="mb-3 text-lg font-semibold">Where are you starting?</legend>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {timelines.map((item) => (
+                        <label
+                          key={item}
+                          className={`flex min-h-14 cursor-pointer items-center gap-3 rounded-lg border p-3 text-sm transition-all duration-150 active:scale-[0.985] ${
+                            timeline === item ? "border-[var(--primary)] bg-[var(--surface-hover)] shadow-sm" : "border-[var(--border)] hover:bg-[var(--surface-hover)]"
+                          }`}
+                        >
+                          <input
+                            type="radio"
+                            name="project-plan"
+                            value={item}
+                            checked={timeline === item}
+                            onChange={() => setTimeline(item)}
+                            className="h-4 w-4 shrink-0 accent-[var(--primary)]"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      ))}
+                    </div>
+                    <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">We work out the scope, approach, budget, and timing together before work starts.</p>
+                  </fieldset>
+                </div>
+              </StudioDisclosure>
+
+              <div className="min-w-0">
+                <h3 className="text-lg font-semibold">Your project note</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">All fields are optional. This creates a draft for you to review.</p>
+                <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                  <div><label htmlFor="project-name" className="mb-2 block text-sm font-medium">Your name or company</label><input id="project-name" name="name" autoComplete="name" maxLength={160} value={company} onChange={(event) => setCompany(event.target.value)} placeholder="For example, Alex / Acme" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+                  <div><label htmlFor="project-contact" className="mb-2 block text-sm font-medium">Email or phone</label><input id="project-contact" name="contact" autoComplete="off" spellCheck={false} maxLength={160} value={contact} onChange={(event) => setContact(event.target.value)} placeholder="alex@example.com or +971…" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+                  <div className="sm:col-span-2"><label htmlFor="project-notes" className="mb-2 block text-sm font-medium">The problem, idea, or result you want</label><textarea id="project-notes" name="notes" autoComplete="off" maxLength={2000} rows={4} value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Who is this for? What should they be able to do? What is difficult or missing today?" className="w-full resize-y rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base leading-relaxed" /><p className="mt-1 text-right text-xs tabular-nums text-[var(--muted)]">{notes.length}/2,000</p></div>
+                  <StudioDisclosure
+                    title="Add tools or timing (optional)"
+                    className="sm:col-span-2 border-t border-[var(--border)] pt-2"
+                    reduced={reduced}
+                  >
+                    <div className="mt-3 grid gap-5 sm:grid-cols-2">
+                      <div><label htmlFor="project-tools" className="mb-2 block text-sm font-medium">Current tools or website</label><input id="project-tools" name="tools" maxLength={300} value={existingTools} onChange={(event) => setExistingTools(event.target.value)} placeholder="For example, Shopify, Excel, a CRM, or starting from scratch" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+                      <div><label htmlFor="project-deadline" className="mb-2 block text-sm font-medium">Target date or timing</label><input id="project-deadline" name="deadline" maxLength={160} value={deadline} onChange={(event) => setDeadline(event.target.value)} placeholder="For example, before launch in November, or flexible" className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 py-3 text-base" /></div>
+                    </div>
+                  </StudioDisclosure>
+                </div>
+                <StudioDisclosure
+                  title="Preview your message"
+                  className="mt-4 border-t border-[var(--border)] pt-2"
+                  reduced={reduced}
+                >
+                  <p className="mt-2 whitespace-pre-wrap break-words rounded-lg bg-[var(--surface-hover)] p-4 text-sm leading-relaxed">{message}</p>
+                </StudioDisclosure>
+                
+                {submitStatus === "success" ? (
+                  <div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5 text-left">
+                    <div className="flex items-center gap-2 text-base font-semibold text-emerald-600 dark:text-emerald-400">
+                      <Check size={20} aria-hidden="true" /> Brief delivered directly to Razim
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
+                      Thank you{company ? `, ${company}` : ""}! Your brief has been sent to Razim&apos;s inbox. You can expect a response within 24 hours.
+                    </p>
+                    <div className="mt-4 flex flex-wrap items-center gap-3">
+                      <button type="button" onClick={() => setSubmitStatus("idle")} className="action-secondary min-h-11 px-4 text-sm font-semibold">
+                        Send another note
+                      </button>
+                      <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="editorial-link text-sm">
+                        Follow up on WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <input type="text" name="hp_planner" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+                    <div className="mt-5 grid grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        onClick={submitInquiry}
+                        disabled={submitStatus === "submitting"}
+                        className="action-primary col-span-2 flex min-h-12 items-center justify-center gap-2 text-sm font-semibold transition-transform active:scale-[0.985] disabled:opacity-60"
+                      >
+                        {submitStatus === "submitting" ? (
+                          <>
+                            <Loader2 size={18} className="animate-spin" aria-hidden="true" /> Delivering to Razim…
+                          </>
+                        ) : (
+                          <>
+                            <Send size={18} aria-hidden="true" /> Send brief directly to Razim
+                          </>
+                        )}
+                      </button>
+                      <a href={whatsappDraft(message)} target="_blank" rel="noopener noreferrer" className="action-secondary flex min-h-11 items-center justify-center gap-2 text-sm transition-transform active:scale-[0.985]">
+                        <MessageCircle size={17} aria-hidden="true" /> Review in WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                      <button type="button" onClick={copy} disabled={copyStatus === "copying"} className="action-secondary flex min-h-11 items-center justify-center gap-2 text-sm transition-transform active:scale-[0.985] disabled:opacity-60">
+                        {copied ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}
+                        {copyStatus === "copying" ? "Copying…" : copied ? "Copied" : "Copy brief"}
+                      </button>
+                    </div>
+                    {submitStatus === "error" && (
+                      <p role="alert" className="mt-2 text-xs font-medium text-rose-500">
+                        {submitError}
+                      </p>
+                    )}
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-[var(--muted)]">
+                      <span>Sends directly to Razim’s inbox via Resend.</span>
+                      <a href={emailDraft(message)} className="underline hover:text-[var(--foreground)]">Or open in email app</a>
+                    </div>
+                  </>
+                )}
+                <p role="status" aria-live="polite" className="mt-2 text-xs text-[var(--muted)]">{copied ? "Brief copied to clipboard." : copyStatus === "error" ? "Copy did not work. Select the message below and copy it manually." : ""}</p>
+                {copyStatus === "error" && <div className="mt-3"><label htmlFor="manual-copy" className="mb-2 block text-sm font-medium">Message to copy</label><textarea id="manual-copy" readOnly value={message} rows={6} className="w-full rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] p-3 text-base" /></div>}
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="tool-estimate"
+              id="tool-estimate"
+              initial={reduced ? false : { opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduced ? undefined : { opacity: 0, y: -6 }}
+              transition={{ duration: reduced ? 0 : 0.2, ease }}
+              className="grid gap-8 lg:grid-cols-2"
+            >
+              <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
+                <h3 className="text-xl font-semibold">Explore the value of time released</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">An illustrative model using your assumptions. Changing currency changes the unit; it does not convert the amounts.</p>
+                <div className="mt-6 space-y-4">
+                  <div><label htmlFor="estimate-currency" className="mb-2 block text-sm font-medium">Currency</label><select id="estimate-currency" name="currency" value={currency} onChange={(event) => setCurrency(event.target.value)} className="min-h-12 rounded-lg border border-[var(--control-border)] bg-[var(--surface-hover)] px-3 text-base text-[var(--foreground)]"><option value="AED">AED</option><option value="USD">USD</option></select></div>
+                  <RangeField id="manual-hours" label="Manual hours per week" value={hours} max={80} display={`${hours} hours`} onChange={setHours} />
+                  <RangeField id="hourly-rate" label="Value per work hour" value={hourlyValue} max={500} step={5} display={money(hourlyValue)} onChange={setHourlyValue} />
+                  <RangeField id="automation-rate" label="Share of work automated" value={automationPercent} max={100} step={5} display={`${automationPercent}%`} onChange={setAutomationPercent} />
+                  <RangeField id="implementation-cost" label="Upfront build cost" value={upfrontCost} max={50000} step={500} display={money(upfrontCost)} onChange={setUpfrontCost} />
+                  <RangeField id="running-cost" label="Monthly running & upkeep cost" value={runningCost} max={5000} step={50} display={money(runningCost)} onChange={setRunningCost} />
+                </div>
+              </div>
+              <div className="min-w-0 rounded-xl bg-[var(--surface-hover)] p-5 md:p-7">
+                <h3 className="text-xl font-semibold">Estimated annual time value</h3>
+                <dl className="mt-6 divide-y divide-[var(--border)]">
+                  {[
+                    ["Hours released per year", `${number.format(result.annualHours)} hours`],
+                    ["Value of that time", money(result.annualTimeValue)],
+                    ["Annual running costs", money(runningCost * 12)],
+                    ["Value after running costs", money(result.annualNetValue)],
+                    ["Modeled payback", payback],
+                  ].map(([label, value]) => <div key={label} className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-4"><dt className="text-sm text-[var(--muted)]">{label}</dt><dd className="break-words text-lg font-semibold tabular-nums">{value}</dd></div>)}
+                </dl>
+                <p className="mt-5 text-sm leading-relaxed text-[var(--muted)]">Assumes 52 working weeks and a constant automation rate. Time released is capacity, not guaranteed cash savings. Payback uses that time value after running costs; it is not a revenue forecast or a project quote.</p>
+                {result.annualNetValue <= 0 && <p className="mt-4 text-sm font-medium">At these assumptions, running costs meet or exceed the value of time released.</p>}
+                <button type="button" onClick={() => setActiveTab("scope")} className="action-secondary mt-6 w-full transition-transform active:scale-[0.985]">Discuss a real scope <ArrowUpRight size={16} aria-hidden="true" /></button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
         </div>
       </div>
     </section>

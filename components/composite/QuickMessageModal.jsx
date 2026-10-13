@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { Check, Loader2, Mail, MessageCircle, Send, X } from 'lucide-react';
+import { Check, Copy, Loader2, Mail, MessageCircle, Send, X } from 'lucide-react';
 import { WHATSAPP_URL } from '@/lib/contact';
 import { USER_DATA } from '@/lib/data';
 
@@ -22,12 +22,24 @@ export function QuickMessageModal({
   const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
   const [errorMessage, setErrorMessage] = useState('');
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleClose = useCallback(() => {
     setStatus('idle');
     setErrorMessage('');
+    setCopiedEmail(false);
     onClose();
   }, [onClose]);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(USER_DATA.contact.email);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2500);
+    } catch {
+      // Fallback ignored if clipboard is unavailable
+    }
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -230,7 +242,7 @@ export function QuickMessageModal({
                     <button
                       type="submit"
                       disabled={status === 'sending'}
-                      className="action-primary flex min-h-12 w-full items-center justify-center gap-2 text-sm font-semibold disabled:opacity-60"
+                      className="action-primary flex min-h-12 w-full items-center justify-center gap-2 text-sm font-semibold transition-transform active:scale-[0.985] disabled:opacity-60"
                     >
                       {status === 'sending' ? (
                         <>
@@ -246,17 +258,34 @@ export function QuickMessageModal({
                 </form>
 
                 <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-[var(--border)] pt-4 text-xs text-[var(--muted)]">
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 hover:text-[var(--foreground)]"
-                  >
-                    <MessageCircle size={13} aria-hidden="true" /> Or message on WhatsApp
-                  </a>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 hover:text-[var(--foreground)] transition-colors"
+                    >
+                      <MessageCircle size={13} aria-hidden="true" /> Message on WhatsApp
+                    </a>
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      className="inline-flex items-center gap-1 hover:text-[var(--foreground)] transition-colors cursor-pointer"
+                    >
+                      {copiedEmail ? (
+                        <>
+                          <Check size={13} className="text-emerald-500" aria-hidden="true" /> Copied email
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={13} aria-hidden="true" /> Copy email
+                        </>
+                      )}
+                    </button>
+                  </div>
                   <a
                     href={mailtoFallback}
-                    className="inline-flex items-center gap-1 hover:text-[var(--foreground)]"
+                    className="inline-flex items-center gap-1 hover:text-[var(--foreground)] transition-colors"
                   >
                     <Mail size={13} aria-hidden="true" /> Open local mail app
                   </a>
